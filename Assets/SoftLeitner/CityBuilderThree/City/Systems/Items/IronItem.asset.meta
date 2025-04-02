@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d3ea0d7d6cf59a14da2d5d110812b86a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderThree/City/Systems/Items/IronItem.asset
+  uploadId: 741700

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: d628afad736249245854e9a3af0e94d7
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Utilities/TransparentColoredOverlay.shader
+  uploadId: 741700

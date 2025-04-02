@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 40f618e09252d0545a41b2bc32a12ab7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderDefense/Scenes/Defense/NavMesh.asset
+  uploadId: 741700

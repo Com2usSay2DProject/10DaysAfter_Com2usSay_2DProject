@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7cfabcb933ecff147b4c5500bfcd5be3
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Editor/Setup/Palette/roadObject.prefab
+  uploadId: 741700

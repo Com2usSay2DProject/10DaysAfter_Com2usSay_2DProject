@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a44a580e79e885c4dac1a945cdfbc7f7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: 5a0720dfcad845744bb2111b8241bb39, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Systems/PeopleSystems/Employing/EmploymentGroupSet.cs
+  uploadId: 741700

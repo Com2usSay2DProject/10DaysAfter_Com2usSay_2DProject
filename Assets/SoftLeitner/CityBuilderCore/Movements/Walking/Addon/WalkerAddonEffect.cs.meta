@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c096f29ce0a4c0d4fa7ee349539f45a3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: f336784651afc254883907130ce89243, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Movements/Walking/Addon/WalkerAddonEffect.cs
+  uploadId: 741700

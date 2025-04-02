@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c69a5f15c0016224c8ee2ea383ad5ea1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Editor/Drawers/LayerRequirementDrawer.cs
+  uploadId: 741700

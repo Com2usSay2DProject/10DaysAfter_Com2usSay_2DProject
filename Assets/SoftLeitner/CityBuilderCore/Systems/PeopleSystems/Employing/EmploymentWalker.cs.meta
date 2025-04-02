@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 933e7f8c2449bca46a7d322daa50130f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: 907c67e8e53690545b9dc4ebe0e62919, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Systems/PeopleSystems/Employing/EmploymentWalker.cs
+  uploadId: 741700

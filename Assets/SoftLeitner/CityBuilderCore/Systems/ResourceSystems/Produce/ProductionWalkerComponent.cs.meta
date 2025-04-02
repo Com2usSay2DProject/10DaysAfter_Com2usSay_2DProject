@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: d1c79d817268ae449ae64b172474845f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Systems/ResourceSystems/Produce/ProductionWalkerComponent.cs
+  uploadId: 741700

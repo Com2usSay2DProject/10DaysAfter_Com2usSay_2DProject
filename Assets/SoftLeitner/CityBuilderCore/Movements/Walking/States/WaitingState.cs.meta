@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ae2af9ec332c8f5449fe0cd8af344a8b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Movements/Walking/States/WaitingState.cs
+  uploadId: 741700

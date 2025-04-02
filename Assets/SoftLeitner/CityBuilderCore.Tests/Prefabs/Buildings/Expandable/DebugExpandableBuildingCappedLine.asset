@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f57f6614d18efa94592fad1845e3b3c7, type: 3}
+  m_Name: DebugExpandableBuildingCappedLine
+  m_EditorClassIdentifier: 
+  Key: EX_CALI
+  Name: Expandable Building Capped Line
+  Description: straight expandable builiding with caps at both ends
+  Size: {x: 1, y: 2}
+  IsDestructible: 1
+  IsMovable: 1
+  IsWalkable: 0
+  Prefab: {fileID: 8140950705246343913, guid: 9a11efbabecf79f49aa6f09af0aa4456, type: 3}
+  PrefabAlternatives: []
+  Ghost: {fileID: 5353332580834319964, guid: e8d6b46adf757fe4b80aa817ba497110, type: 3}
+  GhostAlternatives: []
+  AccessType: 0
+  AccessPoint: {x: 0, y: 0}
+  Cost: []
+  BuildingRequirements: []
+  RoadRequirements: []
+  Level:
+    Value: 0
+  ExpansionMinimum: {x: 2, y: 0}
+  ExpansionMaximum: {x: 10, y: 0}
+  ExpansionCost: []
+  SizeStep: {x: 2, y: 0}
+  SizePost: {x: 1, y: 0}

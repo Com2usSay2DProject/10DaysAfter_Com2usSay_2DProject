@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e8b05de36a922ed46ba328f10d359e04
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderTown/Prefabs/Tasks/TownDeliver.prefab
+  uploadId: 741700

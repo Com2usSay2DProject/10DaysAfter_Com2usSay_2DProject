@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 83ad3d7e7df69fe48aae7b586d7a0eb5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Systems/PeopleSystems/Housing/PopulationHousing.cs
+  uploadId: 741700

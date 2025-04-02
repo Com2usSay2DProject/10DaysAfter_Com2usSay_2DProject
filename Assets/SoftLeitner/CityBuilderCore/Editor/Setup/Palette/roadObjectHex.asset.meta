@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e4c988774c4754541b7d7ad5a630c67e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Editor/Setup/Palette/roadObjectHex.asset
+  uploadId: 741700

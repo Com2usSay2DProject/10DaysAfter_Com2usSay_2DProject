@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0c91d818ced27c74a87e167286999e9f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderManual/Custom/Walkers/CustomRoamingWalker.prefab
+  uploadId: 741700

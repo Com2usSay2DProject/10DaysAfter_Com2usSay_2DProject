@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: bdd71a0fa528b544ab0c5c475ec4ebaa
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/Playgrounds/Layer/LayerPlayground.unity
+  uploadId: 741700

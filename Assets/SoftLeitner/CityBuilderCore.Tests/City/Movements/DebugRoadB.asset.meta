@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3ec228dd453374b43904cc31d46f93d6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/City/Movements/DebugRoadB.asset
+  uploadId: 741700

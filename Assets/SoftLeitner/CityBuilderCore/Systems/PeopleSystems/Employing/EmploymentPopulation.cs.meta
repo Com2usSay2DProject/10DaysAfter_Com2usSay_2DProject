@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: fd5f58876ee99d6498b64fad9d5a413a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Systems/PeopleSystems/Employing/EmploymentPopulation.cs
+  uploadId: 741700

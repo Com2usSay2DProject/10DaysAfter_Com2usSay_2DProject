@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c5feee88e4912c746a123fd99a720e45
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: b211dea5ed83655498c20aad9ae3fd32, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Systems/PeopleSystems/DefaultPopulationManager.cs
+  uploadId: 741700

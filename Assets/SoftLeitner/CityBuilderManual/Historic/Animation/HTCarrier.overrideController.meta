@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 457ce450936b59444ab9abc3d4245819
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderManual/Historic/Animation/HTCarrier.overrideController
+  uploadId: 741700

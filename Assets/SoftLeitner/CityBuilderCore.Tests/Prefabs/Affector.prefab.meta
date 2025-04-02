@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: dd4ec2edb1d6a4a47af27fa58f3cebf3
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/Prefabs/Affector.prefab
+  uploadId: 741700

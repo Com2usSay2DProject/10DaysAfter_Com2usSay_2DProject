@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 1d74221a22d82b64892c625c9b1a4ed4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Editor/Walkers/WalkerElement.cs
+  uploadId: 741700

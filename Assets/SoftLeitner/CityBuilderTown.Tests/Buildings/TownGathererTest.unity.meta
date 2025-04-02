@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4d8b7d4a6e9607145bf7b992b907d7ea
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderTown.Tests/Buildings/TownGathererTest.unity
+  uploadId: 741700

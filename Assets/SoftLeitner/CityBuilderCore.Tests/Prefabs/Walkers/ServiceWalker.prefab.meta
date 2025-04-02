@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8cabf681ced82e741b67e6da7507f3f0
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/Prefabs/Walkers/ServiceWalker.prefab
+  uploadId: 741700

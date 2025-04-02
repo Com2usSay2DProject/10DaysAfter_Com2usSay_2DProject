@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 49752d3957b11e74a8a9b4d7c8df8a61
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Visualization/Dialogs/MessageBoxDialog.cs
+  uploadId: 741700

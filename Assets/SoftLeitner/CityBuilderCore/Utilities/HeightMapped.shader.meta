@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 2b5bd0f9cb6522043883eddcff39b439
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Utilities/HeightMapped.shader
+  uploadId: 741700

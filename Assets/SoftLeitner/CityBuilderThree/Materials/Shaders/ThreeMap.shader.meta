@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 0d603f91dd47d4249afe8f04eeedaecc
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderThree/Materials/Shaders/ThreeMap.shader
+  uploadId: 741700

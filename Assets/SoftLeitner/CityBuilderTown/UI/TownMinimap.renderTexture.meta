@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 281753b763c58584a8c2fa48dc1ed0c3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderTown/UI/TownMinimap.renderTexture
+  uploadId: 741700

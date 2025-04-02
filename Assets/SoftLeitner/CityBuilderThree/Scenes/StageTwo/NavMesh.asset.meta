@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b8fee11c82c231149ac40d70f6ff9abd
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderThree/Scenes/StageTwo/NavMesh.asset
+  uploadId: 741700

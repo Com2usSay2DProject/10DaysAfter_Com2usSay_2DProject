@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 05d3724a64b2d0840a1572b7d32fadb3
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderTown/Prefabs/TownMenu.prefab
+  uploadId: 741700

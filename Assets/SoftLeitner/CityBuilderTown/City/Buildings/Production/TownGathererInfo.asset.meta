@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 302504f4ed563e5429be2d7e51634ec9
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderTown/City/Buildings/Production/TownGathererInfo.asset
+  uploadId: 741700

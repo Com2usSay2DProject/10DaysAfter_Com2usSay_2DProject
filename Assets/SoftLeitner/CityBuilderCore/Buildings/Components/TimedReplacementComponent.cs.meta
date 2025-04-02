@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 966c3b7bb0ccb8f48bdd981ee26557b1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Buildings/Components/TimedReplacementComponent.cs
+  uploadId: 741700

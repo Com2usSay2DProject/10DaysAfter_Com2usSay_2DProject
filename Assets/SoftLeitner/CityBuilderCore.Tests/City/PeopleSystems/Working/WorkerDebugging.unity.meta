@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 53a32aeeb5c389c4f9ece4910a883cb8
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/City/PeopleSystems/Working/WorkerDebugging.unity
+  uploadId: 741700

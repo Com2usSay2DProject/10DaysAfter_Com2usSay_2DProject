@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ba654be8ea05b264f99767b9e87153da
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Visualization/Dialogs/SelectionSwitcher.prefab
+  uploadId: 741700

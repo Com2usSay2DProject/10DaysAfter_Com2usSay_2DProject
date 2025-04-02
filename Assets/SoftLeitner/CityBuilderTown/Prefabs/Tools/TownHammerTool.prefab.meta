@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6bd1c4ee3bb4d3d44b1f4b160fd9b55a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderTown/Prefabs/Tools/TownHammerTool.prefab
+  uploadId: 741700

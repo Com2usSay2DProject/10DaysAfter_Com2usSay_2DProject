@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 794e7de1b8551144c96cbe21dad38d26
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Visualization/Highlights/IHighlightManager.cs
+  uploadId: 741700

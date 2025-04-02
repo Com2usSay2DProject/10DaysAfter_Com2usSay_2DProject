@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d30fb763a27f6134f89500f97886f2e0
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/Prefabs/Buildings/Expandable/DebugExpandableBuildingLineGhost.prefab
+  uploadId: 741700

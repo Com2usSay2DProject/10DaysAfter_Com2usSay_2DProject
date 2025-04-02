@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 01de69d1d2edafa4da1d6926b583fe4a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Visualization/Tooltips/TooltipPanel.cs
+  uploadId: 741700

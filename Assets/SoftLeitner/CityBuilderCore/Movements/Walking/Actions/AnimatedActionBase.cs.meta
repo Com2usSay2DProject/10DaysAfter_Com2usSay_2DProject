@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 0c622fda247958d4abd6685d245e8d32
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Movements/Walking/Actions/AnimatedActionBase.cs
+  uploadId: 741700

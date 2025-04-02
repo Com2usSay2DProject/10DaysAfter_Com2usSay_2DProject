@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c964bc3d5b3bbdf4a8147ff5c8e2e4b9
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/Prefabs/Buildings/DebugEvolutionBuilding2.prefab
+  uploadId: 741700

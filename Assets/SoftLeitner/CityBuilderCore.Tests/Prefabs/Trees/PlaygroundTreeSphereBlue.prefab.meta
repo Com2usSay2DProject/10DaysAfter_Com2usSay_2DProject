@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d954dfc11125b8f459eed25ba1550df0
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/Prefabs/Trees/PlaygroundTreeSphereBlue.prefab
+  uploadId: 741700

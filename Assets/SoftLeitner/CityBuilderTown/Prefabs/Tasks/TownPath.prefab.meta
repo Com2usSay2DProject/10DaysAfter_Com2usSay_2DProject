@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0462be8f5dd3eab4c951310a92939e98
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderTown/Prefabs/Tasks/TownPath.prefab
+  uploadId: 741700

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c10e88754be94c540a9661a5aa056335
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/Playgrounds/TerrainMovement/TerrainMovementData.asset
+  uploadId: 741700

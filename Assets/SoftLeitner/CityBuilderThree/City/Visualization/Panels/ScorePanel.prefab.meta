@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b5e1cf9116878c648a18776e3b74fb11
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderThree/City/Visualization/Panels/ScorePanel.prefab
+  uploadId: 741700

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: af7d294161433f24596c84c8e70f13d9
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderUrban/Animation/UrbanTornado.controller
+  uploadId: 741700

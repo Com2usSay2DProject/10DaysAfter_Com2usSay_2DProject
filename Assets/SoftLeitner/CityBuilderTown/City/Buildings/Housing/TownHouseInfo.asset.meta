@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b12b345cb33baae4ebd94e769cb8cca4
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderTown/City/Buildings/Housing/TownHouseInfo.asset
+  uploadId: 741700

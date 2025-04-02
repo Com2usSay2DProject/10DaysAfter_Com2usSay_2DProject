@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5bcbb8f1804600f489b27a0041519052
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/Prefabs/Buildings/Addon/DebugBuildingHighlight.prefab
+  uploadId: 741700

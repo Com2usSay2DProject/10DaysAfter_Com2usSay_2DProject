@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a2492d6bd1452ca47a13e635b75babe8
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderThree/City/Movements/Walkers/MasonWalker.prefab
+  uploadId: 741700

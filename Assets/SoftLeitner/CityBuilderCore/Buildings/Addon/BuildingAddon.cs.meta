@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a729ce41a173e294fb5e975a3f863d63
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: 35db8961bce682e438acd6c5c1651c06, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Buildings/Addon/BuildingAddon.cs
+  uploadId: 741700

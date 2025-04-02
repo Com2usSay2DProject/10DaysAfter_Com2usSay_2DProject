@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 43fd7577ef987544187389290d8f94e4
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderUrban/City/Walkers/UrbanTrain.prefab
+  uploadId: 741700

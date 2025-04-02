@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c0743c3d83479bb49bf75c24514db36c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/General/Tasks/Items/ItemTaskItem.cs
+  uploadId: 741700

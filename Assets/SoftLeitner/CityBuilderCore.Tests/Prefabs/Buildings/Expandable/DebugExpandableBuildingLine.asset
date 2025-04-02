@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f57f6614d18efa94592fad1845e3b3c7, type: 3}
+  m_Name: DebugExpandableBuildingLine
+  m_EditorClassIdentifier: 
+  Key: EX_LINE
+  Name: Expandable Building Line
+  Description: straight expandable builiding without special start or end
+  Size: {x: 0, y: 1}
+  IsDestructible: 1
+  IsMovable: 1
+  IsWalkable: 0
+  Prefab: {fileID: 8140950705246343913, guid: 9c55c918a56c94f47ab3ee03e13e67ad, type: 3}
+  PrefabAlternatives: []
+  Ghost: {fileID: 5353332580834319964, guid: d30fb763a27f6134f89500f97886f2e0, type: 3}
+  GhostAlternatives: []
+  AccessType: 0
+  AccessPoint: {x: 0, y: 0}
+  Cost: []
+  BuildingRequirements: []
+  RoadRequirements: []
+  Level:
+    Value: 2
+  ExpansionMinimum: {x: 0, y: 0}
+  ExpansionMaximum: {x: 10, y: 0}
+  ExpansionCost: []
+  SizeStep: {x: 1, y: 1}
+  SizePost: {x: 0, y: 0}

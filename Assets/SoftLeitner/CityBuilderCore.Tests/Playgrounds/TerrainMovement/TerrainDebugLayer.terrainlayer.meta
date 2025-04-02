@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 30f77adf0f1fcb4409acf7a5ba03f927
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/Playgrounds/TerrainMovement/TerrainDebugLayer.terrainlayer
+  uploadId: 741700

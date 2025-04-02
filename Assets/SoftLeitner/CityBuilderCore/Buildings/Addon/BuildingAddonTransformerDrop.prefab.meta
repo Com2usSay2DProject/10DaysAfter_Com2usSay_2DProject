@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 01f447a7e9ead9a4d97d074f948aa190
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Buildings/Addon/BuildingAddonTransformerDrop.prefab
+  uploadId: 741700

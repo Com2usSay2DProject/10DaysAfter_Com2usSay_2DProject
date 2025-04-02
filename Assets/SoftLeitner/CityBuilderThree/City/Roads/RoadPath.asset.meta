@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f2225d395c4984f4aa52e89d19099174
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderThree/City/Roads/RoadPath.asset
+  uploadId: 741700

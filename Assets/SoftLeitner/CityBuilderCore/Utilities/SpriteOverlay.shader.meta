@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: d223007d400ed0b4b932f554fcd1dafc
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Utilities/SpriteOverlay.shader
+  uploadId: 741700

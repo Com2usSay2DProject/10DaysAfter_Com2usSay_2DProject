@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 12191bc751c6c1f4dbe8867f3c57c04b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Maps/Height/IOverrideHeight.cs
+  uploadId: 741700

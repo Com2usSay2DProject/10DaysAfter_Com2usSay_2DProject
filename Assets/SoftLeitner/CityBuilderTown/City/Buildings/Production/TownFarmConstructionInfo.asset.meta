@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 03379b52c7441e449a37c9ad66bc3b6f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderTown/City/Buildings/Production/TownFarmConstructionInfo.asset
+  uploadId: 741700

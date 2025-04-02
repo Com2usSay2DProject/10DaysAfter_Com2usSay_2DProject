@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e328efb9043643e4ebac0e8f739ebd43
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Buildings/Components/SpriteRandomizerComponent.cs
+  uploadId: 741700

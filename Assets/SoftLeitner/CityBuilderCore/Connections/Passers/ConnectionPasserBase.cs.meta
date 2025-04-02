@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 7799a3e5bdf4e654a84ff54091c67ade
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Connections/Passers/ConnectionPasserBase.cs
+  uploadId: 741700

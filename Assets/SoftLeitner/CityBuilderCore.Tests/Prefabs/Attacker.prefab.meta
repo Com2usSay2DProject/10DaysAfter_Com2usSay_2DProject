@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6f437cdff3f23fb40b8009d206c9a08f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/Prefabs/Attacker.prefab
+  uploadId: 741700

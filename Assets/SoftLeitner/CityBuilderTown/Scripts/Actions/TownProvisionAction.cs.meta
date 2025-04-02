@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a0f1abc2f11dcd140bc541922457b059
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderTown/Scripts/Actions/TownProvisionAction.cs
+  uploadId: 741700

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6864591c1a7ec154aaf142fbd59c278e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 24100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderTown/Sounds/TownAudioMixer.mixer
+  uploadId: 741700

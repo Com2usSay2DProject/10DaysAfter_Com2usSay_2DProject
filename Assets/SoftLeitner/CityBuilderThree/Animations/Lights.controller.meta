@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 73bdc05c569527d4a8f1efbe4ef3a5a0
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderThree/Animations/Lights.controller
+  uploadId: 741700

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f57f6614d18efa94592fad1845e3b3c7, type: 3}
+  m_Name: DebugExpandableBuildingArea
+  m_EditorClassIdentifier: 
+  Key: EX_AREA
+  Name: Expandable Building Area
+  Description: expandable builiding that covers an area in repetitions on structure
+    level 1
+  Size: {x: 0, y: 0}
+  IsDestructible: 1
+  IsMovable: 1
+  IsWalkable: 0
+  Prefab: {fileID: 8140950705246343913, guid: d15577b8d432182458fdb35e1c060525, type: 3}
+  PrefabAlternatives: []
+  Ghost: {fileID: 5353332580834319964, guid: 9ca4615790ee1f14fbca778b6d52d057, type: 3}
+  GhostAlternatives: []
+  AccessType: 0
+  AccessPoint: {x: 0, y: 0}
+  Cost: []
+  BuildingRequirements: []
+  RoadRequirements: []
+  Level:
+    Value: 1
+  ExpansionMinimum: {x: 1, y: 1}
+  ExpansionMaximum: {x: 10, y: 10}
+  ExpansionCost: []
+  SizeStep: {x: 0, y: 0}
+  SizePost: {x: 0, y: 0}

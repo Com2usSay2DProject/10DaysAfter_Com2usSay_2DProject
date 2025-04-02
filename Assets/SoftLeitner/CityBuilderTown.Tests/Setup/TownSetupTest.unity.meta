@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c8e2fbed240d2364ca315ff7c9deab37
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderTown.Tests/Setup/TownSetupTest.unity
+  uploadId: 741700

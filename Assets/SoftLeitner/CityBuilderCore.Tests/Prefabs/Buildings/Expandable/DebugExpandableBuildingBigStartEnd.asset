@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f57f6614d18efa94592fad1845e3b3c7, type: 3}
+  m_Name: DebugExpandableBuildingBigStartEnd
+  m_EditorClassIdentifier: 
+  Key: EX_SEBI
+  Name: Expandable Building Start-End Big
+  Description: straight expandable builiding with a start and end object of size
+    2
+  Size: {x: 2, y: 2}
+  IsDestructible: 1
+  IsMovable: 1
+  IsWalkable: 0
+  Prefab: {fileID: 8140950705246343913, guid: 029b0e4789b6c9f4da9520b94fb91b43, type: 3}
+  PrefabAlternatives: []
+  Ghost: {fileID: 5353332580834319964, guid: 49246bd6d57b3a7498f975b26a3a26dd, type: 3}
+  GhostAlternatives: []
+  AccessType: 0
+  AccessPoint: {x: 0, y: 0}
+  Cost: []
+  BuildingRequirements: []
+  RoadRequirements: []
+  Level:
+    Value: 0
+  ExpansionMinimum: {x: 2, y: 0}
+  ExpansionMaximum: {x: 10, y: 0}
+  ExpansionCost: []
+  SizeStep: {x: 2, y: 0}
+  SizePost: {x: 2, y: 0}

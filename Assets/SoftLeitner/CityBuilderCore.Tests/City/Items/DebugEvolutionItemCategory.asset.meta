@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6e92f12c131da3c4ab8c5bf37a33fe0d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/City/Items/DebugEvolutionItemCategory.asset
+  uploadId: 741700

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d429a8b297c226648a7325f014f0ab7d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderTown/Prefabs/UI/TownJobPanel.prefab
+  uploadId: 741700

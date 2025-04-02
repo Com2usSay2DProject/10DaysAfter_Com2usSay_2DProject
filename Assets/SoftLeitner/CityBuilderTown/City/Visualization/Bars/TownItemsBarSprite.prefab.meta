@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7e32751c5d28b944f82d2f8935b1210d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderTown/City/Visualization/Bars/TownItemsBarSprite.prefab
+  uploadId: 741700

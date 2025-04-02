@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 41b1615ee6b35944c85c294ce0c2b571
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/City/PeopleSystems/DebugPopulationA.asset
+  uploadId: 741700

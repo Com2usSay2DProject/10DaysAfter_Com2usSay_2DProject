@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ed889880fb2039b4a96ebf486e0412d8
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderTown/City/Buildings/Storage/TownStockpileInfo.asset
+  uploadId: 741700

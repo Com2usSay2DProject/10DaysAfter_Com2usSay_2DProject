@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f16f7e013654c5b499b79c712a5933b2
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Visualization/Tools/DemolishVisualRendererDissolve.prefab
+  uploadId: 741700

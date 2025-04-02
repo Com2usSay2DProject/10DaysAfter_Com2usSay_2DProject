@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 13149f1701bf601498d8a7f693a0c489
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/City/Movements/StructurePathDebugging.unity
+  uploadId: 741700

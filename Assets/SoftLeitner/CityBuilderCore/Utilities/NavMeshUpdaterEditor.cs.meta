@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: fd5f7bd627efcfb4e8b54c1ac06fffd3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Utilities/NavMeshUpdaterEditor.cs
+  uploadId: 741700

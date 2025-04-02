@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2dc698cbbd70ea14ab6c0db4924feb9e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 23800000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderThree/Terrain/DebugTerrain/NavMesh.asset
+  uploadId: 741700

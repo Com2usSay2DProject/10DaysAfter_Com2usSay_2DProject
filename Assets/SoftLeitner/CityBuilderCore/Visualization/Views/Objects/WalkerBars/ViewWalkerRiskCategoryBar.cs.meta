@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 91fcf6a4410d8284b88b5382d5e227d8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: 2b400227e23e1e24cb811e60db1f3c3c, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Visualization/Views/Objects/WalkerBars/ViewWalkerRiskCategoryBar.cs
+  uploadId: 741700

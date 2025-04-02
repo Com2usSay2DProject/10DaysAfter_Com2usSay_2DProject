@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7cf7fd89f0a4f8d4fa836cdd6eb96d9b
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/Playgrounds/Placement/Buildings/PlacementBedGhost.prefab
+  uploadId: 741700

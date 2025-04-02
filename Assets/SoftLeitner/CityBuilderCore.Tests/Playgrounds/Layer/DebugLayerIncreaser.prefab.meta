@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 05cac473b9f3c254fac94206c00c6c85
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/Playgrounds/Layer/DebugLayerIncreaser.prefab
+  uploadId: 741700

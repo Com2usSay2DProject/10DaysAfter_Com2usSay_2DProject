@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5bfea7ee67f6a044786ca57e1c1a9c77
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderTown/CityBuilderTown.asmdef
+  uploadId: 741700

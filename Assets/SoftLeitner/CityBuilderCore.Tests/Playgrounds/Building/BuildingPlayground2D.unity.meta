@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a9d67beaae14ac145b88f8a4e875830e
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/Playgrounds/Building/BuildingPlayground2D.unity
+  uploadId: 741700

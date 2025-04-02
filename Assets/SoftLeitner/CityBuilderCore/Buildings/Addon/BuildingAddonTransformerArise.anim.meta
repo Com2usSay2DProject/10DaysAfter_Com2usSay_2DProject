@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1c6719fbd8695b04eb2ca63507e1f277
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Buildings/Addon/BuildingAddonTransformerArise.anim
+  uploadId: 741700

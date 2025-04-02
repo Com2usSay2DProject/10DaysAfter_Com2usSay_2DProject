@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8f2dd083848e0c543b1d76cf6044d357
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Buildings/Addon/BuildingAddonTransformerArise.prefab
+  uploadId: 741700

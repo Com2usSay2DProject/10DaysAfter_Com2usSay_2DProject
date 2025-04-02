@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e7f5bdc5bf9fec247bc67bd30c2ab377
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Movements/Walking/WanderingWalker.cs
+  uploadId: 741700

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ab2379414d8169f4d87e133e47062e7b
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/Prefabs/Walkers/StorageWalker.prefab
+  uploadId: 741700

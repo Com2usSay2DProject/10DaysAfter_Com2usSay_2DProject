@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6e2c9636b5e27c64b8c5c867377210bc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Editor/Setup/SetupGenerator.asset
+  uploadId: 741700

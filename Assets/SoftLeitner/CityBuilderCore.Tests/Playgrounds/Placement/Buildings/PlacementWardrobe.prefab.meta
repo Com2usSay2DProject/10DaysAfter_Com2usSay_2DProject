@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e7a3cb1afc9580d4aba8ef666232f387
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/Playgrounds/Placement/Buildings/PlacementWardrobe.prefab
+  uploadId: 741700

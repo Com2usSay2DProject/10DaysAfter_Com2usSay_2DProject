@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d0ec6329f974d9a4da9e82057d569520
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderTown/City/Visualization/Views/TownWalkerViewWarmthBar.asset
+  uploadId: 741700

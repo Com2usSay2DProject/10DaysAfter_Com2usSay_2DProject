@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 39acf0e6784a6b343a8c2d89521c343c
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/Prefabs/Distribution.prefab
+  uploadId: 741700

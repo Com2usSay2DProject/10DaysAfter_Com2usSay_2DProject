@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cc85e4911e17c734c9ab97f568e231ed
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Editor/Setup/Materials/Road.mat
+  uploadId: 741700

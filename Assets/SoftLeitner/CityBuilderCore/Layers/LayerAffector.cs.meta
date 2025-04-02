@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 7ed0cbc06bc5f3a4c97e2aeecd9e705b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: 5955914f8a0f3fb4a814888545f6749b, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Layers/LayerAffector.cs
+  uploadId: 741700

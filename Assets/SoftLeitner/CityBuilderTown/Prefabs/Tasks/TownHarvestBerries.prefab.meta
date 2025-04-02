@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: dffe6c24dfaba67419f576a3ea3024df
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderTown/Prefabs/Tasks/TownHarvestBerries.prefab
+  uploadId: 741700

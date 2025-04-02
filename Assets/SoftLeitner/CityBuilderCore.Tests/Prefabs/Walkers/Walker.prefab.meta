@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 761bf1607f82d6544921a9c8fd15e783
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/Prefabs/Walkers/Walker.prefab
+  uploadId: 741700

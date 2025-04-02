@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4b375cc53c5b7d94d98fc79391da45ba
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/Prefabs/Walkers/Addon/DebugWalkerHighlight.anim
+  uploadId: 741700

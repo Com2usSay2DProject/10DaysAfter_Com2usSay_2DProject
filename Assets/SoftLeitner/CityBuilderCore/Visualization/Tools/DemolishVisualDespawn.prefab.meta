@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b76979ca29654834a9734191f3835d40
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Visualization/Tools/DemolishVisualDespawn.prefab
+  uploadId: 741700

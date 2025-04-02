@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 49a7922256f00204b9dba38c53a8fbdb
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderTown/City/Visualization/Bars/TownWalkerInfoBar.prefab
+  uploadId: 741700

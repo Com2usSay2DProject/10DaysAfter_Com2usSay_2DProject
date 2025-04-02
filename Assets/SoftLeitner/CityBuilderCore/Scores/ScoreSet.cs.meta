@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 72562ba2b3636514190ebd997a02929c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: 95e667aa6f0e46548902f5b398336eb9, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Scores/ScoreSet.cs
+  uploadId: 741700

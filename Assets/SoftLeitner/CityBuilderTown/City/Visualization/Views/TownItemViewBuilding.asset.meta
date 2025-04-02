@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5a4d395ab96ce294eba1067ca945fa87
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderTown/City/Visualization/Views/TownItemViewBuilding.asset
+  uploadId: 741700

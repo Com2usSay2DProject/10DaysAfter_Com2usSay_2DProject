@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: dcbdf88c12d993a48be2321346709719
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/Materials/HighlightOutlineOverlay.mat
+  uploadId: 741700

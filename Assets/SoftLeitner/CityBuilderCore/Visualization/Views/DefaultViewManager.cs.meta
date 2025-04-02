@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 9a1178ea3cd295b41a354e84a19d8447
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: 724721b2981d9b54b958a8fd1674b48a, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore/Visualization/Views/DefaultViewManager.cs
+  uploadId: 741700

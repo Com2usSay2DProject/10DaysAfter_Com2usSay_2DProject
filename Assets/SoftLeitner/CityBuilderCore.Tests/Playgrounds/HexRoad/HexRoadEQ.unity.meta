@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f031f60d444f5d847b3efcd068a59d45
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/Playgrounds/HexRoad/HexRoadEQ.unity
+  uploadId: 741700

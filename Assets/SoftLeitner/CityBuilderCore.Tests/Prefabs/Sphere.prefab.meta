@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5bfca631bab5a0d4f9b3e20a6294306b
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187814
+  packageName: Classic City Builder Kit
+  packageVersion: 1.9.2
+  assetPath: Assets/SoftLeitner/CityBuilderCore.Tests/Prefabs/Sphere.prefab
+  uploadId: 741700
