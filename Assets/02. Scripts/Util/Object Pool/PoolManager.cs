@@ -2,12 +2,13 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PoolManager : Singleton<PoolManager>
+public class PoolManager : Singleton<PoolManager> // 문의 : 수민
 {
     [SerializeField] private List<PoolInfo> _poolInfoList;
 
     private void Awake()
     {
+        Initialize_DontDestroyOnLoad();
         Initialize();
     }
 

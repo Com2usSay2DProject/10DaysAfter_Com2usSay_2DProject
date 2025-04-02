@@ -3,7 +3,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-public static class AesEncryption
+public static class AesEncryption // 문의 : 수민
 {
     //private static string key = "1234567890123456";
     private const string KEY = "1234567890123456";
