@@ -19,5 +19,7 @@ public class EnemyIdleState : EnemyState
     public override void Update()
     {
         base.Update();
+
+        _stateMachine.ChangeState(_enemyBase.MoveState);
     }
 }

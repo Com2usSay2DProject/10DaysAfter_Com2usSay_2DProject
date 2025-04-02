@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
 
 
-    private float _moveSpeed;
+    public float _moveSpeed { get; private set; } = 2;
 
 
     #region Staties
