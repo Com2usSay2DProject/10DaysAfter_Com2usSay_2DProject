@@ -11,7 +11,7 @@ public class ResourceManager : Singleton<ResourceManager>
 		//자원 데이터 불러옴.
 		InitResources();
 		LoadResourceData();
-		DontDestroyOnLoad(gameObject);
+		Initialize_DontDestroyOnLoad();
 	}
 
 	private void InitResources()
@@ -65,7 +65,7 @@ public class ResourceManager : Singleton<ResourceManager>
 			data.entries.Add(new ResourceEntry { type = pair.Key, amount = pair.Value });
 		}
 
-		string json = JsonDataManager<ResourceData>.ToJson(data);
+		string json = JsonDataManager.ToJson<ResourceData>(data);
 		PlayerPrefs.SetString("ResourceData", json);
 	}
 
@@ -74,7 +74,7 @@ public class ResourceManager : Singleton<ResourceManager>
 		if (PlayerPrefs.HasKey("ResourceData"))
 		{
 			string json = PlayerPrefs.GetString("ResourceData");
-			ResourceData data = JsonDataManager<ResourceData>.FromJson(json);
+			ResourceData data = JsonDataManager.FromJson<ResourceData>(json);
 
 			_resources.Clear();
 			foreach (var entry in data.entries)
