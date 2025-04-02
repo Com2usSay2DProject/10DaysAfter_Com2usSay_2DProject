@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System;
 
 [Serializable]
-public class PoolInfo
+public class PoolInfo // 문의 : 수민
 {
     public EObjectType Type;
     public int InitCount;
