@@ -51,6 +51,7 @@ public class TileClickManager : Singleton<TileClickManager>
                 {
                     // TODO : 업그레이드 UI 띄우기
                     Debug.Log("타워 업그레이드 UI를 띄워주세요");
+                    hit.transform.GetComponent<TowerRoot>().TowerClick();
                 }
             }
         }

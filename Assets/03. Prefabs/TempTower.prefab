@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2711582118492329379}
   - component: {fileID: 3322947693454767604}
-  - component: {fileID: 5628750716689086140}
+  - component: {fileID: 6376391365361401602}
+  - component: {fileID: 8537324735742010314}
   m_Layer: 0
   m_Name: TempTower
   m_TagString: Tower
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 115663138731165893}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -89,7 +90,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &5628750716689086140
+--- !u!114 &6376391365361401602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115663138731165893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 240e11bd7a632e24497c9c8790393ca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeUI: {fileID: 8072597730915460394}
+--- !u!61 &8537324735742010314
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -239,5 +253,10 @@ PrefabInstance:
 --- !u!224 &7209230909304434784 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1972254465665835434, guid: 2c1ae12a9b4cea64897b5479c247c095, type: 3}
+  m_PrefabInstance: {fileID: 9174553361623273930}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8072597730915460394 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1104841449351738592, guid: 2c1ae12a9b4cea64897b5479c247c095, type: 3}
   m_PrefabInstance: {fileID: 9174553361623273930}
   m_PrefabAsset: {fileID: 0}
