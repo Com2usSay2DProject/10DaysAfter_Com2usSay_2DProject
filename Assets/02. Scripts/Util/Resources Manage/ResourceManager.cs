@@ -5,7 +5,7 @@ using UnityEngine;
 public class ResourceManager : Singleton<ResourceManager>
 {
 	private Dictionary<ResourceType, int> _resources = new();
-
+	public string ResourceDataName = "ResourceData";
 	private void Awake()
 	{
 		//자원 데이터 불러옴.
@@ -65,16 +65,14 @@ public class ResourceManager : Singleton<ResourceManager>
 			data.entries.Add(new ResourceEntry { type = pair.Key, amount = pair.Value });
 		}
 
-		string json = JsonDataManager.ToJson<ResourceData>(data);
-		PlayerPrefs.SetString("ResourceData", json);
+		JsonDataManager.SaveToPrefs(ResourceDataName, data);
 	}
 
 	private void LoadResourceData()
 	{
-		if (PlayerPrefs.HasKey("ResourceData"))
+		if (PlayerPrefs.HasKey(ResourceDataName))
 		{
-			string json = PlayerPrefs.GetString("ResourceData");
-			ResourceData data = JsonDataManager.FromJson<ResourceData>(json);
+			ResourceData data = JsonDataManager.LoadFromPrefs<ResourceData>(ResourceDataName);
 
 			_resources.Clear();
 			foreach (var entry in data.entries)

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MapScroll : MonoBehaviour
+public class MapScroll : MonoBehaviour		//카메라가 orthographic일 때만 가능
 {
     public float ScrollSpeed = 10f;
 
