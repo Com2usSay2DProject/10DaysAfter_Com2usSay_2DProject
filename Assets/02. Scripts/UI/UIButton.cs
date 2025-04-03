@@ -15,4 +15,19 @@ public class UIButton: Singleton<UIButton>
     {
         UIManager.Instance.ToggleBuildMode(button);
     }
+
+    public void OnClickUpgredeTowerUI()
+    {
+        UIManager.Instance.ShowUI("TowerUpgrade");
+    }
+
+    public void OnClickSellTowerUI()
+    {
+        UIManager.Instance.ShowUI("TowerSela");
+    }
+
+    public void OnClickCloseUI(GameObject UI)
+    {
+        UI.SetActive(false);
+    }
 }
