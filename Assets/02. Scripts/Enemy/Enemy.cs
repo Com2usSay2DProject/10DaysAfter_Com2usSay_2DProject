@@ -6,7 +6,12 @@ public class Enemy : MonoBehaviour
 {
     private EnemyStateMachine _stateMachine;
     private Rigidbody2D _rigidbody2D;
-    [SerializeField]private float _moveSpeed = 10;
+    private Animator _animator;
+    public Animator Animator => _animator;
+    private SpriteRenderer _spriteRenderer;
+
+
+    [SerializeField] private float _moveSpeed = 10;
     public float MoveSpeed => _moveSpeed;
     public bool HasTowerInRange = false;
 
@@ -25,8 +30,9 @@ public class Enemy : MonoBehaviour
     protected virtual void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-
         _stateMachine = new EnemyStateMachine();
+        _animator = GetComponentInChildren<Animator>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>(); ;
 
         IdleState = new EnemyIdleState(_stateMachine, _rigidbody2D, this, "Idle");
         MoveState = new EnemyMoveState(_stateMachine, _rigidbody2D, this, "Move");
@@ -36,7 +42,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        if(_stateMachine != null)
+        if (_stateMachine != null)
         {
             _stateMachine.InitStateMachine(IdleState, this);
         }
@@ -64,5 +70,11 @@ public class Enemy : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         HasTowerInRange = false;
+    }
+
+    public void FlipSprite(Vector3 direction)
+    {
+
+        _spriteRenderer.flipX = direction.x < 0;
     }
 }

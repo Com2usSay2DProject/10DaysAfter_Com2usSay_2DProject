@@ -22,6 +22,7 @@ public class EnemyState
     public virtual void Enter()
     {
         _stateTimer = 0;
+        _enemyBase.Animator.SetBool(_animBoolName, true);
     }
     public virtual void Update()
     {
@@ -29,7 +30,7 @@ public class EnemyState
     }
     public virtual void Exit()
     {
-
+        _enemyBase.Animator.SetBool(_animBoolName, false);
     }
 
 }

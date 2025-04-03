@@ -57,5 +57,8 @@ public class EnemyMoveState : EnemyState
             _rigidbody.linearVelocity = Vector2.zero;
 
         }
+
+        _enemyBase.FlipSprite(direction);
+
     }
 }
