@@ -83,7 +83,7 @@ public class TileManager : Singleton<TileManager> // 수민
 
         if (_groundTilemap.HasTile(gridPosition))
         {
-            return GetNodeInfo(gridPosition.x, gridPosition.y);
+            return GetNodeInfo(gridPosition.x - _bounds.xMin, gridPosition.y - _bounds.yMin);
         }
         else
         {
@@ -103,7 +103,7 @@ public class TileManager : Singleton<TileManager> // 수민
         {
             return null;
         }
-        return _gridArray[x - _bounds.xMin, y - _bounds.yMin];
+        return _gridArray[x, y];
     }
 
     public void SetNodeWalkable(int x, int y, bool flag)
