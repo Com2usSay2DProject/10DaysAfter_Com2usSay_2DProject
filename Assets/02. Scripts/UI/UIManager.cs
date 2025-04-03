@@ -36,7 +36,7 @@ public class UIManager : MonoBehaviour //Singleton<UIManager>
         CrrentButton.interactable = !isBuildModeActive;
     }
 
-    public void ToogleBuildModeOff()
+    public void ToggleBuildModeOff()
     {
         isBuildModeActive = false;
         CrrentButton.interactable = !isBuildModeActive; ;

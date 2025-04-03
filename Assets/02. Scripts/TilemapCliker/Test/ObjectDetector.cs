@@ -3,7 +3,7 @@ using UnityEngine;
 public class ObjectDetector : MonoBehaviour
 {
     [SerializeField]
-    private TilemapClickTest _towerSpawner;
+    private TowerSpawner _towerSpawner;
     [SerializeField]
     private Grid _grid;  // Tilemap 대신 Grid 참조
 

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TilemapClickTest : Singleton<TilemapClickTest>
+public class TowerSpawner : Singleton<TowerSpawner>
 {
     [SerializeField]
     private GameObject _tower;

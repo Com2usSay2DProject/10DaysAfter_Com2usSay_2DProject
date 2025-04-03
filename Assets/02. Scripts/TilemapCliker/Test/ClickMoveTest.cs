@@ -9,7 +9,7 @@ public class ClickMoveTest : MonoBehaviour
 
     MouseInput mouseInput;
 
-    public TilemapClickTest tile;
+    public TowerSpawner tile;
 
     private Vector3 destination;
 

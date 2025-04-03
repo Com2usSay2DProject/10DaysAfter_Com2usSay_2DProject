@@ -8,30 +8,50 @@ public class TileClickManager : Singleton<TileClickManager>
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        // 1. 빌드 모드인가?
+        // 2. 해당 위치에 건물이 지어져 있는가 -> IsWalkable = true 일 때 통과
+        // 둘다 통과하면 건설 -> 빌드 모드 해제
+        // else if
+        // 1. 빌드 모드가 아니고, 클릭 한 것이 건물 -> 업그레이드 UI
+        GetMouseClick();
+    }
+
+    private void GetMouseClick()
+    {
+        if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
+            Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
+            if(hit.collider == null)
             {
-                // 맞은 오브젝트에 "Tile" 태그가 없을 경우
-                if (!hit.transform.CompareTag("Tile"))
-                {
-                    Debug.Log("클릭한 위치가 타일이 아님: " + hit.transform.name);
-                    // 여기에 원하는 동작 추가
+                return;
+            }
 
-                    IsBuildingMode = true;
+            if (UIManager.Instance.isBuildModeActive)
+            {
+                if (hit.transform.CompareTag("Tile"))
+                {
+                    Debug.Log("클릭한 위치가 타일임");
+                    TileNode clickedTile = TileManager.Instance.GetNodeInfo();
+                    if (clickedTile != null && clickedTile.IsWalkable)
+                    {
+                        TowerSpawner.Instance.SpawnTower(clickedTile.WorldPositon);
+                        clickedTile.IsWalkable = false;
+                        UIManager.Instance.ToggleBuildModeOff();
+                    }
                 }
                 else
                 {
-                    Debug.Log("클릭한 위치가 타일임");
-                    IsBuildingMode = false;
+                    Debug.Log("클릭한 위치가 타일이 아님: " + hit.transform.name);
                 }
             }
             else
             {
-
+                if(hit.transform.CompareTag("Tower"))
+                {
+                    // TODO : 업그레이드 UI 띄우기
+                    Debug.Log("타워 업그레이드 UI를 띄워주세요");
+                }
             }
         }
     }

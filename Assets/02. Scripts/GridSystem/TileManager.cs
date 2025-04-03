@@ -21,48 +21,11 @@ public class TileManager : Singleton<TileManager> // 수민
     private TileNode[,] _gridArray;
 
     public TileNode[,] GridArray => _gridArray;
-
-    public Action NodeClickAction;
         
     private void Awake()
     {
         _bounds = _groundTilemap.cellBounds;
         MakeTileInfo();
-    }
-
-    private void Update()
-    {
-        //if(Input.GetMouseButtonDown(0))
-        //{
-        //    NodeClickAction?.Invoke();
-        //}
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
-
-            if (hit.collider != null)
-            {
-                if (!hit.transform.CompareTag("Tile"))
-                {
-                    Debug.Log("클릭한 위치가 타일이 아님: " + hit.transform.name);
-                }
-                else
-                {
-                    Debug.Log("클릭한 위치가 타일임");
-                    TileNode clickedTile = GetNodeInfo();
-                    if (clickedTile != null && clickedTile.IsWalkable)
-                    {
-                        TilemapClickTest.Instance.SpawnTower(clickedTile.WorldPositon);
-                        clickedTile.IsWalkable = false;
-                    }
-                }
-            }
-            else
-            {
-                Debug.Log("클릭한 위치에 오브젝트가 없음");
-            }
-        }
     }
 
     private void MakeTileInfo()

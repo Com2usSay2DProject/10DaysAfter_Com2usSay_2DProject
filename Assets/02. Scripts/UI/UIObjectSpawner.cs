@@ -18,7 +18,7 @@ public class UIObjectSpawner : MonoBehaviour
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
             Instantiate(objectPrefab, worldPosition, Quaternion.identity); // 오브젝트 생성
-            UIManager.Instance.ToogleBuildModeOff();
+            UIManager.Instance.ToggleBuildModeOff();
         }
     }
 
