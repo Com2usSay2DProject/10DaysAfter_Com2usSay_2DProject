@@ -25,7 +25,10 @@ public class TileManager : Singleton<TileManager> // 수민
         
     private void Awake()
     {
+
         _bounds = _groundTilemap.cellBounds;
+        Debug.Log($"Bounds: xMin:{_bounds.xMin}, xMax:{_bounds.xMax}, yMin:{_bounds.yMin}, yMax:{_bounds.yMax}");
+
         MakeTileInfo();
     }
 
@@ -64,7 +67,7 @@ public class TileManager : Singleton<TileManager> // 수민
 
         if (_groundTilemap.HasTile(gridPosition))
         {
-            return GetNodeInfo(gridPosition.x, gridPosition.y);
+            return GetNodeInfo(pos); //여까진 맞음
         }
         else
         {
