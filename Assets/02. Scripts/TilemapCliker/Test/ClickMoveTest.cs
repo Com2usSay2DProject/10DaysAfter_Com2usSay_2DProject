@@ -67,8 +67,6 @@ public class ClickMoveTest : MonoBehaviour
     int[,] gridArray;
     void PrintCellInfo()
     {
-        
-
         BoundsInt bounds = map.cellBounds;
         gridArray = new int[bounds.size.x, bounds.size.y];
 

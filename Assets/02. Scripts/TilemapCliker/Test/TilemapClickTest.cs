@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TilemapClickTest : MonoBehaviour
+public class TilemapClickTest : Singleton<TilemapClickTest>
 {
     [SerializeField]
     private GameObject _tower;
