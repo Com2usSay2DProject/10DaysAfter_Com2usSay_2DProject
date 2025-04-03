@@ -999,9 +999,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _groundTilemap: {fileID: 1353583911}
-  obstacleLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &1353583905
 GameObject:
   m_ObjectHideFlags: 0

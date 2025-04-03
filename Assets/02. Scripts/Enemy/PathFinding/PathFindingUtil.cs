@@ -37,7 +37,7 @@ public static class Pathfinding
 
             foreach (TileNode neighbor in GetNeighbors(current))
             {
-                if (neighbor .HasObstacle|| !neighbor.IsWalkable || closedSet.Contains(neighbor))
+                if (!neighbor.IsWalkable || closedSet.Contains(neighbor))
                     continue;
 
                 int newCost = current.gCost + GetDistance(current, neighbor);
