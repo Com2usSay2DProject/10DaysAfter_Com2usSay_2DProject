@@ -12,7 +12,9 @@ public static class Pathfinding
         TileNode start = TileManager.Instance.GetNodeInfo(startWorld);
         TileNode target = TileManager.Instance.GetNodeInfo(targetWorld);
 
+        //새로운거
         List<TileNode> openSet = new List<TileNode> { start };
+        //탐색했던거
         HashSet<TileNode> closedSet = new HashSet<TileNode>();
 
         while (openSet.Count > 0)
@@ -35,7 +37,7 @@ public static class Pathfinding
 
             foreach (TileNode neighbor in GetNeighbors(current))
             {
-                if (!neighbor.IsWalkable || closedSet.Contains(neighbor))
+                if (neighbor .HasObstacle|| !neighbor.IsWalkable || closedSet.Contains(neighbor))
                     continue;
 
                 int newCost = current.gCost + GetDistance(current, neighbor);
