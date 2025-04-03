@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public enum ResourceType
 {
+	//자유롭게 추가 가능
 	Wood,
 	Stone,
 	Food,
