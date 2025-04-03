@@ -2,6 +2,7 @@ using CityBuilderCore;
 using System;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using static UnityEditor.PlayerSettings;
 
 /// <summary>
 /// 각 타일 정보 조회, 수정
@@ -82,6 +83,11 @@ public class TileManager : Singleton<TileManager> // 수민
     {
         return (node.X, node.Y);
     }
+
+    /// <summary>
+    /// 마우스 위치로 노드 정보
+    /// </summary>
+    /// <returns></returns>
     public TileNode GetNodeInfo()
     {
         Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -97,11 +103,33 @@ public class TileManager : Singleton<TileManager> // 수민
         }
     }
 
+    /// <summary>
+    /// Vector 좌표로 노드 정보
+    /// </summary>
+    /// <param name="position"></param>
+    /// <returns></returns>
     public TileNode GetNodeInfo(Vector3 position)
     {
-        int x = (int)position.x;
-        int y = (int)position.y;
+        Vector3Int gridPosition = _groundTilemap.WorldToCell(position);
 
+        if (_groundTilemap.HasTile(gridPosition))
+        {
+            return GetNodeInfo(gridPosition);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    /// <summary>
+    /// x, y 인덱스로 노드 정보
+    /// </summary>
+    /// <param name="x"></param>
+    /// <param name="y"></param>
+    /// <returns></returns>
+    public TileNode GetNodeInfo(int x, int y)
+    {
         if (x < _bounds.xMin || y < _bounds.yMin || x >= _bounds.xMax || y >= _bounds.yMax)
         {
             return null;
