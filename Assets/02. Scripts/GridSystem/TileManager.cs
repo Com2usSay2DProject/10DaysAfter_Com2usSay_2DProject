@@ -1,5 +1,6 @@
 using CityBuilderCore;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using static UnityEditor.PlayerSettings;
@@ -98,7 +99,7 @@ public class TileManager : Singleton<TileManager> // 수민
     /// <returns></returns>
     public TileNode GetNodeInfo(int x, int y)
     {
-        if (x < _bounds.xMin || y < _bounds.yMin || x >= _bounds.xMax || y >= _bounds.yMax)
+        if (x < 0 || y < 0 || x >= _gridArray.GetLength(0) || y >= _gridArray.GetLength(1))
         {
             return null;
         }
@@ -113,4 +114,6 @@ public class TileManager : Singleton<TileManager> // 수민
         }
         _gridArray[x - _bounds.xMin, y - _bounds.yMin].IsWalkable = flag;
     }
+
+
 }

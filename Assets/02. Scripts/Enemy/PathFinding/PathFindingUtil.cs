@@ -1,14 +1,23 @@
+using CityBuilderCore;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UIElements;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 public static class Pathfinding
 {
+    //private static TranslateToIsomatirc(Vector3 pos)
+    //{
+
+    //}
+
     public static List<Vector3> FindPath(Vector3 startWorld, Vector3 targetWorld)
     {
         TileNode start = TileManager.Instance.GetNodeInfo(startWorld);
         TileNode target = TileManager.Instance.GetNodeInfo(targetWorld);
 
-        List<TileNode> openSet = new List<TileNode> {};
+        List<TileNode> openSet = new List<TileNode> { start };
         HashSet<TileNode> closedSet = new HashSet<TileNode>();
 
         while (openSet.Count > 0)
@@ -70,7 +79,7 @@ public static class Pathfinding
         return Mathf.Abs(a.X - b.X) + Mathf.Abs(a.Y - b.Y);
     }
 
-    private static List<TileNode> GetNeighbors(TileNode node)
+    public static List<TileNode> GetNeighbors(TileNode node)
     {
         List<TileNode> neighbors = new List<TileNode>();
 
@@ -86,15 +95,18 @@ public static class Pathfinding
             { -1, -1 }  // 좌하
         };
 
+
         for (int i = 0; i < offsets.GetLength(0); i++)
         {
             int newX = node.X + offsets[i, 0];
             int newY = node.Y + offsets[i, 1];
 
-            if (newX >= 0 && newY >= 0 && newX < TileManager.Instance.Bounds.xMin && newY < TileManager.Instance.Bounds.yMax)
+            if (newX >= 0 && newX <  TileManager.Instance.GridArray.GetLength(0)&&
+                newY >= 0 && newY < TileManager.Instance.GridArray.GetLength(1))
             {
                 neighbors.Add(TileManager.Instance.GridArray[newX, newY]);
             }
+
         }
 
         return neighbors;
