@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -5,10 +6,12 @@ public class Enemy : MonoBehaviour
 {
     private EnemyStateMachine _stateMachine;
     private Rigidbody2D _rigidbody2D;
-
-    public Transform Target;
-    public float _moveSpeed { get; private set; } = 10;
+    [SerializeField]private float _moveSpeed = 10;
+    public float MoveSpeed => _moveSpeed;
     public bool HasTowerInRange = false;
+
+    public Queue<Vector3> Path;
+
 
 
     #region Staties
