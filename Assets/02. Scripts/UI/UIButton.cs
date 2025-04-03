@@ -2,11 +2,11 @@ using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIButton: MonoBehaviour
+public class UIButton: Singleton<UIButton>
 {
     private Button button;
 
-    private void Start()
+    private void Awake()
     {
         button = GetComponent<Button>();
     }

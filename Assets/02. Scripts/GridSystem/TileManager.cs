@@ -100,7 +100,7 @@ public class TileManager : Singleton<TileManager> // 수민
 
         if (_groundTilemap.HasTile(gridPosition))
         {
-            return GetNodeInfo(gridPosition);
+            return GetNodeInfo(gridPosition.x, gridPosition.y);
         }
         else
         {
@@ -119,7 +119,7 @@ public class TileManager : Singleton<TileManager> // 수민
 
         if (_groundTilemap.HasTile(gridPosition))
         {
-            return GetNodeInfo(gridPosition);
+            return GetNodeInfo(gridPosition.x, gridPosition.y);
         }
         else
         {
