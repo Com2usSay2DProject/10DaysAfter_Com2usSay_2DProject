@@ -13,6 +13,7 @@ public class TileManager : Singleton<TileManager> // 수민
     private Tilemap _groundTilemap;
 
     private BoundsInt _bounds;
+    public BoundsInt Bounds;
     private TileNode[,] _gridArray;
 
     public TileNode[,] GridArray => _gridArray;

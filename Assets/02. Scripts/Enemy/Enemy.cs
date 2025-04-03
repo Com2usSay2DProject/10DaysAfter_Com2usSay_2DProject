@@ -6,8 +6,9 @@ public class Enemy : MonoBehaviour
     private EnemyStateMachine _stateMachine;
     private Rigidbody2D _rigidbody2D;
 
-
-    public float _moveSpeed { get; private set; } = 2;
+    public Transform Target;
+    public float _moveSpeed { get; private set; } = 10;
+    public bool HasTowerInRange = false;
 
 
     #region Staties
@@ -48,5 +49,17 @@ public class Enemy : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Tower"))
+        {
+            _stateMachine.ChangeState(AttackState);
+            HasTowerInRange = true;
 
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        HasTowerInRange = false;
+    }
 }

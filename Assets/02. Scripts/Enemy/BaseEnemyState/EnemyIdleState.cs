@@ -9,6 +9,8 @@ public class EnemyIdleState : EnemyState
     public override void Enter()
     {
         base.Enter();
+
+        Debug.Log("Idle");
     }
 
     public override void Exit()
