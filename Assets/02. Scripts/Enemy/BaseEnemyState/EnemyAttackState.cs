@@ -11,7 +11,8 @@ public class EnemyAttackState : EnemyState
     public override void Enter()
     {
         base.Enter();
-
+        _rigidbody.linearVelocity = Vector2.zero;
+        Debug.Log("Enter AttackState");
     }
 
     public override void Exit()
@@ -29,10 +30,10 @@ public class EnemyAttackState : EnemyState
             Debug.Log("Attack");
         }
         
-        if(_enemyBase.HasTowerInRange == false)
-        {
-            _stateMachine.ChangeState(_enemyBase.IdleState);
-        }
+        //if(_enemyBase.HasTowerInRange == false)
+        //{
+        //    _stateMachine.ChangeState(_enemyBase.IdleState);
+        //}
 
     }
 }
