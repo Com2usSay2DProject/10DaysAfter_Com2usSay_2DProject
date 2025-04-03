@@ -42,7 +42,7 @@ public class TileManager : Singleton<TileManager> // 수민
                 bool hasTile = _groundTilemap.HasTile(cellPosition);
                 Vector3 worldPosition = _groundTilemap.GetCellCenterWorld(cellPosition);
 
-                _gridArray[x - _bounds.xMin, y - _bounds.yMin] = new TileNode(x, y, hasTile, worldPosition);
+                _gridArray[x - _bounds.xMin, y - _bounds.yMin] = new TileNode(x - _bounds.xMin, y - _bounds.yMin, hasTile, worldPosition);
             }
         }
     }
