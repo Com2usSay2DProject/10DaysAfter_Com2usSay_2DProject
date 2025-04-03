@@ -19,6 +19,9 @@ public class CameraMouseFollow : MonoBehaviour
 	}
 	private void Update()
 	{
+		//다른 창이 열려 있을 경우 따라다니지 않음
+		if (!Application.isFocused) return;
+
 		Vector3 moveDirection = Vector3.zero;
 		_mousePosition = Input.mousePosition;
 
