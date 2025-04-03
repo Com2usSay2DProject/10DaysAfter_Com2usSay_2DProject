@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour //Singleton<UIManager>
+public class UIManager : Singleton<UIManager>
 {
-    public static UIManager Instance;
+    //public static UIManager Instance;
+    public Canvas _canvas;
 
     public List<UIPage> UIPages = new List<UIPage>();
 
@@ -17,7 +18,8 @@ public class UIManager : MonoBehaviour //Singleton<UIManager>
 
     private void Awake()
     {
-        Instance = this;
+        //Instance = this;
+        
     }
     public void Start()
     {
@@ -45,17 +47,20 @@ public class UIManager : MonoBehaviour //Singleton<UIManager>
 
     public void ShowUI(string name)
     {
-        foreach(UIPage page in UIPages)
+        Debug.Log("타워UI팝업");
+        foreach (UIPage page in UIPages)
         {
-           if( page.name == name)
+           if( page.PageName == name)
             {
+                //Debug.Log("타워UI팝업");
                 if (CurrentPage != null)
                 {
                     CurrentPage.Hide();
                 }
                 //페이지 안에 있는 재화를 불러서 넣어 준다.
-                page.Show();
-                CurrentPage = page;
+                UIPage pages  = Instantiate(page);
+                pages.Show();
+                CurrentPage = pages;
                 return;
             }
         }
