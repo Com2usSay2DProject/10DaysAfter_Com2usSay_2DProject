@@ -9,9 +9,9 @@ public class UIManager : MonoBehaviour //Singleton<UIManager>
 
     public List<UIPage> UIPages = new List<UIPage>();
 
-    public UIPage CurrentPage;
+    private UIPage CurrentPage;
 
-    public Button CrrentButton;
+    private Button CrrentButton;
 
     public bool isBuildModeActive = false; // 빌드 모드 활성화 여부
 

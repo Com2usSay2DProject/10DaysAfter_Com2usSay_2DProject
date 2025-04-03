@@ -2,7 +2,7 @@ using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIButtonTest : MonoBehaviour
+public class UIButton: MonoBehaviour
 {
     private Button button;
 
@@ -14,9 +14,5 @@ public class UIButtonTest : MonoBehaviour
     public void OnClickBuildMode()
     {
         UIManager.Instance.ToggleBuildMode(button);
-        //button.interactable = UIManager.Instance.ToggleBuildMode();
     }
-
-
-
 }
