@@ -7,11 +7,6 @@ using UnityEngine.UIElements;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 public static class Pathfinding
 {
-    //private static TranslateToIsomatirc(Vector3 pos)
-    //{
-
-    //}
-
     public static List<Vector3> FindPath(Vector3 startWorld, Vector3 targetWorld)
     {
         TileNode start = TileManager.Instance.GetNodeInfo(startWorld);
@@ -94,8 +89,6 @@ public static class Pathfinding
             { -1, 1 },  // 좌상
             { -1, -1 }  // 좌하
         };
-
-
         for (int i = 0; i < offsets.GetLength(0); i++)
         {
             int newX = node.X + offsets[i, 0];
