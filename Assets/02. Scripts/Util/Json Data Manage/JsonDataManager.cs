@@ -60,7 +60,8 @@ public static class JsonDataManager // 문의 : 수민
                 return default;
             }
 
-            return AesEncryption.Encrypt(json);
+            //return AesEncryption.Encrypt(json);
+            return json;
         }
         catch (Exception ex)
         {
@@ -79,15 +80,16 @@ public static class JsonDataManager // 문의 : 수민
                 return default;
             }
 
-            string decryptedJson = AesEncryption.Decrypt(json);
+            //string decryptedJson = AesEncryption.Decrypt(json);
 
-            if (string.IsNullOrEmpty(decryptedJson))
+            /*if (string.IsNullOrEmpty(decryptedJson))
             {
                 Debug.LogError("Decryption failed: Resulting JSON is empty.");
                 return default;
-            }
+            }*/
 
-            return JsonUtility.FromJson<T>(decryptedJson);
+            //return JsonUtility.FromJson<T>(decryptedJson);
+            return JsonUtility.FromJson<T>(json);
         }
         catch (Exception ex)
         {
