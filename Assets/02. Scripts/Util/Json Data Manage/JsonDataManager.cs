@@ -5,6 +5,17 @@ using UnityEngine;
 
 public static class JsonDataManager // 문의 : 수민
 {
+    public static void CreateFile<T>(string fileName, T data)
+    {
+        string path = Application.dataPath + $"/Resources/Json/{fileName}.json";
+        string json = ToJson(data);
+
+        FileStream fileStream = new FileStream(path, FileMode.Create);
+        byte[] bData = Encoding.UTF8.GetBytes(json);
+        fileStream.Write(bData, 0, bData.Length);
+        fileStream.Close();
+    }
+
     // Json -> <T>
     // <T> -> Json
     public static void SaveToPrefs<T>(string key, T data) //파일로 오버로드 가능

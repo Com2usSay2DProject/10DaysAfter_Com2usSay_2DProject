@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 240e11bd7a632e24497c9c8790393ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TowerType: 1
   UpgradeUI: {fileID: 8072597730915460394}
 --- !u!61 &8537324735742010314
 BoxCollider2D:

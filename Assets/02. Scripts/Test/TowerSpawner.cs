@@ -8,8 +8,24 @@ public class TowerSpawner : Singleton<TowerSpawner>
 
     public Vector3 TowerOffset;
 
+    private void Awake()
+    {
+        TowerDataCollection collection = new TowerDataCollection();
+        collection.Datas.Add(new TowerData
+        {
+            TowerType = EObjectType.TempTower,
+            TypeString = EObjectType.TempTower.ToString(),
+            MaxHp = 100f,
+            Damage = 10f,
+            Range = 3f,
+            AtkSpeed = 1f,
+        });
+        //JsonDataManager.LoadFromF("Tower/TowerDataCollection", collection);
+    }
+
     public void SpawnTower(Vector3 tilePosition)
     {
-        Instantiate(_tower, tilePosition + TowerOffset, Quaternion.identity);
+        GameObject tower = PoolManager.Instance.GetObject(EObjectType.TempTower);
+        tower.transform.position = tilePosition + TowerOffset;
     }
 }
