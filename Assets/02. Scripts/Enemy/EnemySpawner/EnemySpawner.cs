@@ -3,21 +3,32 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject EnemyPrefab;
+    [SerializeField] private GameObject _enemyPrefab;
+    [SerializeField] private TargetType _priorityTarget;
+    [SerializeField] private float minDistance;
+    [SerializeField] private float maxDistance;
 
-    //지금은 메인타워라는 태그 가진 건물을 목표로 이동함
+    private EnemyTargetSelector _targetSelector;
+
     private Transform Target;
 
     private Queue<Vector3> _path;
 
     float _spawnTimer;
     [SerializeField]private float _spawnTime;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        Target = GameObject.FindWithTag("MainTower").transform;
 
-        transform.position = GetRandomPositionOutsideRadius(Target.position, 4f, 5f);
+
+    protected virtual void Awake()
+    {
+        _targetSelector = GetComponent<EnemyTargetSelector>();
+
+    }
+    protected virtual void Start()
+    {
+
+        Target = _targetSelector.FindTarget(_priorityTarget);
+
+        transform.position = GetRandomPositionOutsideRadius(Vector2.zero, minDistance, maxDistance);
         transform.rotation = Quaternion.identity;
 
         Vector3 startPos = transform.position;
@@ -34,17 +45,13 @@ public class EnemySpawner : MonoBehaviour
         }
 
     }
-
-    // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         _spawnTimer -= Time.deltaTime;
 
         if(_spawnTimer<0)
         {
             _spawnTimer = Random.Range(_spawnTime, _spawnTime * 2);
-            //Enemy enemy = Instantiate(EnemyPrefab, transform).GetComponent<Enemy>();
-            //enemy.Path = _path;
             Enemy enemy = PoolManager.Instance.GetObject(EObjectType.Enemy).GetComponent<Enemy>();
             enemy.transform.position = transform.position;
             enemy.Path = _path;
@@ -52,7 +59,7 @@ public class EnemySpawner : MonoBehaviour
 
     }
 
-    private Vector2 GetRandomPositionOutsideRadius(Vector2 center, float minDistance, float maxDistance)
+    protected virtual private Vector2 GetRandomPositionOutsideRadius(Vector2 center, float minDistance, float maxDistance)
     {
         float angle = Random.Range(0f, Mathf.PI * 2f); 
         float distance = Mathf.Lerp(minDistance, maxDistance, Mathf.Sqrt(Random.Range(0f, 1f))); // 거리: min ~ max

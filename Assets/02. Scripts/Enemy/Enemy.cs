@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Tower"))
+        if (collision.CompareTag("MainTower"))
         {
             _stateMachine.ChangeState(AttackState);
             HasTowerInRange = true;
