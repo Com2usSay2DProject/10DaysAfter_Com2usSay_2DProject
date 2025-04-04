@@ -2,11 +2,11 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 
-public abstract class BasePoolManager<T, U> : MonoBehaviour
-    where T : Enum
-    where U : BasePoolInfo<T>
+public abstract class BasePoolManager<TEnum, TPoolInfo> : MonoBehaviour
+    where TEnum : Enum
+    where TPoolInfo : BasePoolInfo<TEnum>
 {
-    [SerializeField] protected List<U> _poolInfoList;
+    [SerializeField] protected List<TPoolInfo> _poolInfoList;
 
     protected virtual void Awake()
     {
@@ -15,7 +15,7 @@ public abstract class BasePoolManager<T, U> : MonoBehaviour
 
     private void Initialize()
     {
-        foreach (U info in _poolInfoList)
+        foreach (TPoolInfo info in _poolInfoList)
         {
             for (int i = 0; i < info.InitCount; i++)
             {
@@ -24,16 +24,16 @@ public abstract class BasePoolManager<T, U> : MonoBehaviour
         }
     }
 
-    private GameObject CreateNewObject(U info)
+    private GameObject CreateNewObject(TPoolInfo info)
     {
         GameObject newObject = Instantiate(info.Prefab, info.Container.transform);
         newObject.SetActive(false);
         return newObject;
     }
 
-    private U GetPoolByType(T type)
+    private TPoolInfo GetPoolByType(TEnum type)
     {
-        foreach (U info in _poolInfoList)
+        foreach (TPoolInfo info in _poolInfoList)
         {
             if (type.Equals(info.Type))
             {
@@ -43,9 +43,9 @@ public abstract class BasePoolManager<T, U> : MonoBehaviour
         return null;
     }
 
-    public GameObject GetObject(T type)
+    public GameObject GetObject(TEnum type)
     {
-        U info = GetPoolByType(type);
+        TPoolInfo info = GetPoolByType(type);
         if (info == null) return null;
 
         GameObject obj;
@@ -61,9 +61,9 @@ public abstract class BasePoolManager<T, U> : MonoBehaviour
         return obj;
     }
 
-    public void ReturnObject(GameObject obj, T type)
+    public void ReturnObject(GameObject obj, TEnum type)
     {
-        U info = GetPoolByType(type);
+        TPoolInfo info = GetPoolByType(type);
         if (info == null) return;
 
         info.PoolQueue.Enqueue(obj);
