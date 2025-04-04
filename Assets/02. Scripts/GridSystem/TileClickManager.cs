@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class TileClickManager : Singleton<TileClickManager>
@@ -5,6 +6,8 @@ public class TileClickManager : Singleton<TileClickManager>
     public bool IsBuildingMode;
 
     private TileNode _selectedNode;
+
+    public Action TowerClick;
 
     private void Update()
     {
@@ -49,6 +52,7 @@ public class TileClickManager : Singleton<TileClickManager>
             {
                 if(hit.transform.CompareTag("Tower"))
                 {
+                    TowerClick?.Invoke();
                     // TODO : 업그레이드 UI 띄우기
                     Debug.Log("타워 업그레이드 UI를 띄워주세요");
                     hit.transform.GetComponent<TowerRoot>().TowerClick();

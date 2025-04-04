@@ -7,7 +7,6 @@ public class PoolManager : Singleton<PoolManager> // 문의 : 수민
 
     private void Awake()
     {
-        Initialize_DontDestroyOnLoad();
         Initialize();
     }
 

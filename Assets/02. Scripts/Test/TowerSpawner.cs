@@ -10,7 +10,7 @@ public class TowerSpawner : Singleton<TowerSpawner>
 
     private void Awake()
     {
-        TowerDataCollection collection = new TowerDataCollection();
+        /*TowerDataCollection collection = new TowerDataCollection();
         collection.Datas.Add(new TowerData
         {
             TowerType = EObjectType.TempTower,
@@ -19,8 +19,7 @@ public class TowerSpawner : Singleton<TowerSpawner>
             Damage = 10f,
             Range = 3f,
             AtkSpeed = 1f,
-        });
-        //JsonDataManager.LoadFromF("Tower/TowerDataCollection", collection);
+        });*/
     }
 
     public void SpawnTower(Vector3 tilePosition)

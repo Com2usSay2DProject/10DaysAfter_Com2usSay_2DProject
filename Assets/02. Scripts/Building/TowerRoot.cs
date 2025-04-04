@@ -57,6 +57,8 @@ public class TowerRoot : MonoBehaviour
 
     public void TowerClick()
     {
+        // 현재 클릭된 타워 제외 나머지 타워 클릭 UI 비활성화
+        TileClickManager.Instance.TowerClick += () => UpgradeUI.SetActive(false);
         UpgradeUI.SetActive(true);
     }
 }
