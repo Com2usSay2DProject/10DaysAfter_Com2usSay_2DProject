@@ -60,10 +60,10 @@ public class Enemy : MonoBehaviour
 
         _enemyDataDict = new Dictionary<EObjectType, EnemyData>();
 
-        foreach(EnemyData d in collection.Datas)
+        foreach(EnemyData data in collection.Datas)
         {
-            d.TypeString = d.EnemyType.ToString();
-            _enemyDataDict[d.EnemyType] = d;
+            data.TypeString = data.EnemyType.ToString();
+            _enemyDataDict[data.EnemyType] = data;
         }
 
         Debug.Log("적 데이터 로드 완료");
