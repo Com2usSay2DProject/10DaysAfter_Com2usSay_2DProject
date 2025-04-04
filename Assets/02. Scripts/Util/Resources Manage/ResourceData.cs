@@ -7,7 +7,8 @@ public enum ResourceType
 	Wood,
 	Stone,
 	Food,
-	Metal
+	Metal,
+	Population
 }
 
 [Serializable]

@@ -1,11 +1,15 @@
 using System;
 using System.Collections.Generic;
+using UniRx;
 using UnityEngine;
 
 public class ResourceManager : Singleton<ResourceManager>
 {
-	private Dictionary<ResourceType, int> _resources = new();
+	private ReactiveDictionary<ResourceType, int> _resources = new();
 	public string ResourceDataName = "ResourceData";
+
+	public Action OnPopulationChange;
+
 	private void Awake()
 	{
 		//자원 데이터 불러옴.
@@ -14,7 +18,17 @@ public class ResourceManager : Singleton<ResourceManager>
 		Initialize_DontDestroyOnLoad();
 	}
 
-	private void InitResources()
+    private void Start()
+    {
+		_resources.ObserveReplace()
+			.Where(change => change.Key == ResourceType.Population)
+			.Subscribe(change =>
+			{
+				OnPopulationChange?.Invoke();
+			}).AddTo(this);
+    }
+
+    private void InitResources()
 	{
 		foreach (ResourceType type in Enum.GetValues(typeof(ResourceType)))
 		{

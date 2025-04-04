@@ -10,6 +10,11 @@ public class TowerRoot : MonoBehaviour
     [Header("# Stats")]
     public EObjectType TowerType; // 타워의 타입 -> 프리팹에서 설정해두면 데이터 찾아옴
     protected TowerData Data; // 해당 타워의 데이터
+    protected float _maxHp;
+    protected float _hp;
+    protected float _damage;
+    protected float _atkSpeed;
+    protected float _range;
 
     [SerializeField]
     private GameObject UpgradeUI;
@@ -28,6 +33,7 @@ public class TowerRoot : MonoBehaviour
     private void Start()
     {
         ObserveTargetEnemy();
+        ResourceManager.Instance.OnPopulationChange += MultiplyData;
     }
 
     private void ObserveTargetEnemy()
@@ -53,7 +59,7 @@ public class TowerRoot : MonoBehaviour
             Attack();
         }
     }
-
+    
     #region Data
     private void GetData()
     {
@@ -83,12 +89,25 @@ public class TowerRoot : MonoBehaviour
         {
             Data = new TowerData();
             Data = data;
-            //Debug.Log(Data.TypeString);
+
+            _maxHp = Data.MaxHp;
+            _hp = _maxHp;
+            _damage = Data.Damage;
+            _atkSpeed = Data.AtkSpeed;
+            _range = Data.Range;
         }
         else
         {
             Debug.LogError($"타워 데이터 없음: {TowerType}");
         }
+    }
+
+    private void MultiplyData()
+    {
+        _maxHp = Data.GetModifiedStat(Data.MaxHp, ResourceManager.Instance.GetResourceAmount(ResourceType.Population));
+        _damage = Data.GetModifiedStat(Data.Damage, ResourceManager.Instance.GetResourceAmount(ResourceType.Population));
+        _atkSpeed = Data.GetModifiedStat(Data.AtkSpeed, ResourceManager.Instance.GetResourceAmount(ResourceType.Population));
+        _range = Data.GetModifiedStat(Data.Range, ResourceManager.Instance.GetResourceAmount(ResourceType.Population));
     }
     #endregion
 
@@ -99,13 +118,13 @@ public class TowerRoot : MonoBehaviour
         float minDistance = float.MaxValue;
 
         GameObject[] Enemys = Physics2D
-            .OverlapCircleAll(transform.position, Data.Range, 1 << LayerMask.NameToLayer("Enemy"))
+            .OverlapCircleAll(transform.position, _range, 1 << LayerMask.NameToLayer("Enemy"))
             .Select(c => c.gameObject).ToArray();
 
         foreach(GameObject enemy in Enemys)
         {
             float currentDistance = Vector3.Distance(transform.position, enemy.transform.position);
-            if(currentDistance <= Data.Range && currentDistance <= minDistance)
+            if(currentDistance <= _range && currentDistance <= minDistance)
             {
                 minDistance = currentDistance;
                 target = enemy;
@@ -123,6 +142,24 @@ public class TowerRoot : MonoBehaviour
     {
         //공격 로직 이거 상속받아서 구현
     }
+
+    public void TakeDamage(float damage)
+    {
+        _hp -= damage;
+
+        //TODO : 피격 이펙트
+
+        if(_hp <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        //TODO : 폭발 이펙트
+        PoolManager.Instance.ReturnObject(gameObject, TowerType);
+    }
     #endregion
 
     public void TowerClick()
@@ -135,6 +172,6 @@ public class TowerRoot : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, Data.Range);
+        Gizmos.DrawWireSphere(transform.position, _range);
     }
 }
