@@ -1,8 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using UniRx;
 
-public abstract class TowerRoot : MonoBehaviour
+public class TowerRoot : MonoBehaviour
 {
     private static Dictionary<EObjectType, TowerData> _towerDataDict; // 모든 타워가 공유할 데이터
 
@@ -14,7 +15,8 @@ public abstract class TowerRoot : MonoBehaviour
     private GameObject UpgradeUI;
 
     [Header("# State")]
-    private bool _isEnemyDetected;
+    private bool _isEnemyDetected = false;
+    [SerializeField]
     private GameObject _targetEnemy;
 
     private void Awake()
@@ -23,11 +25,28 @@ public abstract class TowerRoot : MonoBehaviour
         GetDataForThis();
     }
 
+    private void Start()
+    {
+        ObserveTargetEnemy();
+    }
+
+    private void ObserveTargetEnemy()
+    {
+        this.ObserveEveryValueChanged(_ => _targetEnemy)
+            .Where(target => target == null)
+            .Subscribe(_ =>
+            {
+                Debug.Log("타워 : 타겟 사라짐");
+                _isEnemyDetected = false;
+            }).AddTo(this);
+    }
+
     private void Update()
     {
-        if(!_isEnemyDetected)
+        if(!_isEnemyDetected || !_targetEnemy)
         {
             _targetEnemy = DetectEnemy();
+            _isEnemyDetected = _targetEnemy != null;
         }
         else
         {
@@ -92,11 +111,18 @@ public abstract class TowerRoot : MonoBehaviour
                 target = enemy;
             }
         }
+        if(target != null)
+        {
+            _isEnemyDetected = true;
+        }
 
         return target;
     }
 
-    protected abstract void Attack();
+    protected virtual void Attack()
+    {
+        //공격 로직 이거 상속받아서 구현
+    }
     #endregion
 
     public void TowerClick()

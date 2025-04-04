@@ -102,8 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 240e11bd7a632e24497c9c8790393ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TowerType: 1
-  UpgradeUI: {fileID: 8072597730915460394}
+  TowerType: 2
+  UpgradeUI: {fileID: 2768662232637103869, guid: d981b488c2087ac4686911dd634b885b, type: 3}
+  _targetEnemy: {fileID: 0}
 --- !u!61 &8537324735742010314
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -254,10 +255,5 @@ PrefabInstance:
 --- !u!224 &7209230909304434784 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1972254465665835434, guid: 2c1ae12a9b4cea64897b5479c247c095, type: 3}
-  m_PrefabInstance: {fileID: 9174553361623273930}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8072597730915460394 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1104841449351738592, guid: 2c1ae12a9b4cea64897b5479c247c095, type: 3}
   m_PrefabInstance: {fileID: 9174553361623273930}
   m_PrefabAsset: {fileID: 0}
