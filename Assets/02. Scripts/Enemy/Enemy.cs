@@ -4,11 +4,11 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    private EnemyStateMachine _stateMachine;
-    private Rigidbody2D _rigidbody2D;
-    private Animator _animator;
+    protected EnemyStateMachine _stateMachine;
+    protected Rigidbody2D _rigidbody2D;
+    protected Animator _animator;
     public Animator Animator => _animator;
-    private SpriteRenderer _spriteRenderer;
+    protected SpriteRenderer _spriteRenderer;
 
 
     [SerializeField] private float _moveSpeed = 10;
@@ -44,7 +44,8 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Start()
     {
-        PhaseManager.Instance.OnNightEnd += DeadEnemy;
+        if(PhaseManager.Instance)
+            PhaseManager.Instance.OnNightEnd += DeadEnemy;
 
         if (_stateMachine != null)
         {

@@ -4,7 +4,7 @@ using UnityEngine;
 public enum TargetType
 {
     MainTower,
-    AttackTower
+    Tower
 }
 public class EnemyTargetSelector : MonoBehaviour
 {
@@ -37,11 +37,11 @@ public class EnemyTargetSelector : MonoBehaviour
         switch (type)
         {
             case TargetType.MainTower: return "MainTower";
-            case TargetType.AttackTower: return "AttackTower";
+            case TargetType.Tower: return "Tower";
             default:
                 {
                     Debug.LogWarning("Wrong Tag");
-                    return string.Empty;
+                    return "MainTower";
                 }
         }
     }

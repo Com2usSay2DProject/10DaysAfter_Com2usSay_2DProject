@@ -12,8 +12,6 @@ public class EnemyAttackState : EnemyState
     {
         base.Enter();
         _rigidbody.linearVelocity = Vector2.zero;
-        Debug.Log("Enter AttackState");
-
     }
 
     public override void Exit()
@@ -27,8 +25,6 @@ public class EnemyAttackState : EnemyState
         if(_stateTimer<0)
         {
             _stateTimer = _attackRate;
-
-            Debug.Log("Attack");
         }
         
 

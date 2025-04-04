@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e0f8118f8dd3e42a5c889ce91c1b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyPrefab: {fileID: 837715679069067520, guid: c06bed67937ba6d4188211b93fada57b, type: 3}
+  _enemyPrefab: {fileID: 837715679069067520, guid: a62e9a5d558cd6f4082971d8c00cbc81, type: 3}
   _priorityTarget: 1
   minDistance: 4
   maxDistance: 5

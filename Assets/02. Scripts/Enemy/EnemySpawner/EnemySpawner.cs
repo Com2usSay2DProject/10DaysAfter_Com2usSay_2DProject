@@ -15,7 +15,7 @@ public class EnemySpawner : MonoBehaviour
     private Queue<Vector3> _path;
 
     float _spawnTimer;
-    [SerializeField]private float _spawnTime;
+    [SerializeField] private float _spawnTime;
 
 
     protected virtual void Awake()
@@ -29,10 +29,17 @@ public class EnemySpawner : MonoBehaviour
 
     protected virtual void Start()
     {
-        PhaseManager.Instance.OnNightBegin += ActiveSpawner;
-        PhaseManager.Instance.OnNightEnd += DisActiveSpawner;
-
+        if (PhaseManager.Instance)
+        {
+            PhaseManager.Instance.OnNightBegin += ActiveSpawner;
+            PhaseManager.Instance.OnNightEnd += DisActiveSpawner;
+        }
         Target = _targetSelector.FindTarget(_priorityTarget);
+        if(Target==null)
+        {
+            Debug.Log("메인건물로 셋팅");
+            Target = _targetSelector.FindTarget(TargetType.MainTower);
+        }
 
         transform.position = GetRandomPositionOutsideRadius(Vector2.zero, minDistance, maxDistance);
         transform.rotation = Quaternion.identity;
@@ -55,7 +62,7 @@ public class EnemySpawner : MonoBehaviour
     {
         _spawnTimer -= Time.deltaTime;
 
-        if(_spawnTimer<0)
+        if (_spawnTimer < 0)
         {
             _spawnTimer = Random.Range(_spawnTime, _spawnTime * 2);
             Enemy enemy = PoolManager.Instance.GetObject(EObjectType.Enemy).GetComponent<Enemy>();
@@ -67,7 +74,7 @@ public class EnemySpawner : MonoBehaviour
 
     protected virtual private Vector2 GetRandomPositionOutsideRadius(Vector2 center, float minDistance, float maxDistance)
     {
-        float angle = Random.Range(0f, Mathf.PI * 2f); 
+        float angle = Random.Range(0f, Mathf.PI * 2f);
         float distance = Mathf.Lerp(minDistance, maxDistance, Mathf.Sqrt(Random.Range(0f, 1f))); // 거리: min ~ max
         Vector2 offset = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * distance;
         return center + offset;
