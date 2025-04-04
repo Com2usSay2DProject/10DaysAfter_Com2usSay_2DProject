@@ -40,15 +40,19 @@ public class Enemy : MonoBehaviour
         DeathState = new EnemyDeathState(_stateMachine, _rigidbody2D, this, "Death");
     }
 
-    void Start()
+    private void DeadEnemy() { _stateMachine.ChangeState(DeathState); }
+
+    protected virtual void Start()
     {
+        PhaseManager.Instance.OnNightEnd += DeadEnemy;
+
         if (_stateMachine != null)
         {
             _stateMachine.InitStateMachine(IdleState, this);
         }
     }
 
-    void Update()
+    protected virtual void Update()
     {
         _stateMachine.Update();
     }
@@ -58,7 +62,7 @@ public class Enemy : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("MainTower"))
         {
@@ -67,7 +71,7 @@ public class Enemy : MonoBehaviour
 
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    protected virtual void OnTriggerExit2D(Collider2D collision)
     {
         HasTowerInRange = false;
     }

@@ -38,7 +38,11 @@ public class EnemyTargetSelector : MonoBehaviour
         {
             case TargetType.MainTower: return "MainTower";
             case TargetType.AttackTower: return "AttackTower";
-            default: return "";
+            default:
+                {
+                    Debug.LogWarning("Wrong Tag");
+                    return string.Empty;
+                }
         }
     }
 }

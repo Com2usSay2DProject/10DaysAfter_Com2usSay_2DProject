@@ -23,8 +23,14 @@ public class EnemySpawner : MonoBehaviour
         _targetSelector = GetComponent<EnemyTargetSelector>();
 
     }
+
+    private void ActiveSpawner() { gameObject.SetActive(true); }
+    private void DisActiveSpawner() { gameObject.SetActive(false); }
+
     protected virtual void Start()
     {
+        PhaseManager.Instance.OnNightBegin += ActiveSpawner;
+        PhaseManager.Instance.OnNightEnd += DisActiveSpawner;
 
         Target = _targetSelector.FindTarget(_priorityTarget);
 
@@ -66,4 +72,5 @@ public class EnemySpawner : MonoBehaviour
         Vector2 offset = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * distance;
         return center + offset;
     }
+
 }
