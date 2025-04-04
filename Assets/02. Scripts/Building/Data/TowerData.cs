@@ -3,7 +3,7 @@ using System;
 [Serializable]
 public class TowerData
 {
-    public EObjectType TowerType;
+    public ETowerType TowerType;
     public string TypeString;
     public float MaxHp;
     public float Damage;

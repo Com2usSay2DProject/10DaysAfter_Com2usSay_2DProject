@@ -5,10 +5,10 @@ using UniRx;
 
 public class TowerRoot : MonoBehaviour
 {
-    private static Dictionary<EObjectType, TowerData> _towerDataDict; // 모든 타워가 공유할 데이터
+    private static Dictionary<ETowerType, TowerData> _towerDataDict; // 모든 타워가 공유할 데이터
 
     [Header("# Stats")]
-    public EObjectType TowerType; // 타워의 타입 -> 프리팹에서 설정해두면 데이터 찾아옴
+    public ETowerType TowerType; // 타워의 타입 -> 프리팹에서 설정해두면 데이터 찾아옴
     protected TowerData Data; // 해당 타워의 데이터
     protected float _maxHp;
     protected float _hp;
@@ -70,7 +70,7 @@ public class TowerRoot : MonoBehaviour
             TowerDataCollection collection =
                 JsonDataManager.LoadFromFile<TowerDataCollection>("Tower/TowerDataCollection");
 
-            _towerDataDict = new Dictionary<EObjectType, TowerData>();
+            _towerDataDict = new Dictionary<ETowerType, TowerData>();
 
             foreach (TowerData d in collection.Datas)
             {
@@ -158,7 +158,7 @@ public class TowerRoot : MonoBehaviour
     private void Die()
     {
         //TODO : 폭발 이펙트
-        PoolManager.Instance.ReturnObject(gameObject, TowerType);
+        TowerPoolManager.Instance.ReturnObject(gameObject, TowerType);
     }
     #endregion
 

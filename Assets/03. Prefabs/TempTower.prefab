@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 240e11bd7a632e24497c9c8790393ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TowerType: 2
+  TowerType: 0
   UpgradeUI: {fileID: 2768662232637103869, guid: d981b488c2087ac4686911dd634b885b, type: 3}
   _targetEnemy: {fileID: 0}
 --- !u!61 &8537324735742010314
