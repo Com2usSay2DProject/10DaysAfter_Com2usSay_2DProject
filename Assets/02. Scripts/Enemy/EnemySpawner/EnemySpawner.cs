@@ -65,7 +65,7 @@ public class EnemySpawner : MonoBehaviour
         if (_spawnTimer < 0)
         {
             _spawnTimer = Random.Range(_spawnTime, _spawnTime * 2);
-            Enemy enemy = PoolManager.Instance.GetObject(EObjectType.Enemy).GetComponent<Enemy>();
+            Enemy enemy = PoolManager.Instance.GetObject(EObjectType.NomalEnemy).GetComponent<Enemy>();
             enemy.transform.position = transform.position;
             enemy.Path = _path;
         }
