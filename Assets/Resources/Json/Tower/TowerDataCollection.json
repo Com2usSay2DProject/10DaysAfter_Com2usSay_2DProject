@@ -1,1 +1,12 @@
-{"Datas":[{"TowerType":1,"TypeString":"TempTower","MaxHp":100.0,"Damage":10.0,"AtkSpeed":1.0,"Range":3.0}]}
+{
+  "Datas": [
+    {
+      "TowerType": 1,
+      "TypeString": "TempTower",
+      "MaxHp": 100.0,
+      "Damage": 10.0,
+      "AtkSpeed": 1.0,
+      "Range": 3.0
+    }
+  ]
+}
