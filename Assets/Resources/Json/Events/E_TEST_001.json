@@ -1,0 +1,36 @@
+{
+    "EventId": "EVT_001",
+    "Title": "테스트용 이벤트",
+    "Condition": {
+        "triggerDays": [ 1, 2, 3, 4 ],
+        "specialConditionRequired": false
+    },
+    "Pages": [
+        {
+            "text": "테스트중 테스트중",
+            "imagePath": ""
+        },
+        {
+            "text": "버튼을 눌러 페이지가 넘어갈 수 있습니다",
+            "imagePath": ""
+        },
+        {
+            "text": "선택지를 누를 수 있습니다",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "선택한다 효과 없음",
+                    "effects": []
+                },
+                {
+                    "text": "무시한다 효과 없음",
+                    "effects": []
+                }
+            ]
+        },
+        {
+            "text": "아직 효과는 없습니다",
+            "imagePath": ""
+        }
+    ]
+}

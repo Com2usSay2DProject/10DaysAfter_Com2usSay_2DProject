@@ -45,7 +45,7 @@ public class EventManager : Singleton<EventManager>
 
 		foreach (var e in GameEvents)
 		{
-			if (e.condition.triggerDays.Contains(currentDay) && !e.condition.specialConditionRequired)
+			if (e.Condition.triggerDays.Contains(currentDay) && !e.Condition.specialConditionRequired)
 			{
 				validEvents.Add(e);
 			}
@@ -58,7 +58,7 @@ public class EventManager : Singleton<EventManager>
 		}
 
 		_pendingEvent = validEvents[Random.Range(0, validEvents.Count)];
-		UIEventTab.Instance.ShowTab(_pendingEvent.title);
+		UIEventTab.Instance.ShowTab(_pendingEvent.Title);
 	}
 
 
