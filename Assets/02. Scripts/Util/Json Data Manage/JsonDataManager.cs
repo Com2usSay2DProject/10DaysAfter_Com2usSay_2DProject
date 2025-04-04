@@ -36,7 +36,7 @@ public static class JsonDataManager // 문의 : 수민
         return FromJson<T>(json);
     }
 
-    public static T LoadFromFile<T>(string fileName, T data)
+    public static T LoadFromFile<T>(string fileName)
     {
         string path = Application.dataPath + $"/Resources/Json/{fileName}.json";
         FileStream fileStream = new FileStream(path, FileMode.Open);
