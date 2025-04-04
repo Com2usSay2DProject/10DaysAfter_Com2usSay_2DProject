@@ -1,0 +1,46 @@
+{
+    "EventId": "EVT_002",
+    "Title": "테스트용 이벤트2",
+    "Condition": {
+        "triggerDays": [ 1, 2, 3, 4 ],
+        "specialConditionRequired": false
+    },
+    "Pages": [
+        {
+            "text": "효과 있는 이벤트 테스트",
+            "imagePath": ""
+        },
+        {
+            "text": "인구수 효과 테스트입니다",
+            "imagePath": ""
+        },
+        {
+            "text": "인구수 달라지기",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "인구수 + 500",
+                    "effects": [
+                        {
+                            "resourceType": 4,
+                            "amount": 500
+                        }
+                    ]
+                },
+                {
+                    "text": "인구수 - 500",
+                    "effects": [
+                        {
+                            "resourceType": 4,
+                            "amount": -500
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "아직 효과는 없습니다",
+            "imagePath": ""
+        }
+    ]
+}

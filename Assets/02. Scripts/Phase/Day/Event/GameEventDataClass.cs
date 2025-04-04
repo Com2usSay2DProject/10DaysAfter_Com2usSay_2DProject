@@ -10,16 +10,15 @@ public class GameEvent
 	public EventCondition Condition;
 
 	public List<EventPage> Pages;
-	
 }
 
 [Serializable]
 public class EventPage
 {
-	public string text;                      // 페이지에 표시될 텍스트
-	public string imagePath;                 // 페이지에 표시될 이미지 경로 (비워두면 없음)
+	public string text;						// 페이지에 표시될 텍스트
+	public string imagePath;				// 페이지에 표시될 이미지 경로 (비워두면 없음)
 
-	public List<EventChoice> Choices;       // 선택지가 있을 경우
+	public List<EventChoice> Choices;		// 선택지가 있을 경우
 }
 
 [Serializable]
@@ -27,6 +26,7 @@ public class EventChoice
 {
 	public string text;                     // 선택지 텍스트
 	public List<EventEffect> effects;       // 선택했을 때 발생하는 효과들
+	//public List<SpecialEffect> specialEffects;     //아직 미구현
 }
 
 [Serializable]
@@ -34,6 +34,14 @@ public class EventEffect
 {
 	public ResourceType resourceType;
 	public int amount;                      // 양 (+면 획득, -면 소모)
+	// 엔딩 조건 및 분기 기능 추가하기
+}
+
+[Serializable]
+public class SpecialEffect
+{
+	public string storyBranch;
+	public bool hasBranched;
 }
 
 [Serializable]

@@ -84,7 +84,7 @@ public class UIEventPlayer : MonoBehaviour
 			button.GetComponent<Button>().onClick.AddListener(() =>
 			{
 				EventManager.Instance.ResolveEvent(choice);
-				_choiceContainer.gameObject.SetActive(false);
+				NextPage();
 				_nextButton.gameObject.SetActive(true);
 			});
 		}
