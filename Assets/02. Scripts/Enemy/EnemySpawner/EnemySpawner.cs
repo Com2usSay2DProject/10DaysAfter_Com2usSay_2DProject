@@ -22,6 +22,19 @@ public class EnemySpawner : MonoBehaviour
     {
         _targetSelector = GetComponent<EnemyTargetSelector>();
 
+        EnemyDataCollection collection = new EnemyDataCollection();
+        collection.Datas.Add(new EnemyData
+        {
+            EnemyType = EObjectType.NomalEnemy,
+            TypeString = EObjectType.NomalEnemy.ToString(),
+            MaxHp = 100f,
+            Speed = 3f,
+            Damage = 10f,
+            AtkSpeed = 1f,
+            Range = 1f,
+        });
+
+        JsonDataManager.CreateFile("Enemy/EnemyDataCollection", collection);
     }
 
     private void ActiveSpawner() { gameObject.SetActive(true); }

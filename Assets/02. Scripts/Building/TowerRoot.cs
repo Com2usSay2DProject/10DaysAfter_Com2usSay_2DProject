@@ -1,14 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.IO;
-using System;
 
 public class TowerRoot : MonoBehaviour
 {
+    private static Dictionary<EObjectType, TowerData> _towerDataDict; // 모든 타워가 공유할 데이터
+
     [Header("# Stats")]
     public EObjectType TowerType; // 타워의 타입 -> 프리팹에서 설정해두면 데이터 찾아옴
     protected TowerData Data; // 해당 타워의 데이터
-    private static Dictionary<EObjectType, TowerData> _towerDataDict; // 모든 타워가 공유할 데이터
 
     [SerializeField]
     private GameObject UpgradeUI;

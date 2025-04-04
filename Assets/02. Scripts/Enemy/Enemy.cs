@@ -4,6 +4,12 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
+    protected static Dictionary<EObjectType, EnemyData> _enemyDataDict;
+
+    [Header("# Stat")]
+    public EObjectType EnemyType;
+    protected EnemyData Data;
+
     protected EnemyStateMachine _stateMachine;
     protected Rigidbody2D _rigidbody2D;
     protected Animator _animator;
@@ -29,6 +35,13 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Awake()
     {
+        if (_enemyDataDict == null)
+        {
+            GetData();
+        }
+        GetDataForThis();
+        _moveSpeed = Data.Speed;
+
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _stateMachine = new EnemyStateMachine();
         _animator = GetComponentInChildren<Animator>();
@@ -38,6 +51,35 @@ public class Enemy : MonoBehaviour
         MoveState = new EnemyMoveState(_stateMachine, _rigidbody2D, this, "Move");
         AttackState = new EnemyAttackState(_stateMachine, _rigidbody2D, this, "Attack");
         DeathState = new EnemyDeathState(_stateMachine, _rigidbody2D, this, "Death");
+    }
+
+    private void GetData()
+    {
+        EnemyDataCollection collection =
+            JsonDataManager.LoadFromFile<EnemyDataCollection>("Enemy/EnemyDataCollection");
+
+        _enemyDataDict = new Dictionary<EObjectType, EnemyData>();
+
+        foreach(EnemyData d in collection.Datas)
+        {
+            d.TypeString = d.EnemyType.ToString();
+            _enemyDataDict[d.EnemyType] = d;
+        }
+
+        Debug.Log("적 데이터 로드 완료");
+    }
+
+    private void GetDataForThis()
+    {
+        if(_enemyDataDict.TryGetValue(EnemyType, out EnemyData data))
+        {
+            Data = new EnemyData();
+            Data = data;
+        }
+        else
+        {
+            Debug.LogError($"적 데이터 없음{EnemyType}");
+        }
     }
 
     private void DeadEnemy() { _stateMachine.ChangeState(DeathState); }
