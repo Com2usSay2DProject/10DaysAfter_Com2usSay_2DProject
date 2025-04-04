@@ -4,7 +4,9 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject EnemyPrefab;
-    [SerializeField] private Transform Target;
+
+    //지금은 메인타워라는 태그 가진 건물을 목표로 이동함
+    private Transform Target;
 
     private Queue<Vector3> _path;
 
@@ -13,6 +15,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Target = GameObject.FindWithTag("MainTower").transform;
 
         transform.position = GetRandomPositionOutsideRadius(Target.position, 4f, 5f);
         transform.rotation = Quaternion.identity;
