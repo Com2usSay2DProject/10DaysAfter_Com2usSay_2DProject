@@ -22,7 +22,7 @@ public class EnemySpawner : MonoBehaviour
     {
         _targetSelector = GetComponent<EnemyTargetSelector>();
 
-        EnemyDataCollection collection = new EnemyDataCollection();
+        /*EnemyDataCollection collection = new EnemyDataCollection();
         collection.Datas.Add(new EnemyData
         {
             EnemyType = EObjectType.NomalEnemy,
@@ -34,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
             Range = 1f,
         });
 
-        JsonDataManager.CreateFile("Enemy/EnemyDataCollection", collection);
+        JsonDataManager.CreateFile("Enemy/EnemyDataCollection", collection);*/
     }
 
     private void ActiveSpawner() { gameObject.SetActive(true); }
