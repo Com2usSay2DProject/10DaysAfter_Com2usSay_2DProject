@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 377500508}
   - component: {fileID: 377500507}
+  - component: {fileID: 377500509}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -143,7 +144,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 377500506}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5774ab979bfa094ba42ccdffdce4f15, type: 3}
   m_Name: 
@@ -168,6 +169,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &377500509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377500506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4360a2103ca96e24c99b244bf55fef83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _poolInfoList:
+  - Type: 0
+    InitCount: 10
+    Prefab: {fileID: 837715679069067520, guid: c06bed67937ba6d4188211b93fada57b, type: 3}
+    Container: {fileID: 377500508}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

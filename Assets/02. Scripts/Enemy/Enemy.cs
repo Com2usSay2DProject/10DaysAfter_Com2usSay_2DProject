@@ -4,10 +4,10 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    protected static Dictionary<EObjectType, EnemyData> _enemyDataDict;
+    protected static Dictionary<EEnemyType, EnemyData> _enemyDataDict;
 
     [Header("# Stat")]
-    public EObjectType EnemyType;
+    public EEnemyType EnemyType;
     protected EnemyData Data;
 
     protected EnemyStateMachine _stateMachine;
@@ -58,7 +58,7 @@ public class Enemy : MonoBehaviour
         EnemyDataCollection collection =
             JsonDataManager.LoadFromFile<EnemyDataCollection>("Enemy/EnemyDataCollection");
 
-        _enemyDataDict = new Dictionary<EObjectType, EnemyData>();
+        _enemyDataDict = new Dictionary<EEnemyType, EnemyData>();
 
         foreach(EnemyData data in collection.Datas)
         {

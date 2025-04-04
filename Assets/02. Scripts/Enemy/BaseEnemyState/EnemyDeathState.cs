@@ -10,7 +10,7 @@ public class EnemyDeathState : EnemyState
     {
         base.Enter();
 
-        PoolManager.Instance.ReturnObject(_enemyBase.gameObject, EObjectType.NomalEnemy);
+        EnemyPoolManager.Instance.ReturnObject(_enemyBase.gameObject, EEnemyType.NomalEnemy);
     }
 
     public override void Exit()

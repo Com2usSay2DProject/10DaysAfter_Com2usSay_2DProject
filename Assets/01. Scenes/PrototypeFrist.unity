@@ -616,9 +616,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 851446805}
-  - component: {fileID: 851446804}
   - component: {fileID: 851446807}
   - component: {fileID: 851446806}
+  - component: {fileID: 851446809}
+  - component: {fileID: 851446808}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -626,27 +627,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &851446804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 851446803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5774ab979bfa094ba42ccdffdce4f15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _poolInfoList:
-  - Type: 0
-    InitCount: 30
-    Prefab: {fileID: 837715679069067520, guid: c06bed67937ba6d4188211b93fada57b, type: 3}
-    Container: {fileID: 851446803}
-  - Type: 2
-    InitCount: 30
-    Prefab: {fileID: 115663138731165893, guid: 07e477a502c6a9941a94418c19c71d05, type: 3}
-    Container: {fileID: 851446803}
 --- !u!4 &851446805
 Transform:
   m_ObjectHideFlags: 0
@@ -689,6 +669,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsBuildingMode: 0
+--- !u!114 &851446808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851446803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd6702ad24cf82144b9ea83ec0ad4867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _poolInfoList:
+  - Type: 0
+    InitCount: 5
+    Prefab: {fileID: 115663138731165893, guid: 07e477a502c6a9941a94418c19c71d05, type: 3}
+    Container: {fileID: 851446805}
+--- !u!114 &851446809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851446803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4360a2103ca96e24c99b244bf55fef83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _poolInfoList:
+  - Type: 0
+    InitCount: 10
+    Prefab: {fileID: 837715679069067520, guid: c06bed67937ba6d4188211b93fada57b, type: 3}
+    Container: {fileID: 851446805}
 --- !u!1 &922020099
 GameObject:
   m_ObjectHideFlags: 0

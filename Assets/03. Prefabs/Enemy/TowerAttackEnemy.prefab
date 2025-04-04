@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fefa73a219afd804b9997ad032b225bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyType: 1
   _moveSpeed: 10
   HasTowerInRange: 0
 --- !u!1 &6459026690021648598
