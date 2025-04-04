@@ -1,7 +1,7 @@
-using UnityEngine;
+/*using UnityEngine;
 using System.Collections;
 
-public class NightPhase
+public class NightPhase : MonoBehaviour
 {
 	public IEnumerator PlayNightPhase(float nightDuration)
 	{
@@ -13,3 +13,5 @@ public class NightPhase
 		//몹 스폰 비활성화
 	}
 }
+*/
+//의미 없어짐

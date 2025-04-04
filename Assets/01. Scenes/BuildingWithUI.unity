@@ -493,7 +493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tower: {fileID: 115663138731165893, guid: 07e477a502c6a9941a94418c19c71d05, type: 3}
-  TowerOffset: {x: 0, y: 0, z: 0}
+  TowerOffset: {x: 0, y: 10, z: 0}
 --- !u!114 &952342124
 MonoBehaviour:
   m_ObjectHideFlags: 0
