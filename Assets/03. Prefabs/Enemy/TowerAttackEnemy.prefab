@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyType: 1
-  _moveSpeed: 10
+  _moveSpeed: 1
   HasTowerInRange: 0
 --- !u!1 &6459026690021648598
 GameObject:

@@ -3,94 +3,45 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject _enemyPrefab;
-    [SerializeField] private TargetType _priorityTarget;
-    [SerializeField] private float minDistance;
-    [SerializeField] private float maxDistance;
+    [SerializeField] private EnemyTargetSelector targetSelector;
 
-    private EnemyTargetSelector _targetSelector;
+    private Queue<Vector3> _pathNomal;
+    private Queue<Vector3> _pathTowrTarget;
 
-    private Transform Target;
-
-    private Queue<Vector3> _path;
-
-    float _spawnTimer;
-    [SerializeField] private float _spawnTime;
-
-
-    protected virtual void Awake()
+    private void Start()
     {
-        _targetSelector = GetComponent<EnemyTargetSelector>();
-
-        /*EnemyDataCollection collection = new EnemyDataCollection();
-        collection.Datas.Add(new EnemyData
-        {
-            EnemyType = EObjectType.NomalEnemy,
-            TypeString = EObjectType.NomalEnemy.ToString(),
-            MaxHp = 100f,
-            Speed = 3f,
-            Damage = 10f,
-            AtkSpeed = 1f,
-            Range = 1f,
-        });
-
-        JsonDataManager.CreateFile("Enemy/EnemyDataCollection", collection);*/
+        //PhaseManager.Instance.OnDayBegin += SetPath;
+        SetPath();
     }
 
-    private void ActiveSpawner() { gameObject.SetActive(true); }
-    private void DisActiveSpawner() { gameObject.SetActive(false); }
-
-    protected virtual void Start()
+    public void Spawn(EEnemyType type)
     {
-        if (PhaseManager.Instance)
-        {
-            PhaseManager.Instance.OnNightBegin += ActiveSpawner;
-            PhaseManager.Instance.OnNightEnd += DisActiveSpawner;
-        }
-        Target = _targetSelector.FindTarget(_priorityTarget);
-        if(Target==null)
-        {
-            Debug.Log("메인건물로 셋팅");
-            Target = _targetSelector.FindTarget(TargetType.MainTower);
-        }
+        Enemy enemy = EnemyPoolManager.Instance.GetObject(type).GetComponent<Enemy>();
 
-        transform.position = GetRandomPositionOutsideRadius(Vector2.zero, minDistance, maxDistance);
-        transform.rotation = Quaternion.identity;
-
-        Vector3 startPos = transform.position;
-        Vector3 targetPos = Target.position;
-
-        List<Vector3> pathList = Pathfinding.FindPath(startPos, targetPos);
-        if (pathList != null && pathList.Count > 0)
+        if (enemy != null)
         {
-            _path = new Queue<Vector3>(pathList);
-        }
-        else
-        {
-            Debug.LogError("경로를 찾을 수 없습니다.");
-        }
-
-    }
-    protected virtual void Update()
-    {
-        _spawnTimer -= Time.deltaTime;
-
-        if (_spawnTimer < 0)
-        {
-            _spawnTimer = Random.Range(_spawnTime, _spawnTime * 2);
-            Enemy enemy = EnemyPoolManager.Instance.GetObject(EEnemyType.NomalEnemy).GetComponent<Enemy>();
             enemy.transform.position = transform.position;
-            enemy.Path = _path;
+
+            switch (type)
+            {
+                case EEnemyType.NomalEnemy:
+                    enemy.Path = _pathNomal;
+                    break;
+                case EEnemyType.TowerAttackEnemy:
+                    enemy.Path = _pathTowrTarget;
+                    break;
+            }
+
         }
-
     }
-
-    protected virtual private Vector2 GetRandomPositionOutsideRadius(Vector2 center, float minDistance, float maxDistance)
+    private void SetPath()
     {
-        float angle = Random.Range(0f, Mathf.PI * 2f);
-        float distance = Mathf.Lerp(minDistance, maxDistance, Mathf.Sqrt(Random.Range(0f, 1f))); // 거리: min ~ max
-        Vector2 offset = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * distance;
-        return center + offset;
+        List<Vector3> nomalPath = Pathfinding.FindPath(transform.position, targetSelector.FindTarget(TargetType.MainTower).position);
+        List<Vector3> towerTargetPath = Pathfinding.FindPath(transform.position, targetSelector.FindTarget(TargetType.Tower).position);
+
+        if(nomalPath.Count>0) _pathNomal = new Queue<Vector3>(nomalPath);
+
+        if(towerTargetPath.Count>0) _pathTowrTarget = new Queue<Vector3>(towerTargetPath);
     }
 
 }

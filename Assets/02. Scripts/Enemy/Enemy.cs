@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     protected SpriteRenderer _spriteRenderer;
 
 
-    [SerializeField] private float _moveSpeed = 10;
+    [SerializeField] private float _moveSpeed;
     public float MoveSpeed => _moveSpeed;
     public bool HasTowerInRange = false;
 
@@ -35,12 +35,12 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Awake()
     {
-        if (_enemyDataDict == null)
-        {
-            GetData();
-        }
-        GetDataForThis();
-        _moveSpeed = Data.Speed;
+        //if (_enemyDataDict == null)
+        //{
+        //    GetData();
+        //}
+        //GetDataForThis();
+        //_moveSpeed = Data.Speed;
 
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _stateMachine = new EnemyStateMachine();

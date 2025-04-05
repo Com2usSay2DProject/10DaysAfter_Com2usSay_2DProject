@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6bedf6b574d574d83a459ea06a8f4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyType: 0
   _moveSpeed: 1
   HasTowerInRange: 0
 --- !u!1 &6459026690021648598
@@ -155,7 +156,7 @@ Animator:
   m_GameObject: {fileID: 6459026690021648598}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2605c45094fb6484ba2a921eb2a81d14, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7acf65c510c7da344a6d7d83b3a4aec6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -211,7 +212,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7219542275010057529, guid: f7ceb586472190340acb04996bd0688b, type: 3}
+  m_Sprite: {fileID: -786756498623241580, guid: 4495b9bcf67115a4daad1319d5850f08, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

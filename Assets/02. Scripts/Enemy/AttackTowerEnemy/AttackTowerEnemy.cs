@@ -42,26 +42,26 @@ public class AttackTowerEnemy : Enemy
     {
         base.OnTriggerExit2D(collision);
 
-        Transform Target =_targetSelector.FindTarget(TargetType.Tower);
+        //Transform Target =_targetSelector.FindTarget(TargetType.Tower);
 
-        List<Vector3> pathList = Pathfinding.FindPath(gameObject.transform.position, Target.position);
-        if (pathList != null && pathList.Count > 0)
-        {
-            Path = new Queue<Vector3>(pathList);
-        }
-        else
-        {
-            Target = _targetSelector.FindTarget(TargetType.MainTower);
-            pathList = Pathfinding.FindPath(gameObject.transform.position, Target.position);
-            if (pathList != null && pathList.Count > 0)
-            {
-                Path = new Queue<Vector3>(pathList);
-            }
-            else
-            {
-                Debug.Log("경로를 찾을수 없습니다.");
-            }
-        }
+        //List<Vector3> pathList = Pathfinding.FindPath(gameObject.transform.position, Target.position);
+        //if (pathList != null && pathList.Count > 0)
+        //{
+        //    Path = new Queue<Vector3>(pathList);
+        //}
+        //else
+        //{
+        //    Target = _targetSelector.FindTarget(TargetType.MainTower);
+        //    pathList = Pathfinding.FindPath(gameObject.transform.position, Target.position);
+        //    if (pathList != null && pathList.Count > 0)
+        //    {
+        //        Path = new Queue<Vector3>(pathList);
+        //    }
+        //    else
+        //    {
+        //        Debug.Log("경로를 찾을수 없습니다.");
+        //    }
+        //}
 
     }
 }
