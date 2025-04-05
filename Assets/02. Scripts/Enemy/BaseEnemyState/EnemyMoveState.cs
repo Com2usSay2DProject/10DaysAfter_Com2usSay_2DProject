@@ -40,10 +40,19 @@ public class EnemyMoveState : EnemyState
 
 
         Vector3 targetPoint = _enemyBase.Path.Peek();
-
         Vector3 direction = (targetPoint - _enemyBase.transform.position).normalized;
-
         _rigidbody.linearVelocity = direction * _enemyBase.MoveSpeed;
+
+        // 8방향 단순화
+        Vector2 moveDir = new Vector2(
+            Mathf.Round(direction.x),
+            Mathf.Round(direction.y)
+        );
+
+        // 애니메이터에 넘기기
+        _enemyBase.Animator.SetFloat("MoveX", moveDir.x);
+        _enemyBase.Animator.SetFloat("MoveY", moveDir.y);
+
 
 
         if (Vector3.Distance(_enemyBase.transform.position, targetPoint) < 0.1f)
@@ -57,8 +66,6 @@ public class EnemyMoveState : EnemyState
             _rigidbody.linearVelocity = Vector2.zero;
 
         }
-
-        _enemyBase.FlipSprite(direction);
 
     }
 }

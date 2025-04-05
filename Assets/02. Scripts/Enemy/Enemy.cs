@@ -119,9 +119,4 @@ public class Enemy : MonoBehaviour
         HasTowerInRange = false;
     }
 
-    public void FlipSprite(Vector3 direction)
-    {
-
-        _spriteRenderer.flipX = direction.x < 0;
-    }
 }
