@@ -13,11 +13,13 @@ public class EnemyAttackState : EnemyState
     {
         base.Enter();
         _rigidbody.linearVelocity = Vector2.zero;
+        _enemyBase.Animator.speed = _enemyBase.AttackRate;
     }
 
     public override void Exit()
     {
         base.Exit();
+        _enemyBase.Animator.speed = 1f;
     }
 
     public override void Update()
@@ -27,22 +29,22 @@ public class EnemyAttackState : EnemyState
         {
             _stateTimer = _enemyBase.AttackRate;
         }
-        if (!_enemyBase.HasTowerInRange && !_enemyBase.IsDead)
-        {
-            _stateMachine.ChangeState(_enemyBase.MoveState);
+        //if (!_enemyBase.HasTowerInRange && !_enemyBase.IsDead)
+        //{
+        //    _stateMachine.ChangeState(_enemyBase.MoveState);
 
-            List<Vector3> pathList = Pathfinding.FindPath(_enemyBase.transform.position, _enemyBase.TargetSelector.FindTarget(TargetType.MainTower).position);
-            if (pathList != null && pathList.Count > 0)
-            {
-                _enemyBase.Path = new Queue<Vector3>(pathList);
-            }
-            else
-            {
-                Debug.LogError("경로를 찾을 수 없습니다.");
-            }
+        //    List<Vector3> pathList = Pathfinding.FindPath(_enemyBase.transform.position, _enemyBase.TargetSelector.FindTarget(ETargetType.MainTower).position);
+        //    if (pathList != null && pathList.Count > 0)
+        //    {
+        //        _enemyBase.Path = new Queue<Vector3>(pathList);
+        //    }
+        //    else
+        //    {
+        //        Debug.LogError("경로를 찾을 수 없습니다.");
+        //    }
 
-            _stateMachine.ChangeState(_enemyBase.MoveState);
-        }
+        //    _stateMachine.ChangeState(_enemyBase.MoveState);
+        //}
 
     }
 }

@@ -3,6 +3,7 @@ using System;
 [Serializable]
 public class EnemyData
 {
+    public ETargetType TargetType;
     public EEnemyType EnemyType;
     public string TypeString;
     public float MaxHp;

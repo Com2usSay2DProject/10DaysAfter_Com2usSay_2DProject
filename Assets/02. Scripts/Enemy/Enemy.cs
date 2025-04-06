@@ -18,14 +18,14 @@ public class Enemy : MonoBehaviour
     protected Animator _animator;
     protected SpriteRenderer _spriteRenderer;
     public EnemyTargetSelector TargetSelector;
-    
+
     //게터
     public Animator Animator => _animator;
     public float MoveSpeed => Data.Speed;
     public float AttackRange => Data.Range;
     public float AttackRate => Data.AtkSpeed;
     public float Damage => Data.Damage;
-
+    public ETargetType TargetType => Data.TargetType;
 
 
     public bool HasTowerInRange = false;
@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour
 
     public Queue<Vector3> Path; // 현재 이동경로
     public Vector2 FaceDir; //현재 보는 방향
+    public GameObject AttackTerget = null;
 
     #region Staties
     public EnemyIdleState IdleState;
@@ -81,7 +82,6 @@ public class Enemy : MonoBehaviour
 
         Debug.Log("적 데이터 로드 완료");
     }
-
     private void GetDataForThis()
     {
         if (_enemyDataDict.TryGetValue(EnemyType, out EnemyData data))
@@ -95,7 +95,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void DeadEnemy() { _stateMachine.ChangeState(DeadState); }
+    private void OnDayBegin() { _stateMachine.ChangeState(DeadState); }
     private void OnNightBegin()
     {
         _stateMachine.ChangeState(IdleState);
@@ -107,7 +107,7 @@ public class Enemy : MonoBehaviour
     {
         if (PhaseManager.Instance != null)
         {
-            PhaseManager.Instance.OnDayBegin += DeadEnemy;
+            PhaseManager.Instance.OnDayBegin += OnDayBegin;
             PhaseManager.Instance.OnNightBegin += OnNightBegin;
         }
 
@@ -126,7 +126,9 @@ public class Enemy : MonoBehaviour
 
     protected virtual void TakeDamage(float damage)
     {
-
+        Hp -= damage;
+        if (Hp <= 0)
+            _stateMachine.ChangeState(DeadState);
     }
     public void CanAttack()
     {
@@ -136,4 +138,23 @@ public class Enemy : MonoBehaviour
         HasTowerInRange = true;
     }
 
+    public void RefreshTargetAndPath()
+    {
+        // 지정된 타입 타겟 재탐색
+        AttackTerget = TargetSelector.FindTarget(TargetType);
+
+        // 없으면 메인 타워를 타겟으로
+        if (AttackTerget == null)
+            AttackTerget = TargetSelector.FindTarget(ETargetType.MainTower);
+
+        if (AttackTerget != null)
+        {
+            List<Vector3> path = Pathfinding.FindPath(transform.position, AttackTerget.transform.position);
+            Path = new Queue<Vector3>(path);
+        }
+        else
+        {
+            Debug.Log("타겟이 존재하지 않습니다.");
+        }
+    }
 }

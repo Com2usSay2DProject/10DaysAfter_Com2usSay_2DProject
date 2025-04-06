@@ -11,6 +11,7 @@ public class CreateEnemyData : MonoBehaviour
 
         collection.Datas.Add(new EnemyData
         {
+            TargetType = ETargetType.MainTower,
             EnemyType = EEnemyType.NomalEnemy,
             TypeString = "NomalEnemy",
             MaxHp = 120,
@@ -21,6 +22,7 @@ public class CreateEnemyData : MonoBehaviour
         }); 
         collection.Datas.Add(new EnemyData
         {
+            TargetType = ETargetType.Tower,
             EnemyType = EEnemyType.TowerAttackEnemy,
             TypeString = "TowerAttackEnemy",
             MaxHp = 80,
@@ -31,6 +33,7 @@ public class CreateEnemyData : MonoBehaviour
         });
         collection.Datas.Add(new EnemyData
         {
+            TargetType = ETargetType.Tower,
             EnemyType = EEnemyType.ThrowEnemy,
             TypeString = "ThrowEnemy",
             MaxHp = 50,
@@ -41,6 +44,7 @@ public class CreateEnemyData : MonoBehaviour
         }); ;
         collection.Datas.Add(new EnemyData
         {
+            TargetType = ETargetType.Tower,
             EnemyType = EEnemyType.Boomer,
             TypeString = "Boomer",
             MaxHp = 100,

@@ -1,5 +1,6 @@
+using NUnit.Framework;
 using UnityEngine;
-
+using System.Collections.Generic;
 public class EnemyState
 {
     protected EnemyStateMachine _stateMachine;
@@ -11,7 +12,7 @@ public class EnemyState
     protected float _stateTimer;// 각상태마다 사용할 타이머임
 
     public virtual void AnimFinishTrigger() => _triggerCalled = true;
-    
+
     public EnemyState(EnemyStateMachine stateMachine, Rigidbody2D rigidbody2D, Enemy enemy, string animBoolName)
     {
         _stateMachine = stateMachine;
@@ -30,7 +31,40 @@ public class EnemyState
     public virtual void Update()
     {
         _stateTimer -= Time.deltaTime;
+
+        UpdateTargetAndPath();
+        //if (_enemyBase.AttackTerget.activeSelf == false)
+        //{
+        //    _enemyBase.AttackTerget = _enemyBase.TargetSelector.FindTarget(_enemyBase.TargetType);
+        //    if (_enemyBase.AttackTerget == null)
+        //    {
+        //        _enemyBase.AttackTerget = _enemyBase.TargetSelector.FindTarget(ETargetType.MainTower);
+        //        List<Vector3> MainTowerPath = Pathfinding.FindPath(_enemyBase.transform.position, _enemyBase.AttackTerget.transform.position);
+        //        _enemyBase.Path = new Queue<Vector3>(MainTowerPath);
+
+        //        _stateMachine.ChangeState(_enemyBase.MoveState);
+        //        return;
+        //    }
+
+        //    List<Vector3> Pathlist = Pathfinding.FindPath(_enemyBase.transform.position, _enemyBase.AttackTerget.transform.position);
+        //    _enemyBase.Path = new Queue<Vector3>(Pathlist);
+        //    _stateMachine.ChangeState(_enemyBase.MoveState);
+        //}
     }
+
+    private void UpdateTargetAndPath()
+    {
+        if (_enemyBase.AttackTerget == null || !_enemyBase.AttackTerget.activeSelf)
+        {
+            _enemyBase.RefreshTargetAndPath();
+
+            if (_enemyBase.AttackTerget != null)
+            {
+                _stateMachine.ChangeState(_enemyBase.MoveState);
+            }
+        }
+    }
+
     public virtual void Exit()
     {
         _enemyBase.Animator.SetBool(_animBoolName, false);

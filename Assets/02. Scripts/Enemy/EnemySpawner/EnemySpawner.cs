@@ -9,6 +9,8 @@ public class EnemySpawner : MonoBehaviour
     private Queue<Vector3> _pathNomal = new Queue<Vector3>();
     private Queue<Vector3> _pathTowrTarget = new Queue<Vector3>();
 
+    private GameObject TowrTarget;
+    private GameObject MainTowerTarget;
     private void Start()
     {
         //PhaseManager.Instance.OnNightBegin += SetPath;
@@ -38,9 +40,11 @@ public class EnemySpawner : MonoBehaviour
             {
                 case EEnemyType.NomalEnemy:
                     enemy.Path = _pathNomal;
+                    enemy.AttackTerget = MainTowerTarget;
                     break;
                 case EEnemyType.TowerAttackEnemy:
                     enemy.Path = _pathTowrTarget;
+                    enemy.AttackTerget = TowrTarget;
                     break;
             }
 
@@ -48,14 +52,15 @@ public class EnemySpawner : MonoBehaviour
     }
     private void SetPath()
     {
-        List<Vector3> nomalPath = Pathfinding.FindPath(transform.position, targetSelector.FindTarget(TargetType.MainTower).position);
+        MainTowerTarget = targetSelector.FindTarget(ETargetType.MainTower);
+        List<Vector3> nomalPath = Pathfinding.FindPath(transform.position, MainTowerTarget.transform.position);
         if (nomalPath.Count > 0) _pathNomal = new Queue<Vector3>(nomalPath);
 
+        TowrTarget = targetSelector.FindTarget(ETargetType.Tower);
 
-        if (targetSelector.FindTarget(TargetType.Tower) != null)
+        if (TowrTarget != null)
         {
-            Vector3 TargetPos = targetSelector.FindTarget(TargetType.Tower).position;
-            TargetPos.z = 0;
+            Vector3 TargetPos = TowrTarget.transform.position;
             List<Vector3> towerTargetPath = Pathfinding.FindPath(transform.position, TargetPos);
 
             if(towerTargetPath != null)

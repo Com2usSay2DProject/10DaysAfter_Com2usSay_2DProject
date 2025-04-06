@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnerPrefab: {fileID: 1650499944606500820, guid: 65d31ebd7a307e341959a7275cdf8a3b, type: 3}
-  spawnerCount: 4
+  spawnerCount: 10
   minSpawnDelay: 5
   maxSpawnDelay: 10
   _spawnRadiusMin: 8
@@ -799,7 +799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tower: {fileID: 115663138731165893, guid: 07e477a502c6a9941a94418c19c71d05, type: 3}
-  TowerOffset: {x: 0, y: 0, z: 0}
+  TowerOffset: {x: 0, y: 0.5, z: 0}
 --- !u!4 &743133185
 Transform:
   m_ObjectHideFlags: 0

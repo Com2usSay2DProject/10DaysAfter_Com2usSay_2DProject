@@ -19,6 +19,7 @@ public class EnemyAttackRange : MonoBehaviour
         if (collision.CompareTag("MainTower") || collision.CompareTag("Tower"))
         {
             _enemy.CanAttack();
+            _enemy.AttackTerget = collision.gameObject;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

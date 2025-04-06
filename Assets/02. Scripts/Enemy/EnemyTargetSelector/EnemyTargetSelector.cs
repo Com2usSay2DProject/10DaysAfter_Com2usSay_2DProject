@@ -1,14 +1,14 @@
 using UnityEngine;
 
 
-public enum TargetType
+public enum ETargetType
 {
     MainTower,
     Tower
 }
 public class EnemyTargetSelector : MonoBehaviour
 {
-    public Transform FindTarget(TargetType type)
+    public GameObject FindTarget(ETargetType type)
     {
         string tag = GetTagFromTargetType(type);
         GameObject[] candidates = GameObject.FindGameObjectsWithTag(tag);
@@ -16,8 +16,8 @@ public class EnemyTargetSelector : MonoBehaviour
         if (candidates.Length == 0)
             return null;
 
-        Transform closest = candidates[0].transform;
-        float minDist = (transform.position - closest.position).sqrMagnitude;
+        GameObject closest = candidates[0];
+        float minDist = (transform.position - closest.transform.position).sqrMagnitude;
 
         foreach (GameObject obj in candidates)
         {
@@ -25,19 +25,19 @@ public class EnemyTargetSelector : MonoBehaviour
             if (dist < minDist)
             {
                 minDist = dist;
-                closest = obj.transform;
+                closest = obj;
             }
         }
 
         return closest;
     }
 
-    private string GetTagFromTargetType(TargetType type)
+    private string GetTagFromTargetType(ETargetType type)
     {
         switch (type)
         {
-            case TargetType.MainTower: return "MainTower";
-            case TargetType.Tower: return "Tower";
+            case ETargetType.MainTower: return "MainTower";
+            case ETargetType.Tower: return "Tower";
             default:
                 {
                     Debug.LogWarning("Wrong Tag");
