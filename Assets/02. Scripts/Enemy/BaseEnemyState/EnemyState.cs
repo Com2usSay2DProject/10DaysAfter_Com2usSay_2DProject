@@ -10,7 +10,9 @@ public class EnemyState
     private string _animBoolName; // 애니메이션 상태변환 할때 쓸거
     protected float _stateTimer;// 각상태마다 사용할 타이머임
 
-   public EnemyState(EnemyStateMachine stateMachine, Rigidbody2D rigidbody2D, Enemy enemy, string animBoolName)
+    public virtual void AnimFinishTrigger() => _triggerCalled = true;
+    
+    public EnemyState(EnemyStateMachine stateMachine, Rigidbody2D rigidbody2D, Enemy enemy, string animBoolName)
     {
         _stateMachine = stateMachine;
         _rigidbody = rigidbody2D;
@@ -23,6 +25,7 @@ public class EnemyState
     {
         _stateTimer = 0;
         _enemyBase.Animator.SetBool(_animBoolName, true);
+        _triggerCalled = false;
     }
     public virtual void Update()
     {

@@ -1,16 +1,23 @@
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private EnemyTargetSelector targetSelector;
 
-    private Queue<Vector3> _pathNomal;
-    private Queue<Vector3> _pathTowrTarget;
+    private Queue<Vector3> _pathNomal = new Queue<Vector3>();
+    private Queue<Vector3> _pathTowrTarget = new Queue<Vector3>();
 
     private void Start()
     {
-        //PhaseManager.Instance.OnDayBegin += SetPath;
+        //PhaseManager.Instance.OnNightBegin += SetPath;
+        SetPath();
+    }
+    private void OnEnable()
+    {
+        _pathNomal.Clear();
+        _pathTowrTarget.Clear();
         SetPath();
     }
 
@@ -22,6 +29,11 @@ public class EnemySpawner : MonoBehaviour
         {
             enemy.transform.position = transform.position;
 
+            if (_pathTowrTarget.Count <= 0)
+            {
+                enemy.Path = _pathNomal;
+                return;
+            }
             switch (type)
             {
                 case EEnemyType.NomalEnemy:
@@ -37,11 +49,20 @@ public class EnemySpawner : MonoBehaviour
     private void SetPath()
     {
         List<Vector3> nomalPath = Pathfinding.FindPath(transform.position, targetSelector.FindTarget(TargetType.MainTower).position);
-        List<Vector3> towerTargetPath = Pathfinding.FindPath(transform.position, targetSelector.FindTarget(TargetType.Tower).position);
+        if (nomalPath.Count > 0) _pathNomal = new Queue<Vector3>(nomalPath);
 
-        if(nomalPath.Count>0) _pathNomal = new Queue<Vector3>(nomalPath);
 
-        if(towerTargetPath.Count>0) _pathTowrTarget = new Queue<Vector3>(towerTargetPath);
+        if (targetSelector.FindTarget(TargetType.Tower) != null)
+        {
+            Vector3 TargetPos = targetSelector.FindTarget(TargetType.Tower).position;
+            TargetPos.z = 0;
+            List<Vector3> towerTargetPath = Pathfinding.FindPath(transform.position, TargetPos);
+
+            if(towerTargetPath != null)
+                if(towerTargetPath.Count > 0) _pathTowrTarget = new Queue<Vector3>(towerTargetPath);
+        }
+
+
     }
 
 }

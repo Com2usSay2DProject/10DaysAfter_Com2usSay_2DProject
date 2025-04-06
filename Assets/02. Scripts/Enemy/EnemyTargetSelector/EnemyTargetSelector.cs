@@ -17,11 +17,11 @@ public class EnemyTargetSelector : MonoBehaviour
             return null;
 
         Transform closest = candidates[0].transform;
-        float minDist = Vector2.Distance(transform.position, closest.position);
+        float minDist = (transform.position - closest.position).sqrMagnitude;
 
         foreach (GameObject obj in candidates)
         {
-            float dist = Vector2.Distance(transform.position, obj.transform.position);
+            float dist = (transform.position - obj.transform.position).sqrMagnitude;
             if (dist < minDist)
             {
                 minDist = dist;

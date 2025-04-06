@@ -7,40 +7,53 @@ public class Enemy : MonoBehaviour
     protected static Dictionary<EEnemyType, EnemyData> _enemyDataDict;
 
     [Header("# Stat")]
+    [SerializeField] protected EnemyData Data;
     public EEnemyType EnemyType;
-    protected EnemyData Data;
+    public float Hp;
+
+
 
     protected EnemyStateMachine _stateMachine;
     protected Rigidbody2D _rigidbody2D;
     protected Animator _animator;
-    public Animator Animator => _animator;
     protected SpriteRenderer _spriteRenderer;
+    public EnemyTargetSelector TargetSelector;
+    
+    //게터
+    public Animator Animator => _animator;
+    public float MoveSpeed => Data.Speed;
+    public float AttackRange => Data.Range;
+    public float AttackRate => Data.AtkSpeed;
+    public float Damage => Data.Damage;
 
 
-    [SerializeField] private float _moveSpeed;
-    public float MoveSpeed => _moveSpeed;
+
     public bool HasTowerInRange = false;
+    public bool IsDead = false;
 
-    public Queue<Vector3> Path;
 
-
+    public Queue<Vector3> Path; // 현재 이동경로
+    public Vector2 FaceDir; //현재 보는 방향
 
     #region Staties
     public EnemyIdleState IdleState;
     public EnemyMoveState MoveState;
     public EnemyAttackState AttackState;
-    public EnemyDeathState DeathState;
+    public EnemyDeadState DeadState;
     #endregion
 
 
+    public void AnimTrigger() => _stateMachine.currentState.AnimFinishTrigger();
+
     protected virtual void Awake()
     {
-        //if (_enemyDataDict == null)
-        //{
-        //    GetData();
-        //}
-        //GetDataForThis();
-        //_moveSpeed = Data.Speed;
+        if (_enemyDataDict == null)
+        {
+            GetData();
+        }
+        GetDataForThis();
+
+        Hp = Data.MaxHp;
 
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _stateMachine = new EnemyStateMachine();
@@ -50,7 +63,7 @@ public class Enemy : MonoBehaviour
         IdleState = new EnemyIdleState(_stateMachine, _rigidbody2D, this, "Idle");
         MoveState = new EnemyMoveState(_stateMachine, _rigidbody2D, this, "Move");
         AttackState = new EnemyAttackState(_stateMachine, _rigidbody2D, this, "Attack");
-        DeathState = new EnemyDeathState(_stateMachine, _rigidbody2D, this, "Death");
+        DeadState = new EnemyDeadState(_stateMachine, _rigidbody2D, this, "Dead", _spriteRenderer);
     }
 
     private void GetData()
@@ -60,7 +73,7 @@ public class Enemy : MonoBehaviour
 
         _enemyDataDict = new Dictionary<EEnemyType, EnemyData>();
 
-        foreach(EnemyData data in collection.Datas)
+        foreach (EnemyData data in collection.Datas)
         {
             data.TypeString = data.EnemyType.ToString();
             _enemyDataDict[data.EnemyType] = data;
@@ -71,7 +84,7 @@ public class Enemy : MonoBehaviour
 
     private void GetDataForThis()
     {
-        if(_enemyDataDict.TryGetValue(EnemyType, out EnemyData data))
+        if (_enemyDataDict.TryGetValue(EnemyType, out EnemyData data))
         {
             Data = new EnemyData();
             Data = data;
@@ -82,17 +95,28 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void DeadEnemy() { _stateMachine.ChangeState(DeathState); }
+    private void DeadEnemy() { _stateMachine.ChangeState(DeadState); }
+    private void OnNightBegin()
+    {
+        _stateMachine.ChangeState(IdleState);
+        _spriteRenderer.color = new Color(1, 1, 1, 1);
+        IsDead = false;
+    }
 
     protected virtual void Start()
     {
-        if(PhaseManager.Instance)
-            PhaseManager.Instance.OnNightEnd += DeadEnemy;
+        if (PhaseManager.Instance != null)
+        {
+            PhaseManager.Instance.OnDayBegin += DeadEnemy;
+            PhaseManager.Instance.OnNightBegin += OnNightBegin;
+        }
 
         if (_stateMachine != null)
         {
             _stateMachine.InitStateMachine(IdleState, this);
         }
+
+
     }
 
     protected virtual void Update()
@@ -104,19 +128,12 @@ public class Enemy : MonoBehaviour
     {
 
     }
-
-    protected virtual void OnTriggerEnter2D(Collider2D collision)
+    public void CanAttack()
     {
-        if (collision.CompareTag("MainTower"))
-        {
-            _stateMachine.ChangeState(AttackState);
-            HasTowerInRange = true;
+        if (IsDead) return;
 
-        }
-    }
-    protected virtual void OnTriggerExit2D(Collider2D collision)
-    {
-        HasTowerInRange = false;
+        _stateMachine.ChangeState(AttackState);
+        HasTowerInRange = true;
     }
 
 }
