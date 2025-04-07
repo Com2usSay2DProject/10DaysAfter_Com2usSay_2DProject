@@ -21,5 +21,4 @@ public class UIObjectSpawner : MonoBehaviour
             UIManager.Instance.ToggleBuildModeOff();
         }
     }
-
 }
