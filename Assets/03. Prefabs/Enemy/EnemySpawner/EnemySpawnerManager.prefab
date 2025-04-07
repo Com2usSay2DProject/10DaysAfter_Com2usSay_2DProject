@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4087703220034663441}
   - component: {fileID: 5016515145468676071}
-  - component: {fileID: 6004725076611147171}
   - component: {fileID: 4146804072151017660}
   - component: {fileID: 4798451395725576019}
   m_Layer: 0
@@ -56,19 +55,6 @@ MonoBehaviour:
   ClusterSpawnerPos: []
   ClusterEnemyNum: 30
   ClusterRadius: 2
---- !u!114 &6004725076611147171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347658688111269488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e0f8118f8dd3e42a5c889ce91c1b83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetSelector: {fileID: 6305670851283007906, guid: d34dcfcb70506e34883b54527ab2979e, type: 3}
 --- !u!114 &4146804072151017660
 MonoBehaviour:
   m_ObjectHideFlags: 0
