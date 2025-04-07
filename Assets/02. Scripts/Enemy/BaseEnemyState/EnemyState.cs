@@ -6,6 +6,7 @@ public class EnemyState
     protected EnemyStateMachine _stateMachine;
     protected Rigidbody2D _rigidbody;
     protected Enemy _enemyBase;
+    private Bommer _bommer;
 
     protected bool _triggerCalled; //나중에 애니메이션 끝났다는거 알려주는 용도로 쓸거임
     private string _animBoolName; // 애니메이션 상태변환 할때 쓸거
@@ -19,6 +20,8 @@ public class EnemyState
         _rigidbody = rigidbody2D;
         _enemyBase = enemy;
         _animBoolName = animBoolName;
+
+        _bommer = _enemyBase as Bommer;
     }
 
 
@@ -33,27 +36,15 @@ public class EnemyState
         _stateTimer -= Time.deltaTime;
 
         UpdateTargetAndPath();
-        //if (_enemyBase.AttackTerget.activeSelf == false)
-        //{
-        //    _enemyBase.AttackTerget = _enemyBase.TargetSelector.FindTarget(_enemyBase.TargetType);
-        //    if (_enemyBase.AttackTerget == null)
-        //    {
-        //        _enemyBase.AttackTerget = _enemyBase.TargetSelector.FindTarget(ETargetType.MainTower);
-        //        List<Vector3> MainTowerPath = Pathfinding.FindPath(_enemyBase.transform.position, _enemyBase.AttackTerget.transform.position);
-        //        _enemyBase.Path = new Queue<Vector3>(MainTowerPath);
-
-        //        _stateMachine.ChangeState(_enemyBase.MoveState);
-        //        return;
-        //    }
-
-        //    List<Vector3> Pathlist = Pathfinding.FindPath(_enemyBase.transform.position, _enemyBase.AttackTerget.transform.position);
-        //    _enemyBase.Path = new Queue<Vector3>(Pathlist);
-        //    _stateMachine.ChangeState(_enemyBase.MoveState);
-        //}
     }
 
     private void UpdateTargetAndPath()
     {
+        if(_bommer)
+        {
+            if (_bommer.isAttacked) return;
+        }
+
         if (_enemyBase.AttackTerget == null || !_enemyBase.AttackTerget.activeSelf)
         {
             _enemyBase.RefreshTargetAndPath();

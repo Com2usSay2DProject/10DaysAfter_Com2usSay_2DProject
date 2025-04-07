@@ -41,16 +41,35 @@ public class EnemySpawnerManager : MonoBehaviour
     }
     void CreateSpawner()
     {
+        // angle은 0 ~ 2π 사이에서 균일하게 선택
         float angle = Random.Range(0f, 2 * Mathf.PI);
-        float radius = Random.Range(_spawnRadiusMin, _spawnRadiusMax);
-        Vector3 pos = Vector3.zero + new Vector3(Mathf.Cos(angle) * radius, Mathf.Sin(angle) * radius, 0);
+
+        // radius는 제곱근을 씌워서 균일한 분포로 변환
+        float t = Random.Range(0f, 1f);
+        float radius = Mathf.Sqrt(t) * (_spawnRadiusMax - _spawnRadiusMin) + _spawnRadiusMin;
+
+        // 위치 계산
+        Vector3 pos = new Vector3(Mathf.Cos(angle) * radius, Mathf.Sin(angle) * radius, 0);
+
+        // 스포너 생성 및 등록
         GameObject spawnerObj = Instantiate(spawnerPrefab, pos, Quaternion.identity);
         spawnerObj.transform.SetParent(transform);
+
         EnemySpawner spawner = spawnerObj.GetComponent<EnemySpawner>();
         if (spawner != null)
         {
             spawners.Add(spawner);
         }
+        //float angle = Random.Range(0f, 2 * Mathf.PI);
+        //float radius = Random.Range(_spawnRadiusMin, _spawnRadiusMax);
+        //Vector3 pos = Vector3.zero + new Vector3(Mathf.Cos(angle) * radius, Mathf.Sin(angle) * radius, 0);
+        //GameObject spawnerObj = Instantiate(spawnerPrefab, pos, Quaternion.identity);
+        //spawnerObj.transform.SetParent(transform);
+        //EnemySpawner spawner = spawnerObj.GetComponent<EnemySpawner>();
+        //if (spawner != null)
+        //{
+        //    spawners.Add(spawner);
+        //}
     }
     IEnumerator SpawnAtRandomIntervals(EnemySpawner spawner)
     {

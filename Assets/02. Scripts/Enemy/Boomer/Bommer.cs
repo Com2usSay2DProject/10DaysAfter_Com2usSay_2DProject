@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Bommer : Enemy
 {
-
+    public bool isAttacked;
     protected override void Awake()
     {
         base.Awake();

@@ -6,10 +6,13 @@ public class EnemyAnimTrigger : MonoBehaviour
 
     Enemy _enemy;
 
+    Bommer _bommer;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _enemy = GetComponentInParent<Enemy>();
+        _bommer = _enemy as Bommer;
     }
 
     private void AnimTrigger()
@@ -26,7 +29,6 @@ public class EnemyAnimTrigger : MonoBehaviour
         if (Tower == null) return;
 
         Tower.TakeDamage(_enemy.Damage);
-        Debug.Log("Attack Damage");
     }
 
     private void BommerAttackTrigger()
@@ -38,7 +40,9 @@ public class EnemyAnimTrigger : MonoBehaviour
         if (Tower == null) return;
 
         Tower.TakeDamage(_enemy.Damage);
-        Debug.Log("Attack Damage");
+
+
+        _bommer.isAttacked = true;
     }
 
     private void ThrowAttckTrigger()
