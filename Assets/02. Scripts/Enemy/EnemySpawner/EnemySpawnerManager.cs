@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 
 
@@ -23,8 +24,14 @@ public class EnemySpawnerManager : MonoBehaviour
 
     //스포너들
     private List<EnemySpawner> spawners = new List<EnemySpawner>();
+    private EnemySpawner ClusterSpawner = new EnemySpawner();
     //코루틴 저장용
     private Dictionary<EnemySpawner, Coroutine> spawnerCoroutines = new Dictionary<EnemySpawner, Coroutine>();
+
+    [Header("ClusterSpawnerSetting")]
+    [SerializeField] Transform[] ClusterSpawnerPos;
+    [SerializeField] int ClusterEnemyNum;
+    [SerializeField] float ClusterRadius;
 
 
     private void Start()
@@ -34,21 +41,30 @@ public class EnemySpawnerManager : MonoBehaviour
         {
             CreateSpawner();
         }
-
+        CreateClusterSpanwer();
 
         PhaseManager.Instance.OnDayBegin += DisActiveSpawners;
         PhaseManager.Instance.OnNightBegin += ActiveSpawners;
+        if (ClusterSpawnerPos.Length >= 0)
+            PhaseManager.Instance.OnNightBegin += SpawnCluster;
     }
+
+    private void SpawnCluster()
+    {
+        if (ClusterSpawnerPos.Length > 0)
+            ClusterSpawner.SpawnEnemyCluster(ClusterEnemyNum, ClusterRadius);
+
+    }
+
     void CreateSpawner()
     {
         // angle은 0 ~ 2π 사이에서 균일하게 선택
         float angle = Random.Range(0f, 2 * Mathf.PI);
 
-        // radius는 제곱근을 씌워서 균일한 분포로 변환
+        //균일한 분포로 변환
         float t = Random.Range(0f, 1f);
         float radius = Mathf.Sqrt(t) * (_spawnRadiusMax - _spawnRadiusMin) + _spawnRadiusMin;
 
-        // 위치 계산
         Vector3 pos = new Vector3(Mathf.Cos(angle) * radius, Mathf.Sin(angle) * radius, 0);
 
         // 스포너 생성 및 등록
@@ -71,6 +87,14 @@ public class EnemySpawnerManager : MonoBehaviour
         //    spawners.Add(spawner);
         //}
     }
+    void CreateClusterSpanwer()
+    {
+
+        int rand = Random.Range(0, 4);
+        // 스포너 생성 및 등록
+        if (ClusterSpawnerPos.Length > 0)
+            ClusterSpawner = Instantiate(spawnerPrefab, ClusterSpawnerPos[rand].position, Quaternion.identity).GetComponent<EnemySpawner>();
+    }
     IEnumerator SpawnAtRandomIntervals(EnemySpawner spawner)
     {
         while (true)
@@ -80,7 +104,7 @@ public class EnemySpawnerManager : MonoBehaviour
             int randomType = Random.Range(0, enableSpawnType);
 
             spawner.Spawn((EEnemyType)randomType);
-            //spawner.Spawn(EEnemyType.ThrowEnemy);
+            //spawner.Spawn(EEnemyType.Crawler);
 
         }
     }
@@ -97,10 +121,15 @@ public class EnemySpawnerManager : MonoBehaviour
                 spawnerCoroutines.Remove(spawner);
             }
         }
+        if (ClusterSpawnerPos.Length > 0)
+            ClusterSpawner.gameObject.SetActive(false);
     }
     void ActiveSpawners()
     {
         spawnerCount += 2;
+
+        if (ClusterSpawnerPos.Length > 0)
+            ClusterSpawner.gameObject.SetActive(true);
 
         //스포너 부족하면 생성
         if (spawners.Count < spawnerCount)

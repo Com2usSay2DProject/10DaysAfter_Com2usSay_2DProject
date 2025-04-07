@@ -2,7 +2,8 @@ public enum EEnemyType
 {
     NomalEnemy,
     TowerAttackEnemy,
-    Boomer,
     ThrowEnemy,
+    Boomer,
+    Crawler,
     Count,
 }

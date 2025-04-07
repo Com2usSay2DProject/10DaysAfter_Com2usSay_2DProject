@@ -54,6 +54,30 @@ public class EnemySpawner : MonoBehaviour
 
         }
     }
+    public void SpawnEnemyCluster(int enemyNum, float radius)
+    {
+        List<Enemy> enemies = new List<Enemy>();
+        enemies.Capacity = enemyNum;
+        for(int i=0; i<enemyNum;++i)
+        {
+            enemies.Add(EnemyPoolManager.Instance.GetObject(EEnemyType.Crawler).GetComponent<Enemy>());
+        }
+
+        foreach(var enemy in enemies)
+        {
+            // 원 안에 랜덤 위치 생성 (균일 분포)
+            float angle = Random.Range(0f, 2 * Mathf.PI);
+            float t = Random.Range(0f, 1f);
+            float randRadius = Mathf.Sqrt(t) * radius;
+
+            Vector3 offset = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * randRadius;
+            enemy.transform.position = transform.position + offset;
+            enemy.Path = _pathNomal;
+        }
+
+
+    }
+
     private void SetPath()
     {
         MainTowerTarget = targetSelector.FindTarget(ETargetType.MainTower);

@@ -121,13 +121,15 @@ MonoBehaviour:
     Damage: 0
     AtkSpeed: 0
     Range: 0
-  EnemyType: 2
+  EnemyType: 3
   Hp: 0
+  ProjectilePrefab: {fileID: 0}
   TargetSelector: {fileID: 6305670851283007906, guid: d34dcfcb70506e34883b54527ab2979e, type: 3}
   HasTowerInRange: 0
   IsDead: 0
   FaceDir: {x: 0, y: 0}
   AttackTerget: {fileID: 0}
+  isAttacked: 0
 --- !u!1 &6459026690021648598
 GameObject:
   m_ObjectHideFlags: 0

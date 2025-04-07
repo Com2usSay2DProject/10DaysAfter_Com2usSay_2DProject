@@ -40,8 +40,8 @@ public class CreateEnemyData : MonoBehaviour
             Speed = 1.0f,
             AtkSpeed = 0.6f,
             Damage = 10,
-            Range = 2f
-        }); ;
+            Range = 2.5f
+        });
         collection.Datas.Add(new EnemyData
         {
             TargetType = ETargetType.Tower,
@@ -51,8 +51,19 @@ public class CreateEnemyData : MonoBehaviour
             Speed = 1.0f,
             AtkSpeed = 1,
             Damage = 50,
-            Range = 0.7f
-        }); ;
+            Range = 1f
+        });
+        collection.Datas.Add(new EnemyData
+        {
+            TargetType = ETargetType.MainTower,
+            EnemyType = EEnemyType.Crawler,
+            TypeString = "Crawler",
+            MaxHp = 30,
+            Speed = 0.5f,
+            AtkSpeed = 0.8f,
+            Damage = 10,
+            Range = 0.6f
+        });
         JsonDataManager.CreateFile("Enemy/EnemyDataCollection", collection);
     }
 
