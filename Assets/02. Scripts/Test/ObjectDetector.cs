@@ -32,7 +32,7 @@ public class ObjectDetector : MonoBehaviour
                 cellPos.z = 0; // Z 축을 0으로 설정
                 //cellPos = new Vector3(cellPos.x * 1.55f, hitPoint.y * 1.17f, 0);
                 Debug.Log($"클릭한 Grid 셀 좌표: {cellPos}");
-                _towerSpawner.SpawnTower(cellPos);
+                _towerSpawner.SpawnTower(cellPos, ETowerType.TempTower);
             }
         }
     }

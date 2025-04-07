@@ -10,7 +10,7 @@ public class TowerSpawner : Singleton<TowerSpawner>
 
     private void Awake()
     {
-        TowerDataCollection collection = new TowerDataCollection();
+        /*TowerDataCollection collection = new TowerDataCollection();
         collection.Datas.Add(new TowerData
         {
             TowerType = ETowerType.TempTower,
@@ -20,12 +20,26 @@ public class TowerSpawner : Singleton<TowerSpawner>
             Range = 3f,
             AtkSpeed = 1f,
         });
-        JsonDataManager.CreateFile("Tower/TowerDataCollection", collection);
+        JsonDataManager.CreateFile("Tower/TowerDataCollection", collection);*/
+        TowerCostDataCollection collection = new TowerCostDataCollection();
+        collection.Datas.Add(new TowerCostData
+        {
+            TowerType = ETowerType.TempTower,
+            TowerTypeString = ETowerType.TempTower.ToString(),
+            Cost = 100,
+        });
+        JsonDataManager.CreateFile("Tower/TowerCostDataCollection", collection);
     }
 
-    public void SpawnTower(Vector3 tilePosition)
+    private void Start()
     {
-        GameObject tower = TowerPoolManager.Instance.GetObject(ETowerType.TempTower);
+        //UIManager.Instance.BuildModeActivate += () => SpawnTower();
+    }
+
+    public GameObject SpawnTower(Vector3 tilePosition = default, ETowerType type = ETowerType.TempTower)
+    {
+        GameObject tower = TowerPoolManager.Instance.GetObject(type);
         tower.transform.position = tilePosition + TowerOffset;
+        return tower;
     }
 }

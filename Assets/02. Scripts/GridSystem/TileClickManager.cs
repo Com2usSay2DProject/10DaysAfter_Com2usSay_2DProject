@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UniRx;
 
 public class TileClickManager : Singleton<TileClickManager>
 {
@@ -7,7 +8,32 @@ public class TileClickManager : Singleton<TileClickManager>
 
     private TileNode _selectedNode;
 
+    public GameObject SelectedTower;
+    private TowerRoot _selectedTower;
+
     public Action TowerClick;
+
+    private void Start()
+    {
+        this.ObserveEveryValueChanged(_ => SelectedTower)
+            .Pairwise() // 이전 값과 현재 값을 함께 가져오기
+            .Where(pair => pair.Previous == null && pair.Current != null)
+            .Subscribe(_ =>
+            {
+                _selectedTower = SelectedTower.GetComponent<TowerRoot>();
+                // 필요한 로직 실행
+            })
+            .AddTo(this);
+
+        this.ObserveEveryValueChanged(_ => _selectedTower)
+            .Pairwise()
+            .Where(pair => pair.Previous != null && pair.Current == null)
+            .Subscribe(_ =>
+            {
+                SelectedTower = null;
+            })
+            .AddTo(this);
+    }
 
     private void Update()
     {
@@ -24,31 +50,43 @@ public class TileClickManager : Singleton<TileClickManager>
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
-            if(hit.collider == null)
-            {
+            Collider2D[] hits = Physics2D.OverlapPointAll(mouseWorldPos);
+
+            if (hits.Length == 0)
                 return;
-            }
 
             if (UIManager.Instance.isBuildModeActive)
             {
-                if (hit.transform.CompareTag("Tile"))
+                bool tileClicked = false;
+
+                foreach (var hit in hits)
                 {
-                    Debug.Log("클릭한 위치가 타일임");
-                    TileNode clickedTile = TileManager.Instance.GetNodeInfo();
-                    if (clickedTile != null && clickedTile.IsWalkable)
+                    if (hit.gameObject.layer == LayerMask.NameToLayer("Tile") ||
+                        hit.CompareTag("Tile"))
                     {
-                        TowerSpawner.Instance.SpawnTower(clickedTile.WorldPositon);
-                        clickedTile.IsWalkable = false;
-                        UIManager.Instance.ToggleBuildModeOff();
+                        if (_selectedTower.CanBuild)
+                        {
+                            tileClicked = true;
+                            Debug.Log("클릭한 위치가 타일임: " + hit.transform.position);
+                            _selectedTower.Isbuilt = true;
+                            _selectedTower = null;
+                            UIManager.Instance.ToggleBuildModeOff();
+                            break;
+                        }
+                        else
+                        {
+                            // 건설 불가 사운드
+                            break;
+                        }
                     }
                 }
-                else
+
+                if (!tileClicked)
                 {
-                    Debug.Log("클릭한 위치가 타일이 아님: " + hit.transform.name);
+                    Debug.Log("클릭한 위치에 타일이 없음");
                 }
             }
-            else
+            /*else
             {
                 if(hit.transform.CompareTag("Tower"))
                 {
@@ -57,7 +95,7 @@ public class TileClickManager : Singleton<TileClickManager>
                     Debug.Log("타워 업그레이드 UI를 띄워주세요");
                     hit.transform.GetComponent<TowerRoot>().TowerClick();
                 }
-            }
+            }*/
         }
     }
 }

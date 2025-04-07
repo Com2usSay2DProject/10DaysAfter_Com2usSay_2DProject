@@ -23,17 +23,44 @@ public class TowerRoot : MonoBehaviour
     private bool _isEnemyDetected = false;
     [SerializeField]
     private GameObject _targetEnemy;
+    [SerializeField]
+    private bool _isBuilt; // 건설이 된 상태인지
+    public bool Isbuilt
+    {
+        get => _isBuilt;
+        set
+        {
+            _isBuilt = value;
+        }
+    }
+    private bool _canBuild;
+    public bool CanBuild => _canBuild;
+
+    private SpriteRenderer _spriteRenderer;
+    private Rigidbody2D _rigid;
+    private Color _tempColor = new Color(255, 255, 255, 0.5f);
+    private Color _errorColor = new Color(255, 0, 0, 0.5f);
 
     private void Awake()
     {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _rigid = GetComponent<Rigidbody2D>();
+    }
+
+    private void OnEnable()
+    {
         GetData();
         GetDataForThis();
+        _isEnemyDetected = false;
+        _isBuilt = false;
+        _canBuild = true;
+        _spriteRenderer.color = _tempColor;
     }
 
     private void Start()
     {
         ObserveTargetEnemy();
-        ResourceManager.Instance.OnPopulationChange += MultiplyData;
+        //ResourceManager.Instance.OnPopulationChange += MultiplyData;
     }
 
     private void ObserveTargetEnemy()
@@ -49,7 +76,18 @@ public class TowerRoot : MonoBehaviour
 
     private void Update()
     {
-        if(!_isEnemyDetected || !_targetEnemy)
+        if(UIManager.Instance.isBuildModeActive && !_isBuilt)
+        {
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePos.z = 0;
+            _rigid.MovePosition(mousePos);
+        }
+        else
+        {
+            _spriteRenderer.color = Color.white;
+        }
+
+        if (!_isEnemyDetected || !_targetEnemy)
         {
             _targetEnemy = DetectEnemy();
             _isEnemyDetected = _targetEnemy != null;
@@ -59,7 +97,42 @@ public class TowerRoot : MonoBehaviour
             Attack();
         }
     }
-    
+
+    public void SetPosition()
+    {
+        _spriteRenderer.color = Color.white;
+        _isBuilt = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(_isBuilt)
+        {
+            return;
+        }
+
+        if(collision.CompareTag("Tower"))
+        {
+            _canBuild = false;
+            Debug.Log("타워 겹침");
+            _spriteRenderer.color = _errorColor;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(_isBuilt)
+        {
+            return;
+        }
+        if(collision.CompareTag("Tower"))
+        {
+            _canBuild = true;
+            Debug.Log("타워 안겹침");
+            _spriteRenderer.color = _tempColor;
+        }
+    }
+
     #region Data
     private void GetData()
     {

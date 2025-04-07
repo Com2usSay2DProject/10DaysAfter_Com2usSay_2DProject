@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,13 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
-  m_GIWorkflowMode: 1
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -67,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 0
@@ -104,7 +100,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +113,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -159,6 +155,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86670791}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -166,7 +163,6 @@ Transform:
   m_Children:
   - {fileID: 978838141}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -208,9 +204,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -244,13 +248,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &978838140
 GameObject:
@@ -277,13 +281,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 978838140}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 86670793}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &978838142
 TilemapRenderer:
@@ -302,6 +306,9 @@ TilemapRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -28793,6 +28800,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 294599496298833681, guid: f41e208a78646b745a25b1dae6180521, type: 3}
@@ -28844,12 +28852,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f41e208a78646b745a25b1dae6180521, type: 3}
 --- !u!1001 &348263741435175495
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 348263742056753453, guid: adb37d0f0e154684b808a2a22cba7e04, type: 3}
@@ -28901,12 +28913,16 @@ PrefabInstance:
       value: medieval_atlas_4_41
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adb37d0f0e154684b808a2a22cba7e04, type: 3}
 --- !u!1001 &537238340795257663
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 537238340885372592, guid: 77e5d645c5e7e3843b2c29b876e7bf0b, type: 3}
@@ -28958,12 +28974,16 @@ PrefabInstance:
       value: medieval_atlas_4_81
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77e5d645c5e7e3843b2c29b876e7bf0b, type: 3}
 --- !u!1001 &664681433741962194
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 664681434850785241, guid: a3db3bd8456d190488649a79638bc01e, type: 3}
@@ -29015,12 +29035,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3db3bd8456d190488649a79638bc01e, type: 3}
 --- !u!1001 &767298823874769533
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 767298824758446661, guid: 88c843b97db53fe429472fe52ee02248, type: 3}
@@ -29072,12 +29096,16 @@ PrefabInstance:
       value: medieval_atlas_4_73
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88c843b97db53fe429472fe52ee02248, type: 3}
 --- !u!1001 &822432214723263198
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 822432213693857619, guid: 97f57c830b383eb4aac3ccfd6f144017, type: 3}
@@ -29129,12 +29157,16 @@ PrefabInstance:
       value: medieval_atlas_4_67
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97f57c830b383eb4aac3ccfd6f144017, type: 3}
 --- !u!1001 &837498364486191242
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 837498363551706915, guid: 1aac9655287a7f344b3221e784381e15, type: 3}
@@ -29186,12 +29218,16 @@ PrefabInstance:
       value: medieval_atlas_4_36
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1aac9655287a7f344b3221e784381e15, type: 3}
 --- !u!1001 &1157639526104193104
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1157639525600789712, guid: 65efa33e34ebafa4b8c5fe8940853e5c, type: 3}
@@ -29243,12 +29279,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65efa33e34ebafa4b8c5fe8940853e5c, type: 3}
 --- !u!1001 &1365057079492108481
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1365057079724930445, guid: 7f43800c02ad90c4db173a8b93c53d0c, type: 3}
@@ -29300,12 +29340,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f43800c02ad90c4db173a8b93c53d0c, type: 3}
 --- !u!1001 &1549096427282765888
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1549096426292100983, guid: 9917ff1908b3e3e4c80dd8de3c923cf7, type: 3}
@@ -29357,12 +29401,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9917ff1908b3e3e4c80dd8de3c923cf7, type: 3}
 --- !u!1001 &1642313573920787809
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1642313571863130105, guid: faa42c43d6c4f604b94ab978f8404941, type: 3}
@@ -29414,12 +29462,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faa42c43d6c4f604b94ab978f8404941, type: 3}
 --- !u!1001 &1843575815445357599
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1843575815645312678, guid: 077adeaa2c4722e49b246807ecdb835a, type: 3}
@@ -29471,12 +29523,16 @@ PrefabInstance:
       value: medieval_atlas_4_62
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 077adeaa2c4722e49b246807ecdb835a, type: 3}
 --- !u!1001 &1861751159121106604
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1861751159804678512, guid: 4a8e123f097d3bc4ab64cbdd9d1ce4ba, type: 3}
@@ -29528,12 +29584,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a8e123f097d3bc4ab64cbdd9d1ce4ba, type: 3}
 --- !u!1001 &1870207797579004841
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1870207797948997042, guid: a9cd2922d7b8eaf48a05ed308ea5f2c4, type: 3}
@@ -29585,12 +29645,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9cd2922d7b8eaf48a05ed308ea5f2c4, type: 3}
 --- !u!1001 &2006140709451608573
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2006140710410670200, guid: b43bb42fecdf08448b862ac9f8c0c366, type: 3}
@@ -29642,12 +29706,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b43bb42fecdf08448b862ac9f8c0c366, type: 3}
 --- !u!1001 &2017443744216063986
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2017443746286182388, guid: a3cd27f9a78605149af1efc896bc7c76, type: 3}
@@ -29699,12 +29767,16 @@ PrefabInstance:
       value: medieval_atlas_4_50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3cd27f9a78605149af1efc896bc7c76, type: 3}
 --- !u!1001 &2055175006251275833
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2055175007440562336, guid: f91b8027101a79a4eb96d1daf71666a4, type: 3}
@@ -29756,12 +29828,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f91b8027101a79a4eb96d1daf71666a4, type: 3}
 --- !u!1001 &2128817244576259433
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2128817244065150569, guid: 1c16316f91c5c8f47b234a5183ec47d2, type: 3}
@@ -29813,12 +29889,16 @@ PrefabInstance:
       value: medieval_atlas_4_33
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c16316f91c5c8f47b234a5183ec47d2, type: 3}
 --- !u!1001 &2155155736923472947
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2155155736200998297, guid: 0058b6eb5c5871a43a2bb839b6a3c2d5, type: 3}
@@ -29870,12 +29950,16 @@ PrefabInstance:
       value: medieval_atlas_4_31
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0058b6eb5c5871a43a2bb839b6a3c2d5, type: 3}
 --- !u!1001 &2184758380345452304
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2184758380510670711, guid: ceb71cba135a73c40994cd8d8af560ad, type: 3}
@@ -29927,12 +30011,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ceb71cba135a73c40994cd8d8af560ad, type: 3}
 --- !u!1001 &2416633616247192575
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2416633616162369172, guid: 52c427bc9b3e63f43b043dea6c380f9c, type: 3}
@@ -29984,12 +30072,16 @@ PrefabInstance:
       value: medieval_atlas_4_86
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52c427bc9b3e63f43b043dea6c380f9c, type: 3}
 --- !u!1001 &2426977802723464699
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2426977801674409696, guid: 69badf454a76689439ed4dc25ae5ee6a, type: 3}
@@ -30041,12 +30133,16 @@ PrefabInstance:
       value: medieval_atlas_4_94
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69badf454a76689439ed4dc25ae5ee6a, type: 3}
 --- !u!1001 &2564379244968015074
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2564379245431883181, guid: 9dcd7e8166d9a864ebfe6fbadfc69074, type: 3}
@@ -30098,12 +30194,16 @@ PrefabInstance:
       value: medieval_atlas_4_7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dcd7e8166d9a864ebfe6fbadfc69074, type: 3}
 --- !u!1001 &2669980622573540323
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2669980621973431428, guid: 95cd97438ce9541478c043e0c4c46c98, type: 3}
@@ -30155,12 +30255,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95cd97438ce9541478c043e0c4c46c98, type: 3}
 --- !u!1001 &2997224353916755258
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2997224351888923419, guid: c3b84e61f7a6b264fbb28a12f5f37619, type: 3}
@@ -30212,12 +30316,16 @@ PrefabInstance:
       value: medieval_atlas_4_91
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3b84e61f7a6b264fbb28a12f5f37619, type: 3}
 --- !u!1001 &3045460798446820042
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3045460796892751257, guid: 5e70ad78abd6823479796b474958fd56, type: 3}
@@ -30269,12 +30377,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e70ad78abd6823479796b474958fd56, type: 3}
 --- !u!1001 &3220233689092085412
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3220233689266670347, guid: ab5269a9d2c21b445bc2768c854469e7, type: 3}
@@ -30326,12 +30438,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab5269a9d2c21b445bc2768c854469e7, type: 3}
 --- !u!1001 &3229162018484034796
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3229162018818590060, guid: ddc5c5330860285488276496793256ca, type: 3}
@@ -30383,12 +30499,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddc5c5330860285488276496793256ca, type: 3}
 --- !u!1001 &3253091537625776374
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3253091538158643050, guid: 51d49e286b5ecc447a599514232097c1, type: 3}
@@ -30440,12 +30560,16 @@ PrefabInstance:
       value: medieval_atlas_4_15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51d49e286b5ecc447a599514232097c1, type: 3}
 --- !u!1001 &3348592085657815679
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3348592086244990477, guid: 1bd5c0396d4c9f6438a3700cc68997ef, type: 3}
@@ -30497,12 +30621,16 @@ PrefabInstance:
       value: medieval_atlas_4_77
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bd5c0396d4c9f6438a3700cc68997ef, type: 3}
 --- !u!1001 &3371603070350278936
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3371603071728014465, guid: ccb3b9fa02a90fe4dbfae223e26a5cc4, type: 3}
@@ -30554,12 +30682,16 @@ PrefabInstance:
       value: medieval_atlas_4_74
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccb3b9fa02a90fe4dbfae223e26a5cc4, type: 3}
 --- !u!1001 &3499788640307734937
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3499788639967869323, guid: 7ad3597d2be2bb144971ec8c768fdfeb, type: 3}
@@ -30611,12 +30743,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ad3597d2be2bb144971ec8c768fdfeb, type: 3}
 --- !u!1001 &3560307159629035340
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3560307159388401916, guid: 49daacf4d3b7f294ab581cdb69703147, type: 3}
@@ -30668,12 +30804,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49daacf4d3b7f294ab581cdb69703147, type: 3}
 --- !u!1001 &3563949830048456043
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3563949829045908285, guid: c0a0a005c07e4764f80e1f724117741f, type: 3}
@@ -30725,12 +30865,16 @@ PrefabInstance:
       value: medieval_atlas_4_27
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0a0a005c07e4764f80e1f724117741f, type: 3}
 --- !u!1001 &3607983886739602094
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3607983888255570107, guid: e3899b3aa2196fb40b0273ae9b72def9, type: 3}
@@ -30782,12 +30926,16 @@ PrefabInstance:
       value: medieval_atlas_4_75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3899b3aa2196fb40b0273ae9b72def9, type: 3}
 --- !u!1001 &3805665761494863313
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3805665761171841788, guid: 2577af96ab7ece44390758a3f44b7168, type: 3}
@@ -30839,12 +30987,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2577af96ab7ece44390758a3f44b7168, type: 3}
 --- !u!1001 &4210614122922557993
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4210614121436660147, guid: 2e2ec61e8fbe8a949892b65009c8ebc0, type: 3}
@@ -30896,12 +31048,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e2ec61e8fbe8a949892b65009c8ebc0, type: 3}
 --- !u!1001 &4402513320857183173
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4402513321323529440, guid: 2ffc9706bf9ff354a9d8c22c1d6efe19, type: 3}
@@ -30953,12 +31109,16 @@ PrefabInstance:
       value: medieval_atlas_4_30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ffc9706bf9ff354a9d8c22c1d6efe19, type: 3}
 --- !u!1001 &4469038430530030699
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4469038431187327538, guid: 143054311d83d1f4380c68b8515c164f, type: 3}
@@ -31010,12 +31170,16 @@ PrefabInstance:
       value: medieval_atlas_4_32
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 143054311d83d1f4380c68b8515c164f, type: 3}
 --- !u!1001 &4489989971039660543
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4489989969643719219, guid: 85108fcecee594f4b96f071dd949732b, type: 3}
@@ -31067,12 +31231,16 @@ PrefabInstance:
       value: medieval_atlas_4_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85108fcecee594f4b96f071dd949732b, type: 3}
 --- !u!1001 &4613854522069926698
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4613854523566672100, guid: 1d4530046ed4b7345ab2c1e239084be2, type: 3}
@@ -31124,12 +31292,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d4530046ed4b7345ab2c1e239084be2, type: 3}
 --- !u!1001 &4685575684882644303
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4685575684947737998, guid: 0b3d615898b66064c835c9dbff610ff6, type: 3}
@@ -31181,12 +31353,16 @@ PrefabInstance:
       value: medieval_atlas_4_16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b3d615898b66064c835c9dbff610ff6, type: 3}
 --- !u!1001 &4877922897880662385
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4877922899793101917, guid: aa87146faf7e0bf4d88d449fa0323556, type: 3}
@@ -31238,12 +31414,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa87146faf7e0bf4d88d449fa0323556, type: 3}
 --- !u!1001 &4900219857307171572
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4900219855590234773, guid: ccb5e343a0974294fb6c9a124b1ac91b, type: 3}
@@ -31295,12 +31475,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccb5e343a0974294fb6c9a124b1ac91b, type: 3}
 --- !u!1001 &5176461733291820753
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5176461733276607109, guid: 2a9df617034105e4e9ce88f0c6f16577, type: 3}
@@ -31352,12 +31536,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a9df617034105e4e9ce88f0c6f16577, type: 3}
 --- !u!1001 &5301108069446495259
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5301108068070467890, guid: 4e0dc6d50d169524a80f33f6bb1ce86f, type: 3}
@@ -31409,12 +31597,16 @@ PrefabInstance:
       value: medieval_atlas_4_8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e0dc6d50d169524a80f33f6bb1ce86f, type: 3}
 --- !u!1001 &5329799809337098455
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5329799808891750976, guid: fa672c41372656b4e83b967d0f263b8b, type: 3}
@@ -31466,12 +31658,16 @@ PrefabInstance:
       value: medieval_atlas_4_25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa672c41372656b4e83b967d0f263b8b, type: 3}
 --- !u!1001 &5336604523339481181
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5336604523554538820, guid: 3d46f3f3025211f40b1192efb61e3940, type: 3}
@@ -31523,12 +31719,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d46f3f3025211f40b1192efb61e3940, type: 3}
 --- !u!1001 &5476480417588739406
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5476480419000074101, guid: 8bc1364841fbdf14d95075ff26db53b5, type: 3}
@@ -31580,12 +31780,16 @@ PrefabInstance:
       value: medieval_atlas_4_90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bc1364841fbdf14d95075ff26db53b5, type: 3}
 --- !u!1001 &5494981588585751129
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5494981588576461891, guid: acb98923ea2d9724aae3a30895cb5d34, type: 3}
@@ -31637,12 +31841,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acb98923ea2d9724aae3a30895cb5d34, type: 3}
 --- !u!1001 &5524640286482060365
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5524640285522989313, guid: f7db5e038321d0343b36deafa7a82e13, type: 3}
@@ -31694,12 +31902,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7db5e038321d0343b36deafa7a82e13, type: 3}
 --- !u!1001 &5743454328270941321
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5743454329543879368, guid: f4fef9c85e7b30e4e9177cd9a6981b63, type: 3}
@@ -31751,12 +31963,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4fef9c85e7b30e4e9177cd9a6981b63, type: 3}
 --- !u!1001 &5829591574316114614
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5829591573933483620, guid: 00ab83d01e7b9764897e44954b1907f0, type: 3}
@@ -31808,12 +32024,16 @@ PrefabInstance:
       value: medieval_atlas_4_26
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00ab83d01e7b9764897e44954b1907f0, type: 3}
 --- !u!1001 &5939806764193832431
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5939806764455689494, guid: d70c0db988c010e47866ff7ade051c93, type: 3}
@@ -31865,12 +32085,16 @@ PrefabInstance:
       value: medieval_atlas_4_89
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d70c0db988c010e47866ff7ade051c93, type: 3}
 --- !u!1001 &5940283919081722256
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5940283918544320458, guid: ed52586c188c50b478151b09b3e5b5b2, type: 3}
@@ -31922,12 +32146,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed52586c188c50b478151b09b3e5b5b2, type: 3}
 --- !u!1001 &6036443379963161410
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6036443380268836197, guid: c2a9272d644f0bc41978b7e8d2b9a121, type: 3}
@@ -31979,12 +32207,16 @@ PrefabInstance:
       value: medieval_atlas_4_63
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2a9272d644f0bc41978b7e8d2b9a121, type: 3}
 --- !u!1001 &6096365371247241010
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6096365369892128456, guid: 95a8fcde3b7a1924bbf59354026a9ba7, type: 3}
@@ -32036,12 +32268,16 @@ PrefabInstance:
       value: medieval_atlas_4_35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95a8fcde3b7a1924bbf59354026a9ba7, type: 3}
 --- !u!1001 &6185269070799876235
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6185269069481114712, guid: 332933f1bb9e69f40b42963e1d3b3aff, type: 3}
@@ -32093,12 +32329,16 @@ PrefabInstance:
       value: medieval_atlas_4_68
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 332933f1bb9e69f40b42963e1d3b3aff, type: 3}
 --- !u!1001 &6235199025649747912
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6235199024449437932, guid: 3c30a030678f0194e9220b84da536bfc, type: 3}
@@ -32150,12 +32390,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c30a030678f0194e9220b84da536bfc, type: 3}
 --- !u!1001 &6392583934478730956
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6392583935944512965, guid: 22e1fd3ab71626640bb92c057544559b, type: 3}
@@ -32207,12 +32451,16 @@ PrefabInstance:
       value: medieval_atlas_4_55
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22e1fd3ab71626640bb92c057544559b, type: 3}
 --- !u!1001 &6527234776321184100
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6527234776150438929, guid: e752f571de4ba1745899fe487b12596e, type: 3}
@@ -32264,12 +32512,16 @@ PrefabInstance:
       value: medieval_atlas_4_5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e752f571de4ba1745899fe487b12596e, type: 3}
 --- !u!1001 &6536483485411341787
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6536483485062743616, guid: dc318b3941690214eaf2bdb2c0f88e12, type: 3}
@@ -32321,12 +32573,16 @@ PrefabInstance:
       value: medieval_atlas_4_95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc318b3941690214eaf2bdb2c0f88e12, type: 3}
 --- !u!1001 &6561975385195558154
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6561975384884095929, guid: e20608252acc2ed4abbe1ed64ba983b2, type: 3}
@@ -32378,12 +32634,16 @@ PrefabInstance:
       value: medieval_atlas_4_38
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e20608252acc2ed4abbe1ed64ba983b2, type: 3}
 --- !u!1001 &6633503810712676796
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6633503809101339277, guid: 4e578e83746641c4487f67e72121a602, type: 3}
@@ -32435,12 +32695,16 @@ PrefabInstance:
       value: medieval_atlas_4_4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e578e83746641c4487f67e72121a602, type: 3}
 --- !u!1001 &6720177862869798426
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6720177863541551380, guid: cfec60b4310c6754d8309b5b70db29a4, type: 3}
@@ -32492,12 +32756,16 @@ PrefabInstance:
       value: medieval_atlas_4_59
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfec60b4310c6754d8309b5b70db29a4, type: 3}
 --- !u!1001 &6741081239708885772
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6741081238054595244, guid: a816ea79c4de47d4da39f79542301721, type: 3}
@@ -32549,12 +32817,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a816ea79c4de47d4da39f79542301721, type: 3}
 --- !u!1001 &6800743307841849950
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6800743308496349221, guid: 5c365a029fb045c41b51383d69f951d7, type: 3}
@@ -32606,12 +32878,16 @@ PrefabInstance:
       value: medieval_atlas_4_78
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c365a029fb045c41b51383d69f951d7, type: 3}
 --- !u!1001 &6865000168104456630
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6865000167960677363, guid: 3d664744e44e89d44a81b41360bb9862, type: 3}
@@ -32663,12 +32939,16 @@ PrefabInstance:
       value: medieval_atlas_4_19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d664744e44e89d44a81b41360bb9862, type: 3}
 --- !u!1001 &7013980156954598348
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7013980158514588453, guid: 13c1049defbdcea4591abab402dd4c55, type: 3}
@@ -32720,12 +33000,16 @@ PrefabInstance:
       value: medieval_atlas_4_85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13c1049defbdcea4591abab402dd4c55, type: 3}
 --- !u!1001 &7021037768694162960
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7021037767690788000, guid: 18d17dbc5eed4ac47ad3687a3c730649, type: 3}
@@ -32777,12 +33061,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18d17dbc5eed4ac47ad3687a3c730649, type: 3}
 --- !u!1001 &7048478569233476905
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7048478569726181610, guid: f1f388e1d901c3d488302b6758bf744f, type: 3}
@@ -32834,12 +33122,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1f388e1d901c3d488302b6758bf744f, type: 3}
 --- !u!1001 &7053286304935564833
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7053286305390068074, guid: 7f72f0da5eae2104991cfc07db9e1b80, type: 3}
@@ -32891,12 +33183,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f72f0da5eae2104991cfc07db9e1b80, type: 3}
 --- !u!1001 &7065493937192203413
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7065493937841437968, guid: 01dd9d76ae95dab47aba1828554aaad7, type: 3}
@@ -32948,12 +33244,16 @@ PrefabInstance:
       value: medieval_atlas_4_28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01dd9d76ae95dab47aba1828554aaad7, type: 3}
 --- !u!1001 &7079365024765821038
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7079365025216600949, guid: c8f9f2fd8f010aa4b9bfe331333669df, type: 3}
@@ -33005,12 +33305,16 @@ PrefabInstance:
       value: medieval_atlas_4_92
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8f9f2fd8f010aa4b9bfe331333669df, type: 3}
 --- !u!1001 &7094656624246431950
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7094656624794358987, guid: afc1eeb929fdcd64d99b3ec722243393, type: 3}
@@ -33062,12 +33366,16 @@ PrefabInstance:
       value: medieval_atlas_4_99
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afc1eeb929fdcd64d99b3ec722243393, type: 3}
 --- !u!1001 &7128907119732483110
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7128907120521831677, guid: 28004d7a67a4da641933cb60d711a5d2, type: 3}
@@ -33119,12 +33427,16 @@ PrefabInstance:
       value: medieval_atlas_4_61
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28004d7a67a4da641933cb60d711a5d2, type: 3}
 --- !u!1001 &7308663416004380496
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7308663416332003671, guid: bca210c453650394f832771dbe7d25ca, type: 3}
@@ -33176,12 +33488,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bca210c453650394f832771dbe7d25ca, type: 3}
 --- !u!1001 &7366005919349170723
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7366005918619534348, guid: 832ce87045cfa3a42bda135d6a395ab7, type: 3}
@@ -33233,12 +33549,16 @@ PrefabInstance:
       value: medieval_atlas_4_97
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 832ce87045cfa3a42bda135d6a395ab7, type: 3}
 --- !u!1001 &7487689546643999583
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7487689547583905312, guid: 86493463fccb61e449df7cd1667e7709, type: 3}
@@ -33290,12 +33610,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86493463fccb61e449df7cd1667e7709, type: 3}
 --- !u!1001 &7616323515751438529
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7616323515597261825, guid: bbeb2c4b55f98a64fac882317f988f07, type: 3}
@@ -33347,12 +33671,16 @@ PrefabInstance:
       value: medieval_atlas_4_98
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbeb2c4b55f98a64fac882317f988f07, type: 3}
 --- !u!1001 &7681434770602431521
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7681434770409998376, guid: ad49f94c1246bc342a3a673a2cbbaab0, type: 3}
@@ -33404,12 +33732,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad49f94c1246bc342a3a673a2cbbaab0, type: 3}
 --- !u!1001 &7722292111311727512
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7722292111614913232, guid: 6a9d51c0059674245bee5128eed574dd, type: 3}
@@ -33461,12 +33793,16 @@ PrefabInstance:
       value: medieval_atlas_4_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a9d51c0059674245bee5128eed574dd, type: 3}
 --- !u!1001 &7737249979071852453
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7737249980047702620, guid: c2b670d8c400a5a4d9bf7a9e80fe13c7, type: 3}
@@ -33518,12 +33854,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2b670d8c400a5a4d9bf7a9e80fe13c7, type: 3}
 --- !u!1001 &7842817376299171294
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7842817375813899361, guid: 4c342015b0593054db28430331f98c97, type: 3}
@@ -33575,12 +33915,16 @@ PrefabInstance:
       value: medieval_atlas_4_83
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c342015b0593054db28430331f98c97, type: 3}
 --- !u!1001 &7907115288808950531
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7907115288403802012, guid: 8375ddf154c6e3845ad92f20a7b71dae, type: 3}
@@ -33632,12 +33976,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8375ddf154c6e3845ad92f20a7b71dae, type: 3}
 --- !u!1001 &7930914527325242614
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7930914527330265778, guid: 6c5d5a52d8f106b459103ed7f25f0194, type: 3}
@@ -33689,12 +34037,16 @@ PrefabInstance:
       value: medieval_atlas_4_56
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c5d5a52d8f106b459103ed7f25f0194, type: 3}
 --- !u!1001 &8131620217255920560
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8131620217335501089, guid: 633af57f6fdaef54da959aedce364851, type: 3}
@@ -33746,12 +34098,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 633af57f6fdaef54da959aedce364851, type: 3}
 --- !u!1001 &8430414492650450471
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8430414493573177041, guid: 5e7ede75849185b4fb03d1ccbb89bef1, type: 3}
@@ -33803,12 +34159,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e7ede75849185b4fb03d1ccbb89bef1, type: 3}
 --- !u!1001 &8543174423735011932
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8543174422436153712, guid: 520e234ea3c75134fab3d35a255ac179, type: 3}
@@ -33860,12 +34220,16 @@ PrefabInstance:
       value: medieval_atlas_4_76
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 520e234ea3c75134fab3d35a255ac179, type: 3}
 --- !u!1001 &8576969572929837293
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8576969572547707445, guid: 652d01a2166be004db9a4ce4deeccbea, type: 3}
@@ -33917,12 +34281,16 @@ PrefabInstance:
       value: medieval_atlas_4_12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 652d01a2166be004db9a4ce4deeccbea, type: 3}
 --- !u!1001 &8757368972448578110
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8757368972491686045, guid: ea8ed26f2d793b1478057bb01d621b69, type: 3}
@@ -33974,12 +34342,16 @@ PrefabInstance:
       value: medieval_atlas_4_48
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea8ed26f2d793b1478057bb01d621b69, type: 3}
 --- !u!1001 &8761404720589176075
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8761404720254613177, guid: f06d3ee870e827646945a4aed073cc21, type: 3}
@@ -34031,12 +34403,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f06d3ee870e827646945a4aed073cc21, type: 3}
 --- !u!1001 &8843257323455580829
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8843257323496226877, guid: 9e94f71beb22fd243818194c1922d60c, type: 3}
@@ -34088,12 +34464,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e94f71beb22fd243818194c1922d60c, type: 3}
 --- !u!1001 &8948530054297632045
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8948530054189583064, guid: 9bee1942f31796440a8d0cba6f43bb63, type: 3}
@@ -34145,12 +34525,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bee1942f31796440a8d0cba6f43bb63, type: 3}
 --- !u!1001 &8964813854381567158
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8964813853339457111, guid: 3b3fae34a435d794aa0ae167dcd0b31a, type: 3}
@@ -34202,12 +34586,16 @@ PrefabInstance:
       value: medieval_atlas_4_9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b3fae34a435d794aa0ae167dcd0b31a, type: 3}
 --- !u!1001 &9103863524549498164
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 9103863523880594784, guid: 30ef32e0868613e4194f39ed189f7279, type: 3}
@@ -34259,12 +34647,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30ef32e0868613e4194f39ed189f7279, type: 3}
 --- !u!1001 &9174958080736423306
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 9174958080232803548, guid: 480ef0b85a7d24042b668bec7f162822, type: 3}
@@ -34316,12 +34708,16 @@ PrefabInstance:
       value: medieval_atlas_4_39
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 480ef0b85a7d24042b668bec7f162822, type: 3}
 --- !u!1001 &9193873612932612851
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 9193873611585771576, guid: 65b142ab1fb64734daecca14b024e04e, type: 3}
@@ -34373,4 +34769,111 @@ PrefabInstance:
       value: medieval_atlas_4_13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65b142ab1fb64734daecca14b024e04e, type: 3}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 519420032}
+  - {fileID: 86670793}
+  - {fileID: 7308663416004380496}
+  - {fileID: 4489989971039660543}
+  - {fileID: 7722292111311727512}
+  - {fileID: 7737249979071852453}
+  - {fileID: 6633503810712676796}
+  - {fileID: 6527234776321184100}
+  - {fileID: 7053286304935564833}
+  - {fileID: 2564379244968015074}
+  - {fileID: 5301108069446495259}
+  - {fileID: 8964813854381567158}
+  - {fileID: 7907115288808950531}
+  - {fileID: 6741081239708885772}
+  - {fileID: 8576969572929837293}
+  - {fileID: 9193873612932612851}
+  - {fileID: 3805665761494863313}
+  - {fileID: 3253091537625776374}
+  - {fileID: 4685575684882644303}
+  - {fileID: 9103863524549498164}
+  - {fileID: 5743454328270941321}
+  - {fileID: 6865000168104456630}
+  - {fileID: 3560307159629035340}
+  - {fileID: 3229162018484034796}
+  - {fileID: 5176461733291820753}
+  - {fileID: 1365057079492108481}
+  - {fileID: 8430414492650450471}
+  - {fileID: 5329799809337098455}
+  - {fileID: 5829591574316114614}
+  - {fileID: 3563949830048456043}
+  - {fileID: 7065493937192203413}
+  - {fileID: 2055175006251275833}
+  - {fileID: 4402513320857183173}
+  - {fileID: 2155155736923472947}
+  - {fileID: 4469038430530030699}
+  - {fileID: 2128817244576259433}
+  - {fileID: 1549096427282765888}
+  - {fileID: 6096365371247241010}
+  - {fileID: 837498364486191242}
+  - {fileID: 2184758380345452304}
+  - {fileID: 6561975385195558154}
+  - {fileID: 9174958080736423306}
+  - {fileID: 7681434770602431521}
+  - {fileID: 348263741435175495}
+  - {fileID: 1870207797579004841}
+  - {fileID: 2006140709451608573}
+  - {fileID: 6235199025649747912}
+  - {fileID: 4613854522069926698}
+  - {fileID: 1861751159121106604}
+  - {fileID: 7487689546643999583}
+  - {fileID: 8757368972448578110}
+  - {fileID: 8948530054297632045}
+  - {fileID: 2017443744216063986}
+  - {fileID: 2669980622573540323}
+  - {fileID: 294599496872138980}
+  - {fileID: 5494981588585751129}
+  - {fileID: 8843257323455580829}
+  - {fileID: 6392583934478730956}
+  - {fileID: 7930914527325242614}
+  - {fileID: 664681433741962194}
+  - {fileID: 3499788640307734937}
+  - {fileID: 6720177862869798426}
+  - {fileID: 3045460798446820042}
+  - {fileID: 7128907119732483110}
+  - {fileID: 1843575815445357599}
+  - {fileID: 6036443379963161410}
+  - {fileID: 5524640286482060365}
+  - {fileID: 5940283919081722256}
+  - {fileID: 4877922897880662385}
+  - {fileID: 822432214723263198}
+  - {fileID: 6185269070799876235}
+  - {fileID: 7048478569233476905}
+  - {fileID: 8131620217255920560}
+  - {fileID: 8761404720589176075}
+  - {fileID: 767298823874769533}
+  - {fileID: 3371603070350278936}
+  - {fileID: 3607983886739602094}
+  - {fileID: 8543174423735011932}
+  - {fileID: 3348592085657815679}
+  - {fileID: 6800743307841849950}
+  - {fileID: 5336604523339481181}
+  - {fileID: 1642313573920787809}
+  - {fileID: 537238340795257663}
+  - {fileID: 3220233689092085412}
+  - {fileID: 7842817376299171294}
+  - {fileID: 4210614122922557993}
+  - {fileID: 7013980156954598348}
+  - {fileID: 2416633616247192575}
+  - {fileID: 4900219857307171572}
+  - {fileID: 1157639526104193104}
+  - {fileID: 5939806764193832431}
+  - {fileID: 5476480417588739406}
+  - {fileID: 2997224353916755258}
+  - {fileID: 7079365024765821038}
+  - {fileID: 7021037768694162960}
+  - {fileID: 2426977802723464699}
+  - {fileID: 6536483485411341787}
+  - {fileID: 7366005919349170723}
+  - {fileID: 7616323515751438529}
+  - {fileID: 7094656624246431950}

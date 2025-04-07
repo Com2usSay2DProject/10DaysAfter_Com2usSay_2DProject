@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3322947693454767604}
   - component: {fileID: 6376391365361401602}
   - component: {fileID: 8537324735742010314}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TempTower
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -105,6 +105,7 @@ MonoBehaviour:
   TowerType: 0
   UpgradeUI: {fileID: 2768662232637103869, guid: d981b488c2087ac4686911dd634b885b, type: 3}
   _targetEnemy: {fileID: 0}
+  _isBuilt: 0
 --- !u!61 &8537324735742010314
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -164,8 +165,16 @@ PrefabInstance:
       value: TowerCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 1104841449351738592, guid: 2c1ae12a9b4cea64897b5479c247c095, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104841449351738592, guid: 2c1ae12a9b4cea64897b5479c247c095, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215257809510134796, guid: 2c1ae12a9b4cea64897b5479c247c095, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1972254465665835434, guid: 2c1ae12a9b4cea64897b5479c247c095, type: 3}
       propertyPath: m_Pivot.x
@@ -246,6 +255,14 @@ PrefabInstance:
     - target: {fileID: 1972254465665835434, guid: 2c1ae12a9b4cea64897b5479c247c095, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644602653881130958, guid: 2c1ae12a9b4cea64897b5479c247c095, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827500204190209445, guid: 2c1ae12a9b4cea64897b5479c247c095, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

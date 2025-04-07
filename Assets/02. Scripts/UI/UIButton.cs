@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class UIButton: Singleton<UIButton>
 {
     private Button button;
+    [SerializeField]
+    private ETowerType AllocatedTower;
 
     private void Awake()
     {
@@ -13,7 +15,7 @@ public class UIButton: Singleton<UIButton>
 
     public void OnClickBuildMode()
     {
-        UIManager.Instance.ToggleBuildMode(button);
+        UIManager.Instance.ToggleBuildMode(button, AllocatedTower);
     }
 
     public void OnClickUpgredeTowerUI()

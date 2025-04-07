@@ -57,7 +57,7 @@ public class ClickMoveTest : MonoBehaviour
                 map.SetColor(gridPosition, Color.red);          // 해당 타일을 빨간색으로 변경
                 destination = new Vector3(destination.x, destination.y + 0.5f, destination.z);
 
-                tile.SpawnTower(destination);
+                tile.SpawnTower(destination, ETowerType.TempTower);
 
                 Debug.Log($"Grid Position: {gridPosition}");
                 Debug.Log($"Tile Center Position: {tileCenter}");

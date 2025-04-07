@@ -39,10 +39,12 @@ public class UIManager : Singleton<UIManager>
     
     }
 
-    public void ToggleBuildMode(Button button)
+    public void ToggleBuildMode(Button button, ETowerType type)
     {
         Debug.Log("Build Mode: " + (isBuildModeActive ? "빌드모드 활성화" : "빌드 모드 비활성"));
-        
+        GameObject tower = TowerSpawner.Instance.SpawnTower((Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition), type);
+        TileClickManager.Instance.SelectedTower = tower;
+
         isBuildModeActive = !isBuildModeActive; // 상태 전환
         CrrentButton = button;
         CrrentButton.interactable = !isBuildModeActive;
