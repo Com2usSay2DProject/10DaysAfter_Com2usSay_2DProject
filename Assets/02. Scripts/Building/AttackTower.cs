@@ -22,13 +22,17 @@ public struct DirectionSprite
 
 public class AttackTower : TowerRoot
 {
-    [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private DirectionSprite[] directionSprites;
+    [SerializeField] private GameObject Turret;
 
     private Dictionary<Direction8, Sprite> _spriteDict;
+    private SpriteRenderer _turretSprite;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
+        _turretSprite = Turret.GetComponent<SpriteRenderer>();
         _spriteDict = new Dictionary<Direction8, Sprite>();
         foreach (var entry in directionSprites)
         {
@@ -46,7 +50,7 @@ public class AttackTower : TowerRoot
         // 방향에 맞는 스프라이트 교체
         if (_spriteDict.TryGetValue(direction, out Sprite sprite))
         {
-            spriteRenderer.sprite = sprite;
+            _turretSprite.sprite = sprite;
         }
 
         // 필요 시: 해당 방향으로 총알 발사 등

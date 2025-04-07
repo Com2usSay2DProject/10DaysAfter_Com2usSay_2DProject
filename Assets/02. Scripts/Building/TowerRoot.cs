@@ -40,15 +40,15 @@ public class TowerRoot : MonoBehaviour
     private bool _canBuild;
     public bool CanBuild => _canBuild;
 
-    private SpriteRenderer _spriteRenderer;
-    private Rigidbody2D _rigid;
+    protected SpriteRenderer _spriteRenderer;
+    protected Rigidbody2D _rigid;
     private Color _tempColor = new Color(255, 255, 255, 0.5f);
     private Color _errorColor = new Color(255, 0, 0, 0.5f);
 
     private HashSet<Collider2D> _overlappingColliders = new HashSet<Collider2D>();
 
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigid = GetComponent<Rigidbody2D>();

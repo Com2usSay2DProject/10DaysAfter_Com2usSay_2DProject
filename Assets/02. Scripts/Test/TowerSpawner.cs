@@ -23,6 +23,19 @@ public class TowerSpawner : Singleton<TowerSpawner>
         });
         collection.Datas[0].Cost.Add(new TowerCostData(ResourceType.Wood, 1));
         collection.Datas[0].Cost.Add(new TowerCostData(ResourceType.Stone, 2));
+
+        collection.Datas.Add(new TowerData
+        {
+            TowerType = ETowerType.AttackTower,
+            TypeString = ETowerType.AttackTower.ToString(),
+            MaxHp = 100f,
+            Damage = 10f,
+            Range = 3f,
+            AtkSpeed = 1f,
+            Cost = new System.Collections.Generic.List<TowerCostData>()
+        });
+        collection.Datas[1].Cost.Add(new TowerCostData(ResourceType.Wood, 1));
+        collection.Datas[1].Cost.Add(new TowerCostData(ResourceType.Stone, 2));
         JsonDataManager.CreateFile("Tower/TowerDataCollection", collection);
         /*TowerCostDataCollection collection = new TowerCostDataCollection();
         collection.Datas.Add(new TowerCostData
