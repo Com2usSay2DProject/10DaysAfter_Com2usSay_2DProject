@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
     public EEnemyType EnemyType;
     public float Hp;
 
+    [Header("# Prefab")]
+    public GameObject ProjectilePrefab;
 
 
     protected EnemyStateMachine _stateMachine;
@@ -34,7 +36,7 @@ public class Enemy : MonoBehaviour
 
     public Queue<Vector3> Path; // 현재 이동경로
     public Vector2 FaceDir; //현재 보는 방향
-    public GameObject AttackTerget = null;
+    public GameObject AttackTerget = null; //현재 목표인 오브젝트
 
     #region Staties
     public EnemyIdleState IdleState;

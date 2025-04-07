@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class EnemyAnimTrigger : MonoBehaviour
 {
+    //애니메이션 트리거용
+
     Enemy _enemy;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,5 +39,14 @@ public class EnemyAnimTrigger : MonoBehaviour
 
         Tower.TakeDamage(_enemy.Damage);
         Debug.Log("Attack Damage");
+    }
+
+    private void ThrowAttckTrigger()
+    {
+        if (_enemy.ProjectilePrefab == null) return;
+
+        Projectile projectile = Instantiate(_enemy.ProjectilePrefab).GetComponent<Projectile>();
+        projectile.Init(_enemy, _enemy.Damage, _enemy.FaceDir);
+        projectile.transform.position = _enemy.transform.position;
     }
 }

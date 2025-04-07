@@ -14,6 +14,8 @@ public class EnemyAttackState : EnemyState
         base.Enter();
         _rigidbody.linearVelocity = Vector2.zero;
         _enemyBase.Animator.speed = _enemyBase.AttackRate;
+
+        _enemyBase.FaceDir = (_enemyBase.AttackTerget.transform.position-_enemyBase.transform.position).normalized;
     }
 
     public override void Exit()

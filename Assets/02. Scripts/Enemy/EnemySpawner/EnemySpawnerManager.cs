@@ -15,7 +15,7 @@ public class EnemySpawnerManager : MonoBehaviour
     public int spawnerCount = 10;
     public float minSpawnDelay = 1f;
     public float maxSpawnDelay = 5f;
-    private int enableSpawnType = 1; //-> 애너미 타입중에 해당 웨이브에서 나오게할 종류의수 int를 애너미 타입으로 형변환해서 사용함 현재 4종류 적 예정?
+    private int enableSpawnType = 4; //-> 애너미 타입중에 해당 웨이브에서 나오게할 종류의수 int를 애너미 타입으로 형변환해서 사용함 현재 4종류 적 예정?
     //-----------------------------------
 
     [SerializeField] private float _spawnRadiusMin;
@@ -58,10 +58,11 @@ public class EnemySpawnerManager : MonoBehaviour
         {
             float randomDelay = Random.Range(minSpawnDelay, maxSpawnDelay);
             yield return new WaitForSeconds(randomDelay);
-            int randomType = Random.Range(0, enableSpawnType + 1);
+            int randomType = Random.Range(0, enableSpawnType);
 
-            //spawner.Spawn((EEnemyType)randomType);
-            spawner.Spawn(EEnemyType.Boomer);
+            spawner.Spawn((EEnemyType)randomType);
+            //spawner.Spawn(EEnemyType.ThrowEnemy);
+
         }
     }
 
