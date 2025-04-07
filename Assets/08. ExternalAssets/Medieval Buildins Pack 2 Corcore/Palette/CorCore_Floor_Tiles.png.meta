@@ -1,0 +1,288 @@
+fileFormatVersion: 2
+guid: 291ce423cb78dda42aa842920fecbfc2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CorCore_Floor_Tiles_43
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 366
+        width: 130
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03921e90687610240bd9f450c5ef7781
+      internalID: 1670322474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CorCore_Floor_Tiles_44
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 367
+        width: 130
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32bc27c05a5151b4f9622f355ffc4660
+      internalID: 555812052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CorCore_Floor_Tiles_49
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 290
+        width: 130
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd1cf0b2c08799e499c12aaf4d532fdc
+      internalID: 1724820502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CorCore_Floor_Tiles_50
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 290
+        width: 130
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad6180b1c812f4c4eb48f463df5bbd3c
+      internalID: -1805152603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      CorCore_Floor_Tiles_0: -447037689
+      CorCore_Floor_Tiles_1: 1305063653
+      CorCore_Floor_Tiles_10: -384262205
+      CorCore_Floor_Tiles_11: 379188181
+      CorCore_Floor_Tiles_12: 1699643981
+      CorCore_Floor_Tiles_13: -15469130
+      CorCore_Floor_Tiles_14: -1195031582
+      CorCore_Floor_Tiles_15: -1548741577
+      CorCore_Floor_Tiles_16: 2093739517
+      CorCore_Floor_Tiles_17: 1439553996
+      CorCore_Floor_Tiles_18: 501238858
+      CorCore_Floor_Tiles_19: 1802938562
+      CorCore_Floor_Tiles_2: 257760999
+      CorCore_Floor_Tiles_20: 1151787755
+      CorCore_Floor_Tiles_21: -1725353438
+      CorCore_Floor_Tiles_22: -971137582
+      CorCore_Floor_Tiles_23: 484565656
+      CorCore_Floor_Tiles_24: 1382971544
+      CorCore_Floor_Tiles_25: 1735601732
+      CorCore_Floor_Tiles_26: -18124199
+      CorCore_Floor_Tiles_27: 1943940287
+      CorCore_Floor_Tiles_28: -1968867899
+      CorCore_Floor_Tiles_29: -494885512
+      CorCore_Floor_Tiles_3: -1471109642
+      CorCore_Floor_Tiles_30: -2106588494
+      CorCore_Floor_Tiles_31: 790311630
+      CorCore_Floor_Tiles_32: -563154894
+      CorCore_Floor_Tiles_33: -969804280
+      CorCore_Floor_Tiles_34: 424483915
+      CorCore_Floor_Tiles_35: 248636309
+      CorCore_Floor_Tiles_36: 2140081524
+      CorCore_Floor_Tiles_37: 590692495
+      CorCore_Floor_Tiles_38: -1379795118
+      CorCore_Floor_Tiles_39: 1365433788
+      CorCore_Floor_Tiles_4: 2088021748
+      CorCore_Floor_Tiles_40: 2119136188
+      CorCore_Floor_Tiles_41: 311780002
+      CorCore_Floor_Tiles_42: 597830080
+      CorCore_Floor_Tiles_43: 1670322474
+      CorCore_Floor_Tiles_44: 555812052
+      CorCore_Floor_Tiles_45: -1002752227
+      CorCore_Floor_Tiles_46: 708309240
+      CorCore_Floor_Tiles_47: -258024467
+      CorCore_Floor_Tiles_48: 1281597014
+      CorCore_Floor_Tiles_49: 1724820502
+      CorCore_Floor_Tiles_5: 1901370336
+      CorCore_Floor_Tiles_50: -1805152603
+      CorCore_Floor_Tiles_51: 1613675252
+      CorCore_Floor_Tiles_52: -1451929441
+      CorCore_Floor_Tiles_53: 187811978
+      CorCore_Floor_Tiles_54: -533508232
+      CorCore_Floor_Tiles_55: -418441275
+      CorCore_Floor_Tiles_56: 1830351163
+      CorCore_Floor_Tiles_57: -352758079
+      CorCore_Floor_Tiles_58: -463600039
+      CorCore_Floor_Tiles_59: 1248340559
+      CorCore_Floor_Tiles_6: -137514004
+      CorCore_Floor_Tiles_60: 1796022157
+      CorCore_Floor_Tiles_61: 1171568585
+      CorCore_Floor_Tiles_62: 1605390349
+      CorCore_Floor_Tiles_63: 594148153
+      CorCore_Floor_Tiles_64: -1929796841
+      CorCore_Floor_Tiles_65: -1613001053
+      CorCore_Floor_Tiles_66: 238924213
+      CorCore_Floor_Tiles_67: 1290628846
+      CorCore_Floor_Tiles_68: 63044935
+      CorCore_Floor_Tiles_69: 1428415790
+      CorCore_Floor_Tiles_7: -1070941332
+      CorCore_Floor_Tiles_70: -1220980252
+      CorCore_Floor_Tiles_71: 11507533
+      CorCore_Floor_Tiles_72: -684893274
+      CorCore_Floor_Tiles_73: 331434841
+      CorCore_Floor_Tiles_8: 225344911
+      CorCore_Floor_Tiles_9: 690177554
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255716
+  packageName: Medieval Building Pack 2 CorCore
+  packageVersion: 1.0
+  assetPath: Assets/Medieval Buildins Pack 2 Corcore/Palette/CorCore_Floor_Tiles.png
+  uploadId: 597545

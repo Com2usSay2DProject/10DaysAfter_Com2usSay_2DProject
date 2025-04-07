@@ -1,0 +1,2403 @@
+fileFormatVersion: 2
+guid: 0aa001eff76b97f40b9d0888795feeeb
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: medieval_atlas_1_0
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 3128
+        width: 135
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c0c373333f85544b81fb202ec1188b7
+      internalID: 427305764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_3
+      rect:
+        serializedVersion: 2
+        x: 1929
+        y: 3002
+        width: 292
+        height: 383
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f05383558f560c745948e57f6b43a7b9
+      internalID: -942469420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_4
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 3002
+        width: 297
+        height: 316
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 364092d7e2a48f94ea304ca2fb06d4ab
+      internalID: 1465875264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_5
+      rect:
+        serializedVersion: 2
+        x: 2704
+        y: 3002
+        width: 506
+        height: 393
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ed23372ed8cd174da442c81238d181d
+      internalID: -2053686470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_6
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 3127
+        width: 155
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 361a4aedbdefe4e468e314d3e295840c
+      internalID: -1733074932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_7
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 3122
+        width: 135
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81f1216b73ab078438e610cc1c6fe781
+      internalID: 822217217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_8
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 3111
+        width: 126
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30c923b092c3e804a9aa0bad5ab3e69c
+      internalID: 2022133529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_9
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 3122
+        width: 171
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 513d07f195ba9c84e93c8d660dafbec8
+      internalID: 616668654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_10
+      rect:
+        serializedVersion: 2
+        x: 1276
+        y: 3118
+        width: 155
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 795d80433c1009c42963c82587f1afe5
+      internalID: 1610133994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_11
+      rect:
+        serializedVersion: 2
+        x: 1465
+        y: 3118
+        width: 141
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc4ac8d5f52d0a64d8b857a0f8272582
+      internalID: 2055365912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_12
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 2880
+        width: 200
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7a7c94c4afe24b4f886137203befe61
+      internalID: 1857497888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_13
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 2887
+        width: 183
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a213889a345bbbe4983b3c6c3a4dfaf1
+      internalID: -1798427849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_14
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 2889
+        width: 197
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e75ebc43abe04146ba9198db1852cc1
+      internalID: 475660339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_15
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 2904
+        width: 175
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83aedf8314ebaaa4695864339de26d2d
+      internalID: -707312658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_16
+      rect:
+        serializedVersion: 2
+        x: 1236
+        y: 2906
+        width: 185
+        height: 174
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0c831c92ff729b4c9d362cbae4f6175
+      internalID: 406585451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_17
+      rect:
+        serializedVersion: 2
+        x: 1465
+        y: 2904
+        width: 175
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79e322585366fa74d81dffb893ec001e
+      internalID: 761046070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_18
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 2581
+        width: 281
+        height: 376
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef705cf1b76e1f6468692a52d827a097
+      internalID: -2075846402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_19
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 2581
+        width: 259
+        height: 375
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84c7a200eeb04124680ef18d7b9f5d4b
+      internalID: -1918475809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_20
+      rect:
+        serializedVersion: 2
+        x: 2599
+        y: 2589
+        width: 275
+        height: 368
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e5e67e74e5c4f349a13c98c28c253b3
+      internalID: -102275257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_21
+      rect:
+        serializedVersion: 2
+        x: 2918
+        y: 2581
+        width: 291
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 245b0acd275afd645add6d0c6564e9eb
+      internalID: -445490401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_22
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 2657
+        width: 175
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 501c5874f3fb9e84bb8c9b6bba81a445
+      internalID: 45881490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_23
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 2648
+        width: 203
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6857897c670142d4fa8d2438d49f3685
+      internalID: -650802874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_24
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 2646
+        width: 197
+        height: 188
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ef452c4eb95b5f448f91e619b9c053a
+      internalID: 164015755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_25
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 2658
+        width: 197
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d85aa9be059aac84093b2e2abcfa9741
+      internalID: 509363322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_26
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 2640
+        width: 192
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f642c5eba2fbe74c892d1e0ff7ae0b6
+      internalID: -1324622432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_27
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 2628
+        width: 241
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89ef4529d9849d144b015ba9a3c9ca5b
+      internalID: -841450389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_28
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 2246
+        width: 229
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe084500ac240fa43aacb65ee90696eb
+      internalID: 476139104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_29
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 2262
+        width: 235
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ab4c68b17a9dd48baca6532d7b3bcf
+      internalID: -374775500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_30
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 2252
+        width: 214
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2904af9e5769691458453569589c9873
+      internalID: -1283645157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_31
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 2287
+        width: 225
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f08e3e045b923794887f810b6ecba653
+      internalID: 257795480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_32
+      rect:
+        serializedVersion: 2
+        x: 1838
+        y: 2252
+        width: 321
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3c07839b6b43824e967ea4aa1fed925
+      internalID: -794571759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_33
+      rect:
+        serializedVersion: 2
+        x: 2236
+        y: 2243
+        width: 298
+        height: 308
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fc54ccee2d285143bfe9ef6be9a50c0
+      internalID: 1269272843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_34
+      rect:
+        serializedVersion: 2
+        x: 2566
+        y: 2235
+        width: 340
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8666b49bbe95b94da1fef41c98a263d
+      internalID: 738032489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_35
+      rect:
+        serializedVersion: 2
+        x: 2918
+        y: 2197
+        width: 297
+        height: 354
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64c8cef18aa853e41ab99cf52a457ee6
+      internalID: -83613407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_36
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 1908
+        width: 198
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81a6bc7c07c0fa94b8000871fd47c285
+      internalID: -358782824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_37
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 1941
+        width: 198
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac02a8954f15c3540b712c3c8fcf8283
+      internalID: 573542862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_38
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 1888
+        width: 242
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1186d0d452ec8d34e82bcf2a843190bd
+      internalID: -1272131626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_39
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 1905
+        width: 167
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35bc6b948df019d4898469dcacdedeca
+      internalID: 1324718133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_40
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 1905
+        width: 200
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21ce37e10f4e46643ab58729079ddd69
+      internalID: 1273303245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_41
+      rect:
+        serializedVersion: 2
+        x: 1838
+        y: 1922
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a212208a3b192a4ebfe38662d861edf
+      internalID: 887321460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_42
+      rect:
+        serializedVersion: 2
+        x: 2187
+        y: 1929
+        width: 324
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03b0fc0d87de5e742872af06b29a12ad
+      internalID: -245711671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_43
+      rect:
+        serializedVersion: 2
+        x: 2545
+        y: 1915
+        width: 342
+        height: 251
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0a8d3078a8e95e429cb7f5d077abccc
+      internalID: -48709772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_44
+      rect:
+        serializedVersion: 2
+        x: 2910
+        y: 1905
+        width: 311
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a233da110b1462428710f176d077a12
+      internalID: -469371249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_46
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 1638
+        width: 315
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ed8078836a4bb45915e70754592899
+      internalID: -1264409681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_47
+      rect:
+        serializedVersion: 2
+        x: 2202
+        y: 1616
+        width: 275
+        height: 253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d1960549510e4044980d5757c7d8d50
+      internalID: 2027296930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_48
+      rect:
+        serializedVersion: 2
+        x: 2532
+        y: 1607
+        width: 345
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 701430b93e7639f42b8b1b66e8489ed5
+      internalID: 1229655788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_49
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 1624
+        width: 304
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53d13efebd909bf47899cc8602c6633d
+      internalID: -74794623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_50
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 1512
+        width: 190
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 643784920cde7d540b9c8534fee6cbc0
+      internalID: 86976865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_51
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 1554
+        width: 152
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba936c1ba455a654e95843f5af1034e7
+      internalID: -617519543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_52
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1536
+        width: 136
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27fddf04a8a3d6749892e0b9077dcb65
+      internalID: -63278139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_53
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 1549
+        width: 119
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d489a2a8cf14e3f49b7bb8673432b5b0
+      internalID: 399599051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_54
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 1549
+        width: 116
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde60b622875ade4aa9d9d2a708bca5e
+      internalID: 1688156080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_55
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 1541
+        width: 124
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71586595d3873b64e99958e865a9b595
+      internalID: -1586203818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_56
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 1520
+        width: 140
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fe2fb9fdc9d8354fbe0cddad2f5c7db
+      internalID: -1836282437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_57
+      rect:
+        serializedVersion: 2
+        x: 1465
+        y: 1542
+        width: 141
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 114579e9f2f4b694c80bb79087bdb73b
+      internalID: 1848925942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_58
+      rect:
+        serializedVersion: 2
+        x: 1876
+        y: 1283
+        width: 323
+        height: 297
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4142c2bce66b0ea4fae40b8d1fffa7db
+      internalID: -110275816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_59
+      rect:
+        serializedVersion: 2
+        x: 2235
+        y: 1276
+        width: 312
+        height: 312
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1cd9f272eae07d469417aac8ef5d973
+      internalID: 1409680242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_60
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 1334
+        width: 137
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38018e5097256654fafb9a4971098849
+      internalID: 1258051522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_62
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 1307
+        width: 137
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23314a845b4873349ba3d3eba121883e
+      internalID: -1211859816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_63
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 1324
+        width: 113
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24b573a8448af1d47a5f813eb94a7805
+      internalID: 1897720246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_64
+      rect:
+        serializedVersion: 2
+        x: 2582
+        y: 1285
+        width: 338
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51a7029169c6d8c41a13ff0f5a585aac
+      internalID: 1591791511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_65
+      rect:
+        serializedVersion: 2
+        x: 2960
+        y: 1291
+        width: 286
+        height: 195
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85a186a754f23024baca0d6e9c4cddec
+      internalID: -891645885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_67
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 1296
+        width: 125
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7568b41ef442c744928f9b3961020a8
+      internalID: 1317065537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_68
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 1336
+        width: 114
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea05f07fb1a426543837aac13c9ea044
+      internalID: 132065953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_69
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1310
+        width: 143
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba9ff553030645649986f10dbfe51b56
+      internalID: 631542521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_70
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 1310
+        width: 118
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed8a6fa5c3265ed41ab85aa86a535000
+      internalID: -896910767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_71
+      rect:
+        serializedVersion: 2
+        x: 1462
+        y: 1324
+        width: 125
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59f5bc67961c12c4a91d90eda6b6b30a
+      internalID: 975682288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_72
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1066
+        width: 174
+        height: 211
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66b793d28838a7d4bb94d6c120762d62
+      internalID: 1949525843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_73
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 1030
+        width: 187
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60b2f16f769a23f48b23ee06033b4e2e
+      internalID: -1167480583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_74
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 1048
+        width: 127
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 490c4f0f07f198549a533376e919e43b
+      internalID: 1662669687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_75
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 1048
+        width: 145
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf690e01016bfc549b04ccc2a794262e
+      internalID: -1288301717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_76
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 1048
+        width: 184
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e5cd631e0fa8b54bb77bb3fe6c9d368
+      internalID: -230957381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_77
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 1101
+        width: 111
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e16e91079ee96044a0b84d83aed8499
+      internalID: -128532367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_78
+      rect:
+        serializedVersion: 2
+        x: 1474
+        y: 1100
+        width: 118
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 381186ed10c7b054db31fa83d8d8430e
+      internalID: 1149109306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_79
+      rect:
+        serializedVersion: 2
+        x: 1885
+        y: 968
+        width: 303
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e4603f8ddc3dd745a596ff1f7136d01
+      internalID: -643705942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_80
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 954
+        width: 268
+        height: 272
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40e88ac4442be084f972d1ee309dc625
+      internalID: 689694176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_81
+      rect:
+        serializedVersion: 2
+        x: 2634
+        y: 912
+        width: 253
+        height: 277
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7c336233e317fe4bb6682526f016c64
+      internalID: -948205885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_82
+      rect:
+        serializedVersion: 2
+        x: 2998
+        y: 912
+        width: 245
+        height: 304
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8cc3af27c23dbe48bec8f2aaa0ecad7
+      internalID: 737967313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_83
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 850
+        width: 168
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc8ea46d705e6da498f2dfcb4da562f8
+      internalID: -1024072886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_84
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 869
+        width: 113
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9412bfd7f1b5c4e43a763125e27c9931
+      internalID: -487756253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_86
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 625
+        width: 212
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bba3d9efe9266042ab63d484c664458
+      internalID: -1021111856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_87
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 604
+        width: 248
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c035c7a2bcad6948b24399859ea1b53
+      internalID: 301927979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_88
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 608
+        width: 210
+        height: 251
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4406128a6a56ca6458c4b75be2eeb08e
+      internalID: -548020275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_89
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 604
+        width: 256
+        height: 195
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 069d5263b93871a4fb1d78f3e3dc96ed
+      internalID: 1713766462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_90
+      rect:
+        serializedVersion: 2
+        x: 1418
+        y: 608
+        width: 124
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc5e981e03f5a1f46846ca7f7009cad0
+      internalID: -1014789386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_91
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 640
+        width: 77
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: affdf47bfcc588b4f8c7d8b93f13511a
+      internalID: 813435309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_92
+      rect:
+        serializedVersion: 2
+        x: 1922
+        y: 572
+        width: 255
+        height: 251
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0a19141f8bd15346a5213be6affdbb1
+      internalID: -74480447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_93
+      rect:
+        serializedVersion: 2
+        x: 2299
+        y: 582
+        width: 235
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dc925996b5dd804cb2650d749590a06
+      internalID: -1335852357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_94
+      rect:
+        serializedVersion: 2
+        x: 2669
+        y: 611
+        width: 232
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2aa35dae0d2c984b98d01f58fde891f
+      internalID: 1588182086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_95
+      rect:
+        serializedVersion: 2
+        x: 2995
+        y: 546
+        width: 217
+        height: 314
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 269486a3af8da704291c2a1984d55cc7
+      internalID: -507298270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_97
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 228
+        width: 201
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb9711a32101674da14069477b22da0
+      internalID: 1233756674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_98
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 233
+        width: 142
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddf1db0b645d7714fb41d4767ddb81a3
+      internalID: 1455709835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_99
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 228
+        width: 156
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c3ff3aeabb5b9f4abfe911ec6081d44
+      internalID: 1647098800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_100
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 233
+        width: 161
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73a66de966f3f154cbe26d17ac80b267
+      internalID: 1929139387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_101
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 245
+        width: 127
+        height: 195
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7abe1b586a787794289af483992914c3
+      internalID: 1394445926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_102
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 255
+        width: 104
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e95f0c0872b4654db153d2fd3324546
+      internalID: 1173235045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_103
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 256
+        width: 103
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 675410ee52e50ae44859326e7900ecf7
+      internalID: 207995464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_104
+      rect:
+        serializedVersion: 2
+        x: 1465
+        y: 249
+        width: 146
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf4927f5e8b27b0439e7be8d4a5f9fca
+      internalID: 707474705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_105
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 247
+        width: 189
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3912525071c0d7439a037468525c3a0
+      internalID: 620302475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_106
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 254
+        width: 205
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e14d40d9763890244bec0d4f630eaa42
+      internalID: -1360095949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_107
+      rect:
+        serializedVersion: 2
+        x: 2347
+        y: 264
+        width: 221
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 178595780d0ecbc48b640ad2a311f034
+      internalID: -933677369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_108
+      rect:
+        serializedVersion: 2
+        x: 2633
+        y: 232
+        width: 271
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3511d33290c65a340a37bbb8a7a96d0d
+      internalID: -1181613260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medieval_atlas_1_109
+      rect:
+        serializedVersion: 2
+        x: 3007
+        y: 250
+        width: 246
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71cf7990340216248b1814bc4b8c03d0
+      internalID: 777311236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      medieval_atlas_1_0: 427305764
+      medieval_atlas_1_1: 76911443
+      medieval_atlas_1_10: 1610133994
+      medieval_atlas_1_100: 1929139387
+      medieval_atlas_1_101: 1394445926
+      medieval_atlas_1_102: 1173235045
+      medieval_atlas_1_103: 207995464
+      medieval_atlas_1_104: 707474705
+      medieval_atlas_1_105: 620302475
+      medieval_atlas_1_106: -1360095949
+      medieval_atlas_1_107: -933677369
+      medieval_atlas_1_108: -1181613260
+      medieval_atlas_1_109: 777311236
+      medieval_atlas_1_11: 2055365912
+      medieval_atlas_1_12: 1857497888
+      medieval_atlas_1_13: -1798427849
+      medieval_atlas_1_14: 475660339
+      medieval_atlas_1_15: -707312658
+      medieval_atlas_1_16: 406585451
+      medieval_atlas_1_17: 761046070
+      medieval_atlas_1_18: -2075846402
+      medieval_atlas_1_19: -1918475809
+      medieval_atlas_1_2: 477575966
+      medieval_atlas_1_20: -102275257
+      medieval_atlas_1_21: -445490401
+      medieval_atlas_1_22: 45881490
+      medieval_atlas_1_23: -650802874
+      medieval_atlas_1_24: 164015755
+      medieval_atlas_1_25: 509363322
+      medieval_atlas_1_26: -1324622432
+      medieval_atlas_1_27: -841450389
+      medieval_atlas_1_28: 476139104
+      medieval_atlas_1_29: -374775500
+      medieval_atlas_1_3: -942469420
+      medieval_atlas_1_30: -1283645157
+      medieval_atlas_1_31: 257795480
+      medieval_atlas_1_32: -794571759
+      medieval_atlas_1_33: 1269272843
+      medieval_atlas_1_34: 738032489
+      medieval_atlas_1_35: -83613407
+      medieval_atlas_1_36: -358782824
+      medieval_atlas_1_37: 573542862
+      medieval_atlas_1_38: -1272131626
+      medieval_atlas_1_39: 1324718133
+      medieval_atlas_1_4: 1465875264
+      medieval_atlas_1_40: 1273303245
+      medieval_atlas_1_41: 887321460
+      medieval_atlas_1_42: -245711671
+      medieval_atlas_1_43: -48709772
+      medieval_atlas_1_44: -469371249
+      medieval_atlas_1_45: 1833811046
+      medieval_atlas_1_46: -1264409681
+      medieval_atlas_1_47: 2027296930
+      medieval_atlas_1_48: 1229655788
+      medieval_atlas_1_49: -74794623
+      medieval_atlas_1_5: -2053686470
+      medieval_atlas_1_50: 86976865
+      medieval_atlas_1_51: -617519543
+      medieval_atlas_1_52: -63278139
+      medieval_atlas_1_53: 399599051
+      medieval_atlas_1_54: 1688156080
+      medieval_atlas_1_55: -1586203818
+      medieval_atlas_1_56: -1836282437
+      medieval_atlas_1_57: 1848925942
+      medieval_atlas_1_58: -110275816
+      medieval_atlas_1_59: 1409680242
+      medieval_atlas_1_6: -1733074932
+      medieval_atlas_1_60: 1258051522
+      medieval_atlas_1_61: -707004635
+      medieval_atlas_1_62: -1211859816
+      medieval_atlas_1_63: 1897720246
+      medieval_atlas_1_64: 1591791511
+      medieval_atlas_1_65: -891645885
+      medieval_atlas_1_66: 979624613
+      medieval_atlas_1_67: 1317065537
+      medieval_atlas_1_68: 132065953
+      medieval_atlas_1_69: 631542521
+      medieval_atlas_1_7: 822217217
+      medieval_atlas_1_70: -896910767
+      medieval_atlas_1_71: 975682288
+      medieval_atlas_1_72: 1949525843
+      medieval_atlas_1_73: -1167480583
+      medieval_atlas_1_74: 1662669687
+      medieval_atlas_1_75: -1288301717
+      medieval_atlas_1_76: -230957381
+      medieval_atlas_1_77: -128532367
+      medieval_atlas_1_78: 1149109306
+      medieval_atlas_1_79: -643705942
+      medieval_atlas_1_8: 2022133529
+      medieval_atlas_1_80: 689694176
+      medieval_atlas_1_81: -948205885
+      medieval_atlas_1_82: 737967313
+      medieval_atlas_1_83: -1024072886
+      medieval_atlas_1_84: -487756253
+      medieval_atlas_1_85: 971536694
+      medieval_atlas_1_86: -1021111856
+      medieval_atlas_1_87: 301927979
+      medieval_atlas_1_88: -548020275
+      medieval_atlas_1_89: 1713766462
+      medieval_atlas_1_9: 616668654
+      medieval_atlas_1_90: -1014789386
+      medieval_atlas_1_91: 813435309
+      medieval_atlas_1_92: -74480447
+      medieval_atlas_1_93: -1335852357
+      medieval_atlas_1_94: 1588182086
+      medieval_atlas_1_95: -507298270
+      medieval_atlas_1_96: -840736762
+      medieval_atlas_1_97: 1233756674
+      medieval_atlas_1_98: 1455709835
+      medieval_atlas_1_99: 1647098800
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255716
+  packageName: Medieval Building Pack 2 CorCore
+  packageVersion: 1.0
+  assetPath: Assets/Medieval Buildins Pack 2 Corcore/Assets/medieval_atlas_1.png
+  uploadId: 597545
