@@ -76,6 +76,9 @@ public class TileClickManager : Singleton<TileClickManager>
                         }
                         else
                         {
+                            TowerPoolManager.Instance.ReturnObject(SelectedTower, _selectedTower.TowerType);
+                            _selectedTower = null;
+                            UIManager.Instance.ToggleBuildModeOff();
                             // 건설 불가 사운드
                             break;
                         }
