@@ -29,6 +29,16 @@ public class UIManager : Singleton<UIManager>
         }
     }
 
+    public void SetGold()
+    {
+
+    }
+
+    public void SetItem() 
+    { 
+    
+    }
+
     public void ToggleBuildMode(Button button)
     {
         Debug.Log("Build Mode: " + (isBuildModeActive ? "빌드모드 활성화" : "빌드 모드 비활성"));
