@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Prefab Wall NW - 2x1 - Size 1_0: 6341020357576031990
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

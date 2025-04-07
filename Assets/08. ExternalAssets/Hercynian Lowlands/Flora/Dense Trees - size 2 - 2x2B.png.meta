@@ -185,7 +185,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dense Trees - size 2 - 2x2B_0: -123470046462307553
+      Dense Trees - size 2 - 2x2B_1: 248471922486385037
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

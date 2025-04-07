@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      german_panzer4_turret7_0: -3438730391148066245
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

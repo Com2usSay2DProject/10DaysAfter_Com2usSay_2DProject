@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Gate - SWxNE - offset 1_0: -554225603156594137
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -185,7 +185,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Rocky Cover - Size 1B_0: 5404479007568183244
+      Rocky Cover - Size 1B_1: 8939640800274762787
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -185,7 +185,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dense Flora - size 1 - 2x2A_0: -3767774951371448354
+      Dense Flora - size 1 - 2x2A_1: -184798157442203416
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

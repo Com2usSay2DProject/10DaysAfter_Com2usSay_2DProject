@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Prefab Brdige Ramp - SW - 2x1_0: 8775480352712592965
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

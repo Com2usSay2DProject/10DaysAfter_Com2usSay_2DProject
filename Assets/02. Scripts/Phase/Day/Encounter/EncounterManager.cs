@@ -18,7 +18,7 @@ public class EncounterManager : Singleton<EncounterManager>
 	// 테스트용으로 사용
 	private void Start()
 	{
-		ForceTriggerEncounter("S_EVT_001");
+		//ForceTriggerEncounter("S_EVT_001");
 	}
 
 	private void LoadAllEncounters()
@@ -100,6 +100,13 @@ public class EncounterManager : Singleton<EncounterManager>
 			}
 		}
 
+		_pendingEncounter = null;
+		UIEncounterTab.Instance.HideTab();
+	}
+
+	public void IgnoreEncounter()
+	{
+		//페이즈 끝날 때까지 무시했을 경우
 		_pendingEncounter = null;
 		UIEncounterTab.Instance.HideTab();
 	}

@@ -185,7 +185,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Muddy Road W Bend_0: 7269416582300583650
+      Muddy Road W Bend_1: -8037633715164418419
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
