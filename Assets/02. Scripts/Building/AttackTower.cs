@@ -34,10 +34,19 @@ public class AttackTower : TowerRoot
 
         _turretSprite = Turret.GetComponent<SpriteRenderer>();
         _spriteDict = new Dictionary<Direction8, Sprite>();
+
+
         foreach (var entry in directionSprites)
         {
             _spriteDict[entry.direction] = entry.sprite;
         }
+    }
+
+    public override void SetPosition()
+    {
+        base.SetPosition();
+
+        _turretSprite.sortingOrder = _turretSprite.sortingOrder + 1;
     }
 
     protected override void Attack()

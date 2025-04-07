@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4087703220034663441}
   - component: {fileID: 5016515145468676071}
   - component: {fileID: 4146804072151017660}
-  - component: {fileID: 4798451395725576019}
   m_Layer: 0
   m_Name: EnemySpawnerManager
   m_TagString: Untagged
@@ -88,20 +87,3 @@ MonoBehaviour:
     InitCount: 30
     Prefab: {fileID: 837715679069067520, guid: b5450c2ac5a65aa4dbbeddb6599e1862, type: 3}
     Container: {fileID: 4087703220034663441}
---- !u!114 &4798451395725576019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347658688111269488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b53c579d3f96d4e43bbc015a9369bba2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FinishDay: 10
-  DayPhaseDuration: 30
-  NightPhaseDuration: 30
-  FadeTime: 3
-  BuildButton: {fileID: 0}

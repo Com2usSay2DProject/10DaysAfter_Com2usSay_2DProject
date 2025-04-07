@@ -103,7 +103,7 @@ public class TowerRoot : MonoBehaviour
         }
     }
 
-    public void SetPosition()
+    public virtual void SetPosition()
     {
         _spriteRenderer.color = Color.white;
         _isBuilt = true;

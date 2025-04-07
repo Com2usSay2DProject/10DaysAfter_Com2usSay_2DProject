@@ -35,7 +35,7 @@ public class PhaseManager : Singleton<PhaseManager>
 		Debug.Log("This is the Day Phase");
 		//건물 건설 활성화 (UI)
 		//이벤트 발동 활성화
-		//EncounterManager.Instance.TriggerEncounter(_currentDay);
+		EncounterManager.Instance.TriggerEncounter(_currentDay);
 
 		yield return new WaitForSeconds(dayDuration);
 
