@@ -1,0 +1,105 @@
+using UnityEngine;
+using System.Collections.Generic;
+using System.IO;
+
+public class EncounterManager : Singleton<EncounterManager>
+{
+	// 이벤트 데이터 전체 보유
+	public List<GameEncounter> GameEncounters;
+	private GameEncounter _pendingEncounter;
+
+	private void Awake()
+	{
+		Initialize_DontDestroyOnLoad();
+		// 이벤트 리스트를 받아옴
+		LoadAllEncounters();
+	}
+
+	// 테스트용으로 사용
+	private void Start()
+	{
+		ForceTriggerEncounter("EVT_003");
+	}
+
+	private void LoadAllEncounters()
+	{
+		string path = Application.dataPath + "/Resources/Json/Encounters";
+		if (!Directory.Exists(path)) return;
+
+		string[] files = Directory.GetFiles(path, "*.json");
+		foreach (string file in files)
+		{
+			string rawJson = File.ReadAllText(file);
+			GameEncounter e = JsonDataManager.FromJson<GameEncounter>(rawJson);
+			if (e != null)
+			{
+				GameEncounters.Add(e);
+			}
+		}
+	}
+
+	// 페이즈 전환 시 이벤트 발생 or 미발생 (조건 중 랜덤으로 골라옴)
+	public void TriggerEncounter(int currentDay)
+	{
+		List<GameEncounter> validEncounter = new();
+
+		foreach (var e in GameEncounters)
+		{
+			if (e.Condition.triggerDays.Contains(currentDay) && StateManager.Instance.GetBranch(e.Condition.specialConditionRequired))
+			{
+				validEncounter.Add(e);
+			}
+		}
+
+		if (validEncounter.Count == 0)
+		{
+			Debug.Log("[EncounterManager] 해당 조건에 맞는 이벤트 없음.");
+			return;
+		}
+
+		_pendingEncounter = validEncounter[Random.Range(0, validEncounter.Count)];
+		UIEncounterTab.Instance.ShowTab(_pendingEncounter.Title);
+	}
+
+	// 강제로 이벤트 실행시킬 때 사용(encounterID 필요)
+	public void ForceTriggerEncounter(string encounterId)
+	{
+		GameEncounter found = GameEncounters.Find(e => e.EncounterId == encounterId);
+		if (found != null)
+		{
+			_pendingEncounter = found;
+			UIEncounterTab.Instance.ShowTab(found.Title);
+		}
+		else
+		{
+			Debug.LogWarning($"[EncounterManager] Encounter ID '{encounterId}'를 찾을 수 없습니다.");
+		}
+	}
+
+	public void OpenEncounterPlayer()
+	{
+		if (_pendingEncounter == null) return;
+		if (_pendingEncounter == null) return;
+		UIEncounterPlayer.Instance.Show(_pendingEncounter);
+	}
+
+	public void ResolveEncounter(EncounterChoice choice)
+	{
+		foreach (var effect in choice.effects)
+		{
+			if (effect.amount < 0)
+				ResourceManager.Instance.TryUseResource(effect.resourceType, -effect.amount);
+			else
+				ResourceManager.Instance.AddResource(effect.resourceType, effect.amount);
+		}
+
+		//특별효과 (스토리?)
+		if (!string.IsNullOrEmpty(choice.branchKey))
+		{
+			StateManager.Instance.SetBranch(choice.branchKey);
+		}
+
+		_pendingEncounter = null;
+		UIEncounterTab.Instance.HideTab();
+	}
+}

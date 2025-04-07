@@ -3,20 +3,20 @@ using UnityEditor;
 using System.Collections.Generic;
 using System.IO;
 
-public class EventJsonCreator : EditorWindow
+public class EncounterJsonCreator : EditorWindow
 {
-	private string eventId = "EVT_001";
-	private string title = "새로운 이벤트";
+	private string encounterId = "EVT_001";
+	private string encounterTitle = "새로운 이벤트";
 	private List<int> triggerDays = new() { 1 };
 	private string specialCondition = "";
 
-	private List<EventPage> pages = new();
+	private List<EncounterPage> pages = new();
 	private Vector2 scrollPos;
 
-	[MenuItem("Tools/Event JSON Creator")]
+	[MenuItem("Tools/Encounter JSON Creator")]
 	public static void ShowWindow()
 	{
-		GetWindow<EventJsonCreator>("Event JSON Creator");
+		GetWindow<EncounterJsonCreator>("Encounter JSON Creator");
 	}
 
 	private void OnGUI()
@@ -24,8 +24,8 @@ public class EventJsonCreator : EditorWindow
 		scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
 
 		GUILayout.Label("이벤트 기본 정보", EditorStyles.boldLabel);
-		eventId = EditorGUILayout.TextField("Event ID", eventId);
-		title = EditorGUILayout.TextField("Title", title);
+		encounterId = EditorGUILayout.TextField("Encounter ID", encounterId);
+		encounterTitle = EditorGUILayout.TextField("Title", encounterTitle);
 
 		GUILayout.Label("Trigger Days (쉼표 구분)");
 		string daysString = EditorGUILayout.TextField(string.Join(",", triggerDays));
@@ -41,7 +41,7 @@ public class EventJsonCreator : EditorWindow
 		GUILayout.Space(10);
 		GUILayout.Label("페이지 목록", EditorStyles.boldLabel);
 		if (GUILayout.Button("페이지 추가"))
-			pages.Add(new EventPage());
+			pages.Add(new EncounterPage());
 
 		for (int i = 0; i < pages.Count; i++)
 		{
@@ -54,7 +54,7 @@ public class EventJsonCreator : EditorWindow
 				pages[i].Choices = new();
 
 			if (GUILayout.Button("선택지 추가"))
-				pages[i].Choices.Add(new EventChoice());
+				pages[i].Choices.Add(new EncounterChoice());
 
 			for (int j = 0; j < pages[i].Choices.Count; j++)
 			{
@@ -80,11 +80,11 @@ public class EventJsonCreator : EditorWindow
 
 	private void SaveJson()
 	{
-		GameEvent gameEvent = new GameEvent
+		GameEncounter gameencounter = new GameEncounter
 		{
-			EventId = eventId,
-			Title = title,
-			Condition = new EventCondition
+			EncounterId = encounterId,
+			Title = encounterTitle,
+			Condition = new EncounterCondition
 			{
 				triggerDays = triggerDays,
 				specialConditionRequired = specialCondition
@@ -92,8 +92,8 @@ public class EventJsonCreator : EditorWindow
 			Pages = pages
 		};
 
-		string json = JsonUtility.ToJson(gameEvent, true);
-		string path = EditorUtility.SaveFilePanel("이벤트 JSON 저장", Application.dataPath, eventId, "json");
+		string json = JsonUtility.ToJson(gameencounter, true);
+		string path = EditorUtility.SaveFilePanel("이벤트 JSON 저장", Application.dataPath, encounterId, "json");
 		if (!string.IsNullOrEmpty(path))
 		{
 			File.WriteAllText(path, json);

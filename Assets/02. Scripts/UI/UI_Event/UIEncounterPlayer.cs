@@ -5,19 +5,19 @@ using Unity.VisualScripting;
 using System.Collections.Generic;
 
 //실제로 보여지는 이벤트 팝업
-public class UIEventPlayer : MonoBehaviour
+public class UIEncounterPlayer : MonoBehaviour
 {
-	public static UIEventPlayer Instance;
+	public static UIEncounterPlayer Instance;
 
 	[SerializeField] private GameObject _playerUI;
-	[SerializeField] private TextMeshProUGUI _eventText;
-	[SerializeField] private Image _eventImage;
+	[SerializeField] private TextMeshProUGUI _encounterText;
+	[SerializeField] private Image _encounterImage;
 	[SerializeField] private Button _nextButton;
 
 	[SerializeField] private Transform _choiceContainer;
 	[SerializeField] private GameObject _choiceButtonPrefab;
 
-	private GameEvent _currentEvent;
+	private GameEncounter _currentEncounter;
 	private int _currentPage = 0;
 	private void Awake()
 	{
@@ -26,9 +26,9 @@ public class UIEventPlayer : MonoBehaviour
 		_nextButton.onClick.AddListener(NextPage);
 	}
 
-	public void Show(GameEvent e)
+	public void Show(GameEncounter e)
 	{
-		_currentEvent = e;
+		_currentEncounter = e;
 		_currentPage = 0;
 		_playerUI.SetActive(true);
 		Time.timeScale = 0f;
@@ -37,9 +37,9 @@ public class UIEventPlayer : MonoBehaviour
 
 	private void ShowPage()
 	{
-		EventPage page = _currentEvent.Pages[_currentPage];
+		EncounterPage page = _currentEncounter.Pages[_currentPage];
 
-		_eventText.text = page.text;
+		_encounterText.text = page.text;
 		_choiceContainer.gameObject.SetActive(false);
 		_nextButton.gameObject.SetActive(true);
 
@@ -48,8 +48,8 @@ public class UIEventPlayer : MonoBehaviour
 			Sprite image = Resources.Load<Sprite>("Images/" + page.imagePath);
 			if (image != null)
 			{
-				_eventImage.sprite = image;
-				_eventImage.gameObject.SetActive(true);
+				_encounterImage.sprite = image;
+				_encounterImage.gameObject.SetActive(true);
 			}
 		}
 
@@ -63,7 +63,7 @@ public class UIEventPlayer : MonoBehaviour
 	private void NextPage()
 	{
 		_currentPage++;
-		if (_currentPage < _currentEvent.Pages.Count)
+		if (_currentPage < _currentEncounter.Pages.Count)
 		{
 			ShowPage();
 		}
@@ -73,7 +73,7 @@ public class UIEventPlayer : MonoBehaviour
 		}
 	}
 
-	private void ShowChoices(List<EventChoice> choices)
+	private void ShowChoices(List<EncounterChoice> choices)
 	{
 		foreach (Transform child in _choiceContainer) Destroy(child.gameObject);
 
@@ -83,7 +83,7 @@ public class UIEventPlayer : MonoBehaviour
 			button.GetComponentInChildren<TextMeshProUGUI>().text = choice.text;
 			button.GetComponent<Button>().onClick.AddListener(() =>
 			{
-				EventManager.Instance.ResolveEvent(choice);
+				EncounterManager.Instance.ResolveEncounter(choice);
 				NextPage();
 				_nextButton.gameObject.SetActive(true);
 			});

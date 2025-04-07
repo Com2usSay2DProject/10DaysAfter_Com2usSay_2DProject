@@ -2,10 +2,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-//event가 trigger되었을 때 옆에 뜨는 탭
-public class UIEventTab : MonoBehaviour
+//encounter가 trigger되었을 때 옆에 뜨는 탭
+public class UIEncounterTab : MonoBehaviour
 {
-	public static UIEventTab Instance;
+	public static UIEncounterTab Instance;
 
 	[SerializeField] private GameObject tabUI;
 	[SerializeField] private TextMeshProUGUI titleText;
@@ -31,6 +31,6 @@ public class UIEventTab : MonoBehaviour
 
 	private void OnTabClicked()
 	{
-		EventManager.Instance.OpenEventPlayer();
+		EncounterManager.Instance.OpenEncounterPlayer();
 	}
 }

@@ -1,0 +1,44 @@
+{
+    "EventId": "EVT_004",
+    "Title": "자원 추가 이벤트",
+    "Condition": {
+        "triggerDays": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "specialConditionRequired": ""
+    },
+    "Pages": [
+        {
+            "text": "자원 추가하는 이벤트 테스트입니다",
+            "imagePath": "",
+            "Choices": []
+        },
+        {
+            "text": "자원 추가해 보겠습니다",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "인구 + 500",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false
+                },
+                {
+                    "text": "식량 + 500",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false
+                }
+            ]
+        },
+        {
+            "text": "추가 되나요?",
+            "imagePath": "",
+            "Choices": []
+        }
+    ]
+}
