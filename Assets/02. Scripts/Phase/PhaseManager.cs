@@ -15,6 +15,7 @@ public class PhaseManager : Singleton<PhaseManager>
 
 	public float DayPhaseDuration = 30f;
 	public float NightPhaseDuration = 30f;
+	public float FadeTime = 3f;
 
 	//for spawners and ui's to use
 	public Action OnDayBegin;
@@ -24,6 +25,10 @@ public class PhaseManager : Singleton<PhaseManager>
 
 	//지금은 그냥 UI 직접 끄기
 	public Button BuildButton;
+
+	//다음 페이즈까지 타이머
+	private float _timeUntilNextPhase;
+	public float TimeUntilNextPhase => _timeUntilNextPhase;
 
 	public IEnumerator PlayDayPhase(float dayDuration)
 	{
@@ -64,13 +69,14 @@ public class PhaseManager : Singleton<PhaseManager>
 
 				
 				OnDayEnd?.Invoke();                             //건설 UI, 이벤트 끝
-				yield return new WaitForSeconds(3f);
+				yield return new WaitForSeconds(FadeTime);
 				BuildButton.gameObject.SetActive(false);		//지금은 그냥 직접 끔
 
 
 				//다음 페이즈는 밤
 				_isNight = true;
 				Debug.Log("Day Phase is over");
+				_timeUntilNextPhase = NightPhaseDuration + FadeTime;
 			}
 			else
 			{
@@ -80,12 +86,13 @@ public class PhaseManager : Singleton<PhaseManager>
 				yield return StartCoroutine(PlayNightPhase(NightPhaseDuration));
 
 				OnNightEnd?.Invoke();                           //스포너 끄기, 빛 조절
-				yield return new WaitForSeconds(3f);
+				yield return new WaitForSeconds(FadeTime);
 				_isNight = false;								//다음 페이즈는 낮
 				BuildButton.gameObject.SetActive(true);			//지금은 그냥 직접 킴(건설UI)
 
 				Debug.Log($"Night Phase is over. You survived {_currentDay} days");
 				_currentDay++;
+				_timeUntilNextPhase = DayPhaseDuration + FadeTime;
 			}
         }
     }
@@ -98,6 +105,13 @@ public class PhaseManager : Singleton<PhaseManager>
 	private void Start()
 	{
         StartCoroutine(PhaseRoutine());
+		_timeUntilNextPhase = DayPhaseDuration + FadeTime;
+	}
+
+	private void Update()
+	{
+		if (_timeUntilNextPhase > 0) _timeUntilNextPhase -= Time.deltaTime;
+		else _timeUntilNextPhase = 0;
 	}
 
 	//낮/밤 시간 바꿀 때
