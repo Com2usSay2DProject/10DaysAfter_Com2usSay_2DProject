@@ -1,0 +1,43 @@
+{
+    "EventId": "EVT_003",
+    "Title": "새로운 이벤트",
+    "Condition": {
+        "triggerDays": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "specialConditionRequired": ""
+    },
+    "Pages": [
+        {
+            "text": "이벤트생성기로 만든 이벤트입니다",
+            "imagePath": "",
+            "Choices": []
+        },
+        {
+            "text": "이벤트생성기 작동하나요",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "네",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false
+                },
+                {
+                    "text": "아마",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false
+                }
+            ]
+        },
+        {
+            "text": "다행이네요",
+            "imagePath": "",
+            "Choices": []
+        }
+    ]
+}

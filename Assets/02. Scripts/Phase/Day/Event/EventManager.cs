@@ -18,7 +18,7 @@ public class EventManager : Singleton<EventManager>
 	// 테스트용으로 사용
 	private void Start()
 	{
-		ForceTriggerEvent("EVT_001");
+		ForceTriggerEvent("EVT_003");
 	}
 
 	private void LoadAllEvents()
@@ -45,7 +45,7 @@ public class EventManager : Singleton<EventManager>
 
 		foreach (var e in GameEvents)
 		{
-			if (e.Condition.triggerDays.Contains(currentDay) && !e.Condition.specialConditionRequired)
+			if (e.Condition.triggerDays.Contains(currentDay) && StateManager.Instance.GetBranch(e.Condition.specialConditionRequired))
 			{
 				validEvents.Add(e);
 			}
@@ -93,17 +93,11 @@ public class EventManager : Singleton<EventManager>
 				ResourceManager.Instance.AddResource(effect.resourceType, effect.amount);
 		}
 
-		//특별효과 (스토리?) 미구현
-		/*if (choice.specialEffects != null)
+		//특별효과 (스토리?)
+		if (!string.IsNullOrEmpty(choice.branchKey))
 		{
-			foreach (var special in choice.specialEffects)
-			{
-				if (special.hasBranched)
-					EventBranches.Add(special.storyBranch);
-				else
-					EventBranches.Remove(special.storyBranch);
-			}
-		}*/
+			StateManager.Instance.SetBranch(choice.branchKey);
+		}
 
 		_pendingEvent = null;
 		UIEventTab.Instance.HideTab();

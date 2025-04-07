@@ -3,7 +3,7 @@
     "Title": "테스트용 이벤트",
     "Condition": {
         "triggerDays": [ 1, 2, 3, 4 ],
-        "specialConditionRequired": false
+        "specialConditionRequired": ""
     },
     "Pages": [
         {

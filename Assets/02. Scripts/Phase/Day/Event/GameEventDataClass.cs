@@ -26,7 +26,10 @@ public class EventChoice
 {
 	public string text;                     // 선택지 텍스트
 	public List<EventEffect> effects;       // 선택했을 때 발생하는 효과들
-	//public List<SpecialEffect> specialEffects;     //아직 미구현
+
+	//특수조건 설정하기
+	public string branchKey;				// 분기 조건 이름
+	public bool setBranchTrue;
 }
 
 [Serializable]
@@ -48,6 +51,6 @@ public class SpecialEffect
 public class EventCondition
 {
 	public List<int> triggerDays;           // 특정 날짜에만 발생 (예: 5일차)
-	public bool specialConditionRequired;   // 특수 조건 여부
+	public string specialConditionRequired;   // 특수 조건 여부
 	// 조건 타입/값으로 확장 (ex: 특정 자원 보유, 특정 건물 존재 등)
 }
