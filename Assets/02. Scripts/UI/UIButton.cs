@@ -13,6 +13,12 @@ public class UIButton: Singleton<UIButton>
         button = GetComponent<Button>();
     }
 
+    public void OnClickDisplayResource()
+    {
+        //ResourceManager.Instance.AddResource(ResourceType.Wood, 300);
+        UIManager.Instance.DisplayTopResources(ResourceType.Wood, 300);
+    }
+
     public void OnClickBuildMode()
     {
         UIManager.Instance.ToggleBuildMode(button, AllocatedTower);
