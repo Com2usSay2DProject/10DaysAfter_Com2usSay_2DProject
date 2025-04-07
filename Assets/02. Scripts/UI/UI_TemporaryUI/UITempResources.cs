@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class UITempResources : MonoBehaviour
 {
 	public List<TextMeshProUGUI> Resources;
+	
 
 	private void Update()
 	{

@@ -8,6 +8,8 @@ public class UIManager : Singleton<UIManager>
     //public static UIManager Instance;
     public Canvas _canvas;
 
+    public UITopCurrency TopResourceUI;
+
     public List<UIPage> UIPages = new List<UIPage>();
 
     private UIPage CurrentPage;
@@ -38,6 +40,13 @@ public class UIManager : Singleton<UIManager>
     { 
     
     }
+
+    public void DisplayTopResources(ResourceType type, int amount)
+    {
+        ResourceManager.Instance.AddResource(type, amount);
+        TopResourceUI.DisplayTopResources();
+    }
+
 
     public void ToggleBuildMode(Button button, ETowerType type)
     {
