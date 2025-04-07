@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2952915719224090511}
   - component: {fileID: 2464151171070629485}
   - component: {fileID: 5073946044637905134}
-  - component: {fileID: 4702966998121843114}
+  - component: {fileID: 2065186241781999192}
   m_Layer: 0
   m_Name: Button (1)
   m_TagString: Untagged
@@ -121,8 +121,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2464151171070629485}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &4702966998121843114
+      m_Calls:
+      - m_Target: {fileID: 2065186241781999192}
+        m_TargetAssemblyTypeName: UIButton, Assembly-CSharp
+        m_MethodName: OnClickDisplayResource
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Stone
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2065186241781999192
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,11 +143,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 518411687800951266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61fa57b0e1929f34a92d4374731dc613, type: 3}
+  m_Script: {fileID: 11500000, guid: f2a589d192acb204c8bfc80ea4554308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  addbutton: {fileID: 5073946044637905134}
-  resourceType: 1
+  AllocatedTower: 0
 --- !u!1 &973799117878048839
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,13 +272,13 @@ MonoBehaviour:
       - m_Target: {fileID: 3718554558529039039}
         m_TargetAssemblyTypeName: UIButton, Assembly-CSharp
         m_MethodName: OnClickDisplayResource
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: wood
+          m_StringArgument: Wood
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &3718554558529039039
@@ -402,7 +413,7 @@ GameObject:
   - component: {fileID: 6539397565033532439}
   - component: {fileID: 5426814428287670373}
   - component: {fileID: 740862544643811237}
-  - component: {fileID: 1499365984127692199}
+  - component: {fileID: 675308604845264216}
   m_Layer: 0
   m_Name: Button (2)
   m_TagString: Untagged
@@ -511,8 +522,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5426814428287670373}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1499365984127692199
+      m_Calls:
+      - m_Target: {fileID: 675308604845264216}
+        m_TargetAssemblyTypeName: UIButton, Assembly-CSharp
+        m_MethodName: OnClickDisplayResource
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Food
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &675308604845264216
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -521,11 +544,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3657444397911876149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61fa57b0e1929f34a92d4374731dc613, type: 3}
+  m_Script: {fileID: 11500000, guid: f2a589d192acb204c8bfc80ea4554308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  addbutton: {fileID: 740862544643811237}
-  resourceType: 2
+  AllocatedTower: 0
 --- !u!1 &4135339520961501819
 GameObject:
   m_ObjectHideFlags: 0
