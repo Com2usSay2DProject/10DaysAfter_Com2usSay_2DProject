@@ -14,7 +14,7 @@ public class ResourceManager : Singleton<ResourceManager>
 	{
 		//자원 데이터 불러옴.
 		InitResources();
-		LoadResourceData();
+		//LoadResourceData();
 		Initialize_DontDestroyOnLoad();
 	}
 
@@ -44,7 +44,7 @@ public class ResourceManager : Singleton<ResourceManager>
 		if (!_resources.ContainsKey(type)) _resources[type] = 0;
 
 		_resources[type] += amount;
-		SaveResourceData();
+		//SaveResourceData();
 	}
 
 	//TryUseResource : 자원 사용할 양이 충분한지 확인, 충분할 경우 사용 및 true 반환
@@ -54,7 +54,7 @@ public class ResourceManager : Singleton<ResourceManager>
 		if (_resources.TryGetValue(type, out int value) && value >= amount)
 		{
 			UseResource(type, amount);
-			SaveResourceData();
+			//SaveResourceData();
 			return true;
 		}
 		else
@@ -69,7 +69,8 @@ public class ResourceManager : Singleton<ResourceManager>
 		_resources[type] -= amount;
 	}
 	
-	//현재 데이터가 업데이트 될 때마다 저장(자동)
+	//자동저장 필요 없어서 현재 빼둠
+	/*//현재 데이터가 업데이트 될 때마다 저장(자동)
 	private void SaveResourceData()
 	{
 		ResourceData data = new ResourceData();
@@ -94,7 +95,7 @@ public class ResourceManager : Singleton<ResourceManager>
 				_resources[entry.type] = entry.amount;
 			}
 		}
-	}
+	}*/
 
 	//자원 양이 얼마나 있는지 반환
 	public int GetResourceAmount(ResourceType type)
