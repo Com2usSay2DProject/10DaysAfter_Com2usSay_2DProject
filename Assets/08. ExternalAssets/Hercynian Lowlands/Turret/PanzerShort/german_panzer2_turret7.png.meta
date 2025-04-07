@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 2105c1eb323aa304ab190a34e3b8c64d
+guid: dd2b174857f29ee4e96d354179037a87
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1657792824557741437
-    second: Background - Hercynian Lowlands - wet_0
-  - first:
-      213: 5400799243871923261
-    second: Background - Hercynian Lowlands - wet_1
-  - first:
-      213: 3082716481614955646
-    second: Background - Hercynian Lowlands - wet_2
-  - first:
-      213: 7320283011663741237
-    second: Background - Hercynian Lowlands - wet_3
+      213: 5564583687994029556
+    second: german_panzer2_turret7_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 4000
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -81,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 64
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -135,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Background - Hercynian Lowlands - wet_0
+      name: german_panzer2_turret7_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 21
-        width: 6971
-        height: 4062
+        x: 64
+        y: 80
+        width: 18
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,74 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 38a5b0d95365ef8e0800000000000000
-      internalID: -1657792824557741437
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Background - Hercynian Lowlands - wet_1
-      rect:
-        serializedVersion: 2
-        x: 6978
-        y: 2128
-        width: 16
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d3c2f223c4e73fa40800000000000000
-      internalID: 5400799243871923261
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Background - Hercynian Lowlands - wet_2
-      rect:
-        serializedVersion: 2
-        x: 6993
-        y: 2125
-        width: 7
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e74c6ed9e4208ca20800000000000000
-      internalID: 3082716481614955646
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Background - Hercynian Lowlands - wet_3
-      rect:
-        serializedVersion: 2
-        x: 3426
-        y: 0
-        width: 78
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5314b855d9ed69560800000000000000
-      internalID: 7320283011663741237
+      spriteID: 4f531ddb16f593d40800000000000000
+      internalID: 5564583687994029556
       vertices: []
       indices: 
       edges: []
@@ -236,10 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Background - Hercynian Lowlands - wet_0: -1657792824557741437
-      Background - Hercynian Lowlands - wet_1: 5400799243871923261
-      Background - Hercynian Lowlands - wet_2: 3082716481614955646
-      Background - Hercynian Lowlands - wet_3: 7320283011663741237
+      german_panzer2_turret7_0: 5564583687994029556
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

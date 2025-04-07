@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5622737536041745850}
   - component: {fileID: -2472223172737245529}
   - component: {fileID: -1412437810720408646}
-  - component: {fileID: 4537476241574603112}
+  - component: {fileID: 666790452378045946}
   m_Layer: 8
   m_Name: TempTower2
   m_TagString: Tower
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 427305764, guid: 0aa001eff76b97f40b9d0888795feeeb, type: 3}
+  m_Sprite: {fileID: -2334236640314598205, guid: 487bada03c78654408b6d50f2c10b956, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,8 +133,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &4537476241574603112
-CapsuleCollider2D:
+--- !u!61 &666790452378045946
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -167,6 +167,15 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.000000050645834, y: -0.4248481}
-  m_Size: {x: 1.3500004, y: 0.86031264}
-  m_Direction: 1
+  m_Offset: {x: -0.67131764, y: 0.090952575}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.84, y: 4.23}
+    newSize: {x: 1.35, y: 1.7099999}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.5916892, y: 1.3455001}
+  m_EdgeRadius: 0

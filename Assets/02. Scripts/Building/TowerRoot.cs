@@ -26,7 +26,7 @@ public class TowerRoot : MonoBehaviour
     [Header("# State")]
     private bool _isEnemyDetected = false;
     [SerializeField]
-    private GameObject _targetEnemy;
+    protected GameObject _targetEnemy;
     [SerializeField]
     private bool _isBuilt; // 건설이 된 상태인지
     public bool Isbuilt

@@ -185,7 +185,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PrefabTower - Size 2_0: 1606603493504159106
+      PrefabTower - Size 2_1: -2334236640314598205
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
