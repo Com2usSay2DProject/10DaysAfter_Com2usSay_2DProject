@@ -235,7 +235,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Barricade4_0: -5887182388265360028
+      Barricade4_1: 6448308716013667586
+      Barricade4_2: -3919333959789679688
+      Barricade4_3: 9129817061181523525
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

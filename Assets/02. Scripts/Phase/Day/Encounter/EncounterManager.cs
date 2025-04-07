@@ -18,7 +18,7 @@ public class EncounterManager : Singleton<EncounterManager>
 	// 테스트용으로 사용
 	private void Start()
 	{
-		ForceTriggerEncounter("EVT_005");
+		ForceTriggerEncounter("S_EVT_001");
 	}
 
 	private void LoadAllEncounters()
@@ -85,18 +85,19 @@ public class EncounterManager : Singleton<EncounterManager>
 
 	public void ResolveEncounter(EncounterChoice choice)
 	{
-		foreach (var effect in choice.effects)
+		if(choice != null)
 		{
-			if (effect.amount < 0)
-				ResourceManager.Instance.TryUseResource(effect.resourceType, -effect.amount);
-			else
-				ResourceManager.Instance.AddResource(effect.resourceType, effect.amount);
-		}
+			foreach (var effect in choice.effects)
+			{
+				if (effect.amount < 0) ResourceManager.Instance.TryUseResource(effect.resourceType, -effect.amount);
+				else ResourceManager.Instance.AddResource(effect.resourceType, effect.amount);
+			}
 
-		//특별효과 (스토리?)
-		if (!string.IsNullOrEmpty(choice.branchKey))
-		{
-			StateManager.Instance.SetBranch(choice.branchKey);
+			//특별효과 (스토리?)
+			if (!string.IsNullOrEmpty(choice.branchKey))
+			{
+				StateManager.Instance.SetBranch(choice.branchKey);
+			}
 		}
 
 		_pendingEncounter = null;

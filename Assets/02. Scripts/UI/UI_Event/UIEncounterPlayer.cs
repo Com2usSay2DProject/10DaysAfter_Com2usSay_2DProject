@@ -96,6 +96,11 @@ public class UIEncounterPlayer : MonoBehaviour
 	private void Close()
 	{
 		Time.timeScale = 1f;
+
+		if (_currentEncounter != null)
+		{
+			EncounterManager.Instance.ResolveEncounter(null); // 선택지가 없는 경우 처리
+		}
 		_playerUI.SetActive(false);
 	}
 }

@@ -235,7 +235,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BarbedWires_0: 7769141908592994209
+      BarbedWires_1: -3234608790970994591
+      BarbedWires_2: 5893556531219491564
+      BarbedWires_3: 7765308239447255695
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

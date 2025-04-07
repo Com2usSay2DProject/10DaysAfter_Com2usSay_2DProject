@@ -235,7 +235,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bonefire_0: 7610994666730515619
+      Bonefire_1: 2008865809276461849
+      Bonefire_2: -789386511948545742
+      Bonefire_3: -9198281847443322260
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

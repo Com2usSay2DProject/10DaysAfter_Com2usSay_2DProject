@@ -63,7 +63,8 @@ public class PhaseManager : Singleton<PhaseManager>
 				yield return StartCoroutine(PlayDayPhase(DayPhaseDuration));
 
 				
-				OnDayEnd?.Invoke();								//건설 UI, 이벤트 끝
+				OnDayEnd?.Invoke();                             //건설 UI, 이벤트 끝
+				yield return new WaitForSeconds(3f);
 				BuildButton.gameObject.SetActive(false);		//지금은 그냥 직접 끔
 
 
@@ -78,12 +79,13 @@ public class PhaseManager : Singleton<PhaseManager>
 
 				yield return StartCoroutine(PlayNightPhase(NightPhaseDuration));
 
-				OnNightEnd?.Invoke();							//스포너 끄기, 빛 조절
+				OnNightEnd?.Invoke();                           //스포너 끄기, 빛 조절
+				yield return new WaitForSeconds(3f);
 				_isNight = false;								//다음 페이즈는 낮
 				BuildButton.gameObject.SetActive(true);			//지금은 그냥 직접 킴(건설UI)
 
-				_currentDay++;
 				Debug.Log($"Night Phase is over. You survived {_currentDay} days");
+				_currentDay++;
 			}
         }
     }

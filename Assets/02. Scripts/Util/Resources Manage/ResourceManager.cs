@@ -64,6 +64,24 @@ public class ResourceManager : Singleton<ResourceManager>
 		}
 	}
 
+	public bool TryUseMultipleResources(Dictionary<ResourceType, int> costData)
+	{
+		foreach(var cost in costData)
+		{
+			if(!_resources.TryGetValue(cost.Key, out int resouceAmount)|| resouceAmount< cost.Value)
+			{
+				Debug.Log($"Not enough {cost.Key}");
+				return false;
+			}
+		}
+
+		foreach(var cost in costData)
+		{
+			UseResource(cost.Key, cost.Value);
+		}
+		return true; 
+	}
+
 	private void UseResource(ResourceType type, int amount)
 	{
 		_resources[type] -= amount;
