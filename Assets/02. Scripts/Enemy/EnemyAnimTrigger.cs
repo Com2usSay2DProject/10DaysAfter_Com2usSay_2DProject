@@ -14,7 +14,19 @@ public class EnemyAnimTrigger : MonoBehaviour
         _enemy.AnimTrigger();
     }
 
-    private void AttackTrigger()
+    private void NomalAttackTrigger()
+    {
+        if (_enemy.AttackTerget.activeSelf == false) return;
+
+        TowerRoot Tower = _enemy.AttackTerget.GetComponent<TowerRoot>();
+
+        if (Tower == null) return;
+
+        Tower.TakeDamage(_enemy.Damage);
+        Debug.Log("Attack Damage");
+    }
+
+    private void BommerAttackTrigger()
     {
         if (_enemy.AttackTerget.activeSelf == false) return;
 

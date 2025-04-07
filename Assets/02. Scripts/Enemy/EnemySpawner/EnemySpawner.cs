@@ -46,6 +46,10 @@ public class EnemySpawner : MonoBehaviour
                     enemy.Path = _pathTowrTarget;
                     enemy.AttackTerget = TowrTarget;
                     break;
+                case EEnemyType.Boomer:
+                    enemy.Path = _pathTowrTarget;
+                    enemy.AttackTerget = TowrTarget;
+                    break;
             }
 
         }

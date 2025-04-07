@@ -25,10 +25,7 @@ public class EnemyAttackState : EnemyState
     public override void Update()
     {
         base.Update();
-        if(_stateTimer<0)
-        {
-            _stateTimer = _enemyBase.AttackRate;
-        }
+
         //if (!_enemyBase.HasTowerInRange && !_enemyBase.IsDead)
         //{
         //    _stateMachine.ChangeState(_enemyBase.MoveState);

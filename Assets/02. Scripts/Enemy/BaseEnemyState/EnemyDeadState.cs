@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemyDeadState : EnemyState
 {
     SpriteRenderer _spriteRenderer;
-    private float fadeDuration = 4f;
+    private float fadeDuration = 2f;
     private float elapsed;
     private Color originalColor;
     public EnemyDeadState(EnemyStateMachine stateMachine, Rigidbody2D rigidbody2D, Enemy enemy, string animBoolName, SpriteRenderer spriteRenderer) : base(stateMachine, rigidbody2D, enemy, animBoolName)
@@ -15,6 +15,7 @@ public class EnemyDeadState : EnemyState
     {
         base.Enter();
 
+        originalColor = _spriteRenderer.color;
         _enemyBase.IsDead = true;
         elapsed = 0;
 
@@ -33,17 +34,21 @@ public class EnemyDeadState : EnemyState
 
         if (_triggerCalled)
         {
-            elapsed += Time.deltaTime;
-
-            float alpha = Mathf.Lerp(1f, 0f, elapsed / fadeDuration);
-            _spriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
-
-            if (elapsed >= fadeDuration)
-            {
-                _spriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
-                EnemyPoolManager.Instance.ReturnObject(_enemyBase.gameObject, _enemyBase.EnemyType);
-            }
+            FadeOutEnemy();
         }
     }
 
+    private void FadeOutEnemy()
+    {
+        elapsed += Time.deltaTime;
+
+        float alpha = Mathf.Lerp(1f, 0f, elapsed / fadeDuration);
+        _spriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+
+        if (elapsed >= fadeDuration)
+        {
+            _spriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
+            EnemyPoolManager.Instance.ReturnObject(_enemyBase.gameObject, _enemyBase.EnemyType);
+        }
+    }
 }

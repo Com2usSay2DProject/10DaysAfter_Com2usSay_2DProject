@@ -176,6 +176,10 @@ MonoBehaviour:
     InitCount: 20
     Prefab: {fileID: 837715679069067520, guid: a62e9a5d558cd6f4082971d8c00cbc81, type: 3}
     Container: {fileID: 377500508}
+  - Type: 2
+    InitCount: 20
+    Prefab: {fileID: 837715679069067520, guid: ea977d901f582f24386071de7cbb6685, type: 3}
+    Container: {fileID: 377500508}
 --- !u!114 &377500510
 MonoBehaviour:
   m_ObjectHideFlags: 0

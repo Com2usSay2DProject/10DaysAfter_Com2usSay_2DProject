@@ -60,8 +60,8 @@ public class EnemySpawnerManager : MonoBehaviour
             yield return new WaitForSeconds(randomDelay);
             int randomType = Random.Range(0, enableSpawnType + 1);
 
-            spawner.Spawn((EEnemyType)randomType);
-            //spawner.Spawn(EEnemyType.TowerAttackEnemy);
+            //spawner.Spawn((EEnemyType)randomType);
+            spawner.Spawn(EEnemyType.Boomer);
         }
     }
 

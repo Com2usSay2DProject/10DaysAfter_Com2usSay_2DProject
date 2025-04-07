@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2444754928335964136}
   - component: {fileID: 2837296739438713602}
   m_Layer: 6
-  m_Name: Enemy
+  m_Name: NomalEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,13 +111,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6bedf6b574d574d83a459ea06a8f4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Data:
+    TargetType: 0
+    EnemyType: 0
+    TypeString: 
+    MaxHp: 0
+    Speed: 0
+    Damage: 0
+    AtkSpeed: 0
+    Range: 0
   EnemyType: 0
+  Hp: 0
   TargetSelector: {fileID: 6305670851283007906, guid: d34dcfcb70506e34883b54527ab2979e, type: 3}
-  _moveSpeed: 1
-  _attackRange: 0.5
   HasTowerInRange: 0
   IsDead: 0
   FaceDir: {x: 0, y: 0}
+  AttackTerget: {fileID: 0}
 --- !u!1 &6459026690021648598
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +261,7 @@ GameObject:
   - component: {fileID: 1926530920629102725}
   - component: {fileID: 3546194103730827643}
   - component: {fileID: 5940027450934958291}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}

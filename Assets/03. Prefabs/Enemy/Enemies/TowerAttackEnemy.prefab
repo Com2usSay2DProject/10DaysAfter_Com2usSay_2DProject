@@ -111,8 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6bedf6b574d574d83a459ea06a8f4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyType: 1
   Data:
+    TargetType: 0
     EnemyType: 1
     TypeString: TowerAttackEnemy
     MaxHp: 100
@@ -120,10 +120,13 @@ MonoBehaviour:
     Damage: 10
     AtkSpeed: 0.8
     Range: 0.5
+  EnemyType: 1
+  Hp: 0
   TargetSelector: {fileID: 6305670851283007906, guid: d34dcfcb70506e34883b54527ab2979e, type: 3}
   HasTowerInRange: 0
   IsDead: 0
   FaceDir: {x: 0, y: 0}
+  AttackTerget: {fileID: 0}
 --- !u!1 &2813769944117016950
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +138,7 @@ GameObject:
   - component: {fileID: 6819644917493886073}
   - component: {fileID: 6332130332649170527}
   - component: {fileID: 7243686781808561994}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
