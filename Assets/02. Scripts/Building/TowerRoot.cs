@@ -41,6 +41,9 @@ public class TowerRoot : MonoBehaviour
     private Color _tempColor = new Color(255, 255, 255, 0.5f);
     private Color _errorColor = new Color(255, 0, 0, 0.5f);
 
+    private HashSet<Collider2D> _overlappingColliders = new HashSet<Collider2D>();
+
+
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -78,13 +81,10 @@ public class TowerRoot : MonoBehaviour
     {
         if(UIManager.Instance.isBuildModeActive && !_isBuilt)
         {
+            _spriteRenderer.sortingOrder = 1000;
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = 0;
             _rigid.MovePosition(mousePos);
-        }
-        else
-        {
-            _spriteRenderer.color = Color.white;
         }
 
         if (!_isEnemyDetected || !_targetEnemy)
@@ -102,34 +102,35 @@ public class TowerRoot : MonoBehaviour
     {
         _spriteRenderer.color = Color.white;
         _isBuilt = true;
+        _spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(_isBuilt)
-        {
-            return;
-        }
+        if (_isBuilt) return;
 
-        if(collision.CompareTag("Tower"))
+        if (collision.CompareTag("Tower"))
         {
+            _overlappingColliders.Add(collision);
             _canBuild = false;
-            Debug.Log("타워 겹침");
             _spriteRenderer.color = _errorColor;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(_isBuilt)
+        if (_isBuilt) return;
+
+        if (collision.CompareTag("Tower"))
         {
-            return;
-        }
-        if(collision.CompareTag("Tower"))
-        {
-            _canBuild = true;
-            Debug.Log("타워 안겹침");
-            _spriteRenderer.color = _tempColor;
+            _overlappingColliders.Remove(collision);
+
+            // 아무것도 안 겹칠 때만 가능하게
+            if (_overlappingColliders.Count == 0)
+            {
+                _canBuild = true;
+                _spriteRenderer.color = _tempColor;
+            }
         }
     }
 
