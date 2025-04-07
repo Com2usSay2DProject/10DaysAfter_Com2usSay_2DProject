@@ -16,6 +16,10 @@ public class TowerRoot : MonoBehaviour
     protected float _atkSpeed;
     protected float _range;
 
+    [Header("# Cost")]
+    protected Dictionary<ResourceType, int> _costData;
+    public Dictionary<ResourceType, int> CostData => _costData;
+
     [SerializeField]
     private GameObject UpgradeUI;
 
@@ -54,6 +58,7 @@ public class TowerRoot : MonoBehaviour
     {
         GetData();
         GetDataForThis();
+        GetCostData();
         _isEnemyDetected = false;
         _isBuilt = false;
         _canBuild = true;
@@ -173,6 +178,15 @@ public class TowerRoot : MonoBehaviour
         else
         {
             Debug.LogError($"타워 데이터 없음: {TowerType}");
+        }
+    }
+
+    private void GetCostData()
+    {
+        _costData = new Dictionary<ResourceType, int>();
+        foreach(var cost in Data.Cost)
+        {
+            _costData.Add(cost.Type, cost.Amount);
         }
     }
 

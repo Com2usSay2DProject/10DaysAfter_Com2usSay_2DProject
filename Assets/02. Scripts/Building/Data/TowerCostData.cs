@@ -3,7 +3,12 @@ using System;
 [Serializable]
 public class TowerCostData
 {
-    public ETowerType TowerType;
-    public string TowerTypeString;
-    public int Cost;
+    public ResourceType Type;
+    public int Amount;
+
+    public TowerCostData(ResourceType type, int amount)
+    {
+        Type = type;
+        Amount = amount;
+    }
 }

@@ -15,7 +15,7 @@ public class TileClickManager : Singleton<TileClickManager>
 
     private void Start()
     {
-        /*this.ObserveEveryValueChanged(_ => SelectedTower)
+        this.ObserveEveryValueChanged(_ => SelectedTower)
             .Pairwise() // 이전 값과 현재 값을 함께 가져오기
             .Where(pair => pair.Previous == null && pair.Current != null)
             .Subscribe(_ =>
@@ -23,7 +23,7 @@ public class TileClickManager : Singleton<TileClickManager>
                 _selectedTower = SelectedTower.GetComponent<TowerRoot>();
                 // 필요한 로직 실행
             })
-            .AddTo(this);*/
+            .AddTo(this);
 
         this.ObserveEveryValueChanged(_ => _selectedTower)
             .Pairwise()
@@ -58,13 +58,13 @@ public class TileClickManager : Singleton<TileClickManager>
             if (UIManager.Instance.isBuildModeActive)
             {
                 bool tileClicked = false;
-                _selectedTower = SelectedTower.GetComponent<TowerRoot>();
+                //_selectedTower = SelectedTower.GetComponent<TowerRoot>();
                 foreach (var hit in hits)
                 {
                     if (hit.gameObject.layer == LayerMask.NameToLayer("Tile") ||
                         hit.CompareTag("Tile"))
                     {
-                        if (_selectedTower.CanBuild)
+                        if (_selectedTower.CanBuild && ResourceManager.Instance.TryUseMultipleResources(_selectedTower.CostData))
                         {
                             tileClicked = true;
                             Debug.Log("클릭한 위치가 타일임: " + hit.transform.position);
