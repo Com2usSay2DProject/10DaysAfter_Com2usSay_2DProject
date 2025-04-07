@@ -10,6 +10,7 @@ public class UITopCurrency : MonoBehaviour
     private void Start()
     {
         DisplayTopResources();
+        ResourceManager.Instance.OnReourceChange += DisplayTopResources;
     }
 
     void Update()

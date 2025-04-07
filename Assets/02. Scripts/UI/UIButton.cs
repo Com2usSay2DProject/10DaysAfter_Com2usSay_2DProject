@@ -20,7 +20,7 @@ public class UIButton: Singleton<UIButton>
 
         if(Enum.TryParse(resource, true, out ResourceType resourceType))
         {
-            UIManager.Instance.DisplayTopResources(resourceType, 300);
+            ResourceManager.Instance.AddResource(resourceType, 300);
         }
 
         //var input = Enum.Parse(ResourceType, resorceType, true);

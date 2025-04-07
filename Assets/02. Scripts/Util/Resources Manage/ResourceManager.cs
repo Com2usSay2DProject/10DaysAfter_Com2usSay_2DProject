@@ -9,6 +9,7 @@ public class ResourceManager : Singleton<ResourceManager>
 	public string ResourceDataName = "ResourceData";
 
 	public Action OnPopulationChange;
+	public Action OnReourceChange;
 
 	private void Awake()
 	{
@@ -26,6 +27,14 @@ public class ResourceManager : Singleton<ResourceManager>
 			{
 				OnPopulationChange?.Invoke();
 			}).AddTo(this);
+
+        _resources.ObserveReplace()
+			.Subscribe(change =>
+			{
+				Debug.Log($"{change.Key} 값이 {change.OldValue} → {change.NewValue} 로 변경됨");
+				OnReourceChange?.Invoke();
+			})
+			.AddTo(this);
     }
 
     private void InitResources()
@@ -44,12 +53,12 @@ public class ResourceManager : Singleton<ResourceManager>
 		if (!_resources.ContainsKey(type)) _resources[type] = 0;
 
 		_resources[type] += amount;
-		//SaveResourceData();
-	}
+        //SaveResourceData();
+    }
 
-	//TryUseResource : 자원 사용할 양이 충분한지 확인, 충분할 경우 사용 및 true 반환
-	//자원이 부족할 경우 false 반환
-	public bool TryUseResource(ResourceType type, int amount)
+    //TryUseResource : 자원 사용할 양이 충분한지 확인, 충분할 경우 사용 및 true 반환
+    //자원이 부족할 경우 false 반환
+    public bool TryUseResource(ResourceType type, int amount)
 	{
 		if (_resources.TryGetValue(type, out int value) && value >= amount)
 		{
