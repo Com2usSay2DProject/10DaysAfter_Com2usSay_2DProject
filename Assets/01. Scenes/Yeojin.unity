@@ -535,7 +535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScrollSpeed: 10
   MaxZoomIn: 5
-  MaxZoomOut: 30
+  MaxZoomOut: 20
 --- !u!114 &130680881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,7 +548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4f90f2985cda643b0b48093766c40b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameEvents: []
+  GameEncounters: []
 --- !u!114 &130680883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -724,8 +724,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerUI: {fileID: 387288141}
-  _eventText: {fileID: 1856368839}
-  _eventImage: {fileID: 1981216237}
+  _encounterText: {fileID: 1856368839}
+  _encounterImage: {fileID: 1981216237}
   _nextButton: {fileID: 943547150}
   _choiceContainer: {fileID: 2046885475}
   _choiceButtonPrefab: {fileID: 357443628266048994, guid: 0f8dc9ee4fc35094c8512bb9c01dcb40, type: 3}

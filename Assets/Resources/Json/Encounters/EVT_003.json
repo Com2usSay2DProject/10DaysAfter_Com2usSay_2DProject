@@ -1,5 +1,5 @@
 {
-    "EventId": "EVT_003",
+    "EncounterId": "EVT_003",
     "Title": "새로운 이벤트",
     "Condition": {
         "triggerDays": [

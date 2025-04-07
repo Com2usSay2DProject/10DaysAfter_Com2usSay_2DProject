@@ -1,5 +1,5 @@
 {
-    "EventId": "EVT_002",
+    "EncounterId": "EVT_002",
     "Title": "테스트용 이벤트2",
     "Condition": {
         "triggerDays": [ 1, 2, 3, 4 ],
@@ -39,7 +39,7 @@
             ]
         },
         {
-            "text": "아직 효과는 없습니다",
+            "text": "효과가 나옵니까?",
             "imagePath": ""
         }
     ]

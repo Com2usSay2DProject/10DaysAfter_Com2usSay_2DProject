@@ -1,5 +1,5 @@
 {
-    "EventId": "EVT_004",
+    "EncounterId": "EVT_004",
     "Title": "자원 추가 이벤트",
     "Condition": {
         "triggerDays": [

@@ -6,7 +6,7 @@ using System.IO;
 public class EncounterJsonCreator : EditorWindow
 {
 	private string encounterId = "EVT_001";
-	private string encounterTitle = "새로운 이벤트";
+	private string Title = "새로운 이벤트";
 	private List<int> triggerDays = new() { 1 };
 	private string specialCondition = "";
 
@@ -25,7 +25,7 @@ public class EncounterJsonCreator : EditorWindow
 
 		GUILayout.Label("이벤트 기본 정보", EditorStyles.boldLabel);
 		encounterId = EditorGUILayout.TextField("Encounter ID", encounterId);
-		encounterTitle = EditorGUILayout.TextField("Title", encounterTitle);
+		Title = EditorGUILayout.TextField("Title", Title);
 
 		GUILayout.Label("Trigger Days (쉼표 구분)");
 		string daysString = EditorGUILayout.TextField(string.Join(",", triggerDays));
@@ -58,12 +58,38 @@ public class EncounterJsonCreator : EditorWindow
 
 			for (int j = 0; j < pages[i].Choices.Count; j++)
 			{
-				GUILayout.BeginHorizontal();
+				GUILayout.BeginVertical("box");
+
 				pages[i].Choices[j].text = EditorGUILayout.TextField("선택지 텍스트", pages[i].Choices[j].text);
-				if (GUILayout.Button("삭제"))
+				pages[i].Choices[j].branchKey = EditorGUILayout.TextField("분기 키 (branchKey)", pages[i].Choices[j].branchKey);
+				pages[i].Choices[j].setBranchTrue = EditorGUILayout.Toggle("분기 활성화 여부", pages[i].Choices[j].setBranchTrue);
+
+				if (pages[i].Choices[j].effects == null)
+					pages[i].Choices[j].effects = new();
+
+				GUILayout.Space(4);
+				GUILayout.Label("효과 목록", EditorStyles.miniBoldLabel);
+
+				if (GUILayout.Button("효과 추가"))
+					pages[i].Choices[j].effects.Add(new EncounterEffect());
+
+				for (int k = 0; k < pages[i].Choices[j].effects.Count; k++)
+				{
+					GUILayout.BeginHorizontal();
+					pages[i].Choices[j].effects[k].resourceType = (ResourceType)EditorGUILayout.EnumPopup("자원 타입", pages[i].Choices[j].effects[k].resourceType);
+					pages[i].Choices[j].effects[k].amount = EditorGUILayout.IntField("양", pages[i].Choices[j].effects[k].amount);
+					if (GUILayout.Button("삭제", GUILayout.Width(50)))
+						pages[i].Choices[j].effects.RemoveAt(k);
+					GUILayout.EndHorizontal();
+				}
+
+				GUILayout.Space(4);
+				if (GUILayout.Button("선택지 삭제"))
 					pages[i].Choices.RemoveAt(j);
-				GUILayout.EndHorizontal();
+
+				GUILayout.EndVertical();
 			}
+
 
 			if (GUILayout.Button("페이지 삭제"))
 				pages.RemoveAt(i);
@@ -83,7 +109,7 @@ public class EncounterJsonCreator : EditorWindow
 		GameEncounter gameencounter = new GameEncounter
 		{
 			EncounterId = encounterId,
-			Title = encounterTitle,
+			Title = Title,
 			Condition = new EncounterCondition
 			{
 				triggerDays = triggerDays,
