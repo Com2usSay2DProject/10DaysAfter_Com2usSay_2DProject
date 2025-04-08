@@ -6,14 +6,18 @@ public class EnemyDeadState : EnemyState
     private float fadeDuration = 2f;
     private float elapsed;
     private Color originalColor;
-    public EnemyDeadState(EnemyStateMachine stateMachine, Rigidbody2D rigidbody2D, Enemy enemy, string animBoolName, SpriteRenderer spriteRenderer) : base(stateMachine, rigidbody2D, enemy, animBoolName)
+    CircleCollider2D circleCollider;
+    public EnemyDeadState(EnemyStateMachine stateMachine, Rigidbody2D rigidbody2D, Enemy enemy, string animBoolName, SpriteRenderer spriteRenderer, CircleCollider2D collider2D) : base(stateMachine, rigidbody2D, enemy, animBoolName)
     {
         _spriteRenderer = spriteRenderer;
+        circleCollider = collider2D;
     }
 
     public override void Enter()
     {
         base.Enter();
+
+        circleCollider.enabled = false;
 
         originalColor = _spriteRenderer.color;
         _enemyBase.IsDead = true;
@@ -48,6 +52,8 @@ public class EnemyDeadState : EnemyState
         if (elapsed >= fadeDuration)
         {
             _spriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
+            circleCollider.enabled = true;
+
             EnemyPoolManager.Instance.ReturnObject(_enemyBase.gameObject, _enemyBase.EnemyType);
         }
     }

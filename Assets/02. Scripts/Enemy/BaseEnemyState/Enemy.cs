@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
 
     protected EnemyStateMachine _stateMachine;
     protected Rigidbody2D _rigidbody2D;
+    protected CircleCollider2D _collider2D;
     protected Animator _animator;
     protected SpriteRenderer _spriteRenderer;
     public EnemyTargetSelector TargetSelector;
@@ -64,12 +65,14 @@ public class Enemy : MonoBehaviour
         _stateMachine = new EnemyStateMachine();
         _animator = GetComponentInChildren<Animator>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>(); ;
+        _collider2D = GetComponent<CircleCollider2D>();
+
 
         IdleState = new EnemyIdleState(_stateMachine, _rigidbody2D, this, "Idle");
         MoveState = new EnemyMoveState(_stateMachine, _rigidbody2D, this, "Move");
         AttackState = new EnemyAttackState(_stateMachine, _rigidbody2D, this, "Attack");
         HitState = new EnemyHitState(_stateMachine, _rigidbody2D, this, "Hit");
-        DeadState = new EnemyDeadState(_stateMachine, _rigidbody2D, this, "Dead", _spriteRenderer);
+        DeadState = new EnemyDeadState(_stateMachine, _rigidbody2D, this, "Dead", _spriteRenderer,_collider2D);
     }
 
     private void GetData()
