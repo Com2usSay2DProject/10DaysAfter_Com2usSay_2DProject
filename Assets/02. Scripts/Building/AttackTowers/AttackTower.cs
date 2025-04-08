@@ -134,12 +134,13 @@ public class AttackTower : TowerRoot
             _turretObject.SetActive(false);
             sprite.SetActive(true);
             _turretObject = sprite;
+            _turretObject.GetComponent<SpriteRenderer>().sortingOrder = _spriteRenderer.sortingOrder + 1;
             _fireEffect = _turretObject.transform.GetChild(0).gameObject;
         }
 
         // 필요 시: 해당 방향으로 총알 발사 등
-        _fireEffect.SetActive(true);
-
+        //_fireEffect.SetActive(true);
+        _fireEffect.GetComponent<ParticleSystem>().Play();
         _targetEnemy.GetComponent<Enemy>().TakeDamage(_damage);
     }
 

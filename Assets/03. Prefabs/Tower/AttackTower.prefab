@@ -465,7 +465,7 @@ MonoBehaviour:
   - direction: 7
     sprite: {fileID: 6518861141037424423}
   _turretObject: {fileID: 374882041667483370}
-  _fireEffect: {fileID: 2901259946024448330}
+  _fireEffect: {fileID: 0}
 --- !u!1 &6518861141037424423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1184,7 +1184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: c888f0c922d622147bbdbe2ca794142b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: c888f0c922d622147bbdbe2ca794142b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1226,16 +1226,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: c888f0c922d622147bbdbe2ca794142b, type: 3}
+      propertyPath: stopAction
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c888f0c922d622147bbdbe2ca794142b, type: 3}
---- !u!1 &2901259946024448330 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100006, guid: c888f0c922d622147bbdbe2ca794142b, type: 3}
-  m_PrefabInstance: {fileID: 2901259946024417260}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2901259946024545642 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400006, guid: c888f0c922d622147bbdbe2ca794142b, type: 3}
