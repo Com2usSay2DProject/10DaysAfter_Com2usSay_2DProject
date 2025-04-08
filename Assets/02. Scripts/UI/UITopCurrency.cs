@@ -11,32 +11,24 @@ public class UITopCurrency : MonoBehaviour
     public TextMeshProUGUI TimeText;
     public TextMeshProUGUI DayText;
     public float DisPlayInterval = 0.5f;
-
+    public float _CurrentDuration;
     private float GameHours = 12f; // 게임 내에서 표현되는 시간
     private float conversionFactor; // 변환 비율
-
+    private float inGameHours;
 
     private void Start()
-    {
-        conversionFactor = GameHours / (PhaseManager.Instance.DayPhaseDuration/3600f);
+    {       
         DisplayTopResources();
         ResourceManager.Instance.OnReourceChange += DisplayTopResources;
         StartCoroutine("DisplayTime");
     }
 
-    void Update()
-    {
-        //DisplayTopResources();
-
-    }
 
     public void SetTimeText()
     {
         TimeText.text = PhaseManager.Instance.TimeUntilNextPhase.ToString();
     }
 
-
-    
 
     IEnumerator DisplayTime()
     {
@@ -45,14 +37,17 @@ public class UITopCurrency : MonoBehaviour
             if (PhaseManager.Instance.isNight)
             {
                 DayNightText.text = "밤";
+                conversionFactor = GameHours / (PhaseManager.Instance.NightPhaseDuration / 3600f);
+                _CurrentDuration = PhaseManager.Instance.NightPhaseDuration;
             }
             else
             {
                 DayNightText.text = "낮";
+                conversionFactor = GameHours / (PhaseManager.Instance.DayPhaseDuration / 3600f);
+                _CurrentDuration = PhaseManager.Instance.DayPhaseDuration;
             }
+            inGameHours = Mathf.Clamp(PhaseManager.Instance.TimeUntilNextPhase, 0f, _CurrentDuration) * conversionFactor / 3600f;
 
-            float inGameHours = Mathf.Clamp(PhaseManager.Instance.TimeUntilNextPhase, 0f, PhaseManager.Instance.DayPhaseDuration)
-                   * conversionFactor / 3600f;
             TimeText.text = $"{Mathf.FloorToInt(inGameHours)}남은시간";
             DayText.text = $"{PhaseManager.Instance.CurrentDay.ToString()}일째";
             yield return new WaitForSeconds(DisPlayInterval);

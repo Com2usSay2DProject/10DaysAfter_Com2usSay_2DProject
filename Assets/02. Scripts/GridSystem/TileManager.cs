@@ -1,28 +1,25 @@
-using CityBuilderCore;
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using static UnityEditor.PlayerSettings;
 
 /// <summary>
 /// 각 타일 정보 조회, 수정
 /// </summary>
 public class TileManager : Singleton<TileManager> // 수민
 {
+    [Header("# Tilemap")]
     [SerializeField]
     private Tilemap _groundTilemap;
-
     private BoundsInt _bounds;
     public BoundsInt Bounds
     {
         get => _bounds;
     }
     public Bounds WorldBounds;
-
     private TileNode[,] _gridArray;
-
     public TileNode[,] GridArray => _gridArray;
+
+    [Header("# Obstacles")]
+    [SerializeField] private GameObject[] Trees;
         
     private void Awake()
     {
@@ -32,6 +29,7 @@ public class TileManager : Singleton<TileManager> // 수민
         Debug.Log($"Bounds: xMin:{_bounds.xMin}, xMax:{_bounds.xMax}, yMin:{_bounds.yMin}, yMax:{_bounds.yMax}");
 
         MakeTileInfo();
+        MakeTrees();
     }
 
     public static Bounds TransformBoundsToWorld(Transform transform, Bounds localBounds)
@@ -44,6 +42,42 @@ public class TileManager : Singleton<TileManager> // 수민
             Mathf.Abs(transform.lossyScale.z) * extents.z
         );
         return new Bounds(center, worldExtents * 2);
+    }
+
+    private void MakeTrees()
+    {
+        int treeCount = 50; // 생성할 나무 개수
+        int width = _gridArray.GetLength(0);
+        int height = _gridArray.GetLength(1);
+
+        int tries = 0;
+        int maxTries = 50;
+
+        while (treeCount > 0 && tries < maxTries)
+        {
+            tries++;
+
+            int randX = Random.Range(0, width);
+            int randY = Random.Range(0, height);
+            TileNode node = _gridArray[randX, randY];
+
+            // 타일이 존재하고, 아직 장애물이 없는 곳에만 나무 생성
+            if (node.IsWalkable)
+            {
+                GameObject treePrefab = Trees[Random.Range(0, Trees.Length)];
+                GameObject tree = Instantiate(treePrefab, node.WorldPositon, Quaternion.identity, transform);
+
+                node.IsWalkable = false;
+                treeCount--;
+
+                Debug.Log($"Tree placed at: ({node.X}, {node.Y})");
+            }
+        }
+
+        if (treeCount > 0)
+        {
+            Debug.LogWarning($"{treeCount}개의 나무를 배치하지 못했습니다. (시도 제한 도달)");
+        }
     }
 
     private void MakeTileInfo()
@@ -131,6 +165,4 @@ public class TileManager : Singleton<TileManager> // 수민
         }
         _gridArray[x - _bounds.xMin, y - _bounds.yMin].IsWalkable = flag;
     }
-
-
 }
