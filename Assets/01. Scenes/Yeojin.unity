@@ -360,6 +360,9 @@ MonoBehaviour:
   EdgeSize: 30
   xBounds: {x: -10, y: 10}
   yBounds: {x: -10, y: 10}
+  xBoundsprime: {x: 0, y: 0}
+  yBoundsprime: {x: 0, y: 0}
+  Offset: 2
 --- !u!114 &130680879
 MonoBehaviour:
   m_ObjectHideFlags: 0
