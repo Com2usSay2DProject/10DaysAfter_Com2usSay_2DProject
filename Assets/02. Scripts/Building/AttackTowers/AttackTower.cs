@@ -79,15 +79,9 @@ public class AttackTower : TowerRoot
     }
     #endregion
 
-    private void Update()
+    protected override void Update()
     {
-        if (UIManager.Instance.isBuildModeActive && !IsBuilt)
-        {
-            _spriteRenderer.sortingOrder = 1000;
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.z = 0;
-            _rigid.MovePosition(mousePos);
-        }
+        base.Update();
 
         if (!_isEnemyDetected || !_targetEnemy)
         {

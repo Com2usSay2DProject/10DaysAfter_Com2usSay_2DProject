@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerRoot : MonoBehaviour // 공통 속성 및 건설 관련 로직만 여기에
+public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 관련 로직만 여기에
 {
     private static Dictionary<ETowerType, TowerData> _towerDataDict; // 모든 타워가 공유할 데이터
 
@@ -35,6 +35,7 @@ public class TowerRoot : MonoBehaviour // 공통 속성 및 건설 관련 로직
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigid = GetComponent<Rigidbody2D>();
+        PhaseManager.Instance.OnDateChange += MultiplyData;
     }
 
     protected virtual void OnEnable() 
@@ -45,6 +46,17 @@ public class TowerRoot : MonoBehaviour // 공통 속성 및 건설 관련 로직
         IsBuilt = false;
         CanBuild = true;
         _spriteRenderer.color = _tempColor;
+    }
+
+    protected virtual void Update()
+    {
+        if (UIManager.Instance.isBuildModeActive && !IsBuilt)
+        {
+            _spriteRenderer.sortingOrder = 1000;
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePos.z = 0;
+            _rigid.MovePosition(mousePos);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
