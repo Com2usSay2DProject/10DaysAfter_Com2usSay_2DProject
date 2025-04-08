@@ -87,27 +87,54 @@ public class UIEncounterPlayer : MonoBehaviour
 	{
 		foreach (Transform child in _choiceContainer) Destroy(child.gameObject);
 
+
 		foreach (var choice in choices)
 		{
+			bool canAfford = true;
+
 			GameObject button = Instantiate(_choiceButtonPrefab, _choiceContainer);
 			button.GetComponentInChildren<TextMeshProUGUI>().text = choice.text;
-			button.GetComponent<Button>().onClick.AddListener(() =>
+
+			if(choice.effects != null)
 			{
-				EncounterManager.Instance.ResolveEncounter(choice);
-
-				//같은 인카운터 내 선택지로 반응 바뀌는 용
-				if (choice.nextPageIndex >= 0 && choice.nextPageIndex < _currentEncounter.Pages.Count)
+				foreach (var effect in choice.effects)
 				{
-					_currentPage = choice.nextPageIndex;
-					ShowPage();
+					if (effect.amount < 0)
+					{
+						int currentAmount = ResourceManager.Instance.GetResourceAmount(effect.resourceType);
+						if (currentAmount < -effect.amount)
+						{
+							canAfford = false;
+							break;
+						}
+					}
 				}
-				else
+			}
+			if (canAfford)
+			{
+				button.GetComponent<Button>().onClick.AddListener(() =>
 				{
-					NextPage();
-				}
+					EncounterManager.Instance.ResolveEncounter(choice);
 
-				_nextButton.gameObject.SetActive(true);
-			});
+					//같은 인카운터 내 선택지로 반응 바뀌는 용
+					if (choice.nextPageIndex >= 0 && choice.nextPageIndex < _currentEncounter.Pages.Count)
+					{
+						_currentPage = choice.nextPageIndex;
+						ShowPage();
+					}
+					else
+					{
+						NextPage();
+					}
+
+					_nextButton.gameObject.SetActive(true);
+				});
+			}
+			else
+			{
+				button.GetComponent<Button>().interactable = false;
+				button.GetComponentInChildren<TextMeshProUGUI>().text = "(자원 부족)";
+			}
 		}
 
 		_nextButton.gameObject.SetActive(false);
