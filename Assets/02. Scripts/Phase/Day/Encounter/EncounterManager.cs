@@ -18,7 +18,7 @@ public class EncounterManager : Singleton<EncounterManager>
 	// 테스트용으로 사용
 	private void Start()
 	{
-		//ForceTriggerEncounter("S_EVT_001");
+		ForceTriggerEncounter("R_EVT_005");
 	}
 
 	private void LoadAllEncounters()
@@ -86,7 +86,6 @@ public class EncounterManager : Singleton<EncounterManager>
 
 	public void OpenEncounterPlayer()
 	{
-		if (_pendingEncounter == null) return;
 		if (_pendingEncounter == null) return;
 		UIEncounterPlayer.Instance.Show(_pendingEncounter);
 	}

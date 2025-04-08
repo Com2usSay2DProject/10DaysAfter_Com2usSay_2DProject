@@ -1,0 +1,220 @@
+{
+    "EncounterId": "T_EVT_001",
+    "Title": "시나리오 첫날",
+    "Condition": {
+        "triggerDays": [
+            1
+        ],
+        "specialConditionRequired": ""
+    },
+    "Pages": [
+        {
+            "text": "목표일까지 --일 / 09:42",
+            "imagePath": "base2_day",
+            "Choices": []
+        },
+        {
+            "text": "기온 : -5.4°C\n풍속 : 북서풍 4.7m/s\n강수 없음",
+            "imagePath": "",
+            "Choices": []
+        },
+        {
+            "text": "통신망 상태 : 고주파 간섭 감지 중",
+            "imagePath": "",
+            "Choices": []
+        },
+        {
+            "text": "송신탑 전력 정상",
+            "imagePath": "",
+            "Choices": []
+        },
+        {
+            "text": "지령 주파수 대역 : 동기화 성공",
+            "imagePath": "",
+            "Choices": []
+        },
+        {
+            "text": "“기지 응답바람.”",
+            "imagePath": "",
+            "Choices": []
+        },
+        {
+            "text": "“본 기지는 외부 전파 이상 영향권 밖. 시스템 안정성 확인됨.”",
+            "imagePath": "",
+            "Choices": []
+        },
+        {
+            "text": "/치직-",
+            "imagePath": "",
+            "Choices": []
+        },
+        {
+            "text": "도심은 신호등이 마비...",
+            "imagePath": "",
+            "Choices": []
+        },
+        {
+            "text": "...고장으로... 인명 피해가...",
+            "imagePath": "",
+            "Choices": []
+        },
+        {
+            "text": "/치직-",
+            "imagePath": "",
+            "Choices": []
+        },
+        {
+            "text": "",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "응답한다",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                }
+            ]
+        },
+        {
+            "text": "\"기지 경계를 강화하고, 물자를 받아 필요 설비를 설치해라.\"",
+            "imagePath": "",
+            "Choices": []
+        },
+        {
+            "text": "",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "물자가 도착하지 않았다고 응답한",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                }
+            ]
+        },
+        {
+            "text": "/치직-",
+            "imagePath": "",
+            "Choices": []
+        },
+        {
+            "text": "\"...가 물자와 함께 곧 도착 예정...\"",
+            "imagePath": "",
+            "Choices": []
+        },
+        {
+            "text": "\"...계 태세 유...\"",
+            "imagePath": "",
+            "Choices": []
+        },
+        {
+            "text": "\"...신호 불량으로 통신은 일단 종...\"",
+            "imagePath": "",
+            "Choices": []
+        },
+        {
+            "text": "/치직-",
+            "imagePath": "",
+            "Choices": []
+        },
+        {
+            "text": "밖이 소란스럽다.",
+            "imagePath": "",
+            "Choices": []
+        },
+        {
+            "text": "/쿵-",
+            "imagePath": "",
+            "Choices": []
+        },
+        {
+            "text": "\"부관 !!+^##!!(식별불가)입니다. 지휘관님께서 요청하신 물자, 확인 부탁드립니다. 목재 보급 5단위, 석재 5세트, 식량 10배급, 금속 컨테이너 5기입니다. 그리고 병력 1개 소대, 복귀 완료했습니다.\"",
+            "imagePath": "resources",
+            "Choices": []
+        },
+        {
+            "text": "",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "확인한다",
+                    "effects": [
+                        {
+                            "resourceType": 0,
+                            "amount": 500
+                        },
+                        {
+                            "resourceType": 1,
+                            "amount": 500
+                        },
+                        {
+                            "resourceType": 2,
+                            "amount": 500
+                        },
+                        {
+                            "resourceType": 3,
+                            "amount": 500
+                        },
+                        {
+                            "resourceType": 4,
+                            "amount": 100
+                        }
+                    ],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                }
+            ]
+        },
+        {
+            "text": "",
+            "imagePath": "base2_day",
+            "Choices": [
+                {
+                    "text": "\"통신 상태는?\"",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false
+                }
+            ]
+        },
+        {
+            "text": "\"왜인지 이곳으로 오면서 신호가 먹통이었지만... 다시 괜찮아진 것 같습니다.\"",
+            "imagePath": "",
+            "Choices": []
+        },
+        {
+            "text": "\"지휘관님, 괜찮으십니까? 평소보다 안색이...\"",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "물러나게 한다",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": 26
+                },
+                {
+                    "text": "괜찮다고 한다",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": 27
+                }
+            ]
+        },
+        {
+            "text": "\"예엡, 그럼 전 먼저 나가 있겠습니다. 기지를 정비하실 때 불러주십시오.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": 30
+        },
+        {
+            "text": "\"예엡, 그럼 같이 가실까요. 기지를 정비해야 한다고 하셨죠.\"",
+            "imagePath": "",
+            "Choices": []
+        }
+    ]
+}

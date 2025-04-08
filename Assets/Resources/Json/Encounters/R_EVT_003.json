@@ -1,0 +1,64 @@
+{
+    "EncounterId": "R_EVT_003",
+    "Title": "버려진 차량",
+    "Condition": {
+        "triggerDays": [
+            2,
+            3,
+            4,
+            5,
+            6
+        ],
+        "specialConditionRequired": ""
+    },
+    "Pages": [
+        {
+            "text": "경계 순찰 중, 길가에 버려진  트럭 한 대를 발견했다.",
+            "imagePath": "oldcar",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "어떻게 할까?",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "아무도 모를 텐데 가져가자!",
+                    "effects": [
+                        {
+                            "resourceType": 2,
+                            "amount": 100
+                        },
+                        {
+                            "resourceType": 3,
+                            "amount": 50
+                        }
+                    ],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": 2
+                },
+                {
+                    "text": "주인을 위해 내버려 두자.",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": 3
+                }
+            ],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "소량의 식량과 폐철을 얻을 수 있었다. 야호!",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": 5
+        },
+        {
+            "text": "양심은 지켰지만, 배는 고프다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        }
+    ]
+}

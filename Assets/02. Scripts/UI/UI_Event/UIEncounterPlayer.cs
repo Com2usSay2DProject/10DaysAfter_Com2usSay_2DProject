@@ -62,7 +62,17 @@ public class UIEncounterPlayer : MonoBehaviour
 
 	private void NextPage()
 	{
-		_currentPage++;
+		EncounterPage current = _currentEncounter.Pages[_currentPage];
+
+		if (current.nextPageIndex >= 0)
+		{
+			_currentPage = current.nextPageIndex;
+		}
+		else
+		{
+			_currentPage++;
+		}
+
 		if (_currentPage < _currentEncounter.Pages.Count)
 		{
 			ShowPage();
@@ -84,7 +94,18 @@ public class UIEncounterPlayer : MonoBehaviour
 			button.GetComponent<Button>().onClick.AddListener(() =>
 			{
 				EncounterManager.Instance.ResolveEncounter(choice);
-				NextPage();
+
+				//같은 인카운터 내 선택지로 반응 바뀌는 용
+				if (choice.nextPageIndex >= 0 && choice.nextPageIndex < _currentEncounter.Pages.Count)
+				{
+					_currentPage = choice.nextPageIndex;
+					ShowPage();
+				}
+				else
+				{
+					NextPage();
+				}
+
 				_nextButton.gameObject.SetActive(true);
 			});
 		}

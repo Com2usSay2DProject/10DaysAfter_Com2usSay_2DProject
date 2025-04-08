@@ -38,11 +38,11 @@ public class LightTesting : MonoBehaviour
 
 	private IEnumerator LightOn()
 	{
-		while (GlobalLight.intensity < 1f)
+		while (GlobalLight.intensity < 1.5f)
 		{
 			GlobalLight.intensity += Time.deltaTime / FadeTime;
 			yield return null;
 		}
-		GlobalLight.intensity = 1f;
+		GlobalLight.intensity = 1.5f;
 	}
 }

@@ -18,7 +18,8 @@ public class EncounterPage
 	public string text;						// 페이지에 표시될 텍스트
 	public string imagePath;				// 페이지에 표시될 이미지 경로 (비워두면 없음)
 
-	public List<EncounterChoice> Choices;		// 선택지가 있을 경우
+	public List<EncounterChoice> Choices;       // 선택지가 있을 경우
+	public int nextPageIndex = -1;
 }
 
 [Serializable]
@@ -30,6 +31,9 @@ public class EncounterChoice
 	//특수조건 설정하기
 	public string branchKey;				// 분기 조건 이름
 	public bool setBranchTrue;
+
+	//선택지로 인한 반응 변경용
+	public int nextPageIndex = -1; 
 }
 
 [Serializable]
