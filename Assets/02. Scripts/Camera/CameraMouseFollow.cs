@@ -1,15 +1,21 @@
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class CameraMouseFollow : MonoBehaviour
 {
-    private Vector3 _mousePosition;
+	private Vector3 _mousePosition;
 	private Camera _mainCamera;
 
 	public float MoveSpeed = 10f;
-	public int EdgeSize = 20;					   //감지할 끄트머리 범위
+	public int EdgeSize = 20;               //감지할 끄트머리 범위
 
-	public Vector2 xBounds = new Vector2(-30, 30); // 카메라 X 이동 제한
-	public Vector2 yBounds = new Vector2(-30, 30); // 카메라 Y 이동 제한
+	public Vector2 xBounds = new Vector2(); // 카메라 X 이동 제한
+	public Vector2 yBounds = new Vector2(); // 카메라 Y 이동 제한
+
+	public Vector2 xBoundsprime = new Vector2(); // 카메라 X 이동 제한
+	public Vector2 yBoundsprime = new Vector2(); // 카메라 Y 이동 제한
+
+	public float Offset = 0f;
 
 	private void Awake()
 	{
@@ -17,6 +23,42 @@ public class CameraMouseFollow : MonoBehaviour
 		if (_mainCamera == null)
 			_mainCamera = Camera.main;
 	}
+
+	private void Start()
+	{
+		var grid = TileManager.Instance.GridArray;
+		int width = grid.GetLength(0);
+		int height = grid.GetLength(1);
+
+		Vector3 topLeft = grid[0, 0].WorldPositon;
+		Vector3 bottomLeft = grid[width - 1, 0].WorldPositon;
+		Vector3 topRight = grid[0, height - 1].WorldPositon;
+		Vector3 bottomRight = grid[width - 1, height - 1].WorldPositon;
+
+		float camHalfHeight = Camera.main.orthographicSize;
+		float camHalfWidth = camHalfHeight * Camera.main.aspect;
+
+		xBoundsprime = new Vector2(topRight.x + Offset, bottomLeft.x - Offset);
+		yBoundsprime = new Vector2(topLeft.y + Offset, bottomRight.y - Offset);
+
+		xBounds = new Vector2(xBoundsprime.x + camHalfWidth, xBoundsprime.y - camHalfWidth);
+		yBounds = new Vector2(yBoundsprime.x + camHalfHeight, yBoundsprime.y - camHalfHeight);
+
+		MapScroll.Instance.OnCameraScroll += ChangeBounds;
+	}
+
+	public void ChangeBounds()
+	{
+		float camHalfHeight = Camera.main.orthographicSize;
+		float camHalfWidth = camHalfHeight * Camera.main.aspect;
+
+		xBounds = new Vector2(xBoundsprime.x + camHalfWidth, xBoundsprime.y - camHalfWidth);
+		yBounds = new Vector2(yBoundsprime.x+ camHalfHeight, yBoundsprime.y - camHalfHeight);
+
+		Debug.Log($"new bounds :{xBounds}, {yBounds}");
+	}
+
+
 	private void Update()
 	{
 		//다른 창이 열려 있을 경우 따라다니지 않음
