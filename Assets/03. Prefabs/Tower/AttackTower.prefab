@@ -447,6 +447,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a347833947493048b3879e8b699738e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TowerType: 1
+  Data:
+    TowerType: 0
+    TypeString: 
+    MaxHp: 0
+    Damage: 0
+    AtkSpeed: 0
+    Range: 0
+    Cost: []
+    PopulationMultiplier: 0.05
+  _targetEnemy: {fileID: 0}
   directionSprites:
   - direction: 0
     sprite: {fileID: 8703052555777230696}

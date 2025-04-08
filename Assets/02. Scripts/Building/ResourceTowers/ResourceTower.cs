@@ -13,8 +13,15 @@ public abstract class ResourceTower : TowerRoot
 
     protected float _timer = 0f;
 
-    protected virtual void Update()
+    protected override void Update()
     {
+        base.Update();
+
+        if(!IsBuilt)
+        {
+            return;
+        }
+
         _timer += Time.deltaTime;
 
         if(_timer >= _atkSpeed)

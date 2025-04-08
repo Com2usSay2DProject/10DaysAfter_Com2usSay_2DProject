@@ -5,9 +5,9 @@ public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 �
 {
     private static Dictionary<ETowerType, TowerData> _towerDataDict; // 모든 타워가 공유할 데이터
 
-    [Header("# Stats")] 
-    public ETowerType TowerType { get; private set; } // 타워의 타입 -> 프리팹에서 설정해두면 데이터 찾아옴
-    protected TowerData Data; // 해당 타워의 데이터
+    [Header("# Stats")]
+    public ETowerType TowerType; // 타워의 타입 -> 프리팹에서 설정해두면 데이터 찾아옴
+    [SerializeField] protected TowerData Data; // 해당 타워의 데이터
     protected float _maxHp;
     protected float _hp;
     protected float _damage;
