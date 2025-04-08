@@ -1,0 +1,65 @@
+{
+    "EncounterId": "R_EVT_004",
+    "Title": "오작동 방송",
+    "Condition": {
+        "triggerDays": [
+            3,
+            4,
+            5,
+            6,
+            8
+        ],
+        "specialConditionRequired": ""
+    },
+    "Pages": [
+        {
+            "text": "며칠간 병사들에게 한밤중에 이상한 방송을 들었다는 제보가 계속해서 들어오고 있다.",
+            "imagePath": "strange_broadcast",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "무슨 조치를 해 줘야 할까?",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "환청은 나약한 것들이나 듣는 거야",
+                    "effects": [
+                        {
+                            "resourceType": 4,
+                            "amount": -50
+                        }
+                    ],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                },
+                {
+                    "text": "방송 장치를 꺼 둔다",
+                    "effects": [
+                        {
+                            "resourceType": 3,
+                            "amount": -50
+                        }
+                    ],
+                    "branchKey": "hasturnedoffbroadcast",
+                    "setBranchTrue": false,
+                    "nextPageIndex": 3
+                }
+            ],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "당신의 정신론을 병사들은 무력하게 받아들일 수밖에 없었다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": 5
+        },
+        {
+            "text": "이제야 밤에 제대로 좀 자겠다며 다들 기뻐하는 분위기이다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        }
+    ]
+}

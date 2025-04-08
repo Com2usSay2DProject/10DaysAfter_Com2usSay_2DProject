@@ -1,0 +1,81 @@
+{
+    "EncounterId": "R_EVT_006",
+    "Title": "불에 타버린 막사",
+    "Condition": {
+        "triggerDays": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+        ],
+        "specialConditionRequired": ""
+    },
+    "Pages": [
+        {
+            "text": "순찰 결과, 다소 불에 탄 오래된 막사 하나를 발견했다고 한다.",
+            "imagePath": "burnt_barrack",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "내부는 확인되지 않았다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "어떻게 할까?",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "들어가서 조사해본다",
+                    "effects": [
+                        {
+                            "resourceType": 4,
+                            "amount": -10
+                        },
+                        {
+                            "resourceType": 1,
+                            "amount": 200
+                        },
+                        {
+                            "resourceType": 3,
+                            "amount": 30
+                        }
+                    ],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                },
+                {
+                    "text": "위험할 수 있으니 내버려 둔다",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": 5
+                }
+            ],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "으악! 숨어 있던 적들에게 습격당했다!",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "다소 병력을 잃었으나, 타지 않은 물자를 꽤 찾을 수 있었다. 전에는 창고였던 것으로 보인다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": 6
+        },
+        {
+            "text": "안전제일! 어차피 물자도 다 타버렸겠지.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        }
+    ]
+}

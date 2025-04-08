@@ -1,0 +1,61 @@
+{
+    "EncounterId": "R_EVT_001",
+    "Title": "추가 물자",
+    "Condition": {
+        "triggerDays": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "specialConditionRequired": ""
+    },
+    "Pages": [
+        {
+            "text": "외부에서 물자가 도착했다고 한다. 병사들을 불러 받으라고 할까?",
+            "imagePath": "resources",
+            "Choices": [
+                {
+                    "text": "보낸다",
+                    "effects": [
+                        {
+                            "resourceType": 0,
+                            "amount": 200
+                        },
+                        {
+                            "resourceType": 1,
+                            "amount": 200
+                        },
+                        {
+                            "resourceType": 4,
+                            "amount": -20
+                        }
+                    ],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": 2
+                },
+                {
+                    "text": "보내지 않는다",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                }
+            ],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "아무 일도 일어나지 않았다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": 3
+        },
+        {
+            "text": "물자를 가져오는 것에 성공하였으나 습격으로 인해 병사 일부를 잃었다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        }
+    ]
+}

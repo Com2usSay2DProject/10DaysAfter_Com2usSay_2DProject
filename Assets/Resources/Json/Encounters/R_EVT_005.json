@@ -1,0 +1,70 @@
+{
+    "EncounterId": "R_EVT_005",
+    "Title": "민간인 발견",
+    "Condition": {
+        "triggerDays": [
+            3,
+            4,
+            5,
+            6,
+            7
+        ],
+        "specialConditionRequired": ""
+    },
+    "Pages": [
+        {
+            "text": "기지 인근 초소에서, 부상자와 어린아이를 포함한 민간인 무리를 발견했다.",
+            "imagePath": "civillians",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "어떻게 할까?",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "군인은 역시 국민을 도와야지!",
+                    "effects": [
+                        {
+                            "resourceType": 2,
+                            "amount": -200
+                        },
+                        {
+                            "resourceType": 4,
+                            "amount": 20
+                        }
+                    ],
+                    "branchKey": "helpedcivillians",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                },
+                {
+                    "text": "우리도 먹고살기 힘들어",
+                    "effects": [],
+                    "branchKey": "neglectedcivillians",
+                    "setBranchTrue": false,
+                    "nextPageIndex": 4
+                }
+            ],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "다들 당신에게 감사를 표했다. 몇몇 젊은이들은 이곳에 남기까지 하겠다고 한다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "식량을 많이 나누어 주었지만 보람찬 일이었다!",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": 6
+        },
+        {
+            "text": "그들은 아쉬워하며 곧 시야 밖으로 사라졌다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        }
+    ]
+}

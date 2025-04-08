@@ -49,6 +49,7 @@ public class EncounterJsonCreator : EditorWindow
 			GUILayout.Label($"페이지 {i + 1}");
 			pages[i].text = EditorGUILayout.TextField("텍스트", pages[i].text);
 			pages[i].imagePath = EditorGUILayout.TextField("이미지 경로", pages[i].imagePath);
+			pages[i].nextPageIndex = EditorGUILayout.IntField("다음 페이지", pages[i].nextPageIndex);
 
 			if (pages[i].Choices == null)
 				pages[i].Choices = new();
@@ -63,6 +64,8 @@ public class EncounterJsonCreator : EditorWindow
 				pages[i].Choices[j].text = EditorGUILayout.TextField("선택지 텍스트", pages[i].Choices[j].text);
 				pages[i].Choices[j].branchKey = EditorGUILayout.TextField("분기 키 (branchKey)", pages[i].Choices[j].branchKey);
 				pages[i].Choices[j].setBranchTrue = EditorGUILayout.Toggle("분기 활성화 여부", pages[i].Choices[j].setBranchTrue);
+
+				pages[i].Choices[j].nextPageIndex = EditorGUILayout.IntField("다음 페이지 인덱스 (-1 = 자동)", pages[i].Choices[j].nextPageIndex);
 
 				if (pages[i].Choices[j].effects == null)
 					pages[i].Choices[j].effects = new();

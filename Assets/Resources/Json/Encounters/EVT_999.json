@@ -1,0 +1,29 @@
+{
+    "EncounterId": "EVT_999",
+    "Title": "특별조건 테스트용",
+    "Condition": {
+        "triggerDays": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            10
+        ],
+        "specialConditionRequired": "hasseenspecialevent"
+    },
+    "Pages": [
+        {
+            "text": "특정 이벤트를 보면 뜨게 하고 싶어요",
+            "imagePath": "",
+            "Choices": []
+        },
+        {
+            "text": "조건이 있을 때만 하고 싶어요",
+            "imagePath": "",
+            "Choices": []
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "EncounterId": "EVT_998",
+    "Title": "특별조건 생성용",
+    "Condition": {
+        "triggerDays": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+        ],
+        "specialConditionRequired": "이걸 봐야 특정 이벤트가 떠요"
+    },
+    "Pages": [
+        {
+            "text": "다른 이벤트로 이어지면 좋겠죠",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "네",
+                    "effects": [],
+                    "branchKey": "hasseenspecialevent",
+                    "setBranchTrue": true
+                }
+            ]
+        },
+        {
+            "text": "이어지길 바래요",
+            "imagePath": "",
+            "Choices": []
+        }
+    ]
+}
