@@ -15,14 +15,13 @@ public class TowerRoot : MonoBehaviour // 공통 속성 및 건설 관련 로직
     protected float _range;
 
     [Header("# Cost")]
-    public Dictionary<ResourceType, int> CostData { get; private set; }
+    public Dictionary<ResourceType, int> CostDataDict { get; private set; }
 
     [Header("# State")]
     public bool IsBuilt { get; set; }
 
     [Header ("# Buildable")]
-    private bool _canBuild;
-    public bool CanBuild => _canBuild;
+    public bool CanBuild { get; private set; }
     private HashSet<Collider2D> _overlappingColliders = new HashSet<Collider2D>(); // 건설 가능 판정용
 
     [Header ("# Components")]
@@ -44,7 +43,7 @@ public class TowerRoot : MonoBehaviour // 공통 속성 및 건설 관련 로직
         GetDataForThis();
         GetCostData();
         IsBuilt = false;
-        _canBuild = true;
+        CanBuild = true;
         _spriteRenderer.color = _tempColor;
     }
 
@@ -55,7 +54,7 @@ public class TowerRoot : MonoBehaviour // 공통 속성 및 건설 관련 로직
         if (collision.CompareTag("Tower"))
         {
             _overlappingColliders.Add(collision);
-            _canBuild = false;
+            CanBuild = false;
             _spriteRenderer.color = _errorColor;
         }
     }
@@ -71,7 +70,7 @@ public class TowerRoot : MonoBehaviour // 공통 속성 및 건설 관련 로직
             // 아무것도 안 겹칠 때만 가능하게
             if (_overlappingColliders.Count == 0)
             {
-                _canBuild = true;
+                CanBuild = true;
                 _spriteRenderer.color = _tempColor;
             }
         }
@@ -148,10 +147,10 @@ public class TowerRoot : MonoBehaviour // 공통 속성 및 건설 관련 로직
 
     private void GetCostData()
     {
-        CostData = new Dictionary<ResourceType, int>();
+        CostDataDict = new Dictionary<ResourceType, int>();
         foreach (var cost in Data.Cost)
         {
-            CostData.Add(cost.Type, cost.Amount);
+            CostDataDict.Add(cost.Type, cost.Amount);
         }
     }
 

@@ -1,0 +1,9 @@
+using UnityEngine;
+
+public class FoodTower : ResourceTower
+{
+    protected override void GenerateResource()
+    {
+        ResourceManager.Instance.AddResource(_resourceType, (int)_damage);
+    }
+}

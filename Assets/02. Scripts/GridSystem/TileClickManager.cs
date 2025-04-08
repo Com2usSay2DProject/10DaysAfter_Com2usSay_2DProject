@@ -64,7 +64,7 @@ public class TileClickManager : Singleton<TileClickManager>
                     if (hit.gameObject.layer == LayerMask.NameToLayer("Tile") ||
                         hit.CompareTag("Tile"))
                     {
-                        if (_selectedTower.CanBuild && ResourceManager.Instance.TryUseMultipleResources(_selectedTower.CostData))
+                        if (_selectedTower.CanBuild && ResourceManager.Instance.TryUseMultipleResources(_selectedTower.CostDataDict))
                         {
                             tileClicked = true;
                             Debug.Log("클릭한 위치가 타일임: " + hit.transform.position);

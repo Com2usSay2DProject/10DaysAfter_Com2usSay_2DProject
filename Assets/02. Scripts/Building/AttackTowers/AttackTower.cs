@@ -4,7 +4,6 @@ using UnityEngine;
 using UniRx;
 using System;
 
-
 public enum Direction8
 {
     Up,
@@ -17,7 +16,7 @@ public enum Direction8
     DownRight
 }
 
-[System.Serializable]
+[Serializable]
 public struct DirectionSprite
 {
     public Direction8 direction;
@@ -39,6 +38,7 @@ public class AttackTower : TowerRoot
     [Header("# UniRx")]
     private IDisposable _targetEnemySubscription;
 
+    #region Initialize
     protected override void Awake()
     {
         base.Awake();
@@ -77,6 +77,7 @@ public class AttackTower : TowerRoot
                 _isEnemyDetected = false;
             }).AddTo(this);
     }
+    #endregion
 
     private void Update()
     {
@@ -162,5 +163,11 @@ public class AttackTower : TowerRoot
             return Direction8.Down;
         else
             return Direction8.DownRight;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, _range);
     }
 }
