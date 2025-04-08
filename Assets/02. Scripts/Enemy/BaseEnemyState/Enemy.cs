@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
 
     [Header("# Prefab")]
     public GameObject ProjectilePrefab;
+    public GameObject HitBloodPrefab;
 
 
     protected EnemyStateMachine _stateMachine;
@@ -42,6 +43,7 @@ public class Enemy : MonoBehaviour
     public EnemyIdleState IdleState;
     public EnemyMoveState MoveState;
     public EnemyAttackState AttackState;
+    public EnemyHitState HitState;
     public EnemyDeadState DeadState;
     #endregion
 
@@ -66,6 +68,7 @@ public class Enemy : MonoBehaviour
         IdleState = new EnemyIdleState(_stateMachine, _rigidbody2D, this, "Idle");
         MoveState = new EnemyMoveState(_stateMachine, _rigidbody2D, this, "Move");
         AttackState = new EnemyAttackState(_stateMachine, _rigidbody2D, this, "Attack");
+        HitState = new EnemyHitState(_stateMachine, _rigidbody2D, this, "Hit");
         DeadState = new EnemyDeadState(_stateMachine, _rigidbody2D, this, "Dead", _spriteRenderer);
     }
 
@@ -124,11 +127,17 @@ public class Enemy : MonoBehaviour
     protected virtual void Update()
     {
         _stateMachine.Update();
+
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            TakeDamage(0);
+        }
     }
 
-    protected virtual void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
         Hp -= damage;
+        _stateMachine.ChangeState(HitState);
         if (Hp <= 0)
             _stateMachine.ChangeState(DeadState);
     }
