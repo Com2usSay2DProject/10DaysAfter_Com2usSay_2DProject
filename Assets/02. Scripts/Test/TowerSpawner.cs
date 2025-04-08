@@ -10,7 +10,7 @@ public class TowerSpawner : Singleton<TowerSpawner>
 
     private void Awake()
     {
-        TowerDataCollection collection = new TowerDataCollection();
+        /*TowerDataCollection collection = new TowerDataCollection();
         collection.Datas.Add(new TowerData
         {
             TowerType = ETowerType.TempTower,
@@ -36,7 +36,7 @@ public class TowerSpawner : Singleton<TowerSpawner>
         });
         collection.Datas[1].Cost.Add(new TowerCostData(ResourceType.Wood, 1));
         collection.Datas[1].Cost.Add(new TowerCostData(ResourceType.Stone, 2));
-        JsonDataManager.CreateFile("Tower/TowerDataCollection", collection);
+        JsonDataManager.CreateFile("Tower/TowerDataCollection", collection);*/
         /*TowerCostDataCollection collection = new TowerCostDataCollection();
         collection.Datas.Add(new TowerCostData
         {

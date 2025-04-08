@@ -41,6 +41,7 @@ public class AttackTower : TowerRoot
     [Header("# UniRx")]
     private IDisposable _targetEnemySubscription;
 
+    private float _timer = 0f;
     #region Initialize
     protected override void Awake()
     {
@@ -85,6 +86,8 @@ public class AttackTower : TowerRoot
     {
         base.Update();
 
+        _timer += Time.deltaTime;
+
         if (!_isEnemyDetected || _targetEnemy.IsDead)
         {
             _targetEnemy = DetectEnemy()?.GetComponent<Enemy>();
@@ -125,6 +128,7 @@ public class AttackTower : TowerRoot
     private void Attack()
     {
         if (_targetEnemy == null) return;
+        if (_timer < _atkSpeed) return;
 
         Vector2 dir = ((Vector2)_targetEnemy.transform.position - (Vector2)transform.position).normalized;
         Direction8 direction = GetDirection8(dir);
@@ -141,8 +145,13 @@ public class AttackTower : TowerRoot
 
         // 필요 시: 해당 방향으로 총알 발사 등
         //_fireEffect.SetActive(true);
-        _fireEffect.GetComponent<ParticleSystem>().Play();
-        _targetEnemy.GetComponent<Enemy>().TakeDamage(_damage); 
+        var ps = _fireEffect.GetComponent<ParticleSystem>();
+        ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        ps.Play();
+
+        _targetEnemy.GetComponent<Enemy>().TakeDamage(_damage);
+
+        _timer = 0f;
     }
 
     private Direction8 GetDirection8(Vector2 dir)
