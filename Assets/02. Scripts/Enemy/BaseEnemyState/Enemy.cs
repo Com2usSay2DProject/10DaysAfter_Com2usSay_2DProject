@@ -78,8 +78,6 @@ public class Enemy : MonoBehaviour
     {
         Hp = Data.MaxHp;
         IsDead = false;
-        _stateMachine.ChangeState(IdleState);
-        _spriteRenderer.color = new Color(1, 1, 1, 1);
         _collider2D.enabled = true;
     }
 
@@ -111,19 +109,19 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnDayBegin() { _stateMachine.ChangeState(DeadState); }
-    /*private void OnNightBegin()
+    private void OnDayBegin() { if (IsDead == true) return; _stateMachine.ChangeState(DeadState); }
+    private void OnNightBegin()
     {
         _stateMachine.ChangeState(IdleState);
         _spriteRenderer.color = new Color(1, 1, 1, 1);
-    }*/
+    }
 
     protected virtual void Start()
     {
         if (PhaseManager.Instance != null)
         {
             PhaseManager.Instance.OnDayBegin += OnDayBegin;
-            //PhaseManager.Instance.OnNightBegin += OnNightBegin;
+            PhaseManager.Instance.OnNightBegin += OnNightBegin;
         }
 
         if (_stateMachine != null)
@@ -146,9 +144,11 @@ public class Enemy : MonoBehaviour
 
     public virtual void TakeDamage(float damage)
     {
+        if (IsDead) return;
+
         Hp -= damage;
         _stateMachine.ChangeState(HitState);
-        if (Hp <= 0 && !IsDead)
+        if (Hp <= 0)
         {
             IsDead = true;
             _stateMachine.ChangeState(DeadState);
