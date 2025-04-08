@@ -41,11 +41,11 @@ public class Projectile : MonoBehaviour
         {
             TowerRoot Tower = collision.GetComponent<TowerRoot>();
 
-            Destroy(gameObject);
             if (Tower == null) return;
 
             Tower.TakeDamage(_damage);
 
+            Destroy(gameObject);
             Debug.Log("Attack Damage");
         }
     }

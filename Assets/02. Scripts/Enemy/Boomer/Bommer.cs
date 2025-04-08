@@ -14,7 +14,7 @@ public class Bommer : Enemy
         base.Start();
     }
 
-    public override void TakeDamage(float damage)
+    protected override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
     }

@@ -74,7 +74,6 @@ public class EnemySpawnerManager : MonoBehaviour
         EnemySpawner spawner = spawnerObj.GetComponent<EnemySpawner>();
         if (spawner != null)
         {
-            spawner.gameObject.SetActive(false);
             spawners.Add(spawner);
         }
         //float angle = Random.Range(0f, 2 * Mathf.PI);
@@ -104,8 +103,8 @@ public class EnemySpawnerManager : MonoBehaviour
             yield return new WaitForSeconds(randomDelay);
             int randomType = Random.Range(0, enableSpawnType);
 
-            //spawner.Spawn((EEnemyType)randomType);
-            spawner.Spawn(EEnemyType.NomalEnemy);
+            spawner.Spawn((EEnemyType)randomType);
+            //spawner.Spawn(EEnemyType.Crawler);
 
         }
     }
