@@ -18,6 +18,7 @@ public class TileManager : Singleton<TileManager> // 수민
     {
         get => _bounds;
     }
+    public Bounds WorldBounds;
 
     private TileNode[,] _gridArray;
 
@@ -25,11 +26,24 @@ public class TileManager : Singleton<TileManager> // 수민
         
     private void Awake()
     {
-
         _bounds = _groundTilemap.cellBounds;
+        WorldBounds = TransformBoundsToWorld(_groundTilemap.transform, _groundTilemap.localBounds);
+
         Debug.Log($"Bounds: xMin:{_bounds.xMin}, xMax:{_bounds.xMax}, yMin:{_bounds.yMin}, yMax:{_bounds.yMax}");
 
         MakeTileInfo();
+    }
+
+    public static Bounds TransformBoundsToWorld(Transform transform, Bounds localBounds)
+    {
+        Vector3 center = transform.TransformPoint(localBounds.center);
+        Vector3 extents = localBounds.extents;
+        Vector3 worldExtents = new Vector3(
+            Mathf.Abs(transform.lossyScale.x) * extents.x,
+            Mathf.Abs(transform.lossyScale.y) * extents.y,
+            Mathf.Abs(transform.lossyScale.z) * extents.z
+        );
+        return new Bounds(center, worldExtents * 2);
     }
 
     private void MakeTileInfo()
