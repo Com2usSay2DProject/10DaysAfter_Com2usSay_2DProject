@@ -64,6 +64,17 @@ public class CreateEnemyData : MonoBehaviour
             Damage = 10,
             Range = 0.6f
         });
+        collection.Datas.Add(new EnemyData
+        {
+            TargetType = ETargetType.Tower,
+            EnemyType = EEnemyType.Unique1,
+            TypeString = "Unique1",
+            MaxHp = 200,
+            Speed = 1f,
+            AtkSpeed = 0.8f,
+            Damage = 50,
+            Range = 1.2f
+        });
         JsonDataManager.CreateFile("Enemy/EnemyDataCollection", collection);
     }
 

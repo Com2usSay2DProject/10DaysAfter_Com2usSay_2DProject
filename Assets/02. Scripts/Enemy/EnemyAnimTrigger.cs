@@ -53,4 +53,11 @@ public class EnemyAnimTrigger : MonoBehaviour
         projectile.Init(_enemy, _enemy.Damage, _enemy.FaceDir);
         projectile.transform.position = _enemy.transform.position;
     }
+
+    private void UniqueEnemyAttackTrigger()
+    {
+
+    }
+
+
 }
