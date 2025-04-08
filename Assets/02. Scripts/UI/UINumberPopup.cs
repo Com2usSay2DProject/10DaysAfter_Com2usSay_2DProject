@@ -29,4 +29,8 @@ public class UINumberPopup : MonoBehaviour
         transform.gameObject.SetActive(false);
     }
 
+    public void SetText(int value)
+    {
+        PopupText.text = $"+ {value.ToString()}";
+    }
 }

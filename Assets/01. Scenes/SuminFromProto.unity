@@ -2042,6 +2042,9 @@ MonoBehaviour:
   EdgeSize: 30
   xBounds: {x: -10, y: 10}
   yBounds: {x: -10, y: 10}
+  xBoundsprime: {x: 0, y: 0}
+  yBoundsprime: {x: 0, y: 0}
+  Offset: 0
 --- !u!114 &1750460111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2191,6 +2194,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _groundTilemap: {fileID: 2079426392}
+  WorldBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
 --- !u!114 &1793045192
 MonoBehaviour:
   m_ObjectHideFlags: 0

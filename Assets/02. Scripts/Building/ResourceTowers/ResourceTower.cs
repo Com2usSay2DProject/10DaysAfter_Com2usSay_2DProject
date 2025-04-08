@@ -10,6 +10,8 @@ public abstract class ResourceTower : TowerRoot
     protected ResourceType _resourceType;
     [SerializeField]
     protected GameObject _resourceEffect;
+    [SerializeField]
+    protected UINumberPopup _resourceTextPopup;
 
     protected float _timer = 0f;
 

@@ -188,6 +188,7 @@ MonoBehaviour:
     PopulationMultiplier: 0.05
   _resourceType: 0
   _resourceEffect: {fileID: 7320083297928095043}
+  _resourceTextPopup: {fileID: 868989827769427185}
 --- !u!1001 &5415377438654700554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -289,6 +290,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd8ffd056df34a74d936c3827be9df41, type: 3}
+--- !u!114 &868989827769427185 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5127362135582734587, guid: fd8ffd056df34a74d936c3827be9df41, type: 3}
+  m_PrefabInstance: {fileID: 5415377438654700554}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7320083297928095043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b1777860d1bbe6469c425da9c6e323d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7320083297928095043 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3364578077642045769, guid: fd8ffd056df34a74d936c3827be9df41, type: 3}
