@@ -23,8 +23,9 @@ public class PhaseManager : Singleton<PhaseManager>
 	public Action OnNightBegin;
 	public Action OnNightEnd;
 
-	//지금은 그냥 UI 직접 끄기
-	public Button BuildButton;
+	public Action OnDateChange;
+
+	public GameObject BuildBar;
 
 	//다음 페이즈까지 타이머
 	private float _timeUntilNextPhase;
@@ -72,7 +73,7 @@ public class PhaseManager : Singleton<PhaseManager>
 				
 				OnDayEnd?.Invoke();                             //건설 UI, 이벤트 끝
 				yield return new WaitForSeconds(FadeTime);
-				BuildButton.gameObject.SetActive(false);		//지금은 그냥 직접 끔
+				BuildBar.gameObject.SetActive(false);		//지금은 그냥 직접 끔
 
 
 				//다음 페이즈는 밤
@@ -90,10 +91,11 @@ public class PhaseManager : Singleton<PhaseManager>
 				OnNightEnd?.Invoke();                           //스포너 끄기, 빛 조절
 				yield return new WaitForSeconds(FadeTime);
 				_isNight = false;								//다음 페이즈는 낮
-				BuildButton.gameObject.SetActive(true);			//지금은 그냥 직접 킴(건설UI)
+				BuildBar.gameObject.SetActive(true);			//지금은 그냥 직접 킴(건설UI)
 
 				Debug.Log($"Night Phase is over. You survived {_currentDay} days");
 				_currentDay++;
+				OnDateChange?.Invoke();
 				_timeUntilNextPhase = DayPhaseDuration + FadeTime;
 			}
         }
