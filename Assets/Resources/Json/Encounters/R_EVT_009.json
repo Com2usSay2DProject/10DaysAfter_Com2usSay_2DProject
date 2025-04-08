@@ -1,32 +1,31 @@
 {
-    "EncounterId": "R_EVT_004",
-    "Title": "오작동 방송",
+    "EncounterId": "R_EVT_009",
+    "Title": "부관의 이상한 취미",
     "Condition": {
         "triggerDays": [
-            3,
-            4,
-            5,
-            6
+            1,
+            2,
+            3
         ],
         "specialConditionRequired": ""
     },
     "Pages": [
         {
-            "text": "며칠간 병사들에게 한밤중에 이상한 방송을 들었다는 제보가 계속해서 들어오고 있다.",
-            "imagePath": "strange_broadcast",
+            "text": "부관이 텐트에서 수상한 짓을 하고 있던 것을 발견했다.",
+            "imagePath": "lieutenants_hobby",
             "Choices": [],
             "nextPageIndex": -1
         },
         {
-            "text": "무슨 조치를 해 줘야 할까?",
+            "text": "어떻게 대응할까?",
             "imagePath": "",
             "Choices": [
                 {
-                    "text": "환청은 나약한 것들이나 듣는 거야",
+                    "text": "예술적 표현이겠지...",
                     "effects": [
                         {
-                            "resourceType": 4,
-                            "amount": -50
+                            "resourceType": 2,
+                            "amount": 5
                         }
                     ],
                     "branchKey": "",
@@ -34,14 +33,14 @@
                     "nextPageIndex": -1
                 },
                 {
-                    "text": "방송 장치를 꺼 둔다",
+                    "text": "병사들의 사기 증진을 위해 잠시 빌린다",
                     "effects": [
                         {
-                            "resourceType": 3,
-                            "amount": -50
+                            "resourceType": 4,
+                            "amount": 30
                         }
                     ],
-                    "branchKey": "hasturnedoffbroadcast",
+                    "branchKey": "",
                     "setBranchTrue": false,
                     "nextPageIndex": 3
                 }
@@ -49,13 +48,13 @@
             "nextPageIndex": -1
         },
         {
-            "text": "당신의 정신론을 병사들은 무력하게 받아들일 수밖에 없었다.",
+            "text": "그 날, 배식 시간에 부관이 유난히 친절했다.",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": 5
         },
         {
-            "text": "이제야 밤에 제대로 좀 자겠다며 다들 기뻐하는 분위기이다.",
+            "text": "병사들은 그 수상쩍은 물건들로 꽤나 즐거워하는 것 같아 보였다. 부관은 어디론가 사라져 보이지 않았다.",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": -1

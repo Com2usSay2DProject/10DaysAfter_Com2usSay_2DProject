@@ -1,0 +1,58 @@
+{
+    "EncounterId": "R_EVT_007",
+    "Title": "실종된 통조림",
+    "Condition": {
+        "triggerDays": [
+            2,
+            3,
+            4,
+            5
+        ],
+        "specialConditionRequired": ""
+    },
+    "Pages": [
+        {
+            "text": "식량 보관소에서 통조림 수십 개가 사라졌다.\n누구도 손댄 기억이 없다고 주장하고 있다.",
+            "imagePath": "canned_food",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "어떻게 처리할까?",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "다음부터는 라벨에 이름 써라!",
+                    "effects": [
+                        {
+                            "resourceType": 4,
+                            "amount": 30
+                        }
+                    ],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                },
+                {
+                    "text": "범인을 색출해라. 밤을 새는 한이 있어도!",
+                    "effects": [
+                        {
+                            "resourceType": 2,
+                            "amount": 30
+                        }
+                    ],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                }
+            ],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "다음날 새벽, 병사 한 명의 텐트에서 빈 통조림 수십 개가 발견되었다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        }
+    ]
+}

@@ -1,32 +1,37 @@
 {
-    "EncounterId": "R_EVT_004",
-    "Title": "오작동 방송",
+    "EncounterId": "R_EVT_008",
+    "Title": "탈출한 닭",
     "Condition": {
         "triggerDays": [
+            1,
+            2,
             3,
             4,
-            5,
-            6
+            5
         ],
         "specialConditionRequired": ""
     },
     "Pages": [
         {
-            "text": "며칠간 병사들에게 한밤중에 이상한 방송을 들었다는 제보가 계속해서 들어오고 있다.",
-            "imagePath": "strange_broadcast",
+            "text": "식량용으로 기르던 닭 한 마리가 탈출해 기지 안을 뛰어다니고 있다.",
+            "imagePath": "chickens",
             "Choices": [],
             "nextPageIndex": -1
         },
         {
-            "text": "무슨 조치를 해 줘야 할까?",
+            "text": "어떻게 할까?",
             "imagePath": "",
             "Choices": [
                 {
-                    "text": "환청은 나약한 것들이나 듣는 거야",
+                    "text": "저 닭을 잡아!",
                     "effects": [
                         {
+                            "resourceType": 2,
+                            "amount": 50
+                        },
+                        {
                             "resourceType": 4,
-                            "amount": -50
+                            "amount": -10
                         }
                     ],
                     "branchKey": "",
@@ -34,14 +39,9 @@
                     "nextPageIndex": -1
                 },
                 {
-                    "text": "방송 장치를 꺼 둔다",
-                    "effects": [
-                        {
-                            "resourceType": 3,
-                            "amount": -50
-                        }
-                    ],
-                    "branchKey": "hasturnedoffbroadcast",
+                    "text": "닭도 자유로운 걸 더 좋아하겠지",
+                    "effects": [],
+                    "branchKey": "",
                     "setBranchTrue": false,
                     "nextPageIndex": 3
                 }
@@ -49,13 +49,13 @@
             "nextPageIndex": -1
         },
         {
-            "text": "당신의 정신론을 병사들은 무력하게 받아들일 수밖에 없었다.",
+            "text": "저 사악한 생물을 잡느라 병사들이 온통 진이 빠졌다.",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": 5
         },
         {
-            "text": "이제야 밤에 제대로 좀 자겠다며 다들 기뻐하는 분위기이다.",
+            "text": "닭은 지금 지휘 센터 근처를 유유히 걷고 있다. 몇몇 병사들이 이름을 붙이려고 한다.",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": -1

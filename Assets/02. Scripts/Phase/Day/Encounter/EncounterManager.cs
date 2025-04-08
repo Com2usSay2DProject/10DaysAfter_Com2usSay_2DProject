@@ -18,7 +18,7 @@ public class EncounterManager : Singleton<EncounterManager>
 	// 테스트용으로 사용
 	private void Start()
 	{
-		ForceTriggerEncounter("R_EVT_005");
+		//ForceTriggerEncounter("R_EVT_009");
 	}
 
 	private void LoadAllEncounters()

@@ -153,8 +153,8 @@ MonoBehaviour:
   spawnerCount: 10
   minSpawnDelay: 5
   maxSpawnDelay: 6
-  _spawnRadiusMin: 7
-  _spawnRadiusMax: 8
+  _spawnRadiusMin: 12
+  _spawnRadiusMax: 14
   ClusterSpawnerPos: []
   ClusterEnemyNum: 0
   ClusterRadius: 0
@@ -544,6 +544,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 807533416818262882, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: AllocatedTower
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325357165212623277, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: AllocatedTower
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1770168973577837414, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -643,6 +651,10 @@ PrefabInstance:
     - target: {fileID: 4966907789740643467, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300022480511634552, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: AllocatedTower
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6496862810113873020, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1095,7 +1107,7 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142856735}
   m_Enabled: 1
-  m_CellSize: {x: 1, y: 0.547, z: 1}
+  m_CellSize: {x: 1.68, y: 1, z: 1}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 3
   m_CellSwizzle: 0
@@ -1313,13 +1325,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _poolInfoList:
-  - Type: 0
-    InitCount: 5
-    Prefab: {fileID: 3507977410005111897, guid: 104353fe23ac8e14fb4f2ba50105aee8, type: 3}
-    Container: {fileID: 99842643}
   - Type: 1
     InitCount: 5
     Prefab: {fileID: 3099625712857953364, guid: 4e420ebc4145d8c4d83f074993d4c7a7, type: 3}
+    Container: {fileID: 99842643}
+  - Type: 2
+    InitCount: 5
+    Prefab: {fileID: 3537882089294492269, guid: 718e79b76b34fb545affa10268629c1a, type: 3}
+    Container: {fileID: 99842643}
+  - Type: 3
+    InitCount: 5
+    Prefab: {fileID: 8733090764095967933, guid: 8fea3939366ea484782c17533dad032e, type: 3}
+    Container: {fileID: 99842643}
+  - Type: 4
+    InitCount: 5
+    Prefab: {fileID: 9010079705763178229, guid: 21e2a8ce202a5f8488107747a5d5ad18, type: 3}
+    Container: {fileID: 99842643}
+  - Type: 5
+    InitCount: 5
+    Prefab: {fileID: 2692141017147565076, guid: 11954fac11daa964ba5269baf695466f, type: 3}
+    Container: {fileID: 99842643}
+  - Type: 0
+    InitCount: 5
+    Prefab: {fileID: 3507977410005111897, guid: 39a2f00161496594583329434eef2308, type: 3}
     Container: {fileID: 99842643}
 --- !u!114 &1380956227
 MonoBehaviour:
