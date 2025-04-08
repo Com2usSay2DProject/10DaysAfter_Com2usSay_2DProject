@@ -26,7 +26,8 @@ public struct DirectionSprite
 public class AttackTower : TowerRoot
 {
     [Header("# Attack, Detect")]
-    private GameObject _targetEnemy;
+    [SerializeField]
+    private Enemy _targetEnemy;
     private bool _isEnemyDetected;
 
     [Header("# Turret")]
@@ -84,9 +85,9 @@ public class AttackTower : TowerRoot
     {
         base.Update();
 
-        if (!_isEnemyDetected || !_targetEnemy)
+        if (!_isEnemyDetected || _targetEnemy.IsDead)
         {
-            _targetEnemy = DetectEnemy();
+            _targetEnemy = DetectEnemy()?.GetComponent<Enemy>();
             _isEnemyDetected = _targetEnemy != null;
         }
         else
@@ -141,7 +142,7 @@ public class AttackTower : TowerRoot
         // 필요 시: 해당 방향으로 총알 발사 등
         //_fireEffect.SetActive(true);
         _fireEffect.GetComponent<ParticleSystem>().Play();
-        _targetEnemy.GetComponent<Enemy>().TakeDamage(_damage);
+        _targetEnemy.GetComponent<Enemy>().TakeDamage(_damage); 
     }
 
     private Direction8 GetDirection8(Vector2 dir)

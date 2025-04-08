@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -59,8 +60,6 @@ public class Enemy : MonoBehaviour
         }
         GetDataForThis();
 
-        Hp = Data.MaxHp;
-
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _stateMachine = new EnemyStateMachine();
         _animator = GetComponentInChildren<Animator>();
@@ -73,6 +72,15 @@ public class Enemy : MonoBehaviour
         AttackState = new EnemyAttackState(_stateMachine, _rigidbody2D, this, "Attack");
         HitState = new EnemyHitState(_stateMachine, _rigidbody2D, this, "Hit");
         DeadState = new EnemyDeadState(_stateMachine, _rigidbody2D, this, "Dead", _spriteRenderer,_collider2D);
+    }
+
+    protected virtual void OnEnable()
+    {
+        Hp = Data.MaxHp;
+        IsDead = false;
+        _stateMachine.ChangeState(IdleState);
+        _spriteRenderer.color = new Color(1, 1, 1, 1);
+        _collider2D.enabled = true;
     }
 
     private void GetData()
@@ -104,19 +112,18 @@ public class Enemy : MonoBehaviour
     }
 
     private void OnDayBegin() { _stateMachine.ChangeState(DeadState); }
-    private void OnNightBegin()
+    /*private void OnNightBegin()
     {
         _stateMachine.ChangeState(IdleState);
         _spriteRenderer.color = new Color(1, 1, 1, 1);
-        IsDead = false;
-    }
+    }*/
 
     protected virtual void Start()
     {
         if (PhaseManager.Instance != null)
         {
             PhaseManager.Instance.OnDayBegin += OnDayBegin;
-            PhaseManager.Instance.OnNightBegin += OnNightBegin;
+            //PhaseManager.Instance.OnNightBegin += OnNightBegin;
         }
 
         if (_stateMachine != null)
@@ -141,8 +148,11 @@ public class Enemy : MonoBehaviour
     {
         Hp -= damage;
         _stateMachine.ChangeState(HitState);
-        if (Hp <= 0)
+        if (Hp <= 0 && !IsDead)
+        {
+            IsDead = true;
             _stateMachine.ChangeState(DeadState);
+        }
     }
     public void CanAttack()
     {

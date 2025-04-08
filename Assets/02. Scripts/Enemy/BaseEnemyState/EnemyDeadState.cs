@@ -24,7 +24,7 @@ public class EnemyDeadState : EnemyState
         elapsed = 0;
 
         _rigidbody.linearVelocity = Vector3.zero;
-
+  
     }
 
     public override void Exit()
@@ -54,6 +54,7 @@ public class EnemyDeadState : EnemyState
             _spriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
             circleCollider.enabled = true;
 
+            _enemyBase.IsDead = false;
             EnemyPoolManager.Instance.ReturnObject(_enemyBase.gameObject, _enemyBase.EnemyType);
         }
     }
