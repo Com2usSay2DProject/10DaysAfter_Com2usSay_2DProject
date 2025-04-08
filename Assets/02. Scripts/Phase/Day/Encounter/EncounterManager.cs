@@ -45,7 +45,15 @@ public class EncounterManager : Singleton<EncounterManager>
 
 		foreach (var e in GameEncounters)
 		{
-			if (e.Condition.triggerDays.Contains(currentDay) && StateManager.Instance.GetBranch(e.Condition.specialConditionRequired))
+			if (e.Condition == null) continue;
+			bool conditionMet = true;
+
+			if (!string.IsNullOrEmpty(e.Condition.specialConditionRequired))
+			{
+				conditionMet = StateManager.Instance.GetBranch(e.Condition.specialConditionRequired);
+			}
+
+			if (e.Condition.triggerDays.Contains(currentDay) && conditionMet)
 			{
 				validEncounter.Add(e);
 			}

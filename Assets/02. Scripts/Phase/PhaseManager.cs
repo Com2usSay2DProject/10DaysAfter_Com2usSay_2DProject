@@ -41,7 +41,7 @@ public class PhaseManager : Singleton<PhaseManager>
 
 		//건물 건설 비활성화(UI)
 		//이벤트 발동 비활성화
-		//EncounterManager.Instance.IgnoreEncounter();
+		EncounterManager.Instance.IgnoreEncounter();
 	}
 
 	public IEnumerator PlayNightPhase(float nightDuration)
