@@ -20,7 +20,7 @@ public enum Direction8
 public struct DirectionSprite
 {
     public Direction8 direction;
-    public Sprite sprite;
+    public GameObject sprite;
 }
 
 public class AttackTower : TowerRoot
@@ -31,9 +31,11 @@ public class AttackTower : TowerRoot
 
     [Header("# Turret")]
     [SerializeField] private DirectionSprite[] directionSprites;
-    [SerializeField] private GameObject Turret;
-    private Dictionary<Direction8, Sprite> _spriteDict;
-    private SpriteRenderer _turretSprite;
+    private Dictionary<Direction8, GameObject> _turretDict;
+    [SerializeField]
+    private GameObject _turretObject;
+    [SerializeField]
+    private GameObject _fireEffect;
 
     [Header("# UniRx")]
     private IDisposable _targetEnemySubscription;
@@ -43,12 +45,11 @@ public class AttackTower : TowerRoot
     {
         base.Awake();
 
-        _turretSprite = Turret.GetComponent<SpriteRenderer>();
-        _spriteDict = new Dictionary<Direction8, Sprite>();
+        _turretDict = new Dictionary<Direction8, GameObject>();
 
         foreach (var entry in directionSprites)
         {
-            _spriteDict[entry.direction] = entry.sprite;
+            _turretDict[entry.direction] = entry.sprite;
         }
     }
 
@@ -56,7 +57,7 @@ public class AttackTower : TowerRoot
     {
         base.SetPosition();
 
-        _turretSprite.sortingOrder = _spriteRenderer.sortingOrder + 1;
+        _turretObject.GetComponent<SpriteRenderer>().sortingOrder = _spriteRenderer.sortingOrder + 1;
     }
 
     protected override void OnEnable()
@@ -128,12 +129,18 @@ public class AttackTower : TowerRoot
         Direction8 direction = GetDirection8(dir);
 
         // 방향에 맞는 스프라이트 교체
-        if (_spriteDict.TryGetValue(direction, out Sprite sprite))
+        if (_turretDict.TryGetValue(direction, out GameObject sprite))
         {
-            _turretSprite.sprite = sprite;
+            _turretObject.SetActive(false);
+            sprite.SetActive(true);
+            _turretObject = sprite;
+            _fireEffect = _turretObject.transform.GetChild(0).gameObject;
         }
 
         // 필요 시: 해당 방향으로 총알 발사 등
+        _fireEffect.SetActive(true);
+
+        _targetEnemy.GetComponent<Enemy>().TakeDamage(_damage);
     }
 
     private Direction8 GetDirection8(Vector2 dir)

@@ -124,7 +124,7 @@ public class Enemy : MonoBehaviour
 
     }
 
-    public virtual void Update()
+    protected virtual void Update()
     {
         _stateMachine.Update();
 
@@ -134,7 +134,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    protected virtual void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
         Hp -= damage;
         _stateMachine.ChangeState(HitState);
