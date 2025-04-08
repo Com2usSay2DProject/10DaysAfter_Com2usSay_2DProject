@@ -46,7 +46,7 @@ public class TileManager : Singleton<TileManager> // 수민
 
     private void MakeTrees()
     {
-        int treeCount = 100; // 생성할 나무 개수
+        int treeCount = 50; // 생성할 나무 개수
         int width = _gridArray.GetLength(0);
         int height = _gridArray.GetLength(1);
 
