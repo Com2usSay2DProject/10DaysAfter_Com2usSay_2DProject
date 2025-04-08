@@ -136,6 +136,8 @@ public class Enemy : MonoBehaviour
     {
         _stateMachine.Update();
 
+        _spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
+
         if(Input.GetKeyDown(KeyCode.Q))
         {
             TakeDamage(0);
@@ -147,7 +149,10 @@ public class Enemy : MonoBehaviour
         if (IsDead) return;
 
         Hp -= damage;
-        _stateMachine.ChangeState(HitState);
+
+        //일단 공격상태로 진입했으면 히트 상태로 안감 
+        if(_stateMachine.currentState != AttackState)
+            _stateMachine.ChangeState(HitState);
         if (Hp <= 0)
         {
             IsDead = true;

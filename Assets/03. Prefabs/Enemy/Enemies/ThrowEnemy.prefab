@@ -123,6 +123,7 @@ MonoBehaviour:
   EnemyType: 2
   Hp: 0
   ProjectilePrefab: {fileID: 5638485977966270164, guid: c1d770a93c092824ba2f2eefdda56e72, type: 3}
+  HitBloodPrefab: {fileID: 1993675547027071760, guid: 8672bfd6d5ae0f5429d106fe8ed5e3c1, type: 3}
   TargetSelector: {fileID: 6305670851283007906, guid: d34dcfcb70506e34883b54527ab2979e, type: 3}
   HasTowerInRange: 0
   IsDead: 0

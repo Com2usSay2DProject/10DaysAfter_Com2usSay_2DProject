@@ -16,15 +16,15 @@ public class EnemySpawnerManager : MonoBehaviour
     public int spawnerCount = 10;
     public float minSpawnDelay = 1f;
     public float maxSpawnDelay = 5f;
-    private int enableSpawnType = 4; //-> 애너미 타입중에 해당 웨이브에서 나오게할 종류의수 int를 애너미 타입으로 형변환해서 사용함 현재 4종류 적 예정?
+    private int enableSpawnType = 6; //-> 애너미 타입중에 해당 웨이브에서 나오게할 종류의수 int를 애너미 타입으로 형변환해서 사용함 현재 4종류 적 예정?
     //-----------------------------------
 
     [SerializeField] private float _spawnRadiusMin;
     [SerializeField] private float _spawnRadiusMax;
 
     //스포너들
-    private List<EnemySpawner> spawners = new List<EnemySpawner>();
-    private EnemySpawner ClusterSpawner = new EnemySpawner();
+    private List<EnemySpawner> spawners;
+    private EnemySpawner ClusterSpawner;
     //코루틴 저장용
     private Dictionary<EnemySpawner, Coroutine> spawnerCoroutines = new Dictionary<EnemySpawner, Coroutine>();
 
@@ -33,7 +33,11 @@ public class EnemySpawnerManager : MonoBehaviour
     [SerializeField] int ClusterEnemyNum;
     [SerializeField] float ClusterRadius;
 
-
+    private void Awake()
+    {
+        spawners = new List<EnemySpawner>();
+        
+    }
     private void Start()
     {
 
@@ -104,8 +108,8 @@ public class EnemySpawnerManager : MonoBehaviour
             yield return new WaitForSeconds(randomDelay);
             int randomType = Random.Range(0, enableSpawnType);
 
-            //spawner.Spawn((EEnemyType)randomType);
-            spawner.Spawn(EEnemyType.NomalEnemy);
+            spawner.Spawn((EEnemyType)randomType);
+            //spawner.Spawn(EEnemyType.Unique1);
 
         }
     }
