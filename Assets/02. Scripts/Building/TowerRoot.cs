@@ -27,8 +27,8 @@ public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 �
     [Header ("# Components")]
     protected SpriteRenderer _spriteRenderer;
     protected Rigidbody2D _rigid;
-    private Color _tempColor = new Color(255, 255, 255, 0.5f);
-    private Color _errorColor = new Color(255, 0, 0, 0.5f);
+    private Color _tempColor = new Color(1, 1, 1, 0.5f);
+    private Color _errorColor = new Color(1, 0, 0, 0.5f);
 
     #region Common
     protected virtual void Awake() 
@@ -170,7 +170,7 @@ public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 �
     {
         _maxHp = Data.GetModifiedStat(Data.MaxHp, ResourceManager.Instance.GetResourceAmount(ResourceType.Population));
         _damage = Data.GetModifiedStat(Data.Damage, ResourceManager.Instance.GetResourceAmount(ResourceType.Population));
-        _atkSpeed = Data.GetModifiedStat(Data.AtkSpeed, ResourceManager.Instance.GetResourceAmount(ResourceType.Population));
+        //_atkSpeed = Data.GetModifiedStat(Data.AtkSpeed, ResourceManager.Instance.GetResourceAmount(ResourceType.Population));
         _range = Data.GetModifiedStat(Data.Range, ResourceManager.Instance.GetResourceAmount(ResourceType.Population));
     }
     #endregion

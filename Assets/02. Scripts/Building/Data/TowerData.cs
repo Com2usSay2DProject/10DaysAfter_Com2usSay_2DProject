@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 [Serializable]
 public class TowerData
@@ -15,6 +16,6 @@ public class TowerData
     public float PopulationMultiplier = 0.05f;
     public float GetModifiedStat(float baseStat, int population)
     {
-        return baseStat * (1 + PopulationMultiplier * (population - 1));
+        return baseStat * (1 + PopulationMultiplier * Mathf.Pow(population, 0.6f));
     }
 }
