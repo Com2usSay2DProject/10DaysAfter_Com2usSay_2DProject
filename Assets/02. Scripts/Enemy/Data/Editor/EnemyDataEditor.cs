@@ -13,7 +13,7 @@ public class EnemyDataEditor : EditorWindow
     }
 
     private Vector2 scrollPos;
-    private const string FileName = "Enemy/EnemyDataCollection"; // Resources/Json 폴더 기준
+    private const string FileName = "Enemy/EnemyDataCollection";
     private void OnEnable()
     {
         try
