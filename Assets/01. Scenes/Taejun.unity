@@ -1459,6 +1459,7 @@ MonoBehaviour:
   WorldBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
+  Trees: []
 --- !u!114 &767547337
 MonoBehaviour:
   m_ObjectHideFlags: 0
