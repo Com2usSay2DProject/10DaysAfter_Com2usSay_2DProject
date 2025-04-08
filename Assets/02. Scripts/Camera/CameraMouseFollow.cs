@@ -15,8 +15,6 @@ public class CameraMouseFollow : MonoBehaviour
 	public Vector2 xBoundsprime = new Vector2(); // 카메라 X 이동 제한
 	public Vector2 yBoundsprime = new Vector2(); // 카메라 Y 이동 제한
 
-	public float Offset = 0f;
-
 	private void Awake()
 	{
 		//메인 카메라 할당
@@ -26,20 +24,15 @@ public class CameraMouseFollow : MonoBehaviour
 
 	private void Start()
 	{
-		var grid = TileManager.Instance.GridArray;
-		int width = grid.GetLength(0);
-		int height = grid.GetLength(1);
-
-		Vector3 topLeft = grid[0, 0].WorldPositon;
-		Vector3 bottomLeft = grid[width - 1, 0].WorldPositon;
-		Vector3 topRight = grid[0, height - 1].WorldPositon;
-		Vector3 bottomRight = grid[width - 1, height - 1].WorldPositon;
+		Bounds bound = TileManager.Instance.WorldBounds;
 
 		float camHalfHeight = Camera.main.orthographicSize;
 		float camHalfWidth = camHalfHeight * Camera.main.aspect;
 
-		xBoundsprime = new Vector2(topRight.x + Offset, bottomLeft.x - Offset);
-		yBoundsprime = new Vector2(topLeft.y + Offset, bottomRight.y - Offset);
+		xBoundsprime = new Vector2(bound.min.x, bound.max.x);
+		Debug.Log($"{xBoundsprime} is x");
+		yBoundsprime = new Vector2(bound.min.y, bound.max.y);
+		Debug.Log($"{yBoundsprime} is y");
 
 		xBounds = new Vector2(xBoundsprime.x + camHalfWidth, xBoundsprime.y - camHalfWidth);
 		yBounds = new Vector2(yBoundsprime.x + camHalfHeight, yBoundsprime.y - camHalfHeight);
@@ -55,7 +48,7 @@ public class CameraMouseFollow : MonoBehaviour
 		xBounds = new Vector2(xBoundsprime.x + camHalfWidth, xBoundsprime.y - camHalfWidth);
 		yBounds = new Vector2(yBoundsprime.x+ camHalfHeight, yBoundsprime.y - camHalfHeight);
 
-		Debug.Log($"new bounds :{xBounds}, {yBounds}");
+		//Debug.Log($"new bounds :{xBounds}, {yBounds}");
 	}
 
 
