@@ -1,14 +1,12 @@
-using UnityEngine;
 using System.Collections.Generic;
-using System.Linq;
-using UniRx;
+using UnityEngine;
 
-public class TowerRoot : MonoBehaviour
+public class TowerRoot : MonoBehaviour // 공통 속성 및 건설 관련 로직만 여기에
 {
     private static Dictionary<ETowerType, TowerData> _towerDataDict; // 모든 타워가 공유할 데이터
 
-    [Header("# Stats")]
-    public ETowerType TowerType; // 타워의 타입 -> 프리팹에서 설정해두면 데이터 찾아옴
+    [Header("# Stats")] 
+    public ETowerType TowerType { get; private set; } // 타워의 타입 -> 프리팹에서 설정해두면 데이터 찾아옴
     protected TowerData Data; // 해당 타워의 데이터
     protected float _maxHp;
     protected float _hp;
@@ -17,102 +15,42 @@ public class TowerRoot : MonoBehaviour
     protected float _range;
 
     [Header("# Cost")]
-    protected Dictionary<ResourceType, int> _costData;
-    public Dictionary<ResourceType, int> CostData => _costData;
-
-    [SerializeField]
-    private GameObject UpgradeUI;
+    public Dictionary<ResourceType, int> CostData { get; private set; }
 
     [Header("# State")]
-    private bool _isEnemyDetected = false;
-    [SerializeField]
-    protected GameObject _targetEnemy;
-    [SerializeField]
-    private bool _isBuilt; // 건설이 된 상태인지
-    public bool Isbuilt
-    {
-        get => _isBuilt;
-        set
-        {
-            _isBuilt = value;
-        }
-    }
+    public bool IsBuilt { get; set; }
+
+    [Header ("# Buildable")]
     private bool _canBuild;
     public bool CanBuild => _canBuild;
+    private HashSet<Collider2D> _overlappingColliders = new HashSet<Collider2D>(); // 건설 가능 판정용
 
+    [Header ("# Components")]
     protected SpriteRenderer _spriteRenderer;
     protected Rigidbody2D _rigid;
     private Color _tempColor = new Color(255, 255, 255, 0.5f);
     private Color _errorColor = new Color(255, 0, 0, 0.5f);
 
-    private HashSet<Collider2D> _overlappingColliders = new HashSet<Collider2D>();
-
-
-    protected virtual void Awake()
+    #region Common
+    protected virtual void Awake() 
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigid = GetComponent<Rigidbody2D>();
     }
 
-    private void OnEnable()
+    protected virtual void OnEnable() 
     {
         GetData();
         GetDataForThis();
         GetCostData();
-        _isEnemyDetected = false;
-        _isBuilt = false;
+        IsBuilt = false;
         _canBuild = true;
         _spriteRenderer.color = _tempColor;
     }
 
-    private void Start()
-    {
-        ObserveTargetEnemy();
-        //ResourceManager.Instance.OnPopulationChange += MultiplyData;
-    }
-
-    private void ObserveTargetEnemy()
-    {
-        this.ObserveEveryValueChanged(_ => _targetEnemy)
-            .Where(target => target == null)
-            .Subscribe(_ =>
-            {
-                Debug.Log("타워 : 타겟 사라짐");
-                _isEnemyDetected = false;
-            }).AddTo(this);
-    }
-
-    private void Update()
-    {
-        if(UIManager.Instance.isBuildModeActive && !_isBuilt)
-        {
-            _spriteRenderer.sortingOrder = 1000;
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.z = 0;
-            _rigid.MovePosition(mousePos);
-        }
-
-        if (!_isEnemyDetected || !_targetEnemy)
-        {
-            _targetEnemy = DetectEnemy();
-            _isEnemyDetected = _targetEnemy != null;
-        }
-        else
-        {
-            Attack();
-        }
-    }
-
-    public virtual void SetPosition()
-    {
-        _spriteRenderer.color = Color.white;
-        _isBuilt = true;
-        _spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (_isBuilt) return;
+        if (IsBuilt) return;
 
         if (collision.CompareTag("Tower"))
         {
@@ -124,7 +62,7 @@ public class TowerRoot : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (_isBuilt) return;
+        if (IsBuilt) return;
 
         if (collision.CompareTag("Tower"))
         {
@@ -139,6 +77,33 @@ public class TowerRoot : MonoBehaviour
         }
     }
 
+    public virtual void SetPosition()
+    {
+        _spriteRenderer.color = Color.white;
+        IsBuilt = true;
+        _spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        _hp -= damage;
+
+        //TODO : 피격 이펙트
+
+        if (_hp <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        //TODO : 폭발 이펙트
+        TowerPoolManager.Instance.ReturnObject(gameObject, TowerType);
+    }
+    #endregion
+
+    // 데이터 로딩은 그대로 유지
     #region Data
     private void GetData()
     {
@@ -183,10 +148,10 @@ public class TowerRoot : MonoBehaviour
 
     private void GetCostData()
     {
-        _costData = new Dictionary<ResourceType, int>();
-        foreach(var cost in Data.Cost)
+        CostData = new Dictionary<ResourceType, int>();
+        foreach (var cost in Data.Cost)
         {
-            _costData.Add(cost.Type, cost.Amount);
+            CostData.Add(cost.Type, cost.Amount);
         }
     }
 
@@ -198,68 +163,4 @@ public class TowerRoot : MonoBehaviour
         _range = Data.GetModifiedStat(Data.Range, ResourceManager.Instance.GetResourceAmount(ResourceType.Population));
     }
     #endregion
-
-    #region 행동
-    private GameObject DetectEnemy()
-    {
-        GameObject target = null;
-        float minDistance = float.MaxValue;
-
-        GameObject[] Enemys = Physics2D
-            .OverlapCircleAll(transform.position, _range, 1 << LayerMask.NameToLayer("Enemy"))
-            .Select(c => c.gameObject).ToArray();
-
-        foreach(GameObject enemy in Enemys)
-        {
-            float currentDistance = Vector3.Distance(transform.position, enemy.transform.position);
-            if(currentDistance <= _range && currentDistance <= minDistance)
-            {
-                minDistance = currentDistance;
-                target = enemy;
-            }
-        }
-        if(target != null)
-        {
-            _isEnemyDetected = true;
-        }
-
-        return target;
-    }
-
-    protected virtual void Attack()
-    {
-        //공격 로직 이거 상속받아서 구현
-    }
-
-    public void TakeDamage(float damage)
-    {
-        _hp -= damage;
-
-        //TODO : 피격 이펙트
-
-        if(_hp <= 0)
-        {
-            Die();
-        }
-    }
-
-    private void Die()
-    {
-        //TODO : 폭발 이펙트
-        TowerPoolManager.Instance.ReturnObject(gameObject, TowerType);
-    }
-    #endregion
-
-    public void TowerClick()
-    {
-        // 현재 클릭된 타워 제외 나머지 타워 클릭 UI 비활성화
-        TileClickManager.Instance.TowerClick += () => UpgradeUI.SetActive(false);
-        UpgradeUI.SetActive(true);
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, _range);
-    }
 }

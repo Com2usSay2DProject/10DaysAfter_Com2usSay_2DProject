@@ -1,5 +1,9 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UniRx;
+using System;
+
 
 public enum Direction8
 {
@@ -22,11 +26,18 @@ public struct DirectionSprite
 
 public class AttackTower : TowerRoot
 {
+    [Header("# Attack, Detect")]
+    private GameObject _targetEnemy;
+    private bool _isEnemyDetected;
+
+    [Header("# Turret")]
     [SerializeField] private DirectionSprite[] directionSprites;
     [SerializeField] private GameObject Turret;
-
     private Dictionary<Direction8, Sprite> _spriteDict;
     private SpriteRenderer _turretSprite;
+
+    [Header("# UniRx")]
+    private IDisposable _targetEnemySubscription;
 
     protected override void Awake()
     {
@@ -34,7 +45,6 @@ public class AttackTower : TowerRoot
 
         _turretSprite = Turret.GetComponent<SpriteRenderer>();
         _spriteDict = new Dictionary<Direction8, Sprite>();
-
 
         foreach (var entry in directionSprites)
         {
@@ -46,10 +56,76 @@ public class AttackTower : TowerRoot
     {
         base.SetPosition();
 
-        _turretSprite.sortingOrder = _turretSprite.sortingOrder + 1;
+        _turretSprite.sortingOrder = _spriteRenderer.sortingOrder + 1;
     }
 
-    protected override void Attack()
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+
+        ObserveTargetEnemy();
+    }
+
+    private void ObserveTargetEnemy()
+    {
+        _targetEnemySubscription?.Dispose(); // 중복 구독 방지
+        _targetEnemySubscription = this.ObserveEveryValueChanged(_ => _targetEnemy)
+            .Where(target => target == null)
+            .Subscribe(_ =>
+            {
+                Debug.Log("타워 : 타겟 사라짐");
+                _isEnemyDetected = false;
+            }).AddTo(this);
+    }
+
+    private void Update()
+    {
+        if (UIManager.Instance.isBuildModeActive && !IsBuilt)
+        {
+            _spriteRenderer.sortingOrder = 1000;
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePos.z = 0;
+            _rigid.MovePosition(mousePos);
+        }
+
+        if (!_isEnemyDetected || !_targetEnemy)
+        {
+            _targetEnemy = DetectEnemy();
+            _isEnemyDetected = _targetEnemy != null;
+        }
+        else
+        {
+            Attack();
+        }
+    }
+
+    private GameObject DetectEnemy()
+    {
+        GameObject target = null;
+        float minDistance = float.MaxValue;
+
+        GameObject[] Enemys = Physics2D
+            .OverlapCircleAll(transform.position, _range, 1 << LayerMask.NameToLayer("Enemy"))
+            .Select(c => c.gameObject).ToArray();
+
+        foreach (GameObject enemy in Enemys)
+        {
+            float currentDistance = Vector3.Distance(transform.position, enemy.transform.position);
+            if (currentDistance <= _range && currentDistance <= minDistance)
+            {
+                minDistance = currentDistance;
+                target = enemy;
+            }
+        }
+        if (target != null)
+        {
+            _isEnemyDetected = true;
+        }
+
+        return target;
+    }
+
+    private void Attack()
     {
         if (_targetEnemy == null) return;
 
