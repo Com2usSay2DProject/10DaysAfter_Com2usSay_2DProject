@@ -78,6 +78,9 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log("create");
 
+        if (_stateMachine.IsInited)
+            _stateMachine.ChangeState(IdleState);
+
         Hp = Data.MaxHp;
         IsDead = false;
         _collider2D.enabled = true;

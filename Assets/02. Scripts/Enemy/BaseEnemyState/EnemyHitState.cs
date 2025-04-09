@@ -31,7 +31,6 @@ public class EnemyHitState : EnemyState
         if (_triggerCalled)
         {
             _stateMachine.ChangeState(_enemyBase.MoveState);
-
         }
     }
 }

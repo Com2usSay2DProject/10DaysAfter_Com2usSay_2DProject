@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class EnemyStateMachine
 {
+
+    public bool IsInited=false;
     private EnemyState _currentState;
     public EnemyState currentState => _currentState;
     private Enemy _enemy;
@@ -10,7 +12,7 @@ public class EnemyStateMachine
     {
         _currentState = currentState;
         _enemy = enemy;
-
+        IsInited = true;
         //Debug.Log("Init State Machine");
     }
     public void ChangeState(EnemyState state)
