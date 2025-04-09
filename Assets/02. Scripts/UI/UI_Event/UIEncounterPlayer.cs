@@ -56,6 +56,30 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 			}
 		}
 
+		//bgm 넣어보기
+		if (!string.IsNullOrEmpty(page.bgm))
+		{
+			if (page.bgm == "stopthebgm")
+			{
+				SoundManager.Instance.StopBgm();
+			}
+			else if (Enum.TryParse<EBgmType>(page.bgm, out var bgmType))
+			{
+				SoundManager.Instance.PlayBgm(bgmType);
+				SoundManager.Instance.OnChangedBGMVolume(0.5f);
+				Debug.Log($"playing bgmtype {bgmType}");
+			}
+		}
+
+		// SFX 처리
+		if (!string.IsNullOrEmpty(page.sfx))
+		{
+			if (Enum.TryParse<ESfxType>(page.sfx, out var sfxType))
+			{
+				SoundManager.Instance.PlaySfx(sfxType);
+			}
+		}
+
 		// 이 페이지에 선택지가 있다면 다음 버튼 숨기고 선택지 보여줌
 		if (page.Choices != null && page.Choices.Count > 0)
 		{
