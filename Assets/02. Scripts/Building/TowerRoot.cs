@@ -38,7 +38,7 @@ public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 �
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigid = GetComponent<Rigidbody2D>();
-        PhaseManager.Instance.OnDateChange += MultiplyData;
+        ResourceManager.Instance.OnPopulationChange += MultiplyData;
     }
 
     protected virtual void OnEnable() 
@@ -46,6 +46,7 @@ public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 �
         GetData();
         GetDataForThis();
         GetCostData();
+        MultiplyData();
         IsBuilt = false;
         CanBuild = true;
         _spriteRenderer.color = _tempColor;
