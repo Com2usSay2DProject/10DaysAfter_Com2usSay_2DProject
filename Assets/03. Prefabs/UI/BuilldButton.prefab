@@ -260,8 +260,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uBE4C\uB4DC\uBAA8\uB4DC"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 39580d3c9d3262449a4cb46bedd97f4a, type: 2}
-  m_sharedMaterial: {fileID: -4594361990050348404, guid: 39580d3c9d3262449a4cb46bedd97f4a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 341cd469fba627940845734e9540f709, type: 2}
+  m_sharedMaterial: {fileID: 4253883349934079393, guid: 341cd469fba627940845734e9540f709, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
