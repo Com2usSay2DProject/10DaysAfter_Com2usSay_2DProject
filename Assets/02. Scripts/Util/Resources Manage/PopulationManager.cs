@@ -1,17 +1,17 @@
 using UnityEngine;
 
-public class PopulationManager : Singleton<PopulationManager>
+public class PopulationManager : MonoBehaviour
 {
     [SerializeField] private float foodPerPersonPerSecond = 0.05f;
     [SerializeField] private float tickInterval = 1f;
-    private float _tickTimer;
+    private float _timer;
 
     private void Update()
     {
-        _tickTimer += Time.deltaTime;
-        if (_tickTimer >= tickInterval)
+        _timer += Time.deltaTime;
+        if (_timer >= tickInterval)
         {
-            _tickTimer = 0f;
+            _timer = 0f;
             HandleResourceCycle();
         }
     }
@@ -29,12 +29,10 @@ public class PopulationManager : Singleton<PopulationManager>
         {
             int food = ResourceManager.Instance.GetResourceAmount(ResourceType.Food);
             int deficit = foodConsumption - food;
-            int popDecrease = Mathf.CeilToInt(deficit * 0.5f); // 식량 부족 대비 감소 비율
+            int populationDecrease = Mathf.CeilToInt(deficit * 0.5f); // 식량 부족 대비 감소 비율
 
             ResourceManager.Instance.SetResource(ResourceType.Food, 0);
-            ResourceManager.Instance.AddResource(ResourceType.Population, -popDecrease);
-
-            Debug.Log($"식량 부족! 인구 {popDecrease} 감소");
+            ResourceManager.Instance.AddResource(ResourceType.Population, -populationDecrease);
         }
     }
 }

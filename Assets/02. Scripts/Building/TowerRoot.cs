@@ -114,6 +114,8 @@ public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 �
 
     private void Die()
     {
+        ResourceManager.Instance.TryUseResource(ResourceType.Population, 10);
+
         GameObject explode = EffectPoolManager.Instance.GetObject(EEffectType.BuildingExplode);
         explode.transform.position = transform.position;
         SoundManager.Instance.PlaySfx(ESfxType.BuildingExplode);

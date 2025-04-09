@@ -16,7 +16,7 @@ public class ResourceManager : Singleton<ResourceManager>
 		//자원 데이터 불러옴.
 		InitResources();
 		//LoadResourceData();
-		Initialize_DontDestroyOnLoad();
+		//Initialize_DontDestroyOnLoad();
 	}
 
     private void Start()
@@ -60,18 +60,22 @@ public class ResourceManager : Singleton<ResourceManager>
     //자원이 부족할 경우 false 반환
     public bool TryUseResource(ResourceType type, int amount)
 	{
+		if(type == ResourceType.Population)
+		{
+			UseResource(type, amount);
+			return true;
+		}
+
 		if (_resources.TryGetValue(type, out int value) && value >= amount)
 		{
 			UseResource(type, amount);
 			//SaveResourceData();
 			return true;
 		}
-		else
-		{
-			Debug.LogWarning($"Not enough {type} to use.");
-			return false;
-		}
-	}
+
+        Debug.LogWarning($"Not enough {type} to use.");
+        return false;
+    }
 
 	public bool TryUseMultipleResources(Dictionary<ResourceType, int> costData)
 	{
