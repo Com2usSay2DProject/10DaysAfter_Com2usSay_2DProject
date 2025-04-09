@@ -25,8 +25,6 @@ public class PhaseManager : Singleton<PhaseManager>
 
 	public Action OnDateChange;
 
-	public GameObject BuildBar;
-
 	//다음 페이즈까지 타이머
 	private float _timeUntilNextPhase;
 	public float TimeUntilNextPhase => _timeUntilNextPhase;
@@ -34,13 +32,11 @@ public class PhaseManager : Singleton<PhaseManager>
 	public IEnumerator PlayDayPhase(float dayDuration)
 	{
 		Debug.Log("This is the Day Phase");
-		//건물 건설 활성화 (UI)
 		//이벤트 발동 활성화
 		EncounterManager.Instance.TriggerStory(_currentDay);
 
 		yield return new WaitForSeconds(dayDuration);
 
-		//건물 건설 비활성화(UI)
 		//이벤트 발동 비활성화
 		EncounterManager.Instance.IgnoreEncounter();
 	}
@@ -67,14 +63,13 @@ public class PhaseManager : Singleton<PhaseManager>
 					//엔딩 추가 (씬 전환)
 					Debug.Log("축하합니다 10일 끝입니다");
 				}
-				OnDayBegin?.Invoke();							//건설 UI, 이벤트 시작
+				OnDayBegin?.Invoke();							//이벤트 시작
 
 				yield return StartCoroutine(PlayDayPhase(DayPhaseDuration));
 
 				
-				OnDayEnd?.Invoke();                             //건설 UI, 이벤트 끝
+				OnDayEnd?.Invoke();                             //이벤트 끝
 				yield return new WaitForSeconds(FadeTime);
-				BuildBar.gameObject.SetActive(false);		//지금은 그냥 직접 끔
 
 
 				//다음 페이즈는 밤
@@ -89,10 +84,9 @@ public class PhaseManager : Singleton<PhaseManager>
 
 				yield return StartCoroutine(PlayNightPhase(NightPhaseDuration));
 
-				OnNightEnd?.Invoke();                           //스포너 끄기, 빛 조절
+				OnNightEnd?.Invoke();							//스포너 끄기, 빛 조절
 				yield return new WaitForSeconds(FadeTime);
 				_isNight = false;								//다음 페이즈는 낮
-				BuildBar.gameObject.SetActive(true);			//지금은 그냥 직접 킴(건설UI)
 
 				Debug.Log($"Night Phase is over. You survived {_currentDay} days");
 				_currentDay++;

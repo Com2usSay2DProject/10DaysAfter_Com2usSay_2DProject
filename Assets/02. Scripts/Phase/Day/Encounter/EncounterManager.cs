@@ -88,6 +88,10 @@ public class EncounterManager : Singleton<EncounterManager>
 			case 8:
 				if (!PhaseManager.Instance.isNight) storyId = "T_EVT_005";
 				break;
+			case 9:
+				break;
+			case 10:
+				break;
 			default:
 				return;
 		}

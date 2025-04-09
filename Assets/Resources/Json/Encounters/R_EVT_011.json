@@ -1,0 +1,96 @@
+{
+    "EncounterId": "R_EVT_011",
+    "Title": "중복 보고서",
+    "Condition": {
+        "triggerDays": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "specialConditionRequired": ""
+    },
+    "Pages": [
+        {
+            "text": "보급 상황 보고서가 책상 위에 두 장 놓여 있다.",
+            "imagePath": "duplicate_report",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "이상한 점은, 작성자 이름과 내용이 다 똑같다는 것.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "어떻게 할까?",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "\"누가 날 두 번 일하게 하려고 한거냐!\"",
+                    "effects": [
+                        {
+                            "resourceType": 0,
+                            "amount": 30
+                        },
+                        {
+                            "resourceType": 1,
+                            "amount": 30
+                        },
+                        {
+                            "resourceType": 2,
+                            "amount": 30
+                        },
+                        {
+                            "resourceType": 3,
+                            "amount": 30
+                        },
+                        {
+                            "resourceType": 4,
+                            "amount": -20
+                        }
+                    ],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                },
+                {
+                    "text": "모른체하고 파쇄한다",
+                    "effects": [
+                        {
+                            "resourceType": 4,
+                            "amount": 20
+                        }
+                    ],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": 4
+                }
+            ],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "심지어 둘 다 잘못 썼잖아!",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": 6,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "특별히 이번만 봐 주기로 했다. 많이 힘들었나 보다...",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        }
+    ]
+}
