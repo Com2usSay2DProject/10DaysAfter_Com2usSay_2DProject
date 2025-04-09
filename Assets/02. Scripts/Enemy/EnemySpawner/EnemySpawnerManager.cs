@@ -9,14 +9,14 @@ public class EnemySpawnerManager : MonoBehaviour
 {
     public GameObject spawnerPrefab;             // 스포너 프리팹
 
-    //public WaveData[] WaveDatas = new WaveData[10];
-    //private WaveData CurrentData;
+    List<WaveData> WaveDatas;
+    int WaveDatasCurIndex = 0;
 
     //웨이브 데이터 필요한거 
-    public int spawnerCount = 10;
-    public float minSpawnDelay = 1f;
-    public float maxSpawnDelay = 5f;
-    private int enableSpawnType = 6; //-> 애너미 타입중에 해당 웨이브에서 나오게할 종류의수 int를 애너미 타입으로 형변환해서 사용함 현재 4종류 적 예정?
+    //public int spawnerCount = 10;
+    //public float minSpawnDelay = 1f;
+    //public float maxSpawnDelay = 5f;
+    //private int enableSpawnType = 6; //-> 애너미 타입중에 해당 웨이브에서 나오게할 종류의수 int를 애너미 타입으로 형변환해서 사용함 현재 4종류 적 예정?
     //-----------------------------------
 
     [SerializeField] private float _spawnRadiusMin;
@@ -36,12 +36,14 @@ public class EnemySpawnerManager : MonoBehaviour
     private void Awake()
     {
         spawners = new List<EnemySpawner>();
-        
+        GetData();
+
+
     }
     private void Start()
     {
 
-        for (int i = 0; i < spawnerCount; i++)
+        for (int i = 0; i < WaveDatas[WaveDatasCurIndex].spawnerCount; i++)
         {
             CreateSpawner();
         }
@@ -52,7 +54,13 @@ public class EnemySpawnerManager : MonoBehaviour
         if (ClusterSpawnerPos.Length >= 0)
             PhaseManager.Instance.OnNightBegin += SpawnCluster;
     }
+    private void GetData()
+    {
+        WaveDataCollection collection = JsonDataManager.LoadFromFile<WaveDataCollection>("Wave/WaveDataCollection");
+        WaveDatas = collection.Datas;
 
+        Debug.Log("적 데이터 로드 완료");
+    }
     private void SpawnCluster()
     {
         if (ClusterSpawnerPos.Length > 0)
@@ -104,9 +112,9 @@ public class EnemySpawnerManager : MonoBehaviour
     {
         while (true)
         {
-            float randomDelay = Random.Range(minSpawnDelay, maxSpawnDelay);
+            float randomDelay = Random.Range(WaveDatas[WaveDatasCurIndex].minSpawnDelay, WaveDatas[WaveDatasCurIndex].maxSpawnDelay);
             yield return new WaitForSeconds(randomDelay);
-            int randomType = Random.Range(0, enableSpawnType);
+            int randomType = Random.Range(0, WaveDatas[WaveDatasCurIndex].enableSpawnType);
 
             spawner.Spawn((EEnemyType)randomType);
             //spawner.Spawn(EEnemyType.Unique1);
@@ -116,6 +124,7 @@ public class EnemySpawnerManager : MonoBehaviour
 
     void DisActiveSpawners()
     {
+        WaveDatasCurIndex++;
         //스포너 멈추고 코루틴도 멈추기
         foreach (var spawner in spawners)
         {
@@ -131,15 +140,14 @@ public class EnemySpawnerManager : MonoBehaviour
     }
     void ActiveSpawners()
     {
-        spawnerCount += 2;
 
         if (ClusterSpawnerPos.Length > 0)
             ClusterSpawner.gameObject.SetActive(true);
 
         //스포너 부족하면 생성
-        if (spawners.Count < spawnerCount)
+        if (spawners.Count < WaveDatas[WaveDatasCurIndex].spawnerCount)
         {
-            int missingCount = spawnerCount - spawners.Count;
+            int missingCount = WaveDatas[WaveDatasCurIndex].spawnerCount - spawners.Count;
             for (int i = 0; i < missingCount; i++)
             {
                 CreateSpawner();

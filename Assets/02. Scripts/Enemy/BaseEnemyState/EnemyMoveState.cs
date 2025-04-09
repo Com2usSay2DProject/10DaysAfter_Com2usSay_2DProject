@@ -27,7 +27,7 @@ public class EnemyMoveState : EnemyState
     {
         base.Update();
 
-        if (_enemyBase.Path == null || _enemyBase.Path.Count == 0)
+        if (_enemyBase.Path == null || _enemyBase.Path.Count == 0 || _enemyBase.IsDead)
         {
             return;
         }
