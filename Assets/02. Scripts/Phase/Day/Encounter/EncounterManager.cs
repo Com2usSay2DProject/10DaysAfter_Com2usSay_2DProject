@@ -18,7 +18,7 @@ public class EncounterManager : Singleton<EncounterManager>
 	// 테스트용으로 사용
 	private void Start()
 	{
-		//StoryEncounter("R_EVT_010");
+		
 	}
 
 	private void LoadAllEncounters()
@@ -78,6 +78,15 @@ public class EncounterManager : Singleton<EncounterManager>
 		{
 			case 1:
 				storyId = PhaseManager.Instance.isNight ? "T_EVT_002" : "T_EVT_001";
+				break;
+			case 2:
+				storyId = "T_EVT_003";
+				break;
+			case 5:
+				if (PhaseManager.Instance.isNight) storyId = "T_EVT_004";
+				break;
+			case 8:
+				storyId = "T_EVT_005";
 				break;
 			default:
 				return;
