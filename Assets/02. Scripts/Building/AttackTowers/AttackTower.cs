@@ -143,7 +143,10 @@ public class AttackTower : TowerRoot
             sprite.SetActive(true);
             _turretObject = sprite;
             _turretObject.GetComponent<SpriteRenderer>().sortingOrder = _spriteRenderer.sortingOrder + 1;
-            //_fireEffect = _turretObject.transform.GetChild(0).gameObject;
+            if (_turretObject.transform.childCount > 0)
+            {
+                _fireEffect = _turretObject.transform.GetChild(0).gameObject;
+            }
         }
     }
 
@@ -156,7 +159,7 @@ public class AttackTower : TowerRoot
         ps.Play();
 
         _targetEnemy.GetComponent<Enemy>().TakeDamage(_damage);
-
+        SoundManager.Instance.PlaySfx(ESfxType.AttackTower);
         //_timer = 0f;
     }
 

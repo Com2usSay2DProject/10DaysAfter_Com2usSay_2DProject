@@ -92,7 +92,8 @@ public class SoundManager : Singleton<SoundManager> // 문의 : 수민
 
             channelIndex = loopIndex;
             sfxPlayers[loopIndex].clip = sfxClips[(int)sfx];
-            sfxPlayers[loopIndex].Play();
+            sfxPlayers[loopIndex].pitch = Random.Range(0.95f, 1.05f);
+            sfxPlayers[loopIndex].PlayOneShot(sfxPlayers[loopIndex].clip);
             break;
         }
     }

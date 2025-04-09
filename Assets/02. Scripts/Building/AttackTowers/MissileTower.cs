@@ -23,6 +23,7 @@ public class MissileTower : AttackTower
 
     private IEnumerator FireMissile(Vector2[] targets)
     {
+        SoundManager.Instance.PlaySfx(ESfxType.MissileTower);
         foreach (Vector2 target in targets)
         {
             Missile missile = BulletPoolManager.Instance.GetObject(EBulletType.Missile).GetComponent<Missile>();
