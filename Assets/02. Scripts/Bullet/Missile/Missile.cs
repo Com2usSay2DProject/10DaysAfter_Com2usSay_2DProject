@@ -18,6 +18,9 @@ public class Missile : MonoBehaviour
     private Vector2 _prevPos;
     private bool _isPathSet = false;
 
+    [Header("# Effect")]
+    [SerializeField] private GameObject _explodeEffect;
+
     private void SetPath()
     {
         _isPathSet = true;
@@ -74,6 +77,7 @@ public class Missile : MonoBehaviour
         }
 
         //TODO : 폭발 이펙트
+        Instantiate(_explodeEffect, transform.position, Quaternion.identity);
 
         BulletPoolManager.Instance.ReturnObject(gameObject, Type);
     }
@@ -98,7 +102,7 @@ public class Missile : MonoBehaviour
 
         Vector2 direction = (currentPos - _prevPos).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle + 90);
+        transform.rotation = Quaternion.Euler(0, 0, angle);
         transform.position = currentPos;
 
         _prevPos = currentPos;

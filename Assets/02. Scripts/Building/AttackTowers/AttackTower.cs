@@ -27,14 +27,14 @@ public class AttackTower : TowerRoot
 {
     [Header("# Attack, Detect")]
     [SerializeField]
-    private Enemy _targetEnemy;
+    protected Enemy _targetEnemy;
     private bool _isEnemyDetected;
 
     [Header("# Turret")]
     [SerializeField] private DirectionSprite[] directionSprites;
     private Dictionary<Direction8, GameObject> _turretDict;
     [SerializeField]
-    private GameObject _turretObject;
+    protected GameObject _turretObject;
     [SerializeField]
     private GameObject _fireEffect;
 
@@ -95,8 +95,11 @@ public class AttackTower : TowerRoot
         }
         else
         {
+            if (_timer < _atkSpeed) return;
+
             SetDirection();
             Attack();
+            _timer = 0;
         }
     }
 
@@ -129,7 +132,6 @@ public class AttackTower : TowerRoot
     private void SetDirection()
     {
         if (_targetEnemy == null) return;
-        if (_timer < _atkSpeed) return;
 
         Vector2 dir = ((Vector2)_targetEnemy.transform.position - (Vector2)transform.position).normalized;
         Direction8 direction = GetDirection8(dir);
@@ -141,7 +143,7 @@ public class AttackTower : TowerRoot
             sprite.SetActive(true);
             _turretObject = sprite;
             _turretObject.GetComponent<SpriteRenderer>().sortingOrder = _spriteRenderer.sortingOrder + 1;
-            _fireEffect = _turretObject.transform.GetChild(0).gameObject;
+            //_fireEffect = _turretObject.transform.GetChild(0).gameObject;
         }
     }
 
@@ -155,7 +157,7 @@ public class AttackTower : TowerRoot
 
         _targetEnemy.GetComponent<Enemy>().TakeDamage(_damage);
 
-        _timer = 0f;
+        //_timer = 0f;
     }
 
     private Direction8 GetDirection8(Vector2 dir)

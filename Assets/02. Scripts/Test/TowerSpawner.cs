@@ -10,7 +10,7 @@ public class TowerSpawner : Singleton<TowerSpawner>
 
     private void Awake()
     {
-        TowerDataCollection collection = new TowerDataCollection();
+        /*TowerDataCollection collection = new TowerDataCollection();
         collection.Datas.Add(new TowerData
         {
             TowerType = ETowerType.TempTower,
@@ -30,13 +30,12 @@ public class TowerSpawner : Singleton<TowerSpawner>
             TypeString = ETowerType.AttackTower.ToString(),
             MaxHp = 400,
             Damage = 24,
-            Range = 10f,
+            Range = 5f,
             AtkSpeed = 0.5f,
             Cost = new System.Collections.Generic.List<TowerCostData>()
         });
         collection.Datas[1].Cost.Add(new TowerCostData(ResourceType.Wood, 50));
         collection.Datas[1].Cost.Add(new TowerCostData(ResourceType.Stone, 50));
-        JsonDataManager.CreateFile("Tower/TowerDataCollection", collection);
 
         collection.Datas.Add(new TowerData
         {
@@ -86,7 +85,20 @@ public class TowerSpawner : Singleton<TowerSpawner>
         });
         collection.Datas[5].Cost.Add(new TowerCostData(ResourceType.Metal, 50));
 
-        JsonDataManager.CreateFile("Tower/TowerDataCollection", collection);
+        collection.Datas.Add(new TowerData
+        {
+            TowerType = ETowerType.MissileTower,
+            TypeString = ETowerType.MissileTower.ToString(),
+            MaxHp = 400,
+            Damage = 24,
+            Range = 5f,
+            AtkSpeed = 0.5f,
+            Cost = new System.Collections.Generic.List<TowerCostData>()
+        });
+        collection.Datas[6].Cost.Add(new TowerCostData(ResourceType.Wood, 50));
+        collection.Datas[6].Cost.Add(new TowerCostData(ResourceType.Stone, 50));
+
+        JsonDataManager.CreateFile("Tower/TowerDataCollection", collection);*/
         /*TowerCostDataCollection collection = new TowerCostDataCollection();
         collection.Datas.Add(new TowerCostData
         {
