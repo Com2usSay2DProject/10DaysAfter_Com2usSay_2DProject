@@ -871,11 +871,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &961554481 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6218523203722660119, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
-  m_PrefabInstance: {fileID: 1980659930}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1182909923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1993,7 +1988,6 @@ MonoBehaviour:
   DayPhaseDuration: 10
   NightPhaseDuration: 10
   FadeTime: 3
-  BuildBar: {fileID: 961554481}
 --- !u!212 &1750460112
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2076,7 +2070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849f94052f9e3dc4b86a52a075d29b91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodPerPersonPerSecond: 0.05
+  foodPerPersonPerSecond: 0.2
   tickInterval: 1
 --- !u!1001 &1980659930
 PrefabInstance:

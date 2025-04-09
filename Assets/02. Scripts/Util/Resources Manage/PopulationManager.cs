@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PopulationManager : MonoBehaviour
 {
-    [SerializeField] private float foodPerPersonPerSecond = 0.05f;
+    [SerializeField] private float foodPerPersonPerSecond = 0.2f;
     [SerializeField] private float tickInterval = 1f;
     private float _timer;
 
