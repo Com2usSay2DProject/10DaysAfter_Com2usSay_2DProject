@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UITopCurrency : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class UITopCurrency : MonoBehaviour
     public TextMeshProUGUI DayText;
     public float DisPlayInterval = 0.5f;
     public float _CurrentDuration;
+    public Sprite SunSprite;
+    public Sprite NightSprite;
+    public Image CurrentDayImage;
     private float GameHours = 12f; // 게임 내에서 표현되는 시간
     private float conversionFactor; // 변환 비율
     private float inGameHours;
@@ -37,18 +41,20 @@ public class UITopCurrency : MonoBehaviour
             if (PhaseManager.Instance.isNight)
             {
                 DayNightText.text = "밤";
+                CurrentDayImage.sprite = NightSprite;
                 conversionFactor = GameHours / (PhaseManager.Instance.NightPhaseDuration / 3600f);
                 _CurrentDuration = PhaseManager.Instance.NightPhaseDuration;
             }
             else
             {
                 DayNightText.text = "낮";
+                CurrentDayImage.sprite = SunSprite;
                 conversionFactor = GameHours / (PhaseManager.Instance.DayPhaseDuration / 3600f);
                 _CurrentDuration = PhaseManager.Instance.DayPhaseDuration;
             }
             inGameHours = Mathf.Clamp(PhaseManager.Instance.TimeUntilNextPhase, 0f, _CurrentDuration) * conversionFactor / 3600f;
 
-            TimeText.text = $"{Mathf.FloorToInt(inGameHours)}남은시간";
+            TimeText.text = $"{Mathf.FloorToInt(inGameHours)}";
             DayText.text = $"{PhaseManager.Instance.CurrentDay.ToString()}일째";
             yield return new WaitForSeconds(DisPlayInterval);
         }
