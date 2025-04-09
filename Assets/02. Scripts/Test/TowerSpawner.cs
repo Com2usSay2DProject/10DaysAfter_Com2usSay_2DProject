@@ -3,9 +3,6 @@ using UnityEngine.EventSystems;
 
 public class TowerSpawner : Singleton<TowerSpawner>
 {
-    [SerializeField]
-    private GameObject _tower;
-
     public Vector3 TowerOffset;
 
     private void Awake()
@@ -107,11 +104,6 @@ public class TowerSpawner : Singleton<TowerSpawner>
             Cost = 100,
         });
         JsonDataManager.CreateFile("Tower/TowerCostDataCollection", collection);*/
-    }
-
-    private void Start()
-    {
-        //UIManager.Instance.BuildModeActivate += () => SpawnTower();
     }
 
     public GameObject SpawnTower(Vector3 tilePosition = default, ETowerType type = ETowerType.TempTower)

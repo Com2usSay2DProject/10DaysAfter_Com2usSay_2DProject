@@ -20,6 +20,7 @@ public class TileManager : Singleton<TileManager> // 수민
 
     [Header("# Obstacles")]
     [SerializeField] private GameObject[] Trees;
+    [SerializeField] private Transform Container;
         
     private void Awake()
     {
@@ -65,7 +66,7 @@ public class TileManager : Singleton<TileManager> // 수민
             if (node.IsWalkable)
             {
                 GameObject treePrefab = Trees[Random.Range(0, Trees.Length)];
-                GameObject tree = Instantiate(treePrefab, node.WorldPositon, Quaternion.identity, transform);
+                GameObject tree = Instantiate(treePrefab, node.WorldPositon, Quaternion.identity, Container);
 
                 node.IsWalkable = false;
                 treeCount--;

@@ -6,6 +6,7 @@ public abstract class ResourceTower : TowerRoot
     // 자원 회복 량 -> Damage
     // 자원 회복 쿨타임 -> AtkSpeed
 
+    [Header("# Resources")]
     [SerializeField]
     protected ResourceType _resourceType;
     [SerializeField]

@@ -24,6 +24,9 @@ public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 �
     public bool CanBuild { get; private set; }
     private HashSet<Collider2D> _overlappingColliders = new HashSet<Collider2D>(); // 건설 가능 판정용
 
+    [Header("# Effect")]
+    [SerializeField] private GameObject _buildEffect;
+
     [Header ("# Components")]
     protected SpriteRenderer _spriteRenderer;
     protected Rigidbody2D _rigid;
@@ -93,6 +96,8 @@ public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 �
         _spriteRenderer.color = Color.white;
         IsBuilt = true;
         _spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
+        _buildEffect.SetActive(true);
+        SoundManager.Instance.PlaySfx(ESfxType.BuildSound);
     }
 
     public void TakeDamage(float damage)
@@ -109,7 +114,9 @@ public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 �
 
     private void Die()
     {
-        //TODO : 폭발 이펙트
+        GameObject explode = EffectPoolManager.Instance.GetObject(EEffectType.BuildingExplode);
+        explode.transform.position = transform.position;
+        SoundManager.Instance.PlaySfx(ESfxType.BuildingExplode);
         TowerPoolManager.Instance.ReturnObject(gameObject, TowerType);
     }
     #endregion
