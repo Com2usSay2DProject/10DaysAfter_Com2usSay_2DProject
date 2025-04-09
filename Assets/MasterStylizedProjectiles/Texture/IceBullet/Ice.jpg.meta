@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2815024320c034f42bd85bc55c53ae7f
+guid: e14d12d679acb8d46bfee69946a4a1fa
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -52,7 +52,7 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 1
+  alphaIsTransparency: 0
   spriteTessellationDetail: -1
   textureType: 0
   textureShape: 1
@@ -164,10 +164,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 255608
-  packageName: Master Stylized Projectile
-  packageVersion: 1.0
-  assetPath: Assets/MasterStylizedProjectiles/Texture/SwordBeam/BurstCone2.png
-  uploadId: 648918
