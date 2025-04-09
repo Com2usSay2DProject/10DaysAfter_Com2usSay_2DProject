@@ -13,9 +13,9 @@ public class TowerData
     public float Range;
     public List<TowerCostData> Cost;
 
-    public float PopulationMultiplier = 0.05f;
+    public float PopulationMultiplier = 0.03f;
     public float GetModifiedStat(float baseStat, int population)
     {
-        return baseStat * (1 + PopulationMultiplier * Mathf.Pow(population, 0.6f));
+        return baseStat * (1 + PopulationMultiplier * Mathf.Pow(population, 0.5f));
     }
 }

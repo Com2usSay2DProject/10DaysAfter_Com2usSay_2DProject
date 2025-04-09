@@ -1880,6 +1880,7 @@ GameObject:
   - component: {fileID: 1750460107}
   - component: {fileID: 1750460106}
   - component: {fileID: 1750460105}
+  - component: {fileID: 1750460114}
   m_Layer: 0
   m_Name: Managers
   m_TagString: MainTower
@@ -2063,6 +2064,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1750460114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750460104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 849f94052f9e3dc4b86a52a075d29b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodPerPersonPerSecond: 0.05
+  tickInterval: 1
 --- !u!1001 &1980659930
 PrefabInstance:
   m_ObjectHideFlags: 0

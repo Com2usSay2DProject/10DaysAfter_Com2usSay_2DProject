@@ -93,7 +93,12 @@ public class ResourceManager : Singleton<ResourceManager>
 
 	private void UseResource(ResourceType type, int amount)
 	{
-		_resources[type] -= amount;
+		_resources[type] = Mathf.Max(_resources[type] - amount, 0);
+	}
+
+	public void SetResource(ResourceType type, int amount)
+	{
+		_resources[type] = Mathf.Max(amount, 0);
 	}
 	
 	//자동저장 필요 없어서 현재 빼둠
