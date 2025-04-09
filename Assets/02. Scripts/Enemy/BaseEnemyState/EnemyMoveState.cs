@@ -37,7 +37,7 @@ public class EnemyMoveState : EnemyState
         }
 
 
-       //Vector2 avoidDir = AvoidLogic();
+        //Vector2 avoidDir = AvoidLogic();
 
         Vector3 targetPoint = _enemyBase.Path.Peek();
         Vector2 toTarget = (targetPoint - _enemyBase.transform.position).normalized;

@@ -24,7 +24,6 @@ public class EnemyIdleState : EnemyState
 
         if (!_enemyBase.HasTowerInRange)
             _stateMachine.ChangeState(_enemyBase.MoveState);
-        else
-            _stateMachine.ChangeState(_enemyBase.AttackState);
+
     }
 }

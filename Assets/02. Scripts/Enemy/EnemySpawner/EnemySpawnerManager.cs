@@ -33,7 +33,6 @@ public class EnemySpawnerManager : MonoBehaviour
         //spawners = new List<EnemySpawner>();
         GetData();
 
-
     }
     private void Start()
     {
@@ -103,7 +102,6 @@ public class EnemySpawnerManager : MonoBehaviour
     }
     void CreateClusterSpanwer()
     {
-
         int rand = Random.Range(0, 4);
         // 스포너 생성 및 등록
         if (ClusterSpawnerPos.Length > 0)
@@ -111,20 +109,22 @@ public class EnemySpawnerManager : MonoBehaviour
     }
     IEnumerator SpawnAtRandomIntervals(EnemySpawner spawner)
     {
+        int curIndex = WaveDatasCurIndex;
+
         while (true)
         {
-            int spawnNum = Random.Range(WaveDatas[WaveDatasCurIndex].spawnMinnum, WaveDatas[WaveDatasCurIndex].spawnMaxnum);
+            int spawnNum = Random.Range(WaveDatas[curIndex].spawnMinnum, WaveDatas[curIndex].spawnMaxnum);
 
-            float randomDelay = Random.Range(WaveDatas[WaveDatasCurIndex].minSpawnDelay, WaveDatas[WaveDatasCurIndex].maxSpawnDelay);
+            float randomDelay = Random.Range(WaveDatas[curIndex].minSpawnDelay, WaveDatas[curIndex].maxSpawnDelay);
             yield return new WaitForSeconds(randomDelay);
             for (int i = 0; i < spawnNum; ++i)
             {
 
-                int randomType = Random.Range(0, WaveDatas[WaveDatasCurIndex].enableSpawnType);
+                int randomType = Random.Range(0, WaveDatas[curIndex].enableSpawnType);
 
                 spawner.Spawn((EEnemyType)randomType);
+                //spawner.Spawn(EEnemyType.NomalEnemy);
             }
-
             //spawner.Spawn(EEnemyType.Unique2);
 
         }

@@ -39,6 +39,8 @@ public class EnemySpawner : MonoBehaviour
         Enemy enemy = EnemyPoolManager.Instance.GetObject(type).GetComponent<Enemy>();
         if (enemy == null || _pathSetList.Count == 0) return;
 
+        Debug.Log("spawn");
+
         //PathSet 중 랜덤하게 하나 선택
         int randIndex = Random.Range(0, _pathSetList.Count);
         PathSet selected = _pathSetList[randIndex];
@@ -130,7 +132,7 @@ public class EnemySpawner : MonoBehaviour
             // 랜덤 위치 생성
             float angle = Random.Range(0f, 2 * Mathf.PI);
             float t = Random.Range(0f, 1f);
-            float randRadius = Mathf.Sqrt(t) * 4f;
+            float randRadius = Mathf.Sqrt(t) * 2f;
             Vector3 offset = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * randRadius;
             Vector3 spawnPos = transform.position + offset;
 

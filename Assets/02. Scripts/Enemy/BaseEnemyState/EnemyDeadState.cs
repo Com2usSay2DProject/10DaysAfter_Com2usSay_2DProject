@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemyDeadState : EnemyState
 {
     SpriteRenderer _spriteRenderer;
-    private float fadeDuration = 2f;
+    private float fadeDuration = 1f;
     private float elapsed;
     private Color originalColor;
     CircleCollider2D circleCollider;
@@ -41,7 +41,7 @@ public class EnemyDeadState : EnemyState
     {
         base.Update();
 
-        if (_triggerCalled)
+        if (_triggerCalled && !_enemyBase.IsDead)
         {
             FadeOutEnemy();
         }
@@ -52,14 +52,12 @@ public class EnemyDeadState : EnemyState
         elapsed += Time.deltaTime;
 
         float alpha = Mathf.Lerp(1f, 0f, elapsed / fadeDuration);
-        _spriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
 
         if (elapsed >= fadeDuration)
         {
             _spriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
             circleCollider.enabled = true;
 
-            _enemyBase.IsDead = false;
             EnemyPoolManager.Instance.ReturnObject(_enemyBase.gameObject, _enemyBase.EnemyType);
         }
     }

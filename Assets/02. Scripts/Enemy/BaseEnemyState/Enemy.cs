@@ -76,9 +76,14 @@ public class Enemy : MonoBehaviour
 
     protected virtual void OnEnable()
     {
+        Debug.Log("create");
+
         Hp = Data.MaxHp;
         IsDead = false;
         _collider2D.enabled = true;
+        _spriteRenderer.color = new Color(1, 1, 1, 1);
+        HasTowerInRange = false;
+
     }
 
     private void GetData()
@@ -112,8 +117,8 @@ public class Enemy : MonoBehaviour
     private void OnDayBegin() { if (IsDead == true) return; _stateMachine.ChangeState(DeadState); }
     private void OnNightBegin()
     {
-        _stateMachine.ChangeState(IdleState);
-        _spriteRenderer.color = new Color(1, 1, 1, 1);
+        //_stateMachine.ChangeState(IdleState);
+
     }
 
     protected virtual void Start()
