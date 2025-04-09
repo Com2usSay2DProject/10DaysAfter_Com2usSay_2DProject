@@ -5,8 +5,7 @@
         "triggerDays": [
             1,
             2,
-            3,
-            4
+            3
         ],
         "specialConditionRequired": ""
     },
@@ -52,7 +51,7 @@
                         },
                         {
                             "resourceType": 4,
-                            "amount": -20
+                            "amount": -2
                         }
                     ],
                     "branchKey": "",
@@ -64,7 +63,7 @@
                     "effects": [
                         {
                             "resourceType": 4,
-                            "amount": 20
+                            "amount": 2
                         }
                     ],
                     "branchKey": "",
@@ -77,7 +76,7 @@
             "sfx": ""
         },
         {
-            "text": "심지어 둘 다 잘못 썼잖아!",
+            "text": "심지어 보고서 둘 다 잘못 썼잖아!",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": 6,

@@ -25,7 +25,7 @@
                     "effects": [
                         {
                             "resourceType": 2,
-                            "amount": 5
+                            "amount": 10
                         }
                     ],
                     "branchKey": "",
@@ -37,7 +37,7 @@
                     "effects": [
                         {
                             "resourceType": 4,
-                            "amount": 30
+                            "amount": 10
                         }
                     ],
                     "branchKey": "",

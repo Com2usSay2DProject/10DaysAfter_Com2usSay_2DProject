@@ -5,9 +5,7 @@
         "triggerDays": [
             3,
             4,
-            5,
-            6,
-            7
+            5
         ],
         "specialConditionRequired": ""
     },
@@ -27,11 +25,11 @@
                     "effects": [
                         {
                             "resourceType": 2,
-                            "amount": -200
+                            "amount": -30
                         },
                         {
                             "resourceType": 4,
-                            "amount": 20
+                            "amount": 10
                         }
                     ],
                     "branchKey": "helpedcivillians",

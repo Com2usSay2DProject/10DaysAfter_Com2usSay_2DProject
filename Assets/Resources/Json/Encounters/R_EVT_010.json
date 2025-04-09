@@ -5,8 +5,7 @@
         "triggerDays": [
             1,
             2,
-            3,
-            4
+            3
         ],
         "specialConditionRequired": ""
     },
@@ -41,16 +40,7 @@
                 },
                 {
                     "text": "누구냐! 날 빼고 파티를 벌인 녀석은!",
-                    "effects": [
-                        {
-                            "resourceType": 2,
-                            "amount": 30
-                        },
-                        {
-                            "resourceType": 4,
-                            "amount": -10
-                        }
-                    ],
+                    "effects": [],
                     "branchKey": "",
                     "setBranchTrue": false,
                     "nextPageIndex": 4
@@ -60,11 +50,11 @@
                     "effects": [
                         {
                             "resourceType": 2,
-                            "amount": -50
+                            "amount": -20
                         },
                         {
                             "resourceType": 4,
-                            "amount": 50
+                            "amount": 10
                         }
                     ],
                     "branchKey": "",

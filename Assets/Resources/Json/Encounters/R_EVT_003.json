@@ -3,17 +3,15 @@
     "Title": "버려진 차량",
     "Condition": {
         "triggerDays": [
-            2,
             3,
             4,
-            5,
-            6
+            5
         ],
         "specialConditionRequired": ""
     },
     "Pages": [
         {
-            "text": "경계 순찰 중, 길가에 버려진  트럭 한 대를 발견했다.",
+            "text": "경계 순찰 중, 길가에 버려진 트럭 한 대를 발견했다.",
             "imagePath": "oldcar",
             "Choices": [],
             "nextPageIndex": -1
@@ -27,11 +25,11 @@
                     "effects": [
                         {
                             "resourceType": 2,
-                            "amount": 100
+                            "amount": 50
                         },
                         {
                             "resourceType": 3,
-                            "amount": 50
+                            "amount": 20
                         }
                     ],
                     "branchKey": "",

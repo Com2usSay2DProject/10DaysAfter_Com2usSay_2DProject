@@ -3,6 +3,7 @@
     "Title": "오작동 방송",
     "Condition": {
         "triggerDays": [
+            2,
             3,
             4,
             5,
@@ -23,22 +24,21 @@
             "Choices": [
                 {
                     "text": "환청은 나약한 것들이나 듣는 거야",
-                    "effects": [
-                        {
-                            "resourceType": 4,
-                            "amount": -50
-                        }
-                    ],
+                    "effects": [],
                     "branchKey": "",
                     "setBranchTrue": false,
                     "nextPageIndex": -1
                 },
                 {
-                    "text": "방송 장치를 꺼 둔다",
+                    "text": "방송 장치를 정비한다",
                     "effects": [
                         {
                             "resourceType": 3,
-                            "amount": -50
+                            "amount": -5
+                        },
+                        {
+                            "resourceType": 4,
+                            "amount": 20
                         }
                     ],
                     "branchKey": "hasturnedoffbroadcast",

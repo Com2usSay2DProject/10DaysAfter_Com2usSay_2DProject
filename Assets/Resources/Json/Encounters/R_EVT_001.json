@@ -3,7 +3,6 @@
     "Title": "추가 물자",
     "Condition": {
         "triggerDays": [
-            1,
             2,
             3,
             4
@@ -20,15 +19,19 @@
                     "effects": [
                         {
                             "resourceType": 0,
-                            "amount": 200
+                            "amount": 100
                         },
                         {
                             "resourceType": 1,
-                            "amount": 200
+                            "amount": 100
+                        },
+                        {
+                            "resourceType": 2,
+                            "amount": 100
                         },
                         {
                             "resourceType": 4,
-                            "amount": -20
+                            "amount": -5
                         }
                     ],
                     "branchKey": "",

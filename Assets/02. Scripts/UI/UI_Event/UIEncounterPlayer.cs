@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using System.Collections.Generic;
 using System;
+using System.Collections;
 
 //실제로 보여지는 이벤트 팝업
 public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
@@ -15,6 +16,8 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 
 	[SerializeField] private Transform _choiceContainer;
 	[SerializeField] private GameObject _choiceButtonPrefab;
+	[SerializeField] private GameObject _choiceEffect;
+	[SerializeField] private TextMeshProUGUI _choiceEffectText;
 
 	private GameEncounter _currentEncounter;
 	private int _currentPage = 0;
@@ -158,7 +161,7 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 						NextPage();
 					}
 
-					//_nextButton.gameObject.SetActive(true);
+					StartCoroutine(ChoiceEffectCoroutine(choice.effects));
 				});
 			}
 			else
@@ -170,6 +173,34 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 
 		_nextButton.gameObject.SetActive(false);
 		_choiceContainer.gameObject.SetActive(true);
+	}
+
+	private IEnumerator ChoiceEffectCoroutine(List<EncounterEffect> effects)
+	{
+		ShowChoiceEffects(effects);
+		yield return new WaitForSeconds(3f);
+		_choiceEffect.SetActive(false);
+	}
+	private void ShowChoiceEffects(List<EncounterEffect> effects)
+	{
+		if (effects == null) return;
+
+		_choiceEffect.SetActive(true);
+
+		System.Text.StringBuilder sb = new();
+
+		foreach (EncounterEffect effect in effects)
+		{
+			if (effect.amount == 0) continue;
+
+			string sign = effect.amount > 0 ? "+" : "-";
+			string color = effect.amount > 0 ? "#00FF00" : "#FF4444"; // 초록/빨강
+			string resourceName = effect.resourceType.ToString();
+
+			sb.AppendLine($"<color={color}>{sign}{Mathf.Abs(effect.amount)} {resourceName}</color>");
+		}
+
+		_choiceEffectText.text = sb.ToString().TrimEnd();
 	}
 
 	private void Close()

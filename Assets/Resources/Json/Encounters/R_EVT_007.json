@@ -3,11 +3,9 @@
     "Title": "실종된 통조림",
     "Condition": {
         "triggerDays": [
-            1,
-            2,
-            3,
             4,
-            5
+            5,
+            6
         ],
         "specialConditionRequired": ""
     },
@@ -26,8 +24,12 @@
                     "text": "다음부터는 라벨에 이름 써라!",
                     "effects": [
                         {
-                            "resourceType": 4,
-                            "amount": 30
+                            "resourceType": 2,
+                            "amount": -10
+                        },
+                        {
+                            "resourceType": 3,
+                            "amount": 10
                         }
                     ],
                     "branchKey": "",
@@ -39,7 +41,7 @@
                     "effects": [
                         {
                             "resourceType": 2,
-                            "amount": 30
+                            "amount": 20
                         }
                     ],
                     "branchKey": "",
