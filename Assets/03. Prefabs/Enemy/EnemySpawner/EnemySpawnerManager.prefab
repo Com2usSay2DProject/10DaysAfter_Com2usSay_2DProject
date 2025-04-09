@@ -46,11 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnerPrefab: {fileID: 1650499944606500820, guid: 65d31ebd7a307e341959a7275cdf8a3b, type: 3}
-  spawnerCount: 10
-  minSpawnDelay: 5
-  maxSpawnDelay: 10
   _spawnRadiusMin: 8
   _spawnRadiusMax: 9
+  spawners: []
   ClusterSpawnerPos: []
   ClusterEnemyNum: 30
   ClusterRadius: 2

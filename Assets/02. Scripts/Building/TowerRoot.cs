@@ -66,7 +66,7 @@ public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 �
     {
         if (IsBuilt) return;
 
-        if (collision.CompareTag("Tower"))
+        if (collision.CompareTag("Tower") || collision.CompareTag("Tree") || collision.CompareTag("Enemy"))
         {
             _overlappingColliders.Add(collision);
             CanBuild = false;
@@ -78,7 +78,7 @@ public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 �
     {
         if (IsBuilt) return;
 
-        if (collision.CompareTag("Tower"))
+        if (collision.CompareTag("Tower") ||collision.CompareTag("Tree") || collision.CompareTag("Enemy"))
         {
             _overlappingColliders.Remove(collision);
 
