@@ -26,6 +26,9 @@ public class EnemyDeadState : EnemyState
         elapsed = 0;
 
         _rigidbody.linearVelocity = Vector3.zero;
+
+        if (EnemySoundManager.Instance != null)
+            EnemySoundManager.Instance.SoundPlay(EnemySoundType.EnemyDead);
   
     }
 
