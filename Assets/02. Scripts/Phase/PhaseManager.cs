@@ -36,7 +36,7 @@ public class PhaseManager : Singleton<PhaseManager>
 		Debug.Log("This is the Day Phase");
 		//건물 건설 활성화 (UI)
 		//이벤트 발동 활성화
-		EncounterManager.Instance.TriggerEncounter(_currentDay);
+		//EncounterManager.Instance.TriggerStory(_currentDay);
 
 		yield return new WaitForSeconds(dayDuration);
 
@@ -48,8 +48,9 @@ public class PhaseManager : Singleton<PhaseManager>
 	public IEnumerator PlayNightPhase(float nightDuration)
 	{
 		Debug.Log("This is the Night Phase");
-		//몹 스폰 활성화
+		//EncounterManager.Instance.TriggerStory(_currentDay);
 
+		//몹 스폰 활성화
 		yield return new WaitForSeconds(nightDuration);
 
 		//몹 스폰 비활성화

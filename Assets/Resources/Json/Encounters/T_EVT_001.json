@@ -2,9 +2,7 @@
     "EncounterId": "T_EVT_001",
     "Title": "시나리오 첫날",
     "Condition": {
-        "triggerDays": [
-            1
-        ],
+        "triggerDays": [],
         "specialConditionRequired": ""
     },
     "Pages": [
@@ -35,7 +33,7 @@
         },
         {
             "text": "“기지 응답바람.”",
-            "imagePath": "",
+            "imagePath": "room",
             "Choices": []
         },
         {
@@ -86,7 +84,7 @@
             "imagePath": "",
             "Choices": [
                 {
-                    "text": "물자가 도착하지 않았다고 응답한",
+                    "text": "물자가 도착하지 않았다고 응답한다",
                     "effects": [],
                     "branchKey": "",
                     "setBranchTrue": false,
@@ -170,13 +168,14 @@
         },
         {
             "text": "",
-            "imagePath": "base2_day",
+            "imagePath": "room",
             "Choices": [
                 {
                     "text": "\"통신 상태는?\"",
                     "effects": [],
                     "branchKey": "",
-                    "setBranchTrue": false
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
                 }
             ]
         },

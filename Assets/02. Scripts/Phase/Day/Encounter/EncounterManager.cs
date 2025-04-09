@@ -18,7 +18,7 @@ public class EncounterManager : Singleton<EncounterManager>
 	// 테스트용으로 사용
 	private void Start()
 	{
-		//ForceTriggerEncounter("R_EVT_009");
+		//StoryEncounter("R_EVT_010");
 	}
 
 	private void LoadAllEncounters()
@@ -69,6 +69,50 @@ public class EncounterManager : Singleton<EncounterManager>
 		UIEncounterTab.Instance.ShowTab(_pendingEncounter.Title);
 	}
 
+	// 페이즈 전환 시 스토리 무조건 발생(날짜에 따라)
+	public void TriggerStory(int currentDay)
+	{
+		string storyId = "";
+
+		switch (currentDay)
+		{
+			case 1:
+				storyId = PhaseManager.Instance.isNight ? "T_EVT_002" : "T_EVT_001";
+				break;
+			default:
+				return;
+		}
+
+		if (!string.IsNullOrEmpty(storyId))
+		{
+			GameEncounter found = GameEncounters.Find(e => e.EncounterId == storyId);
+			if (found != null)
+			{
+				UIEncounterPlayer.Instance.Show(found, () =>
+				{
+					if (!PhaseManager.Instance.isNight)
+					{
+						TriggerEncounter(currentDay);
+					}
+				});
+			}
+			else
+			{
+				if (!PhaseManager.Instance.isNight)
+				{
+					TriggerEncounter(currentDay); // 스토리 없으면 일반 바로
+				}
+			}
+		}
+		else
+		{
+			if (!PhaseManager.Instance.isNight)
+			{
+				TriggerEncounter(currentDay); // 스토리 없으면 일반 바로
+			}
+		}
+	}
+
 	// 강제로 이벤트 실행시킬 때 사용(encounterID 필요)
 	public void ForceTriggerEncounter(string encounterId)
 	{
@@ -83,6 +127,15 @@ public class EncounterManager : Singleton<EncounterManager>
 			Debug.LogWarning($"[EncounterManager] Encounter ID '{encounterId}'를 찾을 수 없습니다.");
 		}
 	}
+
+	/*public void StoryEncounter(string encounterId)
+	{
+		GameEncounter found = GameEncounters.Find(e => e.EncounterId == encounterId);
+		if (found != null)
+		{
+			UIEncounterPlayer.Instance.Show(found);
+		}
+	}*/
 
 	public void OpenEncounterPlayer()
 	{

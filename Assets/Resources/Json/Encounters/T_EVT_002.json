@@ -1,0 +1,205 @@
+{
+    "EncounterId": "T_EVT_002",
+    "Title": "시나리오 첫날밤",
+    "Condition": {
+        "triggerDays": [],
+        "specialConditionRequired": ""
+    },
+    "Pages": [
+        {
+            "text": "“기지 응답바람.”",
+            "imagePath": "room_night",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "/치직-",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "...다수 지역에서 통신 장애...",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "...사람들이 미치...",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "/치직-",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "응답한다",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                }
+            ],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "\"...위험 인물이 접근할 가능성...\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "/치지직-",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "\"상황에 따라 발포를 허가한다.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "\"...통신망 복구까지 약 10일 소요 예정으로...\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "/치지지직-",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "신호 불량으로 통신이 종료되었다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "목표일까지 10일 / 19:48",
+            "imagePath": "base2_night",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "기온 : -3.4°C\n풍속 : 북풍 3.0m/s\n강수 없음",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "통신망 상태 : 고주파 간섭 감지 중",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "송신탑 전력 정상",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "지령 주파수 대역 : 동기화 성공",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "",
+            "imagePath": "room_night",
+            "Choices": [
+                {
+                    "text": "부관을 부른다",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                }
+            ],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "\"예엡, 부르셨습니까.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "상황을 설명한다",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                }
+            ],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "\"전파 간섭...? 같은 겁니까? 알겠습니다, 일단 애들한테 위험인물로 판단되면 바로 쏘라고 말해두겠습니다.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "\"그런데, 위험 인물이 저희네 같은 외딴 기지까지 오기는 오려나 싶군요. 하하하.\"",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "따라 웃는다",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                },
+                {
+                    "text": "\"웃을 상황이 아니다.\"",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": 23
+                }
+            ],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "\"하하하, 뭐 10일이라 한다지만 곧 복구될 거라 생각합니다.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": 24
+        },
+        {
+            "text": "\"아, 죄송합니다. 상황이 그렇게 심각할 거라고 생각하지 못해서... 10일이라 해도, 더 일찍 복구되지 않겠습니까?\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "\"어쨌든, 경계 태세를 더 높여 두죠. 무슨 일 있다면 바로 보고드리겠습니다.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "\"영화 보면 이러다가 좀비 같은 게 나오더만... 웃기는 이야기지 않습니까.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        }
+    ]
+}

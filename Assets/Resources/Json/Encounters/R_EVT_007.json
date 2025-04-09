@@ -3,6 +3,7 @@
     "Title": "실종된 통조림",
     "Condition": {
         "triggerDays": [
+            1,
             2,
             3,
             4,
@@ -49,7 +50,7 @@
             "nextPageIndex": -1
         },
         {
-            "text": "다음날 새벽, 병사 한 명의 텐트에서 빈 통조림 수십 개가 발견되었다.",
+            "text": "다음날 새벽, 병사 한 명의 관물대에서 빈 통조림 수십 개가 발견되었다.",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": -1

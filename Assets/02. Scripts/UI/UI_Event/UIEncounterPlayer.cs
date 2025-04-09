@@ -3,12 +3,11 @@ using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
 using System.Collections.Generic;
+using System;
 
 //실제로 보여지는 이벤트 팝업
-public class UIEncounterPlayer : MonoBehaviour
+public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 {
-	public static UIEncounterPlayer Instance;
-
 	[SerializeField] private GameObject _playerUI;
 	[SerializeField] private TextMeshProUGUI _encounterText;
 	[SerializeField] private Image _encounterImage;
@@ -19,19 +18,23 @@ public class UIEncounterPlayer : MonoBehaviour
 
 	private GameEncounter _currentEncounter;
 	private int _currentPage = 0;
+
+	public Action OnEncounterClose;
+
 	private void Awake()
 	{
-		Instance = this;
 		_playerUI.SetActive(false);
 		_nextButton.onClick.AddListener(NextPage);
 	}
 
-	public void Show(GameEncounter e)
+	public void Show(GameEncounter e, Action onCloseCallback = null)
 	{
 		_currentEncounter = e;
 		_currentPage = 0;
 		_playerUI.SetActive(true);
 		Time.timeScale = 0f;
+		OnEncounterClose = onCloseCallback;
+
 		ShowPage();
 	}
 
@@ -41,7 +44,7 @@ public class UIEncounterPlayer : MonoBehaviour
 
 		_encounterText.text = page.text;
 		_choiceContainer.gameObject.SetActive(false);
-		_nextButton.gameObject.SetActive(true);
+		_nextButton.gameObject.SetActive(false);
 
 		if (!string.IsNullOrEmpty(page.imagePath))
 		{
@@ -57,6 +60,10 @@ public class UIEncounterPlayer : MonoBehaviour
 		if (page.Choices != null && page.Choices.Count > 0)
 		{
 			ShowChoices(page.Choices);
+		}
+		else
+		{
+			_nextButton.gameObject.SetActive(true);
 		}
 	}
 
@@ -127,7 +134,7 @@ public class UIEncounterPlayer : MonoBehaviour
 						NextPage();
 					}
 
-					_nextButton.gameObject.SetActive(true);
+					//_nextButton.gameObject.SetActive(true);
 				});
 			}
 			else
@@ -150,5 +157,8 @@ public class UIEncounterPlayer : MonoBehaviour
 			EncounterManager.Instance.ResolveEncounter(null); // 선택지가 없는 경우 처리
 		}
 		_playerUI.SetActive(false);
+
+		OnEncounterClose?.Invoke();
+		OnEncounterClose = null;
 	}
 }
