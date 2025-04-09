@@ -28,6 +28,8 @@ public class EnemyAnimTrigger : MonoBehaviour
 
         if (Tower == null) return;
 
+        if(EnemySoundManager.Instance != null)
+            EnemySoundManager.Instance.SoundPlay(EnemySoundType.EnemyAttck);
         Tower.TakeDamage(_enemy.Damage);
     }
 

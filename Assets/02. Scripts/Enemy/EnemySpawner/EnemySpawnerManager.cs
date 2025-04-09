@@ -23,7 +23,7 @@ public class EnemySpawnerManager : MonoBehaviour
     [SerializeField] private float _spawnRadiusMax;
 
     //스포너들
-    private List<EnemySpawner> spawners;
+    [SerializeField] private List<EnemySpawner> spawners;
     private EnemySpawner ClusterSpawner;
     //코루틴 저장용
     private Dictionary<EnemySpawner, Coroutine> spawnerCoroutines = new Dictionary<EnemySpawner, Coroutine>();
@@ -35,7 +35,7 @@ public class EnemySpawnerManager : MonoBehaviour
 
     private void Awake()
     {
-        spawners = new List<EnemySpawner>();
+        //spawners = new List<EnemySpawner>();
         GetData();
 
 
@@ -43,10 +43,16 @@ public class EnemySpawnerManager : MonoBehaviour
     private void Start()
     {
         WaveDatasCurIndex = PhaseManager.Instance.CurrentDay - 1;
-        for (int i = 0; i < WaveDatas[WaveDatasCurIndex].spawnerCount; i++)
+
+        if (spawners.Count ==0)
         {
-            CreateSpawner();
+            spawners = new List<EnemySpawner>();
+            for (int i = 0; i < 12; i++)
+            {
+                CreateSpawner();
+            }
         }
+
         CreateClusterSpanwer();
 
         PhaseManager.Instance.OnDayBegin += DisActiveSpawners;
@@ -144,15 +150,6 @@ public class EnemySpawnerManager : MonoBehaviour
         if (ClusterSpawnerPos.Length > 0)
             ClusterSpawner.gameObject.SetActive(true);
 
-        //스포너 부족하면 생성
-        if (spawners.Count < WaveDatas[WaveDatasCurIndex].spawnerCount)
-        {
-            int missingCount = WaveDatas[WaveDatasCurIndex].spawnerCount - spawners.Count;
-            for (int i = 0; i < missingCount; i++)
-            {
-                CreateSpawner();
-            }
-        }
         //나중에 코루틴 종료할때 필요해서 저장
         foreach (var spawner in spawners)
         {
