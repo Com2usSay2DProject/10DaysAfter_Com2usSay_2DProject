@@ -95,6 +95,7 @@ public class AttackTower : TowerRoot
         }
         else
         {
+            SetDirection();
             Attack();
         }
     }
@@ -125,7 +126,7 @@ public class AttackTower : TowerRoot
         return target;
     }
 
-    private void Attack()
+    private void SetDirection()
     {
         if (_targetEnemy == null) return;
         if (_timer < _atkSpeed) return;
@@ -142,7 +143,10 @@ public class AttackTower : TowerRoot
             _turretObject.GetComponent<SpriteRenderer>().sortingOrder = _spriteRenderer.sortingOrder + 1;
             _fireEffect = _turretObject.transform.GetChild(0).gameObject;
         }
+    }
 
+    protected virtual void Attack()
+    {
         // 필요 시: 해당 방향으로 총알 발사 등
         //_fireEffect.SetActive(true);
         var ps = _fireEffect.GetComponent<ParticleSystem>();

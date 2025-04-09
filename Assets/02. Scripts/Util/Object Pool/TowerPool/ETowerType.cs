@@ -6,5 +6,6 @@ public enum ETowerType
     StoneTower,
     MetalTower,
     FoodTower,
+    MissileTower,
     Count,
 }
