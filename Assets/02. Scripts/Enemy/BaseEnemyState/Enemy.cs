@@ -149,7 +149,7 @@ public class Enemy : MonoBehaviour
         if (IsDead) return;
 
         Hp -= damage;
-
+        Debug.Log($"CurHp : {Hp}");
         //일단 공격상태로 진입했으면 히트 상태로 안감 
         if(_stateMachine.currentState != AttackState)
             _stateMachine.ChangeState(HitState);

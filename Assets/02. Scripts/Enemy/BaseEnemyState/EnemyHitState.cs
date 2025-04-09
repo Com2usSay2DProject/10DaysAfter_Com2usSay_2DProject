@@ -30,12 +30,8 @@ public class EnemyHitState : EnemyState
 
         if (_triggerCalled)
         {
-                _stateMachine.ChangeState(_enemyBase.IdleState);
-            _stateTimer -= Time.deltaTime;
+            _stateMachine.ChangeState(_enemyBase.MoveState);
 
-            if(_stateTimer<=0)
-            {
-            }
         }
     }
 }

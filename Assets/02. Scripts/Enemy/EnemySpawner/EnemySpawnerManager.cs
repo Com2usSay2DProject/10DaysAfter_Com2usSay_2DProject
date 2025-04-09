@@ -42,7 +42,7 @@ public class EnemySpawnerManager : MonoBehaviour
     }
     private void Start()
     {
-
+        WaveDatasCurIndex = PhaseManager.Instance.CurrentDay - 1;
         for (int i = 0; i < WaveDatas[WaveDatasCurIndex].spawnerCount; i++)
         {
             CreateSpawner();
@@ -117,14 +117,14 @@ public class EnemySpawnerManager : MonoBehaviour
             int randomType = Random.Range(0, WaveDatas[WaveDatasCurIndex].enableSpawnType);
 
             spawner.Spawn((EEnemyType)randomType);
-            //spawner.Spawn(EEnemyType.Unique1);
+            //spawner.Spawn(EEnemyType.Unique2);
 
         }
     }
 
     void DisActiveSpawners()
     {
-        WaveDatasCurIndex++;
+        WaveDatasCurIndex = PhaseManager.Instance.CurrentDay -1;
         //스포너 멈추고 코루틴도 멈추기
         foreach (var spawner in spawners)
         {

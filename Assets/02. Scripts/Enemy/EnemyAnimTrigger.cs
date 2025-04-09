@@ -54,9 +54,21 @@ public class EnemyAnimTrigger : MonoBehaviour
         projectile.transform.position = _enemy.transform.position;
     }
 
-    private void UniqueEnemyAttackTrigger()
+    private void Unique2EnemyAttackTrigger()
     {
+        if (_enemy.ProjectilePrefab == null) return;
 
+        TowerRoot Tower = _enemy.AttackTerget.GetComponent<TowerRoot>();
+        GameObject acid=Instantiate(_enemy.ProjectilePrefab);
+
+        Vector3 offset = _enemy.FaceDir * 2f;
+        Vector3 newpos = _enemy.transform.position + offset;
+        acid.transform.position = newpos;
+
+
+
+        if (Tower == null) return;
+        Tower.TakeDamage(_enemy.Damage);
     }
 
 

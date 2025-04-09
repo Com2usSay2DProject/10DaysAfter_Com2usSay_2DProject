@@ -27,13 +27,15 @@ public class EnemyMoveState : EnemyState
     {
         base.Update();
 
-        if (_enemyBase.IsDead)
+        if (_enemyBase.IsDead == true)
             _stateMachine.ChangeState(_enemyBase.DeadState);
+
 
         if (_enemyBase.Path == null || _enemyBase.Path.Count == 0)
         {
             return;
         }
+
 
        //Vector2 avoidDir = AvoidLogic();
 

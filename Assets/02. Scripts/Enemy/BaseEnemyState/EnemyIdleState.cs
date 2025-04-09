@@ -22,7 +22,9 @@ public class EnemyIdleState : EnemyState
     {
         base.Update();
 
-        if(!_enemyBase.HasTowerInRange)
+        if (!_enemyBase.HasTowerInRange)
             _stateMachine.ChangeState(_enemyBase.MoveState);
+        else
+            _stateMachine.ChangeState(_enemyBase.AttackState);
     }
 }

@@ -6,5 +6,6 @@ public enum EEnemyType
     Boomer,
     Crawler,
     Unique1,
+    Unique2,
     Count,
 }

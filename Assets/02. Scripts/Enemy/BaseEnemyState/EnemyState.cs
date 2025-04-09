@@ -35,7 +35,8 @@ public class EnemyState
     {
         _stateTimer -= Time.deltaTime;
 
-        UpdateTargetAndPath();
+        if(!_enemyBase.IsDead)
+            UpdateTargetAndPath();
     }
 
     private void UpdateTargetAndPath()

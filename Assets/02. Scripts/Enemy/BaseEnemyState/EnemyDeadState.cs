@@ -17,6 +17,8 @@ public class EnemyDeadState : EnemyState
     {
         base.Enter();
 
+        //_rigidbody.AddForce(-_enemyBase.FaceDir * 5f);
+
         circleCollider.enabled = false;
 
         originalColor = _spriteRenderer.color;
