@@ -6,7 +6,7 @@ public class Missile : MonoBehaviour
     [Header("# Stat")]
     public EBulletType Type;
     [SerializeField] private float _speed;
-    [SerializeField] private float _range;
+    [SerializeField] private float _explodeRange;
     public float Damage;
 
     [Header ("# Bezier")]
@@ -67,7 +67,7 @@ public class Missile : MonoBehaviour
     {
         // TODO : 폭발 데미지 주기
         GameObject[] Enemys = Physics2D
-            .OverlapCircleAll(transform.position, _range, 1 << LayerMask.NameToLayer("Enemy"))
+            .OverlapCircleAll(transform.position, _explodeRange, 1 << LayerMask.NameToLayer("Enemy"))
             .Select(c => c.gameObject).ToArray();
 
         foreach(GameObject enemy in Enemys)
@@ -102,7 +102,7 @@ public class Missile : MonoBehaviour
 
         Vector2 direction = (currentPos - _prevPos).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle);
+        transform.rotation = Quaternion.Euler(0, 0, angle + 90);
         transform.position = currentPos;
 
         _prevPos = currentPos;

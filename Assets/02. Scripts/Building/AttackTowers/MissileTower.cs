@@ -15,7 +15,7 @@ public class MissileTower : AttackTower
         //TODO: targetEnemy 주변으로 랜덤한 위치들 적용
         for(int i=0; i<targets.Length; i++)
         {
-            targets[i] = (Vector2)_targetEnemy.transform.position + Random.insideUnitCircle;
+            targets[i] = (Vector2)_targetEnemy.transform.position + Random.insideUnitCircle * 3;
         }
 
         StartCoroutine(FireMissile(targets));
@@ -26,6 +26,7 @@ public class MissileTower : AttackTower
         foreach (Vector2 target in targets)
         {
             Missile missile = BulletPoolManager.Instance.GetObject(EBulletType.Missile).GetComponent<Missile>();
+            missile.Damage = _damage;
             missile.transform.position = _turretObject.transform.position;
             missile.TargetPosition = target;
 
