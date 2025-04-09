@@ -20,6 +20,9 @@ public class EncounterPage
 
 	public List<EncounterChoice> Choices;       // 선택지가 있을 경우
 	public int nextPageIndex = -1;
+
+	public string bgm;
+	public string sfx;
 }
 
 [Serializable]

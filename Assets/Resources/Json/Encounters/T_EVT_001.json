@@ -1,6 +1,6 @@
 {
     "EncounterId": "T_EVT_001",
-    "Title": "시나리오 첫날",
+    "Title": "시나리오 1일차 낮",
     "Condition": {
         "triggerDays": [],
         "specialConditionRequired": ""
@@ -9,7 +9,8 @@
         {
             "text": "목표일까지 --일 / 09:42",
             "imagePath": "base2_day",
-            "Choices": []
+            "Choices": [],
+            "bgm": ""
         },
         {
             "text": "기온 : -5.4°C\n풍속 : 북서풍 4.7m/s\n강수 없음",

@@ -41,9 +41,14 @@ public class WaveDataEditor : EditorWindow
             EditorGUILayout.BeginVertical("box");
 
             EditorGUILayout.LabelField($"Wave {i + 1}", EditorStyles.boldLabel);
+
+            wave.spawnMinnum = EditorGUILayout.IntField("Spawn Min Num", wave.spawnMinnum);
+            wave.spawnMaxnum = EditorGUILayout.IntField("Spawn Max Num", wave.spawnMaxnum);
             wave.minSpawnDelay = EditorGUILayout.FloatField("Min Spawn Delay", wave.minSpawnDelay);
             wave.maxSpawnDelay = EditorGUILayout.FloatField("Max Spawn Delay", wave.maxSpawnDelay);
-            wave.enableSpawnType = EditorGUILayout.IntField("Enable Spawn Type", wave.enableSpawnType);
+            wave.enableSpawnType = EditorGUILayout.IntSlider("Enable Spawn Type", wave.enableSpawnType, 0, 4);
+            wave.useUnipueEnemy = EditorGUILayout.Toggle("Use Unique Enemy", wave.useUnipueEnemy);
+            wave.useBossEnemy = EditorGUILayout.Toggle("Use Boss Enemy", wave.useBossEnemy);
 
             if (GUILayout.Button("삭제"))
             {
