@@ -80,13 +80,13 @@ public class EncounterManager : Singleton<EncounterManager>
 				storyId = PhaseManager.Instance.isNight ? "T_EVT_002" : "T_EVT_001";
 				break;
 			case 2:
-				storyId = "T_EVT_003";
+				if (!PhaseManager.Instance.isNight)storyId = "T_EVT_003";
 				break;
 			case 5:
 				if (PhaseManager.Instance.isNight) storyId = "T_EVT_004";
 				break;
 			case 8:
-				storyId = "T_EVT_005";
+				if (!PhaseManager.Instance.isNight) storyId = "T_EVT_005";
 				break;
 			default:
 				return;
