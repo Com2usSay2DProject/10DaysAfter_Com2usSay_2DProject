@@ -61,5 +61,6 @@ public class UIButton: UI_TouchBounce
     public void OnClickLoadScene(String name)
     {
         SceneManager.LoadScene(name);
+        SoundManager.Instance.StopBgm();
     }
 }
