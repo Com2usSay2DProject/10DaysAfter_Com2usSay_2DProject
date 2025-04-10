@@ -2758,6 +2758,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1597296702829276697}
     m_Modifications:
+    - target: {fileID: 1175759708042613469, guid: fc5f3ad7b13aff84c8535e3dcce9a072, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f0d5d25e47b1a4327a7015a43789c1e8, type: 3}
     - target: {fileID: 2089965960596962375, guid: fc5f3ad7b13aff84c8535e3dcce9a072, type: 3}
       propertyPath: m_Name
       value: FoodResourceUI
@@ -2902,7 +2906,7 @@ PrefabInstance:
     - target: {fileID: 1175759708042613469, guid: fc5f3ad7b13aff84c8535e3dcce9a072, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b1f2dbc8fcdf4014495f09ffc86fa396, type: 3}
+      objectReference: {fileID: 21300000, guid: b97581bfdead14b7a96d41aff798eb8d, type: 3}
     - target: {fileID: 2089965960596962375, guid: fc5f3ad7b13aff84c8535e3dcce9a072, type: 3}
       propertyPath: m_Name
       value: PopulationResourceUI
@@ -3047,7 +3051,7 @@ PrefabInstance:
     - target: {fileID: 1175759708042613469, guid: fc5f3ad7b13aff84c8535e3dcce9a072, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 628255781ed67984f860c9caee3849f4, type: 3}
+      objectReference: {fileID: 21300000, guid: efd19a472ef894517b61a77c4915b6e3, type: 3}
     - target: {fileID: 2089965960596962375, guid: fc5f3ad7b13aff84c8535e3dcce9a072, type: 3}
       propertyPath: m_Name
       value: WoodResourceUI
@@ -3337,7 +3341,7 @@ PrefabInstance:
     - target: {fileID: 1175759708042613469, guid: fc5f3ad7b13aff84c8535e3dcce9a072, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f7059e18b36d4cd4b90d2e2c95c94b9f, type: 3}
+      objectReference: {fileID: 21300000, guid: 3b8178c2ce66a408ba11d8ed50594163, type: 3}
     - target: {fileID: 2089965960596962375, guid: fc5f3ad7b13aff84c8535e3dcce9a072, type: 3}
       propertyPath: m_Name
       value: MetalResourceUI
