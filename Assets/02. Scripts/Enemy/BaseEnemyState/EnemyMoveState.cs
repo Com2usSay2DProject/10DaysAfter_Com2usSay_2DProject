@@ -5,6 +5,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class EnemyMoveState : EnemyState
 {
+    private float MoveSoundTime = 2f;
 
     public EnemyMoveState(EnemyStateMachine stateMachine, Rigidbody2D rigidbody2D, Enemy enemy, string animBoolName) : base(stateMachine, rigidbody2D, enemy, animBoolName)
     {
@@ -14,7 +15,7 @@ public class EnemyMoveState : EnemyState
     {
         base.Enter();
 
-
+        _stateTimer = MoveSoundTime;
 
     }
 
@@ -34,6 +35,15 @@ public class EnemyMoveState : EnemyState
         if (_enemyBase.Path == null || _enemyBase.Path.Count == 0)
         {
             return;
+        }
+
+        if(_stateTimer<0)
+        {
+            _stateTimer = MoveSoundTime;
+            if(EnemySoundManager.Instance !=null)
+            {
+                EnemySoundManager.Instance.Play3DSoundWithLimit(_enemyBase.gameObject.transform.position, EnemySoundType.EnemyMove);
+            }
         }
 
 

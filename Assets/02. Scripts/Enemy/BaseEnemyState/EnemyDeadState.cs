@@ -28,7 +28,7 @@ public class EnemyDeadState : EnemyState
         _rigidbody.linearVelocity = Vector3.zero;
 
         if (EnemySoundManager.Instance != null)
-            EnemySoundManager.Instance.SoundPlay(EnemySoundType.EnemyDead);
+            EnemySoundManager.Instance.Play3DSoundWithLimit(_enemyBase.gameObject.transform.position,EnemySoundType.EnemyDead);
   
     }
 
