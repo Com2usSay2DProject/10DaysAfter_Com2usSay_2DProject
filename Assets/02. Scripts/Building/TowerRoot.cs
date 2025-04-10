@@ -43,6 +43,7 @@ public class TowerRoot : Building
 
     protected override void OnPlaced()
     {
+        _collider.enabled = true;
         _spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
         StartCoroutine(CoBuildRoutine());
     }

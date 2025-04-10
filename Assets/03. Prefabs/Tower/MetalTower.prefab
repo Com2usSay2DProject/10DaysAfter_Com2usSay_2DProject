@@ -177,6 +177,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c497a4d0708a4e84e99fc8c3c044765a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Area:
+    m_Position: {x: 0, y: 0, z: 0}
+    m_Size: {x: 2, y: 2, z: 1}
+  _buildingOffset: {x: 1, y: 2.64, z: 0}
+  _inverseBuildingOffset: {x: -1, y: -2.64, z: 0}
   TowerType: 4
   Data:
     TowerType: 0

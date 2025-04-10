@@ -2856,6 +2856,42 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 362567721575597355, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 362567721575597355, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 365638086}
+    - target: {fileID: 362567721575597355, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InitializeWithBuilding
+      objectReference: {fileID: 0}
+    - target: {fileID: 362567721575597355, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GridBuildingSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 362567721575597355, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1662460302092980188, guid: 718e79b76b34fb545affa10268629c1a, type: 3}
+    - target: {fileID: 362567721575597355, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TowerRoot, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 807533416818262882, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 854711946800038911, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: SellectBuildType
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325357165212623277, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1770168973577837414, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2872,9 +2908,45 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1974385182334413945, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: SellectBuildType
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042500521527928804, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042500521527928804, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 365638086}
+    - target: {fileID: 2042500521527928804, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InitializeWithBuilding
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042500521527928804, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GridBuildingSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042500521527928804, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 5934382594418969662, guid: 8fea3939366ea484782c17533dad032e, type: 3}
+    - target: {fileID: 2042500521527928804, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TowerRoot, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2317939524723362133, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
       propertyPath: m_Name
       value: DownCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380955426368072241, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: SellectBuildType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435163178451856815, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: SellectBuildType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4966907789740643467, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
       propertyPath: m_Pivot.x
@@ -2956,6 +3028,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5281838389236452326, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5300022480511634552, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2995,6 +3071,30 @@ PrefabInstance:
     - target: {fileID: 6550718855881577442, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782518061962948448, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782518061962948448, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 365638086}
+    - target: {fileID: 6782518061962948448, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InitializeWithBuilding
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782518061962948448, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GridBuildingSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782518061962948448, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 6399145685680916891, guid: 21e2a8ce202a5f8488107747a5d5ad18, type: 3}
+    - target: {fileID: 6782518061962948448, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TowerRoot, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6837012236321827070, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -3064,9 +3164,41 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7166046154255573685, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: SellectBuildType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7177204687648350760, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7177204687648350760, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
       propertyPath: AllocatedTower
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7227413981594102056, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7227413981594102056, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 365638086}
+    - target: {fileID: 7227413981594102056, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InitializeWithBuilding
+      objectReference: {fileID: 0}
+    - target: {fileID: 7227413981594102056, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GridBuildingSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7227413981594102056, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2995090362264765963, guid: 11954fac11daa964ba5269baf695466f, type: 3}
+    - target: {fileID: 7227413981594102056, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TowerRoot, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8088048985803061804, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3083,6 +3215,34 @@ PrefabInstance:
     - target: {fileID: 8088048985803061804, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295747626286353838, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8427934306160166574, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8427934306160166574, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 365638086}
+    - target: {fileID: 8427934306160166574, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InitializeWithBuilding
+      objectReference: {fileID: 0}
+    - target: {fileID: 8427934306160166574, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GridBuildingSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8427934306160166574, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 7781017549173608812, guid: aa3e51b5754f45c4eb170bb47d35cba9, type: 3}
+    - target: {fileID: 8427934306160166574, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TowerRoot, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3401,7 +3561,8 @@ PrefabInstance:
       propertyPath: _groundTilemap
       value: 
       objectReference: {fileID: 2079426392}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6275382568705037882, guid: ff937b14a03152e429adefac20db433d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
