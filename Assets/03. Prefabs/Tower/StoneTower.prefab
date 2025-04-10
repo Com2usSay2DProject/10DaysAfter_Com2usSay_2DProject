@@ -177,6 +177,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80dfeb17547f0e547b30bfd1bb247637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Area:
+    m_Position: {x: 0, y: 0, z: 0}
+    m_Size: {x: 2, y: 2, z: 1}
+  _buildingOffset: {x: 0.5, y: 1.8, z: 0}
+  _inverseBuildingOffset: {x: -0.5, y: -1.8, z: 0}
   TowerType: 3
   Data:
     TowerType: 0
@@ -185,6 +190,7 @@ MonoBehaviour:
     Damage: 0
     AtkSpeed: 0
     Range: 0
+    BuildTime: 0
     Cost: []
     PopulationMultiplier: 0.05
   _buildEffect: {fileID: 5011273772310220022}

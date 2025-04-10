@@ -204,8 +204,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.628, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1703377511502075812}
   - {fileID: 5505740200219177178}
@@ -286,6 +286,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42cf410ad61cc3740a7491479cc88fed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Area:
+    m_Position: {x: 0, y: 0, z: 0}
+    m_Size: {x: 2, y: 2, z: 1}
+  _buildingOffset: {x: 0.5, y: 1.8, z: 0}
+  _inverseBuildingOffset: {x: -0.5, y: -1.8, z: 0}
   TowerType: 6
   Data:
     TowerType: 0
@@ -294,6 +299,7 @@ MonoBehaviour:
     Damage: 0
     AtkSpeed: 0
     Range: 0
+    BuildTime: 0
     Cost: []
     PopulationMultiplier: 0.05
   _buildEffect: {fileID: 1703377511502564228}

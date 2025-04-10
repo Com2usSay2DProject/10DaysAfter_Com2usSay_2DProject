@@ -5,7 +5,7 @@ public abstract class Building : MonoBehaviour
     [Header("# Grid Settings")]
     public BoundsInt Area;
     [SerializeField] protected Vector3 _buildingOffset = new Vector3(0.5f, 1.8f, 0f);
-    [SerializeField] protected Vector3 _inverseBuildingOffset = new Vector3(-0.5f, -1.8f, 0f);
+    protected Vector3 _inverseBuildingOffset = new Vector3(-0.5f, -1.8f, 0f);
     
     public bool IsPlaced { get; protected set; }
 
@@ -15,6 +15,7 @@ public abstract class Building : MonoBehaviour
 
     protected virtual void Awake()
     {
+        _inverseBuildingOffset = _buildingOffset * -1;
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _collider = GetComponent<Collider2D>();
     }
