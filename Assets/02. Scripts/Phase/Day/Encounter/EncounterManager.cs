@@ -183,4 +183,9 @@ public class EncounterManager : Singleton<EncounterManager>
 		_pendingEncounter = null;
 		UIEncounterTab.Instance.HideTab();
 	}
+
+	public void SkipStory()
+	{
+
+	}
 }

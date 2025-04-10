@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Unity.VisualScripting;
+using DG.Tweening;
 using System.Collections.Generic;
 using System;
 using System.Collections;
@@ -178,12 +178,16 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 	private IEnumerator ChoiceEffectCoroutine(List<EncounterEffect> effects)
 	{
 		ShowChoiceEffects(effects);
-		yield return new WaitForSeconds(3f);
+		yield return new WaitForSecondsRealtime(3f);
 		_choiceEffect.SetActive(false);
 	}
 	private void ShowChoiceEffects(List<EncounterEffect> effects)
 	{
-		if (effects == null) return;
+		if (effects == null)
+		{
+			_choiceEffect.SetActive(false);
+			return;
+		}
 
 		_choiceEffect.SetActive(true);
 
@@ -194,13 +198,15 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 			if (effect.amount == 0) continue;
 
 			string sign = effect.amount > 0 ? "+" : "-";
-			string color = effect.amount > 0 ? "#00FF00" : "#FF4444"; // 초록/빨강
+			string color = effect.amount > 0 ? "#7FD97A" : "#FF6F5A";
 			string resourceName = effect.resourceType.ToString();
 
-			sb.AppendLine($"<color={color}>{sign}{Mathf.Abs(effect.amount)} {resourceName}</color>");
+			sb.Append($"<color={color}>{sign}{Mathf.Abs(effect.amount)} {resourceName}</color>  ");	
 		}
 
+		_choiceEffectText.DOFade(255f, 1.5f).SetUpdate(true);
 		_choiceEffectText.text = sb.ToString().TrimEnd();
+		_choiceEffectText.DOFade(0f, 1.5f).SetUpdate(true);
 	}
 
 	private void Close()

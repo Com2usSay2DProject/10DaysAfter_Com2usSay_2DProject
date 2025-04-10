@@ -29,11 +29,14 @@ public class PhaseManager : Singleton<PhaseManager>
 	private float _timeUntilNextPhase;
 	public float TimeUntilNextPhase => _timeUntilNextPhase;
 
+	//디버깅용
+	public bool DoTriggerEncounters = false;
+
 	public IEnumerator PlayDayPhase(float dayDuration)
 	{
 		Debug.Log("This is the Day Phase");
 		//이벤트 발동 활성화
-		EncounterManager.Instance.TriggerStory(_currentDay);
+		if(DoTriggerEncounters)	EncounterManager.Instance.TriggerStory(_currentDay);
 
 		yield return new WaitForSeconds(dayDuration);
 
@@ -44,7 +47,7 @@ public class PhaseManager : Singleton<PhaseManager>
 	public IEnumerator PlayNightPhase(float nightDuration)
 	{
 		Debug.Log("This is the Night Phase");
-		EncounterManager.Instance.TriggerStory(_currentDay);
+		if(DoTriggerEncounters) EncounterManager.Instance.TriggerStory(_currentDay);
 
 		//몹 스폰 활성화
 		yield return new WaitForSeconds(nightDuration);
