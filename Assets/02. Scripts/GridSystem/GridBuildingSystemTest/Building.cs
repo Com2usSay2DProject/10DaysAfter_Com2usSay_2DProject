@@ -1,34 +1,44 @@
 using UnityEngine;
 
-public class Building : MonoBehaviour
+public abstract class Building : MonoBehaviour
 {
-    public bool Placed { get; private set; }
-    public BoundsInt area;
-
-    #region BuildMethods
+    [Header("# Grid Settings")]
+    public BoundsInt Area;
+    [SerializeField] protected Vector3 _buildingOffset = new Vector3(0.5f, 1.8f, 0f);
+    [SerializeField] protected Vector3 _inverseBuildingOffset = new Vector3(-0.5f, -1.8f, 0f);
+    
+    public bool IsPlaced { get; protected set; }
+    
+    protected virtual void OnPlaced() { }
+    protected virtual bool ValidatePlacement() => true;
 
     public bool CanBePlaced()
     {
-        Vector3 position = transform.position;
-        Vector3 offset = new Vector3(-0.5f, -1.8f, 0f);  // 건물 오프셋을 역으로 적용
-        Vector3 basePosition = position + offset;
-        Vector3Int positionInt = GridBuildingSystem.current.gridLayout.WorldToCell(basePosition);
-        BoundsInt areaTemp = area;
-        areaTemp.position = positionInt;
-
-        return GridBuildingSystem.current.CanTakeArea(areaTemp);
+        if (!ValidatePlacement()) return false;
+        return GridBuildingSystem.Instance.CanTakeArea(GetGridArea());
     }
 
     public void Place()
     {
-        Vector3 position = transform.position;
-        Vector3 offset = new Vector3(-0.5f, -1.8f, 0f);  // 건물 오프셋을 역으로 적용
-        Vector3 basePosition = position + offset;
-        Vector3Int positionInt = GridBuildingSystem.current.gridLayout.WorldToCell(basePosition);
-        BoundsInt areaTemp = area;
-        areaTemp.position = positionInt;
-        Placed = true;
-        GridBuildingSystem.current.TakeArea(areaTemp);
+        if (!CanBePlaced()) return;
+        
+        //IsPlaced = true;
+        GridBuildingSystem.Instance.TakeArea(GetGridArea());
+        OnPlaced();
     }
-    #endregion
+
+    public BoundsInt GetGridArea()
+    {
+        Vector3 basePosition = transform.position + _inverseBuildingOffset;
+        Vector3Int positionInt = GridBuildingSystem.Instance.GridLayout.WorldToCell(basePosition);
+        BoundsInt areaTemp = Area;
+        areaTemp.position = positionInt;
+        return areaTemp;
+    }
+
+    public void SetGridPosition(Vector3Int cellPos)
+    {
+        Vector3 basePosition = GridBuildingSystem.Instance.GridLayout.CellToWorld(cellPos);
+        transform.position = basePosition + _buildingOffset;
+    }
 }

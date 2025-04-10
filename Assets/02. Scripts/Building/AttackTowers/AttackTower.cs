@@ -55,17 +55,18 @@ public class AttackTower : TowerRoot
         }
     }
 
-    public override void SetPosition()
+    protected override void OnPlaced()
     {
-        base.SetPosition();
-
-        _turretObject.GetComponent<SpriteRenderer>().sortingOrder = _spriteRenderer.sortingOrder + 1;
+        base.OnPlaced();
+        if (_turretObject != null)
+        {
+            _turretObject.GetComponent<SpriteRenderer>().sortingOrder = _spriteRenderer.sortingOrder + 1;
+        }
     }
 
     protected override void OnEnable()
     {
         base.OnEnable();
-
         ObserveTargetEnemy();
     }
 
@@ -82,11 +83,11 @@ public class AttackTower : TowerRoot
     }
     #endregion
 
-    protected override void Update()
+    private void Update()
     {
-        base.Update();
+        //base.Update();
 
-        if(!IsBuilt)
+        if(!IsPlaced)
         {
             return;
         }

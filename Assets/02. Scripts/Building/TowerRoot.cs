@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 관련 로직만 여기에
+public class TowerRoot : Building
 {
-    private static Dictionary<ETowerType, TowerData> _towerDataDict; // 모든 타워가 공유할 데이터
+    private static Dictionary<ETowerType, TowerData> _towerDataDict;
 
     [Header("# Stats")]
-    public ETowerType TowerType; // 타워의 타입 -> 프리팹에서 설정해두면 데이터 찾아옴
-    [SerializeField] protected TowerData Data; // 해당 타워의 데이터
+    public ETowerType TowerType;
+    [SerializeField] protected TowerData Data;
     protected float _maxHp;
     protected float _hp;
     protected float _damage;
@@ -18,90 +18,48 @@ public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 �
     [Header("# Cost")]
     public Dictionary<ResourceType, int> CostDataDict { get; private set; }
 
-    [Header("# State")]
-    public bool IsBuilt { get; set; }
-
-    [Header ("# Buildable")]
-    public bool CanBuild { get; private set; }
-    private HashSet<Collider2D> _overlappingColliders = new HashSet<Collider2D>(); // 건설 가능 판정용
+    [Header("# Buildable")]
+    private HashSet<Collider2D> _overlappingColliders = new HashSet<Collider2D>();
 
     [Header("# Effect")]
     [SerializeField] private GameObject _buildEffect;
 
-    [Header ("# Components")]
+    [Header("# Components")]
     protected SpriteRenderer _spriteRenderer;
-    protected Rigidbody2D _rigid;
+    protected Collider2D _collider;
     private Color _tempColor = new Color(1, 1, 1, 0.5f);
     private Color _errorColor = new Color(1, 0, 0, 0.5f);
 
-    #region Common
-    protected virtual void Awake() 
+    protected override bool ValidatePlacement()
+    {
+        return _overlappingColliders.Count == 0;
+    }
+
+    protected override void OnPlaced()
+    {
+        _collider.enabled = true;
+        _spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
+        _buildEffect.SetActive(true);
+        SoundManager.Instance.PlaySfx(ESfxType.BuildSound);
+        StartCoroutine(CoBuildRoutine());
+    }
+
+    protected virtual void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _rigid = GetComponent<Rigidbody2D>();
+        _collider = GetComponent<Collider2D>();
         ResourceManager.Instance.OnPopulationChange += MultiplyData;
     }
 
-    protected virtual void OnEnable() 
+    protected virtual void OnEnable()
     {
+        _collider.enabled = false;
         GetData();
         GetDataForThis();
         GetCostData();
         MultiplyData();
-        IsBuilt = false;
-        CanBuild = true;
+        IsPlaced = false;
         _spriteRenderer.color = _tempColor;
-    }
-
-    protected virtual void Update()
-    {
-        if (UIManager.Instance.isBuildModeActive && !IsBuilt)
-        {
-            _spriteRenderer.sortingOrder = 1000;
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.z = 0;
-            _rigid.MovePosition(mousePos);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (IsBuilt) return;
-
-        if (collision.CompareTag("Tower") || collision.CompareTag("Tree") || collision.CompareTag("Enemy"))
-        {
-            _overlappingColliders.Add(collision);
-            CanBuild = false;
-            _spriteRenderer.color = _errorColor;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (IsBuilt) return;
-
-        if (collision.CompareTag("Tower") ||collision.CompareTag("Tree") || collision.CompareTag("Enemy"))
-        {
-            _overlappingColliders.Remove(collision);
-
-            // 아무것도 안 겹칠 때만 가능하게
-            if (_overlappingColliders.Count == 0)
-            {
-                CanBuild = true;
-                _spriteRenderer.color = _tempColor;
-            }
-        }
-    }
-
-    public virtual void SetPosition()
-    {
-        //_spriteRenderer.color = Color.white;
-        //IsBuilt = true;
-        _spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
-        _buildEffect.SetActive(true);
-        SoundManager.Instance.PlaySfx(ESfxType.BuildSound);
-
-        StartCoroutine(CoBuildRoutine());
     }
 
     private IEnumerator CoBuildRoutine()
@@ -111,19 +69,15 @@ public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 �
         while(timer < Data.BuildTime)
         {
             timer += Time.deltaTime;
-
             yield return null;
         }
         _spriteRenderer.color = Color.white;
-        IsBuilt = true;
+        IsPlaced = true;
     }
 
     public void TakeDamage(float damage)
     {
         _hp -= damage;
-
-        //TODO : 피격 이펙트
-
         if (_hp <= 0)
         {
             Die();
@@ -133,25 +87,18 @@ public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 �
     private void Die()
     {
         ResourceManager.Instance.TryUseResource(ResourceType.Population, 10);
-
         GameObject explode = EffectPoolManager.Instance.GetObject(EEffectType.BuildingExplode);
         explode.transform.position = transform.position;
         SoundManager.Instance.PlaySfx(ESfxType.BuildingExplode);
         TowerPoolManager.Instance.ReturnObject(gameObject, TowerType);
     }
-    #endregion
 
-    // 데이터 로딩은 그대로 유지
     #region Data
     private void GetData()
     {
-        // JSON 데이터가 아직 로드되지 않았다면 불러오기
         if (_towerDataDict == null)
         {
-            //LoadTowerData();
-            TowerDataCollection collection =
-                JsonDataManager.LoadFromFile<TowerDataCollection>("Tower/TowerDataCollection");
-
+            TowerDataCollection collection = JsonDataManager.LoadFromFile<TowerDataCollection>("Tower/TowerDataCollection");
             _towerDataDict = new Dictionary<ETowerType, TowerData>();
 
             foreach (TowerData d in collection.Datas)
@@ -159,14 +106,11 @@ public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 �
                 d.TypeString = d.TowerType.ToString();
                 _towerDataDict[d.TowerType] = d;
             }
-
-            Debug.Log("타워 데이터 로드 완료");
         }
     }
 
     private void GetDataForThis()
     {
-        // 내 타워 타입에 맞는 데이터 찾기
         if (_towerDataDict.TryGetValue(TowerType, out TowerData data))
         {
             Data = new TowerData();
@@ -197,7 +141,6 @@ public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 �
     {
         _maxHp = Data.GetModifiedStat(Data.MaxHp, ResourceManager.Instance.GetResourceAmount(ResourceType.Population));
         _damage = Data.GetModifiedStat(Data.Damage, ResourceManager.Instance.GetResourceAmount(ResourceType.Population));
-        //_atkSpeed = Data.GetModifiedStat(Data.AtkSpeed, ResourceManager.Instance.GetResourceAmount(ResourceType.Population));
         _range = Data.GetModifiedStat(Data.Range, ResourceManager.Instance.GetResourceAmount(ResourceType.Population));
     }
     #endregion
