@@ -20,7 +20,7 @@ public abstract class ResourceTower : TowerRoot
     {
         //base.Update();
 
-        if(!IsBuilt)
+        if(!IsPlaced)
         {
             return;
         }
