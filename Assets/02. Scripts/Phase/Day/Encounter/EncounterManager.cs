@@ -1,12 +1,16 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.IO;
+using UnityEngine.SceneManagement;
+using DG.Tweening.Core.Easing;
 
 public class EncounterManager : Singleton<EncounterManager>
 {
 	// 이벤트 데이터 전체 보유
 	public List<GameEncounter> GameEncounters;
 	private GameEncounter _pendingEncounter;
+
+	public string TitleSceneName = "HyungJin_Title";
 
 	private void Awake()
 	{
@@ -93,6 +97,10 @@ public class EncounterManager : Singleton<EncounterManager>
 				storyId = PhaseManager.Instance.isNight ? "T_EVT_007" : "T_EVT_006";
 				break;
 			case 10:
+				//if (StateManager.Instance.GetBranch("lieutenant_ending"))
+				//{
+				//}
+				storyId = "ENDING_TEST";
 				break;
 			default:
 				break;
@@ -103,13 +111,23 @@ public class EncounterManager : Singleton<EncounterManager>
 			GameEncounter found = GameEncounters.Find(e => e.EncounterId == storyId);
 			if (found != null)
 			{
-				UIEncounterPlayer.Instance.Show(found, () =>
+				if (storyId == "ENDING_TEST")
+				{
+					UIEncounterPlayer.Instance.Show(found, () =>
+					{
+						GoToTitle();  // TitleSceneName로 이동
+					});
+				}
+				else
+				{
+					UIEncounterPlayer.Instance.Show(found, () =>
 				{
 					if (!PhaseManager.Instance.isNight)
 					{
 						TriggerEncounter(currentDay);
 					}
 				});
+				}
 			}
 			else
 			{
@@ -127,30 +145,6 @@ public class EncounterManager : Singleton<EncounterManager>
 			}
 		}
 	}
-
-	// 강제로 이벤트 실행시킬 때 사용(encounterID 필요)
-	public void ForceTriggerEncounter(string encounterId)
-	{
-		GameEncounter found = GameEncounters.Find(e => e.EncounterId == encounterId);
-		if (found != null)
-		{
-			_pendingEncounter = found;
-			UIEncounterTab.Instance.ShowTab(found.Title);
-		}
-		else
-		{
-			Debug.LogWarning($"[EncounterManager] Encounter ID '{encounterId}'를 찾을 수 없습니다.");
-		}
-	}
-
-	/*public void StoryEncounter(string encounterId)
-	{
-		GameEncounter found = GameEncounters.Find(e => e.EncounterId == encounterId);
-		if (found != null)
-		{
-			UIEncounterPlayer.Instance.Show(found);
-		}
-	}*/
 
 	public void OpenEncounterPlayer()
 	{
@@ -179,15 +173,16 @@ public class EncounterManager : Singleton<EncounterManager>
 		UIEncounterTab.Instance.HideTab();
 	}
 
+	public void GoToTitle()
+	{
+		SceneManager.LoadScene(TitleSceneName);
+		return;
+	}
+
 	public void IgnoreEncounter()
 	{
 		//페이즈 끝날 때까지 무시했을 경우
 		_pendingEncounter = null;
 		UIEncounterTab.Instance.HideTab();
-	}
-
-	public void SkipStory()
-	{
-
 	}
 }

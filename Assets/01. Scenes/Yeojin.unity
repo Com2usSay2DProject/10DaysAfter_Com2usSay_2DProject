@@ -153,7 +153,6 @@ MonoBehaviour:
   _spawnRadiusMin: 12
   _spawnRadiusMax: 14
   spawners: []
-  ClusterSpawnerPos: []
   ClusterEnemyNum: 0
   ClusterRadius: 0
 --- !u!114 &99279177
@@ -349,6 +348,7 @@ MonoBehaviour:
   DayPhaseDuration: 5
   NightPhaseDuration: 5
   FadeTime: 3
+  DoTriggerEncounters: 1
 --- !u!114 &130680878
 MonoBehaviour:
   m_ObjectHideFlags: 0
