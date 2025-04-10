@@ -16,9 +16,9 @@ public abstract class ResourceTower : TowerRoot
 
     protected float _timer = 0f;
 
-    protected override void Update()
+    private void Update()
     {
-        base.Update();
+        //base.Update();
 
         if(!IsBuilt)
         {

@@ -47,7 +47,7 @@ public class TileClickManager : Singleton<TileClickManager>
 
     private void GetMouseClick()
     {
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
             Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Collider2D[] hits = Physics2D.OverlapPointAll(mouseWorldPos);
@@ -99,7 +99,7 @@ public class TileClickManager : Singleton<TileClickManager>
                     Debug.Log("타워 업그레이드 UI를 띄워주세요");
                     hit.transform.GetComponent<TowerRoot>().TowerClick();
                 }
-            }*/
-        }
+            }
+        }*/
     }
 }

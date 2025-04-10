@@ -82,9 +82,9 @@ public class AttackTower : TowerRoot
     }
     #endregion
 
-    protected override void Update()
+    private void Update()
     {
-        base.Update();
+        //base.Update();
 
         if(!IsBuilt)
         {

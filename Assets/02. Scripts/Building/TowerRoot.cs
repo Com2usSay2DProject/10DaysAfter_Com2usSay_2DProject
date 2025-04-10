@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 관련 로직만 여기에
+public class TowerRoot : Building // 공통 속성(데이터) 및 건설 관련 로직만 여기에
 {
     private static Dictionary<ETowerType, TowerData> _towerDataDict; // 모든 타워가 공유할 데이터
 
@@ -22,7 +22,7 @@ public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 �
     public bool IsBuilt { get; set; }
 
     [Header ("# Buildable")]
-    public bool CanBuild { get; private set; }
+    //public bool CanBuild { get; private set; }
     private HashSet<Collider2D> _overlappingColliders = new HashSet<Collider2D>(); // 건설 가능 판정용
 
     [Header("# Effect")]
@@ -31,6 +31,7 @@ public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 �
     [Header ("# Components")]
     protected SpriteRenderer _spriteRenderer;
     protected Rigidbody2D _rigid;
+    protected Collider2D _collider;
     private Color _tempColor = new Color(1, 1, 1, 0.5f);
     private Color _errorColor = new Color(1, 0, 0, 0.5f);
 
@@ -39,21 +40,23 @@ public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 �
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigid = GetComponent<Rigidbody2D>();
+        _collider.GetComponent<Collider2D>();
         ResourceManager.Instance.OnPopulationChange += MultiplyData;
     }
 
     protected virtual void OnEnable() 
     {
+        _collider.enabled = false;
         GetData();
         GetDataForThis();
         GetCostData();
         MultiplyData();
         IsBuilt = false;
-        CanBuild = true;
+        //CanBuild = true;
         _spriteRenderer.color = _tempColor;
     }
 
-    protected virtual void Update()
+    /*protected virtual void Update()
     {
         if (UIManager.Instance.isBuildModeActive && !IsBuilt)
         {
@@ -91,12 +94,13 @@ public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 �
                 _spriteRenderer.color = _tempColor;
             }
         }
-    }
+    }*/
 
     public virtual void SetPosition()
     {
         //_spriteRenderer.color = Color.white;
         //IsBuilt = true;
+        _collider.enabled = true;
         _spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
         _buildEffect.SetActive(true);
         SoundManager.Instance.PlaySfx(ESfxType.BuildSound);

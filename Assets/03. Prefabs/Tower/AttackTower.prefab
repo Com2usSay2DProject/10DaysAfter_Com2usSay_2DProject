@@ -576,9 +576,9 @@ Transform:
   m_GameObject: {fileID: 3099625712857953364}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.48, y: -7.52, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 271007805201901787}
   - {fileID: 789305971432347882}
@@ -732,6 +732,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a347833947493048b3879e8b699738e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  area:
+    m_Position: {x: 0, y: 0, z: 0}
+    m_Size: {x: 2, y: 2, z: 1}
   TowerType: 1
   Data:
     TowerType: 0
@@ -740,6 +743,7 @@ MonoBehaviour:
     Damage: 0
     AtkSpeed: 0
     Range: 0
+    BuildTime: 0
     Cost: []
     PopulationMultiplier: 0.05
   _buildEffect: {fileID: 5182041991734715494}

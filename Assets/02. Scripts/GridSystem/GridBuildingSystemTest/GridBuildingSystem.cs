@@ -1,45 +1,44 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
-public class GridBuildingSystem : MonoBehaviour
+public class GridBuildingSystem : Singleton<GridBuildingSystem>
 {
-    public static GridBuildingSystem current;
-
-    public GridLayout gridLayout;
+    public GridLayout GridLayout;
     public Tilemap MainTilemap;
     public Tilemap Temptilemap;
 
-    private static Dictionary<TileType, TileBase> tileBases = new Dictionary<TileType, TileBase>();
+    private static Dictionary<TileType, TileBase> _tileBases = new Dictionary<TileType, TileBase>();
 
-    private Building temp;
-    private Vector3 prevPos;
-    private BoundsInt prevArea;
+    private Building _tempBuilding;
+    private TowerRoot _tempTower;
+    private Vector3 _prevPos;
+    private BoundsInt _prevArea;
+
+    public Action OnBuildFailed;
 
     #region UnityMethods
-    private void Awake()
-    {
-        current = this;
-    }
+
 
     private void Start()
     {
         string tilePath = @"Tiles\";
-        tileBases.Add(TileType.Empty, null);
-        tileBases.Add(TileType.White, Resources.Load<TileBase>(tilePath + "RandGroundPixel"));
-        tileBases.Add(TileType.Green, Resources.Load<TileBase>(tilePath + "green"));
-        tileBases.Add(TileType.Red, Resources.Load<TileBase>(tilePath + "red"));
+        _tileBases.Add(TileType.Empty, null);
+        _tileBases.Add(TileType.White, Resources.Load<TileBase>(tilePath + "RandGroundPixel"));
+        _tileBases.Add(TileType.Green, Resources.Load<TileBase>(tilePath + "green"));
+        _tileBases.Add(TileType.Red, Resources.Load<TileBase>(tilePath + "red"));
     }
 
     private void Update()
     {
-        if (!temp)
+        if (!_tempBuilding)
         {
             return;
         }
 
-        if (!temp.Placed)
+        if (!_tempBuilding.Placed)
         {
             if (EventSystem.current.IsPointerOverGameObject(0))
             {
@@ -48,29 +47,34 @@ public class GridBuildingSystem : MonoBehaviour
 
             Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3 worldPos = new Vector3(touchPos.x, touchPos.y, 0);
-            Vector3Int cellPos = gridLayout.WorldToCell(worldPos);
+            Vector3Int cellPos = GridLayout.WorldToCell(worldPos);
 
-            if (prevPos != cellPos)
+            if (_prevPos != cellPos)
             {
-                Vector3 basePosition = gridLayout.CellToWorld(cellPos);
+                Vector3 basePosition = GridLayout.CellToWorld(cellPos);
                 Vector3 offset = new Vector3(0.5f, 1.8f, 0f);
-                temp.transform.position = basePosition + offset;
-                prevPos = cellPos;
+                _tempBuilding.transform.position = basePosition + offset;
+                _prevPos = cellPos;
                 FollowBuilding();
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
-            if (temp.CanBePlaced())
+            if (_tempBuilding.CanBePlaced() && ResourceManager.Instance.TryUseMultipleResources(_tempTower.CostDataDict))
             {
-                temp.Place();
+                _tempBuilding.Place();
+                _tempBuilding.GetComponent<TowerRoot>().SetPosition();
+            }
+            else
+            {
+                OnBuildFailed?.Invoke();
             }
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
             ClearArea();
-            Destroy(temp.gameObject);
+            TowerPoolManager.Instance.ReturnObject(_tempTower.gameObject, _tempTower.TowerType);
         }
     }
     #endregion
@@ -103,33 +107,34 @@ public class GridBuildingSystem : MonoBehaviour
     {
         for (int i = 0; i < arr.Length; i++)
         {
-            arr[i] = tileBases[type];
+            arr[i] = _tileBases[type];
         }
     }
     #endregion
 
     #region Building Placement
-    public void InitializeWithBuulding(GameObject building)
+    public void InitializeWithBuulding(TowerRoot building)
     {
-        temp = Instantiate(building, Vector3.zero, Quaternion.identity).GetComponent<Building>();
+        _tempTower = TowerPoolManager.Instance.GetObject(building.TowerType).GetComponent<TowerRoot>();
+        _tempBuilding = _tempTower.GetComponent<Building>();
         FollowBuilding();
     }
 
     private void ClearArea()
     {
-        TileBase[] toClear = new TileBase[prevArea.size.x * prevArea.size.y * prevArea.size.z];
+        TileBase[] toClear = new TileBase[_prevArea.size.x * _prevArea.size.y * _prevArea.size.z];
         FillTiles(toClear, TileType.Empty);
-        Temptilemap.SetTilesBlock(prevArea, toClear);
+        Temptilemap.SetTilesBlock(_prevArea, toClear);
     }
 
     private void FollowBuilding()
     {
         ClearArea();
-        Vector3 position = temp.transform.position;
+        Vector3 position = _tempBuilding.transform.position;
         Vector3 offset = new Vector3(-0.5f, -1.8f, 0f);  // 건물 오프셋을 역으로 적용
         Vector3 basePosition = position + offset;
-        temp.area.position = gridLayout.WorldToCell(basePosition);
-        BoundsInt buildingArea = temp.area;
+        _tempBuilding.area.position = GridLayout.WorldToCell(basePosition);
+        BoundsInt buildingArea = _tempBuilding.area;
 
         TileBase[] baseArray = GetTilesBlock(buildingArea, MainTilemap);
 
@@ -138,9 +143,9 @@ public class GridBuildingSystem : MonoBehaviour
 
         for (int i = 0; i < baseArray.Length; i++)
         {
-            if (baseArray[i] == tileBases[TileType.White])
+            if (baseArray[i] == _tileBases[TileType.White])
             {
-                tileArray[i] = tileBases[TileType.Green];
+                tileArray[i] = _tileBases[TileType.Green];
             }
             else
             {
@@ -150,7 +155,7 @@ public class GridBuildingSystem : MonoBehaviour
         }
 
         Temptilemap.SetTilesBlock(buildingArea, tileArray);
-        prevArea = buildingArea;
+        _prevArea = buildingArea;
     }
 
     public bool CanTakeArea(BoundsInt area)
@@ -158,7 +163,7 @@ public class GridBuildingSystem : MonoBehaviour
         TileBase[] baseArray = GetTilesBlock(area, MainTilemap);
         foreach (var b in baseArray)
         {
-            if (b != tileBases[TileType.White])
+            if (b != _tileBases[TileType.White])
             {
                 Debug.Log("Cannot Place here");
                 return false;
