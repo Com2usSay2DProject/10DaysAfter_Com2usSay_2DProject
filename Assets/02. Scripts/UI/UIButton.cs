@@ -1,7 +1,9 @@
 using JetBrains.Annotations;
 using System;
 using System.ComponentModel;
+using UniRx;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIButton: Singleton<UIButton>
@@ -44,8 +46,18 @@ public class UIButton: Singleton<UIButton>
         UIManager.Instance.ShowUI("TowerSela");
     }
 
-    public void OnClickCloseUI(GameObject UI)
+    public void OnClicPopupUI(GameObject popupUI)
     {
-        UI.SetActive(false);
+        popupUI.SetActive(true);
+    }
+
+    public void OnClickCloseUI(GameObject PopupUI)
+    {
+        PopupUI.SetActive(false);
+    }
+
+    public void OnClickLoadScene(String name)
+    {
+        SceneManager.LoadScene(name);
     }
 }
