@@ -15,7 +15,7 @@
             "sfx": ""
         },
         {
-            "text": "기온 : 0°C 풍속 : 북동풍 4.4m/s 미세한 비 감지",
+            "text": "기온 : 0°C\n풍속 : 북동풍 4.4m/s\n강수량 3.2mm",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": -1,
@@ -214,7 +214,7 @@
             "sfx": ""
         },
         {
-            "text": "\"그래도 오늘, 내일만 버티면 된다는 거죠.\"",
+            "text": "\"그래도 오늘만 버티면 된다는 거죠.\"",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": -1,

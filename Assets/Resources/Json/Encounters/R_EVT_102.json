@@ -24,7 +24,7 @@
                     "effects": [
                         {
                             "resourceType": 4,
-                            "amount": 5
+                            "amount": -2
                         }
                     ],
                     "branchKey": "letfreethemonster",

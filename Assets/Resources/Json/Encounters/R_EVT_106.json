@@ -3,9 +3,9 @@
     "Title": "불에 타버린 막사",
     "Condition": {
         "triggerDays": [
-            4,
-            5,
-            6
+            1,
+            2,
+            3
         ],
         "specialConditionRequired": ""
     },

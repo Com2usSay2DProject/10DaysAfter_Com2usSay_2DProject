@@ -3,15 +3,15 @@
     "Title": "추가 물자",
     "Condition": {
         "triggerDays": [
+            1,
             2,
-            3,
-            4
+            3
         ],
         "specialConditionRequired": ""
     },
     "Pages": [
         {
-            "text": "외부에서 물자가 도착했다고 한다. 병사들을 불러 받으라고 할까?",
+            "text": "외부에서 물자가 추가로 도착했다고 한다. 병사들을 불러 받으라고 할까?",
             "imagePath": "resources",
             "Choices": [
                 {

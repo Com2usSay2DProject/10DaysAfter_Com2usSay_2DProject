@@ -3,9 +3,9 @@
     "Title": "버려진 차량",
     "Condition": {
         "triggerDays": [
-            3,
-            4,
-            5
+            1,
+            2,
+            3
         ],
         "specialConditionRequired": ""
     },

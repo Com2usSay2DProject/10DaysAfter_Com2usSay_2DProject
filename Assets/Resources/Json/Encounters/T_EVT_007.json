@@ -1,0 +1,320 @@
+{
+    "EncounterId": "T_EVT_007",
+    "Title": "시나리오 9일차 밤",
+    "Condition": {
+        "triggerDays": [],
+        "specialConditionRequired": ""
+    },
+    "Pages": [
+        {
+            "text": "목표일까지 1일 / 19:22",
+            "imagePath": "base2_night",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "기온 : 1.9°C\n풍속 : 북동풍 8.8m/s\n강수량 9.3mm",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "통신망 상태 : 간헐적 신호 단절 및 반복 동기화 발생",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "송신탑 전력 : 출력 불안정 (주기적 재부팅 감지됨)",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "지령 주파수 대역 : 예외 대역 동기화 지속 중",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "",
+            "imagePath": "fake_command",
+            "Choices": [
+                {
+                    "text": "신호를 증폭한다",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                }
+            ],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"안녕하십니까, 지휘관님.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"곧 그 미친놈들이 들이닥칠 텐데 여긴 뭐하러 오셨습니까?\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "여긴 왜 온거지?",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                }
+            ],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"알고 계시지 않습니까? 지휘관님의 서류 정리는 제 역할인 것 정돈.\"",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "...",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                },
+                {
+                    "text": "쓸데없는 짓을.",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                }
+            ],
+            "nextPageIndex": 11,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"하하... 예전엔 안 한다고 혼내시더만.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"어쨌든, 제가 여기 있는 거 보면 아실 거라 생각합니다.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"그 기계에서 떨어져 주십시오.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "\"명령이다...\"",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                }
+            ],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"전 정말 지휘관님을 믿는다고 말씀드렸지만...\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"지휘관님의 그 공상 같은 계획에 저희가 말려드는 건 좀 별로잖습니까.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "\"나가라.\"",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                }
+            ],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "/쾅",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"그럴 리가 없잖아, 미치광이 자식!\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "그걸 읽었으면... 너도 알고 있겠지.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "너희가 열심히 기지를 지켜준 덕분이다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "지금 날 멈춰도 아무 의미도 없다고!",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "이미, 영향을 받은 사람들이 이전처럼 돌아갈 길은 없다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "한 부분을 고치려면 전체를 뜯어내야 하지. 그 책임을, 내가 짊어져 주겠다고 하는 거다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"제정신이냐? 아니... 이런 생각을 하고 있는데 제정신은 아니겠지.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"하여튼... 아무리 우리가 썩어있다고 해도 말이지.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"대부분의 사람들을 정신 나가버린 괴물로 만들고 죽여버린다고, 뭔가 해결이 되겠어?\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"된다 하더라도, 왜 네 멋대로...\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"아 됐다, 원래 나는...\"",
+            "imagePath": "ending_branch",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "쏜다",
+                    "effects": [],
+                    "branchKey": "lieutenant_ending",
+                    "setBranchTrue": true,
+                    "nextPageIndex": -1
+                },
+                {
+                    "text": "쏘지 않는다",
+                    "effects": [],
+                    "branchKey": "commander_ending",
+                    "setBranchTrue": true,
+                    "nextPageIndex": -1
+                }
+            ],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "/탕",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        }
+    ]
+}
