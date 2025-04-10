@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+guid: 7aaf53919b42c5145b2d6ceab03ddfdd
+timeCreated: 1509483082
+licenseType: Store
+AudioImporter:
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  preloadAudioData: 1
+  loadInBackground: 0
+  ambisonic: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103835
+  packageName: Adventure Music Collection
+  packageVersion: 1.1
+  assetPath: Assets/Adventure Music/Exploration & Adventure/undiscovered_worlds_loop.wav
+  uploadId: 388529

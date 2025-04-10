@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d1bb51694f6610d4e8d7f616fa26a7e1
+timeCreated: 1509485773
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103835
+  packageName: Adventure Music Collection
+  packageVersion: 1.1
+  assetPath: Assets/Adventure Music/_README.txt
+  uploadId: 388529
