@@ -3,9 +3,9 @@
     "Title": "실종된 통조림",
     "Condition": {
         "triggerDays": [
-            4,
-            5,
-            6
+            1,
+            2,
+            3
         ],
         "specialConditionRequired": ""
     },

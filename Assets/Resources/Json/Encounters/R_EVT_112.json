@@ -1,0 +1,78 @@
+{
+    "EncounterId": "R_EVT_112",
+    "Title": "방치된 탈영자",
+    "Condition": {
+        "triggerDays": [
+            1,
+            2,
+            3
+        ],
+        "specialConditionRequired": ""
+    },
+    "Pages": [
+        {
+            "text": "감시 영상에 어둠 속 무언가가 찍혔다.",
+            "imagePath": "in_camera",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "출동시켜 확인해보니, 다친 병사가 혼자 웅크리고 있었다. 누구도 탈영한 사실을 몰랐다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "어떻게 할까?",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "복귀시킨 후 치료한다",
+                    "effects": [
+                        {
+                            "resourceType": 0,
+                            "amount": -30
+                        },
+                        {
+                            "resourceType": 4,
+                            "amount": 5
+                        }
+                    ],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                },
+                {
+                    "text": "우리 병사 아니에요",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": 4
+                }
+            ],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "그런데 확인해 보니, 이쪽 부대 소속이 아니었다. 그래도 일은 해라!",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": 5,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "탈영같은 게 일어났었다면 내가 알고 있었겠지.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        }
+    ]
+}

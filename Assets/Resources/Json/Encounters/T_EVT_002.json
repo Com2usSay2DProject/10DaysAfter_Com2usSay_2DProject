@@ -196,7 +196,13 @@
             "nextPageIndex": -1
         },
         {
-            "text": "\"영화 보면 이러다가 좀비 같은 게 나오더만... 웃기는 이야기지 않습니까.\"",
+            "text": "\"그런데 지금 완전 영화 같은 상황이지 않습니까?\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1
+        },
+        {
+            "text": "\"뭐, 항상 무사고일순 없으니, 가끔은 열심히 일해야겠군요.\"",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": -1

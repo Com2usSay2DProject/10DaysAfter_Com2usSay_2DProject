@@ -162,7 +162,7 @@
             "imagePath": "",
             "Choices": [
                 {
-                    "text": "넌 받은 지시대로 여길 잘 지켜내기만 하면 된다.",
+                    "text": "넌 내 지시대로만 하면 된다.",
                     "effects": [],
                     "branchKey": "",
                     "setBranchTrue": false,
