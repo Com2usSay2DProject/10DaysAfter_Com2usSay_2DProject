@@ -29,13 +29,18 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
 
     private void InitializeTileBases()
     {
-        _tileBases = new Dictionary<TileType, TileBase>
+        _tileBases = new Dictionary<TileType, TileBase>();
+        _tileBases.Add(TileType.Empty, null);
+        _tileBases.Add(TileType.White, Resources.Load<TileBase>("Tiles/RandGroundPixel"));
+        _tileBases.Add(TileType.Green, Resources.Load<TileBase>("Tiles/green"));
+        _tileBases.Add(TileType.Red, Resources.Load<TileBase>("Tiles/red"));
+
+        // 디버그용 로그 추가
+        foreach (var tile in _tileBases)
         {
-            { TileType.Empty, null },
-            { TileType.White, Resources.Load<TileBase>(_tilePath + "RandGroundPixel") },
-            { TileType.Green, Resources.Load<TileBase>(_tilePath + "green") },
-            { TileType.Red, Resources.Load<TileBase>(_tilePath + "red") }
-        };
+            if (tile.Value != null)
+                Debug.Log($"Loaded tile: {tile.Key} = {tile.Value.name}");
+        }
     }
 
     private void Update()
@@ -44,17 +49,14 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
         
         if (EventSystem.current.IsPointerOverGameObject(0)) return;
 
-        HandleBuildingPlacement();
-    }
-
-    private void HandleBuildingPlacement()
-    {
         Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3Int cellPos = GridLayout.WorldToCell(new Vector3(touchPos.x, touchPos.y, 0));
 
         if (_prevCellPos != cellPos)
         {
-            UpdateBuildingPosition(cellPos);
+            _tempBuilding.SetGridPosition(cellPos);
+            _prevCellPos = cellPos;
+            UpdatePreviewTiles();
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -67,48 +69,24 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
         }
     }
 
-    private void UpdateBuildingPosition(Vector3Int cellPos)
-    {
-        _tempBuilding.SetGridPosition(cellPos);
-        _prevCellPos = cellPos;
-        UpdatePreviewTiles();
-    }
-
-    private void TryPlaceBuilding()
-    {
-        if (_tempBuilding.CanBePlaced() && ResourceManager.Instance.TryUseMultipleResources(_tempTower.CostDataDict))
-        {
-            _tempBuilding.Place();
-            _tempBuilding = null;
-            _tempTower = null;
-        }
-        else
-        {
-            OnBuildFailed?.Invoke();
-        }
-    }
-
-    private void CancelBuilding()
-    {
-        ClearPreviewTiles();
-        if (_tempTower != null)
-        {
-            TowerPoolManager.Instance.ReturnObject(_tempTower.gameObject, _tempTower.TowerType);
-            _tempTower = null;
-            _tempBuilding = null;
-        }
-    }
-
     public void InitializeWithBuilding(TowerRoot building)
     {
         CancelBuilding();
         _tempTower = TowerPoolManager.Instance.GetObject(building.TowerType).GetComponent<TowerRoot>();
         _tempBuilding = _tempTower.GetComponent<Building>();
+        
+        // 초기 위치 설정 및 미리보기 표시
+        Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3Int cellPos = GridLayout.WorldToCell(new Vector3(touchPos.x, touchPos.y, 0));
+        _tempBuilding.SetGridPosition(cellPos);
+        _prevCellPos = cellPos;
         UpdatePreviewTiles();
     }
 
     private void UpdatePreviewTiles()
     {
+        if (_tempBuilding == null) return;
+
         ClearPreviewTiles();
         BoundsInt buildingArea = _tempBuilding.GetGridArea();
 
@@ -125,7 +103,11 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
             }
         }
 
-        FillTiles(tileArray, canPlace ? TileType.Green : TileType.Red);
+        // 디버그용 로그 추가
+        Debug.Log($"Updating preview tiles: canPlace = {canPlace}, area = {buildingArea}");
+
+        TileType tileType = canPlace ? TileType.Green : TileType.Red;
+        FillTiles(tileArray, tileType);
         Temptilemap.SetTilesBlock(buildingArea, tileArray);
         _prevArea = buildingArea;
     }
@@ -134,7 +116,8 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
     {
         if (_prevArea.size == Vector3Int.zero) return;
         
-        TileBase[] toClear = new TileBase[_prevArea.size.x * _prevArea.size.y * _prevArea.size.z];
+        int size = _prevArea.size.x * _prevArea.size.y * _prevArea.size.z;
+        TileBase[] toClear = new TileBase[size];
         FillTiles(toClear, TileType.Empty);
         Temptilemap.SetTilesBlock(_prevArea, toClear);
     }
@@ -156,9 +139,16 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
 
     private static void FillTiles(TileBase[] arr, TileType type)
     {
+        if (!_tileBases.ContainsKey(type))
+        {
+            Debug.LogError($"TileType {type} not found in tileBases dictionary!");
+            return;
+        }
+
+        TileBase tile = _tileBases[type];
         for (int i = 0; i < arr.Length; i++)
         {
-            arr[i] = _tileBases[type];
+            arr[i] = tile;
         }
     }
 
@@ -187,6 +177,32 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
         TileBase[] tileArray = new TileBase[size];
         FillTiles(tileArray, type);
         tilemap.SetTilesBlock(area, tileArray);
+    }
+
+    private void TryPlaceBuilding()
+    {
+        if (_tempBuilding.CanBePlaced() && ResourceManager.Instance.TryUseMultipleResources(_tempTower.CostDataDict))
+        {
+            _tempBuilding.Place();
+            ClearPreviewTiles();  // 건물 배치 후 미리보기 제거
+            _tempBuilding = null;
+            _tempTower = null;
+        }
+        else
+        {
+            OnBuildFailed?.Invoke();
+        }
+    }
+
+    private void CancelBuilding()
+    {
+        ClearPreviewTiles();
+        if (_tempTower != null)
+        {
+            TowerPoolManager.Instance.ReturnObject(_tempTower.gameObject, _tempTower.TowerType);
+            _tempTower = null;
+            _tempBuilding = null;
+        }
     }
 }
 
