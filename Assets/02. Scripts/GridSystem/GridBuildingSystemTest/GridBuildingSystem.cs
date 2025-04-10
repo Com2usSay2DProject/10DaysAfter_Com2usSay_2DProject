@@ -171,6 +171,12 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
         SetTilesBlock(area, TileType.Green, MainTilemap);
     }
 
+    public void ClearArea(BoundsInt area)
+    {
+        SetTilesBlock(area, TileType.Empty, Temptilemap);
+        SetTilesBlock(area, TileType.White, MainTilemap);
+    }
+
     private static void SetTilesBlock(BoundsInt area, TileType type, Tilemap tilemap)
     {
         int size = area.size.x * area.size.y * area.size.z;
