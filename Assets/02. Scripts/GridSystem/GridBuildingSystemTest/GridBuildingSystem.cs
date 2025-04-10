@@ -39,30 +39,28 @@ public class GridBuildingSystem : MonoBehaviour
             return;
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (!temp.Placed)
         {
             if (EventSystem.current.IsPointerOverGameObject(0))
             {
                 return;
             }
 
-            if (!temp.Placed)
-            {
-                Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Vector3 worldPos = new Vector3(touchPos.x, touchPos.y, 0);
-                Vector3Int cellPos = gridLayout.WorldToCell(worldPos);
+            Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 worldPos = new Vector3(touchPos.x, touchPos.y, 0);
+            Vector3Int cellPos = gridLayout.WorldToCell(worldPos);
 
-                if (prevPos != cellPos)
-                {
-                    Vector3 basePosition = gridLayout.CellToWorld(cellPos);
-                    Vector3 offset = new Vector3(0.5f, 1.8f, 0f);  // 기본 위치에서 필요한 오프셋
-                    temp.transform.position = basePosition + offset;
-                    prevPos = cellPos;
-                    FollowBuilding();
-                }
+            if (prevPos != cellPos)
+            {
+                Vector3 basePosition = gridLayout.CellToWorld(cellPos);
+                Vector3 offset = new Vector3(0.5f, 1.8f, 0f);
+                temp.transform.position = basePosition + offset;
+                prevPos = cellPos;
+                FollowBuilding();
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Space))
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (temp.CanBePlaced())
             {
