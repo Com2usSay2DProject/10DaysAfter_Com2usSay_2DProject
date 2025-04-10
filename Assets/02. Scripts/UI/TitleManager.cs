@@ -7,9 +7,4 @@ public class TitleManager : MonoBehaviour
         SoundManager.Instance.PlayBgm(EBgmType.Title);
     }
 
-
-    void Update()
-    {
-        
-    }
 }

@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class UIButton: Singleton<UIButton>
+public class UIButton: UI_TouchBounce
 {
     private Button button;
     [SerializeField]
