@@ -72,13 +72,15 @@ public class TowerRoot : Building
 
     private void Die()
     {
-        // 타일을 Empty로 변경
-        GridBuildingSystem.Instance.ClearArea(GetGridArea());
+        BoundsInt areaToClean = GetGridArea();
+        GridBuildingSystem.Instance.ClearArea(areaToClean);
 
         ResourceManager.Instance.TryUseResource(ResourceType.Population, 10);
         GameObject explode = EffectPoolManager.Instance.GetObject(EEffectType.BuildingExplode);
         explode.transform.position = transform.position;
         SoundManager.Instance.PlaySfx(ESfxType.BuildingExplode);
+        
+        
         TowerPoolManager.Instance.ReturnObject(gameObject, TowerType);
     }
 

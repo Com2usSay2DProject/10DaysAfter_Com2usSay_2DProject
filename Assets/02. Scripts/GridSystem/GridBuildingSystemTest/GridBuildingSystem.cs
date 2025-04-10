@@ -29,18 +29,13 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
 
     private void InitializeTileBases()
     {
-        _tileBases = new Dictionary<TileType, TileBase>();
-        _tileBases.Add(TileType.Empty, null);
-        _tileBases.Add(TileType.White, Resources.Load<TileBase>("Tiles/RandGroundPixel"));
-        _tileBases.Add(TileType.Green, Resources.Load<TileBase>("Tiles/green"));
-        _tileBases.Add(TileType.Red, Resources.Load<TileBase>("Tiles/red"));
-
-        // 디버그용 로그 추가
-        foreach (var tile in _tileBases)
+        _tileBases = new Dictionary<TileType, TileBase>
         {
-            if (tile.Value != null)
-                Debug.Log($"Loaded tile: {tile.Key} = {tile.Value.name}");
-        }
+            { TileType.Empty, null },
+            { TileType.White, Resources.Load<TileBase>("Tiles/RandGroundPixel") },
+            { TileType.Green, Resources.Load<TileBase>("Tiles/green") },
+            { TileType.Red, Resources.Load<TileBase>("Tiles/red") }
+        };
     }
 
     private void Update()
@@ -102,9 +97,6 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
                 break;
             }
         }
-
-        // 디버그용 로그 추가
-        Debug.Log($"Updating preview tiles: canPlace = {canPlace}, area = {buildingArea}");
 
         TileType tileType = canPlace ? TileType.Green : TileType.Red;
         FillTiles(tileArray, tileType);
@@ -174,6 +166,7 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
     public void ClearArea(BoundsInt area)
     {
         SetTilesBlock(area, TileType.Empty, Temptilemap);
+        SetTilesBlock(area, TileType.Empty, MainTilemap);
         SetTilesBlock(area, TileType.White, MainTilemap);
     }
 
