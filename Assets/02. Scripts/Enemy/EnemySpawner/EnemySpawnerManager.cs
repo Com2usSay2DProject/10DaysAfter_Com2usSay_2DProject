@@ -20,9 +20,12 @@ public class EnemySpawnerManager : MonoBehaviour
     //스포너들
     [SerializeField] private List<EnemySpawner> spawners;
     private EnemySpawner ClusterSpawner;
+    private EnemySpawner UniqueSpawner;
+
     //코루틴 저장용
     private Dictionary<EnemySpawner, Coroutine> spawnerCoroutines = new Dictionary<EnemySpawner, Coroutine>();
     private Coroutine ClusterSpawnerCoroutine;
+    private Coroutine UniqueSpawnerCoroutines;
 
     [Header("ClusterSpawnerSetting")]
     //[SerializeField] Transform[] ClusterSpawnerPos;
@@ -90,6 +93,9 @@ public class EnemySpawnerManager : MonoBehaviour
 
         ClusterSpawner = Instantiate(spawnerPrefab).GetComponent<EnemySpawner>();
         SetRandPos(ClusterSpawner);
+
+        UniqueSpawner = Instantiate(spawnerPrefab).GetComponent<EnemySpawner>();
+        SetRandPos(UniqueSpawner);
     }
     IEnumerator SpawnAtRandomIntervals(EnemySpawner spawner)
     {
@@ -150,21 +156,38 @@ public class EnemySpawnerManager : MonoBehaviour
     }
     private void Update()
     {
+        if (PhaseManager.Instance.isNight == false) return;
 
-        if (WaveDatas[WaveDatasCurIndex].useClusterEnemy && ClusterSpawner.gameObject.activeSelf && ClusterSpawnerCoroutine==null)
+        if (WaveDatas[WaveDatasCurIndex].useClusterEnemy /*&& ClusterSpawner.gameObject.activeSelf*/ && ClusterSpawnerCoroutine == null)
         {
             SetRandPos(ClusterSpawner);
             ClusterSpawnerCoroutine = StartCoroutine(SpawnClusterEnemy(ClusterSpawner));
         }
+
+        if (WaveDatas[WaveDatasCurIndex].useUnipueEnemy && UniqueSpawnerCoroutines ==null)
+        {
+            SetRandPos(UniqueSpawner);
+            UniqueSpawnerCoroutines = StartCoroutine(SpawnUniqueEnemy(ClusterSpawner));
+        }
+        
+
     }
     IEnumerator SpawnClusterEnemy(EnemySpawner spawner)
     {
         yield return new WaitForSeconds(10f);
 
-        spawner.SpawnEnemyCluster(30, 5);
+        spawner.SpawnEnemyCluster(30, 3);
         ClusterSpawnerCoroutine = null;
     }
+    IEnumerator SpawnUniqueEnemy(EnemySpawner spawner)
+    {
+        yield return new WaitForSeconds(10f);
 
+        int randInt = Random.Range((int)EEnemyType.Unique1, (int)EEnemyType.Unique2 + 1);
+
+        spawner.Spawn((EEnemyType)randInt);
+        UniqueSpawnerCoroutines = null;
+    }
     private void SetRandPos(EnemySpawner spawner)
     {
         if (spawner == null || spawners == null || spawners.Count == 0) return;

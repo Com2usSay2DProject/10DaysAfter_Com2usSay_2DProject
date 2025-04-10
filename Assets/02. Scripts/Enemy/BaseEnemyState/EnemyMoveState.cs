@@ -5,9 +5,9 @@ using static UnityEngine.GraphicsBuffer;
 
 public class EnemyMoveState : EnemyState
 {
-    private float MoveSoundTime = 2f;
-    private float _avoidCheckTimer = 0f;
-    private Vector2 _cachedAvoidDir = Vector2.zero;
+    protected float MoveSoundTime = 2f;
+    protected float _avoidCheckTimer = 0f;
+    protected Vector2 _cachedAvoidDir = Vector2.zero;
     public EnemyMoveState(EnemyStateMachine stateMachine, Rigidbody2D rigidbody2D, Enemy enemy, string animBoolName) : base(stateMachine, rigidbody2D, enemy, animBoolName)
     {
     }
@@ -38,10 +38,10 @@ public class EnemyMoveState : EnemyState
             return;
         }
 
-        if(_stateTimer<0)
+        if (_stateTimer < 0)
         {
             _stateTimer = MoveSoundTime;
-            if(EnemySoundManager.Instance !=null)
+            if (EnemySoundManager.Instance != null)
             {
                 EnemySoundManager.Instance.Play3DSoundWithLimit(_enemyBase.gameObject.transform.position, EnemySoundType.EnemyMove);
             }
@@ -56,49 +56,72 @@ public class EnemyMoveState : EnemyState
         }
 
         Vector2 avoidDir = _cachedAvoidDir;
- 
 
-        Vector3 targetPoint = _enemyBase.Path.Peek();
-        Vector2 toTarget = (targetPoint - _enemyBase.transform.position).normalized;
-
-        Vector2 finalMove = toTarget.normalized+ avoidDir;
-
-
-        _rigidbody.linearVelocity = finalMove * _enemyBase.MoveSpeed;//* Time.fixedDeltaTime;
-
-
-        _enemyBase.FaceDir = new Vector2(finalMove.x, finalMove.y);
-
-        // 8방향 단순화
-        Vector2 moveDir = new Vector2(
-            Mathf.Round(toTarget.x),
-            Mathf.Round(toTarget.y)
-        );
-
-        // 애니메이터에 넘기기
-        _enemyBase.Animator.SetFloat("MoveX", toTarget.x);
-        _enemyBase.Animator.SetFloat("MoveY", toTarget.y);
-
-
-
-        if (Vector3.Distance(_enemyBase.transform.position, targetPoint) < 0.1f)
+        if (_enemyBase.EnemyType != EEnemyType.Crawler)
         {
-            _enemyBase.Path.Dequeue();
+
+            Vector3 targetPoint = _enemyBase.Path.Peek();
+            Vector2 toTarget = (targetPoint - _enemyBase.transform.position).normalized;
+
+            float avoidWeight = (avoidDir == Vector2.zero) ? 0f : 0.8f;
+            Vector2 finalMove = (toTarget.normalized + avoidDir * avoidWeight).normalized;
+            //Vector2 finalMove = toTarget.normalized + avoidDir;
+
+
+            _rigidbody.linearVelocity = finalMove * _enemyBase.MoveSpeed;//* Time.fixedDeltaTime;
+
+
+            _enemyBase.FaceDir = new Vector2(finalMove.x, finalMove.y);
+
+            // 8방향 단순화
+            Vector2 moveDir = new Vector2(
+                Mathf.Round(toTarget.x),
+                Mathf.Round(toTarget.y)
+            );
+
+            // 애니메이터에 넘기기
+            _enemyBase.Animator.SetFloat("MoveX", toTarget.x);
+            _enemyBase.Animator.SetFloat("MoveY", toTarget.y);
+
+
+
+            if (Vector3.Distance(_enemyBase.transform.position, targetPoint) < 0.1f)
+            {
+                _enemyBase.Path.Dequeue();
+            }
+
+
+            if (_enemyBase.Path.Count == 0)
+            {
+                _rigidbody.linearVelocity = Vector2.zero;
+
+            }
         }
-
-
-        if (_enemyBase.Path.Count == 0)
+        else
         {
-            _rigidbody.linearVelocity = Vector2.zero;
+            Vector2 toTarget = (Vector3.zero - _enemyBase.transform.position).normalized;
+
+            Vector2 finalMove = toTarget.normalized + avoidDir;
+
+
+            _rigidbody.linearVelocity = finalMove * _enemyBase.MoveSpeed;//* Time.fixedDeltaTime;
+
+            Vector2 moveDir = new Vector2(Mathf.Round(toTarget.x), Mathf.Round(toTarget.y));
+
+            // 애니메이터에 넘기기
+            _enemyBase.Animator.SetFloat("MoveX", toTarget.x);
+            _enemyBase.Animator.SetFloat("MoveY", toTarget.y);
 
         }
 
     }
 
-    private Vector2 AvoidLogic()
+    protected Vector2 AvoidLogic()
     {
+        if (_enemyBase.EnemyType == EEnemyType.Unique1 || _enemyBase.EnemyType == EEnemyType.Unique2) return Vector2.zero;
+
         Vector2 avoidDir = Vector2.zero;
-        float avoidRadius = 1.0f; 
+        float avoidRadius = 1.0f;
 
         Collider2D[] neighbors = Physics2D.OverlapCircleAll(
             _enemyBase.transform.position,

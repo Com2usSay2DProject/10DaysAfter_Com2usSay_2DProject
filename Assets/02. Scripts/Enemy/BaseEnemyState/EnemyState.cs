@@ -40,7 +40,7 @@ public class EnemyState
             UpdateTargetAndPath();
     }
 
-    private void UpdateTargetAndPath()
+    protected void UpdateTargetAndPath()
     {
         if(_bommer)
         {
