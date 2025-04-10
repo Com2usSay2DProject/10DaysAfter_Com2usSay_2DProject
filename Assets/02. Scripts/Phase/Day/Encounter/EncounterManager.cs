@@ -10,7 +10,7 @@ public class EncounterManager : Singleton<EncounterManager>
 	public List<GameEncounter> GameEncounters;
 	private GameEncounter _pendingEncounter;
 
-	public string TitleSceneName = "HyungJin_Title";
+	public string NextSceneName = "EndingCredits";
 
 	private void Awake()
 	{
@@ -175,7 +175,8 @@ public class EncounterManager : Singleton<EncounterManager>
 
 	public void GoToTitle()
 	{
-		SceneManager.LoadScene(TitleSceneName);
+		UIEncounterPlayer.Instance.EndFade.gameObject.SetActive(true);
+		SceneManager.LoadScene(NextSceneName);
 		return;
 	}
 

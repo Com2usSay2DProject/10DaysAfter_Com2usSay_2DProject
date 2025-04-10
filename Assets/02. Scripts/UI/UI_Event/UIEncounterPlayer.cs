@@ -19,6 +19,8 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 	[SerializeField] private GameObject _choiceEffect;
 	[SerializeField] private TextMeshProUGUI _choiceEffectText;
 
+	public Image EndFade;
+
 	private GameEncounter _currentEncounter;
 	private int _currentPage = 0;
 
