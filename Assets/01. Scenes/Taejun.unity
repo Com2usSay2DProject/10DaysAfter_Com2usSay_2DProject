@@ -1097,6 +1097,18 @@ PrefabInstance:
       propertyPath: 'spawners.Array.data[11]'
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5016515145468676071, guid: edbdb3ffdb73d354b98f597549d1d291, type: 3}
+      propertyPath: ClusterSpawnerPos.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016515145468676071, guid: edbdb3ffdb73d354b98f597549d1d291, type: 3}
+      propertyPath: 'ClusterSpawnerPos.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016515145468676071, guid: edbdb3ffdb73d354b98f597549d1d291, type: 3}
+      propertyPath: 'ClusterSpawnerPos.Array.data[1]'
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4798451395725576019, guid: edbdb3ffdb73d354b98f597549d1d291, type: 3}
     m_RemovedGameObjects: []

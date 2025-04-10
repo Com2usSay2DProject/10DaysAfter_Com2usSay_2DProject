@@ -39,8 +39,6 @@ public class EnemySpawner : MonoBehaviour
         Enemy enemy = EnemyPoolManager.Instance.GetObject(type).GetComponent<Enemy>();
         if (enemy == null || _pathSetList.Count == 0) return;
 
-        Debug.Log("spawn");
-
         //PathSet 중 랜덤하게 하나 선택
         int randIndex = Random.Range(0, _pathSetList.Count);
         PathSet selected = _pathSetList[randIndex];
@@ -97,24 +95,27 @@ public class EnemySpawner : MonoBehaviour
     }
     public void SpawnEnemyCluster(int enemyNum, float radius)
     {
-        //List<Enemy> enemies = new List<Enemy>();
-        //enemies.Capacity = enemyNum;
-        //for(int i=0; i<enemyNum;++i)
-        //{
-        //    enemies.Add(EnemyPoolManager.Instance.GetObject(EEnemyType.Crawler).GetComponent<Enemy>());
-        //}
+        List<Enemy> enemies = new List<Enemy>();
+        enemies.Capacity = enemyNum;
 
-        //foreach(var enemy in enemies)
-        //{
-        //    // 원 안에 랜덤 위치 생성 (균일 분포)
-        //    float angle = Random.Range(0f, 2 * Mathf.PI);
-        //    float t = Random.Range(0f, 1f);
-        //    float randRadius = Mathf.Sqrt(t) * radius;
+        List<Vector3> path = Pathfinding.FindPath(transform.position, targetSelector.FindTarget(ETargetType.MainTower).transform.position);
+        Queue<Vector3> pathQue = new Queue<Vector3>(path);
+        for (int i = 0; i < enemyNum; ++i)
+        {
+            enemies.Add(EnemyPoolManager.Instance.GetObject(EEnemyType.Crawler).GetComponent<Enemy>());
+        }
 
-        //    Vector3 offset = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * randRadius;
-        //    enemy.transform.position = transform.position + offset;
-        //    enemy.Path = _pathNomal;
-        //}
+        foreach (var enemy in enemies)
+        {
+            // 원 안에 랜덤 위치 생성 (균일 분포)
+            float angle = Random.Range(0f, 2 * Mathf.PI);
+            float t = Random.Range(0f, 1f);
+            float randRadius = Mathf.Sqrt(t) * radius;
+
+            Vector3 offset = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * randRadius;
+            enemy.transform.position = transform.position + offset;
+            enemy.Path = pathQue;
+        }
 
 
     }

@@ -49,6 +49,7 @@ public class WaveDataEditor : EditorWindow
             wave.enableSpawnType = EditorGUILayout.IntSlider("Enable Spawn Type", wave.enableSpawnType, 0, 4);
             wave.useUnipueEnemy = EditorGUILayout.Toggle("Use Unique Enemy", wave.useUnipueEnemy);
             wave.useBossEnemy = EditorGUILayout.Toggle("Use Boss Enemy", wave.useBossEnemy);
+            wave.useClusterEnemy = EditorGUILayout.Toggle("Use Cluster Enemy", wave.useClusterEnemy);
 
             if (GUILayout.Button("삭제"))
             {

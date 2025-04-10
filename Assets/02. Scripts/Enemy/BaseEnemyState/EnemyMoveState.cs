@@ -47,12 +47,12 @@ public class EnemyMoveState : EnemyState
         }
 
 
-        //Vector2 avoidDir = AvoidLogic();
+        Vector2 avoidDir = AvoidLogic();
 
         Vector3 targetPoint = _enemyBase.Path.Peek();
         Vector2 toTarget = (targetPoint - _enemyBase.transform.position).normalized;
 
-        Vector2 finalMove = toTarget.normalized;
+        Vector2 finalMove = toTarget.normalized+ avoidDir;
 
 
         _rigidbody.linearVelocity = finalMove * _enemyBase.MoveSpeed;//* Time.fixedDeltaTime;
@@ -89,7 +89,7 @@ public class EnemyMoveState : EnemyState
     private Vector2 AvoidLogic()
     {
         Vector2 avoidDir = Vector2.zero;
-        float avoidRadius = 0.7f; // 반응 거리 약간 증가
+        float avoidRadius = 1.0f; 
 
         Collider2D[] neighbors = Physics2D.OverlapCircleAll(
             _enemyBase.transform.position,
@@ -112,10 +112,9 @@ public class EnemyMoveState : EnemyState
             }
         }
 
-        // 회피 벡터 정규화 및 영향력 조절
         if (avoidDir != Vector2.zero)
         {
-            avoidDir = avoidDir.normalized * 0.6f; // ← 회피 강도 조정 가능
+            avoidDir = avoidDir.normalized * 0.6f; // ← 회피 강도
         }
 
         return avoidDir;

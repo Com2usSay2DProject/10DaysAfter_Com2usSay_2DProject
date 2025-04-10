@@ -27,7 +27,6 @@ public class EnemyState
 
     public virtual void Enter()
     {
-        Debug.Log(_animBoolName);
 
         _stateTimer = 0;
         _enemyBase.Animator.SetBool(_animBoolName, true);
@@ -43,8 +42,6 @@ public class EnemyState
 
     private void UpdateTargetAndPath()
     {
-        Debug.Log("update");
-
         if(_bommer)
         {
             if (_bommer.isAttacked) return;

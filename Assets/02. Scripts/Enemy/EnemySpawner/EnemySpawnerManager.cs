@@ -22,9 +22,10 @@ public class EnemySpawnerManager : MonoBehaviour
     private EnemySpawner ClusterSpawner;
     //코루틴 저장용
     private Dictionary<EnemySpawner, Coroutine> spawnerCoroutines = new Dictionary<EnemySpawner, Coroutine>();
+    private Coroutine ClusterSpawnerCoroutine;
 
     [Header("ClusterSpawnerSetting")]
-    [SerializeField] Transform[] ClusterSpawnerPos;
+    //[SerializeField] Transform[] ClusterSpawnerPos;
     [SerializeField] int ClusterEnemyNum;
     [SerializeField] float ClusterRadius;
 
@@ -51,8 +52,7 @@ public class EnemySpawnerManager : MonoBehaviour
 
         PhaseManager.Instance.OnDayBegin += DisActiveSpawners;
         PhaseManager.Instance.OnNightBegin += ActiveSpawners;
-        if (ClusterSpawnerPos.Length >= 0)
-            PhaseManager.Instance.OnNightBegin += SpawnCluster;
+
     }
     private void GetData()
     {
@@ -60,12 +60,6 @@ public class EnemySpawnerManager : MonoBehaviour
         WaveDatas = collection.Datas;
 
         Debug.Log("적 데이터 로드 완료");
-    }
-    private void SpawnCluster()
-    {
-        if (ClusterSpawnerPos.Length > 0)
-            ClusterSpawner.SpawnEnemyCluster(ClusterEnemyNum, ClusterRadius);
-
     }
 
     void CreateSpawner()
@@ -89,23 +83,13 @@ public class EnemySpawnerManager : MonoBehaviour
             spawner.gameObject.SetActive(false);
             spawners.Add(spawner);
         }
-        //float angle = Random.Range(0f, 2 * Mathf.PI);
-        //float radius = Random.Range(_spawnRadiusMin, _spawnRadiusMax);
-        //Vector3 pos = Vector3.zero + new Vector3(Mathf.Cos(angle) * radius, Mathf.Sin(angle) * radius, 0);
-        //GameObject spawnerObj = Instantiate(spawnerPrefab, pos, Quaternion.identity);
-        //spawnerObj.transform.SetParent(transform);
-        //EnemySpawner spawner = spawnerObj.GetComponent<EnemySpawner>();
-        //if (spawner != null)
-        //{
-        //    spawners.Add(spawner);
-        //}
+
     }
     void CreateClusterSpanwer()
     {
-        int rand = Random.Range(0, 4);
-        // 스포너 생성 및 등록
-        if (ClusterSpawnerPos.Length > 0)
-            ClusterSpawner = Instantiate(spawnerPrefab, ClusterSpawnerPos[rand].position, Quaternion.identity).GetComponent<EnemySpawner>();
+
+        ClusterSpawner = Instantiate(spawnerPrefab).GetComponent<EnemySpawner>();
+        SetRandPos(ClusterSpawner);
     }
     IEnumerator SpawnAtRandomIntervals(EnemySpawner spawner)
     {
@@ -143,13 +127,14 @@ public class EnemySpawnerManager : MonoBehaviour
                 spawnerCoroutines.Remove(spawner);
             }
         }
-        if (ClusterSpawnerPos.Length > 0)
+
+        if (ClusterSpawner != null)
             ClusterSpawner.gameObject.SetActive(false);
     }
     void ActiveSpawners()
     {
 
-        if (ClusterSpawnerPos.Length > 0)
+        if (ClusterSpawner != null)
             ClusterSpawner.gameObject.SetActive(true);
 
         //나중에 코루틴 종료할때 필요해서 저장
@@ -163,6 +148,36 @@ public class EnemySpawnerManager : MonoBehaviour
             }
         }
     }
+    private void Update()
+    {
+
+        if (WaveDatas[WaveDatasCurIndex].useClusterEnemy && ClusterSpawner.gameObject.activeSelf && ClusterSpawnerCoroutine==null)
+        {
+            SetRandPos(ClusterSpawner);
+            ClusterSpawnerCoroutine = StartCoroutine(SpawnClusterEnemy(ClusterSpawner));
+        }
+    }
+    IEnumerator SpawnClusterEnemy(EnemySpawner spawner)
+    {
+        yield return new WaitForSeconds(10f);
+
+        spawner.SpawnEnemyCluster(30, 5);
+        ClusterSpawnerCoroutine = null;
+    }
+
+    private void SetRandPos(EnemySpawner spawner)
+    {
+        if (spawner == null || spawners == null || spawners.Count == 0) return;
+
+        // spawners 리스트에서 랜덤한 스포너 하나 선택
+        int randIndex = Random.Range(0, spawners.Count);
+        Vector3 randomSpawnerPos = spawners[randIndex].transform.position;
+
+        // 선택된 위치로 현재 스포너 이동
+        spawner.transform.position = randomSpawnerPos;
+    }
+
+
 }
 
 
