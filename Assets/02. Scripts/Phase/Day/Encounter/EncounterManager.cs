@@ -41,6 +41,7 @@ public class EncounterManager : Singleton<EncounterManager>
 	// 페이즈 전환 시 이벤트 발생 or 미발생 (조건 중 랜덤으로 골라옴)
 	public void TriggerEncounter(int currentDay)
 	{
+		Debug.Log($"triggered encounter day {currentDay}");
 		List<GameEncounter> validEncounter = new();
 
 		foreach (var e in GameEncounters)
@@ -89,11 +90,12 @@ public class EncounterManager : Singleton<EncounterManager>
 				if (!PhaseManager.Instance.isNight) storyId = "T_EVT_005";
 				break;
 			case 9:
+				if (!PhaseManager.Instance.isNight) storyId = "T_EVT_006";
 				break;
 			case 10:
 				break;
 			default:
-				return;
+				break;
 		}
 
 		if (!string.IsNullOrEmpty(storyId))

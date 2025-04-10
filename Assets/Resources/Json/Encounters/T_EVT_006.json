@@ -1,0 +1,233 @@
+{
+    "EncounterId": "T_EVT_006",
+    "Title": "시나리오 9일차 낮",
+    "Condition": {
+        "triggerDays": [],
+        "specialConditionRequired": ""
+    },
+    "Pages": [
+        {
+            "text": "목표일까지 1일 / 09:12",
+            "imagePath": "base2_day",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "기온 : 0°C 풍속 : 북동풍 4.4m/s 미세한 비 감지",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "송신탑 전력 : 자동 교체 시스템 비정상 작동",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "지령 주파수 대역 : 예외 대역 동기화 감지됨",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "/(노크 소리)",
+            "imagePath": "room",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"부관입니다. 들어가도 좋습니까?\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "들어오라고 한다",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                }
+            ],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"정말 좋은 아침입니다, 지휘관님. 어제도 저 끔찍한 것들을 수십, 아니 수백 마리는 죽인 것 같네요.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "무슨 용무인지 묻는다",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                }
+            ],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"아, 항상 상부랑 연락하느라 바쁘시겠지만...\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"그나저나, 원래 이렇게 자주 지시를 받고 하는 거 싫어하시지 않으셨습니까?\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"아, 하긴 상황이 상황이니... 아무리 지휘관님이라도 어쩔 수 없겠군요.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "무슨 용무인지 다시 묻는다.",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                }
+            ],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"아하하, 주저리주저리 죄송합니다. 뭐 새로운 얘기가 없나 해서요.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"아시다시피, 저희가 이렇게 된 지 꽤 지나기도 했고...\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"그, 뭔가 복구하는 것도, 이제쯤 거의 끝난 거 아닙니까?\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "",
+            "imagePath": "",
+            "Choices": [
+                {
+                    "text": "\"그걸 전달할지 말지는 내 선택이다.\"",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": -1
+                },
+                {
+                    "text": "\"조금만 있으면, 다 끝이다.\"",
+                    "effects": [],
+                    "branchKey": "",
+                    "setBranchTrue": false,
+                    "nextPageIndex": 18
+                }
+            ],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"아- 그렇네요, 그냥 요즘... 너무 힘들어서 제가 깜빡했나 봅니다.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": 19,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "정말입니까? 지금 이 상황이, 다 끝날 수 있는 겁니까?",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"하하... 이상한 소릴 해서 죄송합니다.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"이런 상황이 오래되다 보니 제 정신도 정상이 아닌가 봅니다.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"그래도 오늘, 내일만 버티면 된다는 거죠.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"그럼, 항상 믿고 있겠습니다, 지휘관님.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        }
+    ]
+}

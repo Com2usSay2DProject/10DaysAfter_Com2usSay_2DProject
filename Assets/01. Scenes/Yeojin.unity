@@ -349,6 +349,7 @@ MonoBehaviour:
   DayPhaseDuration: 5
   NightPhaseDuration: 5
   FadeTime: 3
+  DoTriggerEncounters: 1
 --- !u!114 &130680878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1394,6 +1395,10 @@ MonoBehaviour:
     InitCount: 5
     Prefab: {fileID: 3099625712857953364, guid: 4e420ebc4145d8c4d83f074993d4c7a7, type: 3}
     Container: {fileID: 99842643}
+  - Type: 6
+    InitCount: 5
+    Prefab: {fileID: 3846297662033212084, guid: aa3e51b5754f45c4eb170bb47d35cba9, type: 3}
+    Container: {fileID: 99842643}
   - Type: 2
     InitCount: 5
     Prefab: {fileID: 3537882089294492269, guid: 718e79b76b34fb545affa10268629c1a, type: 3}
@@ -1402,17 +1407,13 @@ MonoBehaviour:
     InitCount: 5
     Prefab: {fileID: 8733090764095967933, guid: 8fea3939366ea484782c17533dad032e, type: 3}
     Container: {fileID: 99842643}
-  - Type: 4
-    InitCount: 5
-    Prefab: {fileID: 9010079705763178229, guid: 21e2a8ce202a5f8488107747a5d5ad18, type: 3}
-    Container: {fileID: 99842643}
   - Type: 5
     InitCount: 5
     Prefab: {fileID: 2692141017147565076, guid: 11954fac11daa964ba5269baf695466f, type: 3}
     Container: {fileID: 99842643}
-  - Type: 0
+  - Type: 4
     InitCount: 5
-    Prefab: {fileID: 3507977410005111897, guid: 39a2f00161496594583329434eef2308, type: 3}
+    Prefab: {fileID: 9010079705763178229, guid: 21e2a8ce202a5f8488107747a5d5ad18, type: 3}
     Container: {fileID: 99842643}
 --- !u!114 &1380956227
 MonoBehaviour:
