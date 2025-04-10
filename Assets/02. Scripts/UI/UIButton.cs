@@ -1,3 +1,4 @@
+using DG.Tweening;
 using JetBrains.Annotations;
 using System;
 using System.ComponentModel;
@@ -6,7 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class UIButton: Singleton<UIButton>
+public class UIButton: UI_TouchBounce
 {
     private Button button;
     [SerializeField]
@@ -49,15 +50,17 @@ public class UIButton: Singleton<UIButton>
     public void OnClicPopupUI(GameObject popupUI)
     {
         popupUI.SetActive(true);
+        popupUI.transform.DOScale(Vector3.one, 0.3f).SetEase(Ease.OutExpo).OnComplete(() => transform.localScale = Vector3.one);
     }
 
     public void OnClickCloseUI(GameObject PopupUI)
     {
-        PopupUI.SetActive(false);
+        PopupUI.transform.DOScale(Vector3.zero * 0.2f, 0.3f).SetEase(Ease.OutExpo).OnComplete(() => PopupUI.SetActive(false));
     }
 
     public void OnClickLoadScene(String name)
     {
         SceneManager.LoadScene(name);
+        SoundManager.Instance.StopBgm();
     }
 }
