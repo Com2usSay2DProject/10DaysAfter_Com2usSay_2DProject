@@ -100,7 +100,7 @@ public class EncounterManager : Singleton<EncounterManager>
 				//if (StateManager.Instance.GetBranch("lieutenant_ending"))
 				//{
 				//}
-				storyId = "ENDING_TEST";
+				storyId = "ENDING_01";
 				break;
 			default:
 				break;
@@ -111,7 +111,7 @@ public class EncounterManager : Singleton<EncounterManager>
 			GameEncounter found = GameEncounters.Find(e => e.EncounterId == storyId);
 			if (found != null)
 			{
-				if (storyId == "ENDING_TEST")
+				if (storyId == "ENDING_01")
 				{
 					UIEncounterPlayer.Instance.Show(found, () =>
 					{

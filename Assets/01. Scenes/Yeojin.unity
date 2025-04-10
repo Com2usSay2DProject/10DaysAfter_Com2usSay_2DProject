@@ -336820,10 +336820,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 580696790272628053, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
-      propertyPath: EndFade
-      value: 
-      objectReference: {fileID: 9148196263223671648}
     - target: {fileID: 4842207545325022049, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -336904,14 +336900,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8218606323232327025, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
-      propertyPath: m_Name
-      value: EndFade
-      objectReference: {fileID: 0}
-    - target: {fileID: 8218606323232327025, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8416644494524006955, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
       propertyPath: m_Camera
       value: 
@@ -336925,17 +336913,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
---- !u!114 &9148196263223671648 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8759924294423874922, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
-  m_PrefabInstance: {fileID: 9148196263223671647}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

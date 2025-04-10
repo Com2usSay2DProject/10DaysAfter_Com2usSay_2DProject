@@ -36,7 +36,11 @@ public class PhaseManager : Singleton<PhaseManager>
 	{
 		Debug.Log("This is the Day Phase");
 		//이벤트 발동 활성화
-		yield return new WaitForSeconds(FadeTime);
+		if (_currentDay > 1)
+		{
+			yield return new WaitForSeconds(FadeTime);
+		}
+
 		if (DoTriggerEncounters) EncounterManager.Instance.TriggerStory(_currentDay);
 
 		yield return new WaitForSeconds(dayDuration);

@@ -1,0 +1,194 @@
+{
+    "EncounterId": "ENDING_01",
+    "Title": "완료된 송신",
+    "Condition": {
+        "triggerDays": [],
+        "specialConditionRequired": ""
+    },
+    "Pages": [
+        {
+            "text": "[자동 백로그 재생 중 · 19:33]",
+            "imagePath": "ending_branch",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"아, 됐다. 원래 나는...\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "/탕",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"어차피... 설득이라던가 재능이 없지.\"",
+            "imagePath": "fake_command",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"기대도 안 했습니다, 지휘관님.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"이정도로 열심히 준비했다면, 제가 뭘 한다고 해도 바뀌지도 않겠죠.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "애초에 부관에 지원하지도 않았던 네가 왜 나한테 배정된 건지, 궁금하지 않았나?",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "내가 일부러 데려온 거다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "너보다 못한 자들에게 재능을 이용당하는 것보다...",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"그래서 당신한테 이용당하라고?\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"어이가 없군... 그냥 난, 결과가 바뀌지 않더라도 시도해 보러 온 겁니다.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"그냥, 당신에게 조금이라도 희망을 걸어본 내가 멍청했지.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "/탕",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "...",
+            "imagePath": "lieutenant_dead",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "아쉽게 됐군.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "[백로그 재생 종료, 19:37]",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "목표일 당일 / 06:18",
+            "imagePath": "base2_day",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "기온 : -4.1°C\\n풍속 : 북서풍 3.6m/s\\n강수 없음",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "지령 주파수 대역 : 전파 없음",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "기지는 조용했다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "모든 것이 멈춘 듯한 아침.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "기지 정문 앞, 지휘관의 외투가 걸쳐져 있었다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "[ENDING 01 : 완료된 송신]",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        }
+    ]
+}
