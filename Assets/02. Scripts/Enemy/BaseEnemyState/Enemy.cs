@@ -90,8 +90,21 @@ public class Enemy : MonoBehaviour
 
     private void GetData()
     {
-        EnemyDataCollection collection =
-            JsonDataManager.LoadFromFile<EnemyDataCollection>("Enemy/EnemyDataCollection");
+        EnemyDataCollection collection;
+
+#if UNITY_EDITOR
+        // 에디터에서는 파일 직접 로딩
+        collection = JsonDataManager.LoadFromFile<EnemyDataCollection>("Enemy/EnemyDataCollection");
+#else
+    // 빌드 후에는 Resources.Load 사용
+    TextAsset jsonText = Resources.Load<TextAsset>("Json/Enemy/EnemyDataCollection");
+    if (jsonText == null)
+    {
+        Debug.LogError("적 데이터 파일을 찾을 수 없습니다 (빌드 환경)");
+        return;
+    }
+    collection = JsonDataManager.FromJson<EnemyDataCollection>(jsonText.text);
+#endif
 
         _enemyDataDict = new Dictionary<EEnemyType, EnemyData>();
 

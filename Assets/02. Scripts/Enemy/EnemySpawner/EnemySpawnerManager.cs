@@ -1,9 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
-
-
 
 public class EnemySpawnerManager : MonoBehaviour
 {
@@ -59,10 +56,25 @@ public class EnemySpawnerManager : MonoBehaviour
     }
     private void GetData()
     {
-        WaveDataCollection collection = JsonDataManager.LoadFromFile<WaveDataCollection>("Wave/WaveDataCollection");
+        WaveDataCollection collection;
+
+#if UNITY_EDITOR
+        // 에디터에서는 직접 파일에서 로딩
+        collection = JsonDataManager.LoadFromFile<WaveDataCollection>("Wave/WaveDataCollection");
+#else
+    // 빌드에서는 Resources.Load 사용
+    TextAsset jsonText = Resources.Load<TextAsset>("Json/Wave/WaveDataCollection");
+    if (jsonText == null)
+    {
+        Debug.LogError("웨이브 데이터 파일을 찾을 수 없습니다 (빌드 환경)");
+        return;
+    }
+    collection = JsonDataManager.FromJson<WaveDataCollection>(jsonText.text);
+#endif
+
         WaveDatas = collection.Datas;
 
-        Debug.Log("적 데이터 로드 완료");
+        Debug.Log("웨이브 데이터 로드 완료");
     }
 
     void CreateSpawner()
