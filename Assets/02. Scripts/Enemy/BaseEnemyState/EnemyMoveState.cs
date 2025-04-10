@@ -6,7 +6,8 @@ using static UnityEngine.GraphicsBuffer;
 public class EnemyMoveState : EnemyState
 {
     private float MoveSoundTime = 2f;
-
+    private float _avoidCheckTimer = 0f;
+    private Vector2 _cachedAvoidDir = Vector2.zero;
     public EnemyMoveState(EnemyStateMachine stateMachine, Rigidbody2D rigidbody2D, Enemy enemy, string animBoolName) : base(stateMachine, rigidbody2D, enemy, animBoolName)
     {
     }
@@ -46,8 +47,16 @@ public class EnemyMoveState : EnemyState
             }
         }
 
+        // 0.2초마다 검사
+        _avoidCheckTimer -= Time.deltaTime;
+        if (_avoidCheckTimer <= 0f)
+        {
+            _cachedAvoidDir = AvoidLogic();
+            _avoidCheckTimer = 0.3f; // 0.3초마다 한 번만 회피 계산
+        }
 
-        Vector2 avoidDir = AvoidLogic();
+        Vector2 avoidDir = _cachedAvoidDir;
+ 
 
         Vector3 targetPoint = _enemyBase.Path.Peek();
         Vector2 toTarget = (targetPoint - _enemyBase.transform.position).normalized;
