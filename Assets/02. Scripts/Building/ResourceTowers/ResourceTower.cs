@@ -16,15 +16,24 @@ public abstract class ResourceTower : TowerRoot
 
     protected float _timer = 0f;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        _timer = 0f;
+    }
+
     private void Update()
     {
-        //base.Update();
-
         if(!IsPlaced)
         {
             return;
         }
 
+        UpdateResourceGeneration();
+    }
+
+    private void UpdateResourceGeneration()
+    {
         _timer += Time.deltaTime;
 
         if(_timer >= _atkSpeed)

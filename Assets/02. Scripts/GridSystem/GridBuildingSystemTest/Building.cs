@@ -8,13 +8,28 @@ public abstract class Building : MonoBehaviour
     [SerializeField] protected Vector3 _inverseBuildingOffset = new Vector3(-0.5f, -1.8f, 0f);
     
     public bool IsPlaced { get; protected set; }
-    
-    protected virtual void OnPlaced() { }
-    protected virtual bool ValidatePlacement() => true;
+
+    protected SpriteRenderer _spriteRenderer;
+    protected Collider2D _collider;
+    protected Color _tempColor = new Color(1, 1, 1, 0.5f);
+
+    protected virtual void Awake()
+    {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _collider = GetComponent<Collider2D>();
+    }
+
+    protected virtual void OnEnable()
+    {
+        _collider.enabled = false;
+        _spriteRenderer.color = _tempColor;
+        IsPlaced = false;
+    }
+
+    protected abstract void OnPlaced();
 
     public bool CanBePlaced()
     {
-        if (!ValidatePlacement()) return false;
         return GridBuildingSystem.Instance.CanTakeArea(GetGridArea());
     }
 

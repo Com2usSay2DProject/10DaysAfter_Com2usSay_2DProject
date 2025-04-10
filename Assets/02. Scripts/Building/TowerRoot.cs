@@ -18,48 +18,33 @@ public class TowerRoot : Building
     [Header("# Cost")]
     public Dictionary<ResourceType, int> CostDataDict { get; private set; }
 
-    [Header("# Buildable")]
-    private HashSet<Collider2D> _overlappingColliders = new HashSet<Collider2D>();
-
     [Header("# Effect")]
     [SerializeField] private GameObject _buildEffect;
 
-    [Header("# Components")]
-    protected SpriteRenderer _spriteRenderer;
-    protected Collider2D _collider;
-    private Color _tempColor = new Color(1, 1, 1, 0.5f);
-    private Color _errorColor = new Color(1, 0, 0, 0.5f);
-
-    protected override bool ValidatePlacement()
+    protected override void Awake()
     {
-        return _overlappingColliders.Count == 0;
+        base.Awake();
+        GetData();
+        GetDataForThis();
+        GetCostData();
+        ResourceManager.Instance.OnPopulationChange += MultiplyData;
+
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _collider = GetComponent<Collider2D>();
+    }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        MultiplyData();
+        _collider.enabled = false;
+        _spriteRenderer.color = _tempColor;
     }
 
     protected override void OnPlaced()
     {
-        _collider.enabled = true;
         _spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
-        _buildEffect.SetActive(true);
-        SoundManager.Instance.PlaySfx(ESfxType.BuildSound);
         StartCoroutine(CoBuildRoutine());
-    }
-
-    protected virtual void Awake()
-    {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _collider = GetComponent<Collider2D>();
-        ResourceManager.Instance.OnPopulationChange += MultiplyData;
-    }
-
-    protected virtual void OnEnable()
-    {
-        _collider.enabled = false;
-        GetData();
-        GetDataForThis();
-        GetCostData();
-        MultiplyData();
-        IsPlaced = false;
-        _spriteRenderer.color = _tempColor;
     }
 
     private IEnumerator CoBuildRoutine()
