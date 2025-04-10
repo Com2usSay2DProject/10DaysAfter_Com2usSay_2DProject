@@ -86,6 +86,11 @@ public class AttackTower : TowerRoot
     {
         base.Update();
 
+        if(!IsBuilt)
+        {
+            return;
+        }
+
         _timer += Time.deltaTime;
 
         if (!_isEnemyDetected || _targetEnemy.IsDead)
