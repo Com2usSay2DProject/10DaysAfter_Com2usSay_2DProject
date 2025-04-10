@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -94,11 +95,27 @@ public class TowerRoot : MonoBehaviour // 공통 속성(데이터) 및 건설 �
 
     public virtual void SetPosition()
     {
-        _spriteRenderer.color = Color.white;
-        IsBuilt = true;
+        //_spriteRenderer.color = Color.white;
+        //IsBuilt = true;
         _spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
         _buildEffect.SetActive(true);
         SoundManager.Instance.PlaySfx(ESfxType.BuildSound);
+
+        StartCoroutine(CoBuildRoutine());
+    }
+
+    private IEnumerator CoBuildRoutine()
+    {
+        float timer = 0f;
+
+        while(timer < Data.BuildTime)
+        {
+            timer += Time.deltaTime;
+
+            yield return null;
+        }
+        _spriteRenderer.color = Color.white;
+        IsBuilt = true;
     }
 
     public void TakeDamage(float damage)

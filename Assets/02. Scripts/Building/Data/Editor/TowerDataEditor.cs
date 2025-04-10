@@ -48,6 +48,7 @@ public class TowerDataEditor : EditorWindow
             tower.Damage = EditorGUILayout.FloatField("Damage", tower.Damage);
             tower.AtkSpeed = EditorGUILayout.FloatField("Attack Speed", tower.AtkSpeed);
             tower.Range = EditorGUILayout.FloatField("Range", tower.Range);
+            tower.BuildTime = EditorGUILayout.FloatField("BuildTime", tower.BuildTime);
             tower.PopulationMultiplier = EditorGUILayout.FloatField("Population Multiplier", tower.PopulationMultiplier);
 
             // Cost 리스트

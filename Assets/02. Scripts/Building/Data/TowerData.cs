@@ -11,6 +11,7 @@ public class TowerData
     public float Damage;
     public float AtkSpeed;
     public float Range;
+    public float BuildTime;
     public List<TowerCostData> Cost;
 
     public float PopulationMultiplier = 0.03f;
