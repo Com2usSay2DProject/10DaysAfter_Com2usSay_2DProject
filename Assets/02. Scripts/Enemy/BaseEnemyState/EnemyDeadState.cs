@@ -17,7 +17,7 @@ public class EnemyDeadState : EnemyState
     {
         base.Enter();
 
-        //_rigidbody.AddForce(-_enemyBase.FaceDir * 5f);
+        _rigidbody.linearVelocity = -_enemyBase.FaceDir * 2.5f; // 방향 반대로 튕김
 
         circleCollider.enabled = false;
 
@@ -25,25 +25,27 @@ public class EnemyDeadState : EnemyState
         _enemyBase.IsDead = true;
         elapsed = 0;
 
-        _rigidbody.linearVelocity = Vector3.zero;
+        //_rigidbody.linearVelocity = Vector3.zero;
 
         if (EnemySoundManager.Instance != null)
-            EnemySoundManager.Instance.Play3DSoundWithLimit(_enemyBase.gameObject.transform.position,EnemySoundType.EnemyDead);
-  
+            EnemySoundManager.Instance.Play3DSoundWithLimit(_enemyBase.gameObject.transform.position, EnemySoundType.EnemyDead);
+
     }
 
     public override void Exit()
     {
         base.Exit();
+
+        _enemyBase.Animator.enabled = true ;
     }
 
     public override void Update()
     {
         base.Update();
+        FadeOutEnemy();
 
         if (_triggerCalled)
         {
-            FadeOutEnemy();
         }
     }
 
