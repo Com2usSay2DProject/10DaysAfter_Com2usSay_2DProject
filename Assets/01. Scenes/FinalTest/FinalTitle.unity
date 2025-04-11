@@ -1640,14 +1640,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
-    - target: {fileID: 7297665227272696241, guid: 8c5234e612ce72840a50d00c0c3592fe, type: 3}
-      propertyPath: sfxClips.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7297665227272696241, guid: 8c5234e612ce72840a50d00c0c3592fe, type: 3}
-      propertyPath: 'sfxClips.Array.data[4]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 30da25de867402c4fb43c70a0b764c56, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
