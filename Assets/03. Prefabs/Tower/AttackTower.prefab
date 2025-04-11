@@ -736,7 +736,6 @@ MonoBehaviour:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 1, y: 1, z: 1}
   _buildingOffset: {x: 0.26, y: 0.91, z: 0}
-  _inverseBuildingOffset: {x: -0.5, y: -1.8, z: 0}
   TowerType: 1
   Data:
     TowerType: 0

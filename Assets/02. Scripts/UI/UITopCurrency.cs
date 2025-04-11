@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class UITopCurrency : MonoBehaviour
 {
@@ -20,13 +21,25 @@ public class UITopCurrency : MonoBehaviour
     private float conversionFactor; // 변환 비율
     private float inGameHours;
 
+    private Dictionary<ResourceType, float> _currentDisplayValues = new Dictionary<ResourceType, float>();
+    [SerializeField] private float _resourceAnimationDuration = 0.5f;
+
     private void Start()
     {       
+        InitializeCurrentValues();
         DisplayTopResources();
         ResourceManager.Instance.OnReourceChange += DisplayTopResources;
         StartCoroutine("DisplayTime");
     }
 
+    private void InitializeCurrentValues()
+    {
+        var resourceTypes = (ResourceType[])System.Enum.GetValues(typeof(ResourceType));
+        foreach (var type in resourceTypes)
+        {
+            _currentDisplayValues[type] = ResourceManager.Instance.GetResourceAmount(type);
+        }
+    }
 
     public void SetTimeText()
     {
@@ -67,8 +80,26 @@ public class UITopCurrency : MonoBehaviour
 
         for (int i = 0; i < Resources.Count && i < resourceTypes.Length; i++)
         {
-            Resources[i].text = ResourceManager.Instance.GetResourceAmount(resourceTypes[i]).ToString();
+            ResourceType type = resourceTypes[i];
+            float targetValue = ResourceManager.Instance.GetResourceAmount(type);
+            float currentValue = _currentDisplayValues[type];
+
+            int index = i; // 클로저를 위한 로컬 변수
+            DOTween.To(
+                () => currentValue,
+                (value) =>
+                {
+                    _currentDisplayValues[type] = value;
+                    if (Resources[index] != null)
+                    {
+                        Resources[index].text = Mathf.Floor(value).ToString();
+                    }
+                },
+                targetValue,
+                _resourceAnimationDuration
+            )
+            .SetEase(Ease.OutQuad)
+            .SetId(type.ToString()); // 각 자원 타입별로 고유한 ID 설정
         }
     }
-
 }
