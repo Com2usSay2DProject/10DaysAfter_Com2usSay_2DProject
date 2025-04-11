@@ -23,7 +23,7 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         //PhaseManager.Instance.OnNightBegin += SetPath;
-        //SetPath();
+        SetPath();
     }
     private void OnEnable()
     {

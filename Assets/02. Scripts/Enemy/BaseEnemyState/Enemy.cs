@@ -129,7 +129,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnDayBegin() { if (IsDead == true) return; _stateMachine.ChangeState(DeadState); }
+    private void OnDayBegin() {/* if (IsDead == true) return; _stateMachine.ChangeState(DeadState);*/ }
     private void OnNightBegin()
     {
         //_stateMachine.ChangeState(IdleState);
