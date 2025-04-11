@@ -2,11 +2,24 @@ using UnityEngine;
 
 public class CommandCenter : TowerRoot
 {
+    private float _timer;
+
     //프리팹에 저장된 포지션 그대로 쓸 것
     void Start()
     {
         base.Start();
         Place();
+    }
+
+    private void Update()
+    {
+        _timer += Time.deltaTime;
+
+        if(_timer > _atkSpeed)
+        {
+            _timer = 0;
+            ResourceManager.Instance.AddResource(ResourceType.Wood, (int)_damage);
+        }
     }
 
     protected override void Die()
