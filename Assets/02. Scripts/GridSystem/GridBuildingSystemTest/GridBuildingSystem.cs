@@ -58,7 +58,7 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
         {
             TryPlaceBuilding();
         }
-        else if (Input.GetKeyDown(KeyCode.Escape))
+        else if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1))
         {
             CancelBuilding();
         }
