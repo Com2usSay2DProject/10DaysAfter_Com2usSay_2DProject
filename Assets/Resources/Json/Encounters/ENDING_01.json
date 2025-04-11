@@ -3,7 +3,7 @@
     "Title": "완료된 송신",
     "Condition": {
         "triggerDays": [],
-        "specialConditionRequired": ""
+        "specialConditionRequired": "commander_ending"
     },
     "Pages": [
         {
@@ -55,15 +55,7 @@
             "sfx": ""
         },
         {
-            "text": "애초에 부관에 지원하지도 않았던 네가 왜 나한테 배정된 건지, 궁금하지 않았나?",
-            "imagePath": "",
-            "Choices": [],
-            "nextPageIndex": -1,
-            "bgm": "",
-            "sfx": ""
-        },
-        {
-            "text": "내가 일부러 데려온 거다.",
+            "text": "이 편이 네게도 더 좋을 거다.",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": -1,
@@ -72,14 +64,6 @@
         },
         {
             "text": "너보다 못한 자들에게 재능을 이용당하는 것보다...",
-            "imagePath": "",
-            "Choices": [],
-            "nextPageIndex": -1,
-            "bgm": "",
-            "sfx": ""
-        },
-        {
-            "text": "\"그래서 당신한테 이용당하라고?\"",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": -1,
@@ -136,7 +120,7 @@
         },
         {
             "text": "목표일 당일 / 06:18",
-            "imagePath": "base2_day",
+            "imagePath": "ending_01",
             "Choices": [],
             "nextPageIndex": -1,
             "bgm": "",
@@ -167,7 +151,7 @@
             "sfx": ""
         },
         {
-            "text": "모든 것이 멈춘 듯한 아침.",
+            "text": "목표일 아침.",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": -1,

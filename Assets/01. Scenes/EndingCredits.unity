@@ -239,81 +239,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Main Developers
-
-    A
-
-    B
-
-    C
-
-    D
-
-    E
-
-    F
-
-
-
-    Main
-    Person
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-
-
-
-    Main
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    Thank
-    you for playing!'
+  m_text: "Main Developers\n\uAE40\uD615\uC9C4\n\uC774\uC5EC\uC9C4\n\uC804\uD0DC\uC900\n\uCC28\uC218\uBBFC\n\n\n\n\n\nMain
+    Person\n\n\n\n\n\nMain\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThank you for playing!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 341cd469fba627940845734e9540f709, type: 2}
+  m_sharedMaterial: {fileID: 4253883349934079393, guid: 341cd469fba627940845734e9540f709, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -722,7 +652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creditContent: {fileID: 813647336}
   targetY: 3000
-  duration: 15
+  duration: 20
   delayAfter: 2
   nextScene: HyungJin_Title
 --- !u!1660057539 &9223372036854775807

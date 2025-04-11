@@ -177,6 +177,7 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 		_choiceContainer.gameObject.SetActive(true);
 	}
 
+	//선택지의 효과 보여주는 용도
 	private IEnumerator ChoiceEffectCoroutine(List<EncounterEffect> effects)
 	{
 		ShowChoiceEffects(effects);

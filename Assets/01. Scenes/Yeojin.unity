@@ -922,11 +922,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ComponentVersion: 2
-  m_LightType: 4
+  m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3
+  m_Color: {r: 0.740566, g: 0.9709067, b: 1, a: 1}
+  m_Intensity: 1.5
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -950,7 +950,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1
+  m_PointLightOuterRadius: 200
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -68328,6 +68328,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 360383680167025386, guid: 49ff10abfd8e86340a205f3f450b30cf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 46.981445
+      objectReference: {fileID: 0}
     - target: {fileID: 740862544643811237, guid: 49ff10abfd8e86340a205f3f450b30cf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -68396,6 +68400,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 19.699997
       objectReference: {fileID: 0}
+    - target: {fileID: 2301854983878322662, guid: 49ff10abfd8e86340a205f3f450b30cf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 46.981445
+      objectReference: {fileID: 0}
     - target: {fileID: 2527491082349847710, guid: 49ff10abfd8e86340a205f3f450b30cf, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -68415,6 +68423,10 @@ PrefabInstance:
     - target: {fileID: 2527491082349847710, guid: 49ff10abfd8e86340a205f3f450b30cf, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579832546816452639, guid: 49ff10abfd8e86340a205f3f450b30cf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 46.981445
       objectReference: {fileID: 0}
     - target: {fileID: 4938920814664046362, guid: 49ff10abfd8e86340a205f3f450b30cf, type: 3}
       propertyPath: m_AnchorMax.y
@@ -68467,6 +68479,10 @@ PrefabInstance:
     - target: {fileID: 5073946044637905134, guid: 49ff10abfd8e86340a205f3f450b30cf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5604453029857069000, guid: 49ff10abfd8e86340a205f3f450b30cf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 46.981445
       objectReference: {fileID: 0}
     - target: {fileID: 6071340405327660743, guid: 49ff10abfd8e86340a205f3f450b30cf, type: 3}
       propertyPath: m_Pivot.x
@@ -68580,6 +68596,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TopCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7104910975451490670, guid: 49ff10abfd8e86340a205f3f450b30cf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 46.981445
+      objectReference: {fileID: 0}
     - target: {fileID: 9080400563122021871, guid: 49ff10abfd8e86340a205f3f450b30cf, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -68646,6 +68666,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2a589d192acb204c8bfc80ea4554308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EndScale: 0.9
+  StartScale: 1
+  Duration: 0.2
   AllocatedTower: 0
 --- !u!114 &1751837820
 MonoBehaviour:
@@ -68659,6 +68682,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2a589d192acb204c8bfc80ea4554308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EndScale: 0.9
+  StartScale: 1
+  Duration: 0.2
   AllocatedTower: 0
 --- !u!1 &2079575140
 GameObject:
@@ -336820,6 +336846,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1587603237200543013, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1808130075784187910, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878433379896247965, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2971834299137465925, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3872580265518814401, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768724138493480990, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800490022519990697, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4842207545325022049, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -336900,6 +336954,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5609515990221193395, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876236391163162110, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013041459962670118, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8416644494524006955, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
       propertyPath: m_Camera
       value: 
@@ -336908,7 +336974,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_EncounterCanvas
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5609515990221193395, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
