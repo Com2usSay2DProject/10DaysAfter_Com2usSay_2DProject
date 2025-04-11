@@ -53,7 +53,7 @@ public class UITopCurrency : MonoBehaviour
 
     public void SetTimeText()
     {
-        TimeText.text = PhaseManager.Instance.TimeUntilNextPhase.ToString();
+        TimeText.text = PhaseManager.Instance.TimeUntilNextPhase.ToString("F0");
     }
 
 
@@ -65,19 +65,20 @@ public class UITopCurrency : MonoBehaviour
             {
                 DayNightText.text = "밤";
                 CurrentDayImage.sprite = NightSprite;
-                conversionFactor = GameHours / (PhaseManager.Instance.NightPhaseDuration / 3600f);
-                _CurrentDuration = PhaseManager.Instance.NightPhaseDuration;
+                //conversionFactor = GameHours / (PhaseManager.Instance.NightPhaseDuration / 3600f);
+                //_CurrentDuration = PhaseManager.Instance.NightPhaseDuration;
             }
             else
             {
                 DayNightText.text = "낮";
                 CurrentDayImage.sprite = SunSprite;
-                conversionFactor = GameHours / (PhaseManager.Instance.DayPhaseDuration / 3600f);
-                _CurrentDuration = PhaseManager.Instance.DayPhaseDuration;
+                //conversionFactor = GameHours / (PhaseManager.Instance.DayPhaseDuration / 3600f);
+                //_CurrentDuration = PhaseManager.Instance.DayPhaseDuration;
             }
-            inGameHours = Mathf.Clamp(PhaseManager.Instance.TimeUntilNextPhase, 0f, _CurrentDuration) * conversionFactor / 3600f;
+            //inGameHours = Mathf.Clamp(PhaseManager.Instance.TimeUntilNextPhase, 0f, _CurrentDuration) * conversionFactor / 3600f;
 
-            TimeText.text = $"{Mathf.FloorToInt(inGameHours)}";
+            //TimeText.text = $"{Mathf.FloorToInt(inGameHours)}";
+            SetTimeText();
             DayText.text = $"{PhaseManager.Instance.CurrentDay.ToString()}일째";
             yield return new WaitForSeconds(DisPlayInterval);
         }
