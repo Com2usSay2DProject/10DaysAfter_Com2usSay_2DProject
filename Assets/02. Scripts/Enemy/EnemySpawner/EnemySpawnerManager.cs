@@ -125,10 +125,7 @@ public class EnemySpawnerManager : MonoBehaviour
                 int randomType = Random.Range(0, WaveDatas[curIndex].enableSpawnType);
 
                 spawner.Spawn((EEnemyType)randomType);
-                //spawner.Spawn(EEnemyType.NomalEnemy);
             }
-            //spawner.Spawn(EEnemyType.Unique2);
-
         }
     }
 
@@ -147,13 +144,25 @@ public class EnemySpawnerManager : MonoBehaviour
         }
 
         if (ClusterSpawner != null)
+        {
             ClusterSpawner.gameObject.SetActive(false);
+            if(ClusterSpawnerCoroutine!=null)
+                StopCoroutine(ClusterSpawnerCoroutine);
+        }
+        if (UniqueSpawner != null)
+        {
+            UniqueSpawner.gameObject.SetActive(false);
+            if (UniqueSpawnerCoroutines != null)
+                StopCoroutine(UniqueSpawnerCoroutines);
+        }
     }
     void ActiveSpawners()
     {
 
         if (ClusterSpawner != null)
             ClusterSpawner.gameObject.SetActive(true);
+        if (UniqueSpawner != null)
+            UniqueSpawner.gameObject.SetActive(true);
 
         //나중에 코루틴 종료할때 필요해서 저장
         foreach (var spawner in spawners)
@@ -179,10 +188,8 @@ public class EnemySpawnerManager : MonoBehaviour
         if (WaveDatas[WaveDatasCurIndex].useUnipueEnemy && UniqueSpawnerCoroutines ==null)
         {
             SetRandPos(UniqueSpawner);
-            UniqueSpawnerCoroutines = StartCoroutine(SpawnUniqueEnemy(ClusterSpawner));
+            UniqueSpawnerCoroutines = StartCoroutine(SpawnUniqueEnemy(UniqueSpawner));
         }
-        
-
     }
     IEnumerator SpawnClusterEnemy(EnemySpawner spawner)
     {
