@@ -7,19 +7,9 @@ public class WatchTower : TowerRoot
     [SerializeField] private Light2D _light;
     [SerializeField] private float _rotateSpeed;
 
-    protected override void OnEnable()
-    {
-        base.OnEnable();
-        _light.gameObject.SetActive(false);
-    }
-
     protected override void OnPlaced()
     {
         base.OnPlaced();
-        if(_light != null)
-        {
-            _light.gameObject.SetActive(true);
-        }
     }
 
     private void Update()
@@ -33,7 +23,12 @@ public class WatchTower : TowerRoot
         {
             return;
         }
-
+        if(!_light.gameObject.activeSelf)
+        {
+            _light.gameObject.SetActive(true);
+            _light.transform.rotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
+        }
+        
         float z = _light.transform.eulerAngles.z;
         z += _rotateSpeed * Time.deltaTime;
         z %= 360f;

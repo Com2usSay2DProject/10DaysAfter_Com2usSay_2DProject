@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8392474480802287157
 Transform:
   m_ObjectHideFlags: 0
@@ -204,7 +204,7 @@ MonoBehaviour:
     PopulationMultiplier: 0.03
   _buildEffect: {fileID: 6808187511248264797}
   _light: {fileID: 7319202619746258329}
-  _rotateSpeed: 5
+  _rotateSpeed: 10
 --- !u!61 &8796525561411785948
 BoxCollider2D:
   m_ObjectHideFlags: 0
