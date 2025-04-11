@@ -13,6 +13,7 @@ public class ClusterZombi : Enemy
     protected override void OnEnable()
     {
         base.OnEnable();
+        
     }
 
     protected override void Start()
