@@ -19,6 +19,8 @@ public class TowerRoot : Building
     [Header("# Effect")]
     [SerializeField] private GameObject _buildEffect;
 
+    private bool _isDataInitialized = false;
+
     protected override void Awake()
     {
         base.Awake();
@@ -30,6 +32,28 @@ public class TowerRoot : Building
 
     protected virtual void Start()
     {
+        TryInitializeData();
+    }
+
+    private void TryInitializeData()
+    {
+        if (_isDataInitialized) return;
+
+        if (!TowerDataManager.Instance.IsInitialized)
+        {
+            StartCoroutine(WaitForDataManager());
+            return;
+        }
+
+        InitializeData();
+    }
+
+    private IEnumerator WaitForDataManager()
+    {
+        while (!TowerDataManager.Instance.IsInitialized)
+        {
+            yield return null;
+        }
         InitializeData();
     }
 
@@ -45,10 +69,20 @@ public class TowerRoot : Building
         _range = Data.Range;
 
         CostDataDict = TowerDataManager.Instance.GetTowerCost(TowerType);
+        _isDataInitialized = true;
+        
+        // 초기화 후 첫 스탯 업데이트
+        UpdateStats();
     }
 
     private void UpdateStats()
     {
+        if (!_isDataInitialized)
+        {
+            TryInitializeData();
+            return;
+        }
+
         _maxHp = TowerDataManager.Instance.GetModifiedStat(TowerType, "MaxHp", Data.MaxHp);
         _damage = TowerDataManager.Instance.GetModifiedStat(TowerType, "Damage", Data.Damage);
         _range = TowerDataManager.Instance.GetModifiedStat(TowerType, "Range", Data.Range);
@@ -57,7 +91,7 @@ public class TowerRoot : Building
     protected override void OnEnable()
     {
         base.OnEnable();
-        UpdateStats();
+        TryInitializeData();
         _collider.enabled = false;
         _spriteRenderer.color = _tempColor;
     }

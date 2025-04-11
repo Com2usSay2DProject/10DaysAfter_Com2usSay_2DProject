@@ -4,10 +4,12 @@ using UnityEngine;
 public class TowerDataManager : Singleton<TowerDataManager>
 {
     public static Dictionary<ETowerType, TowerData> TowerDataDictionary { get; private set; }
+    public bool IsInitialized { get; private set; }
 
     private void Awake()
     {
         LoadTowerData();
+        IsInitialized = true;
     }
 
     private void LoadTowerData()
