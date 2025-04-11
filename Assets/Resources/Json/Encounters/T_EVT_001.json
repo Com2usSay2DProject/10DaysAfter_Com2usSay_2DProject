@@ -142,19 +142,7 @@
                     "effects": [
                         {
                             "resourceType": 0,
-                            "amount": 100
-                        },
-                        {
-                            "resourceType": 1,
-                            "amount": 100
-                        },
-                        {
-                            "resourceType": 2,
-                            "amount": 100
-                        },
-                        {
-                            "resourceType": 3,
-                            "amount": 0
+                            "amount": 300
                         },
                         {
                             "resourceType": 4,
