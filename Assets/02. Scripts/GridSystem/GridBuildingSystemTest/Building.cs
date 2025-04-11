@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Building : MonoBehaviour
@@ -9,9 +10,12 @@ public abstract class Building : MonoBehaviour
     
     public bool IsPlaced { get; protected set; }
 
+    private HashSet<Collider2D> _overlappingColliders = new HashSet<Collider2D>();
     protected SpriteRenderer _spriteRenderer;
     protected Collider2D _collider;
     protected Color _tempColor = new Color(1, 1, 1, 0.5f);
+
+    public bool HasEnemyOverlap => _overlappingColliders.Count > 0;
 
     protected virtual void Awake()
     {
@@ -22,24 +26,42 @@ public abstract class Building : MonoBehaviour
 
     protected virtual void OnEnable()
     {
-        _collider.enabled = false;
+        _collider.enabled = true;  // 충돌 감지를 위해 활성화
         _spriteRenderer.color = _tempColor;
         IsPlaced = false;
+        _overlappingColliders.Clear();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            _overlappingColliders.Add(collision);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            _overlappingColliders.Remove(collision);
+        }
+    }
+
+    #region Build
     protected abstract void OnPlaced();
 
     public bool CanBePlaced()
     {
-        return GridBuildingSystem.Instance.CanTakeArea(GetGridArea());
+        return GridBuildingSystem.Instance.CanTakeArea(GetGridArea()) && !HasEnemyOverlap;
     }
 
     public void Place()
     {
         if (!CanBePlaced()) return;
         
-        //IsPlaced = true;
         GridBuildingSystem.Instance.TakeArea(GetGridArea());
+        _collider.isTrigger = false;  // 배치 후에는 실제 충돌체로 변경
         OnPlaced();
     }
 
@@ -57,4 +79,5 @@ public abstract class Building : MonoBehaviour
         Vector3 basePosition = GridBuildingSystem.Instance.GridLayout.CellToWorld(cellPos);
         transform.position = basePosition + _buildingOffset;
     }
+    #endregion
 }

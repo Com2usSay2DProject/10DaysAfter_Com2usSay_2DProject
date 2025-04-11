@@ -98,7 +98,7 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
             }
         }
 
-        TileType tileType = canPlace ? TileType.Green : TileType.Red;
+        TileType tileType = (canPlace && !_tempBuilding.HasEnemyOverlap) ? TileType.Green : TileType.Red;
         FillTiles(tileArray, tileType);
         Temptilemap.SetTilesBlock(buildingArea, tileArray);
         _prevArea = buildingArea;

@@ -30,7 +30,7 @@ public class TileManager : Singleton<TileManager> // 수민
         Debug.Log($"Bounds: xMin:{_bounds.xMin}, xMax:{_bounds.xMax}, yMin:{_bounds.yMin}, yMax:{_bounds.yMax}");
 
         MakeTileInfo();
-        MakeTrees();
+        //MakeTrees();
     }
 
     public static Bounds TransformBoundsToWorld(Transform transform, Bounds localBounds)
