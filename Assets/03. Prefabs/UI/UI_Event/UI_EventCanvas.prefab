@@ -661,7 +661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &865048299350246972
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1895,3 +1895,4 @@ MonoBehaviour:
   _choiceEffect: {fileID: 804373055505989736}
   _choiceEffectText: {fileID: 6691880002777397959}
   EndFade: {fileID: 8759924294423874922}
+  TextSoundInterval: 5

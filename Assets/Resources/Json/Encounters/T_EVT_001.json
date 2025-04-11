@@ -145,6 +145,10 @@
                             "amount": 300
                         },
                         {
+                            "resourceType": 2,
+                            "amount": 300
+                        },
+                        {
                             "resourceType": 4,
                             "amount": 10
                         }

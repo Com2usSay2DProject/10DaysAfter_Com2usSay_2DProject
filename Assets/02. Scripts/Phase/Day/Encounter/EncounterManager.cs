@@ -46,6 +46,7 @@ public class EncounterManager : Singleton<EncounterManager>
 	public void TriggerEncounter(int currentDay)
 	{
 		Debug.Log($"triggered encounter day {currentDay}");
+
 		List<GameEncounter> validEncounter = new();
 
 		foreach (var e in GameEncounters)
@@ -82,7 +83,7 @@ public class EncounterManager : Singleton<EncounterManager>
 		switch (currentDay)
 		{
 			case 1:
-				storyId = PhaseManager.Instance.isNight ? "T_EVT_002" : "T_EVT_001";
+				storyId = PhaseManager.Instance.isNight ? "T_EVT_002" : "R_EVT_010";
 				break;
 			case 2:
 				if (!PhaseManager.Instance.isNight)storyId = "T_EVT_003";
