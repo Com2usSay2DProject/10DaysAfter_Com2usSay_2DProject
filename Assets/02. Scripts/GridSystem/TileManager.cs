@@ -95,7 +95,13 @@ public class TileManager : Singleton<TileManager> // 수민
                 bool hasTile = _groundTilemap.HasTile(cellPosition);
                 Vector3 worldPosition = _groundTilemap.GetCellCenterWorld(cellPosition);
 
-                _gridArray[x - _bounds.xMin, y - _bounds.yMin] = new TileNode(x - _bounds.xMin, y - _bounds.yMin, hasTile, worldPosition);
+                // 충돌 검사 (예: 작은 OverlapBox 사용)
+                bool isBlocked = Physics2D.OverlapBox(worldPosition, Vector2.one * 0.4f, 0f, LayerMask.GetMask("Obstacle")) != null;
+
+                // 통과 가능한지 여부 = 타일이 있고 && 충돌물이 없을 때
+                bool walkable = hasTile && !isBlocked;
+
+                _gridArray[x - _bounds.xMin, y - _bounds.yMin] = new TileNode(x - _bounds.xMin, y - _bounds.yMin, walkable, worldPosition);
             }
         }
     }
