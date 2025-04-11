@@ -1,0 +1,60 @@
+{
+    "EncounterId": "BADEND_01",
+    "Title": "헝그리 버그",
+    "Condition": {
+        "triggerDays": [
+            0
+        ],
+        "specialConditionRequired": ""
+    },
+    "Pages": [
+        {
+            "text": "식량이 떨어졌을 때, 병사들은 무엇을 할 수 있을까.",
+            "imagePath": "BADEND_01",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "물론, 무기를 들어서 자신의 것을 지키는 것이다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "외부에서 몰려올 적보다, 식량을 뺏어가는 전우가 더 밉다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "자기 음식에 몰려드는 파리를 혐오하듯, 서로를 조준했다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "마지막엔 누구도 남지 않았다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "[BAD END : 헝그리 버그]",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        }
+    ]
+}

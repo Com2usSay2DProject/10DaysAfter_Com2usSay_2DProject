@@ -347,6 +347,10 @@ PrefabInstance:
       value: CommandCenter
       objectReference: {fileID: 0}
     - target: {fileID: 2273422486891180173, guid: fa6bd62d57ebfce4aa66bef8e80719bb, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2273422486891180173, guid: fa6bd62d57ebfce4aa66bef8e80719bb, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -270984,6 +270988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameEncounters: []
   NextSceneName: EndingCredits
+  TitleSceneName: FInalTitle
 --- !u!114 &1977656979
 MonoBehaviour:
   m_ObjectHideFlags: 0

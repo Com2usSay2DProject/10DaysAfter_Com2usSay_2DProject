@@ -103,22 +103,22 @@
                     "effects": [],
                     "branchKey": "",
                     "setBranchTrue": false,
-                    "nextPageIndex": -1
+                    "nextPageIndex": 12
                 },
                 {
-                    "text": "쓸데없는 짓을.",
+                    "text": "\"너무 늦었다.\"",
                     "effects": [],
                     "branchKey": "",
                     "setBranchTrue": false,
                     "nextPageIndex": -1
                 }
             ],
-            "nextPageIndex": 11,
+            "nextPageIndex": -1,
             "bgm": "",
             "sfx": ""
         },
         {
-            "text": "\"하하... 예전엔 안 한다고 혼내시더만.\"",
+            "text": "\"하하... 죄송합니다.\"",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": -1,
@@ -142,17 +142,9 @@
             "sfx": ""
         },
         {
-            "text": "",
+            "text": "...",
             "imagePath": "",
-            "Choices": [
-                {
-                    "text": "\"명령이다...\"",
-                    "effects": [],
-                    "branchKey": "",
-                    "setBranchTrue": false,
-                    "nextPageIndex": -1
-                }
-            ],
+            "Choices": [],
             "nextPageIndex": -1,
             "bgm": "",
             "sfx": ""
@@ -198,7 +190,7 @@
             "sfx": ""
         },
         {
-            "text": "\"그럴 리가 없잖아, 미치광이 자식!\"",
+            "text": "\"네 말을 들을 리가 없잖아, 미치광이 자식!\"",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": -1,

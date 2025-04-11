@@ -1,0 +1,58 @@
+{
+    "EncounterId": "BADEND_02",
+    "Title": "어중간함",
+    "Condition": {
+        "triggerDays": [],
+        "specialConditionRequired": ""
+    },
+    "Pages": [
+        {
+            "text": "기지를 잃었다.",
+            "imagePath": "BADEND_02",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "분명 이럴 수도 있다는 것은 알고 있었을 텐데.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "결국 무엇도 이루지 못하고, 무엇도 얻지 못한다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "어중간한 상태인 채로.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "그리고 아무도 기억하지 못했다.",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "[BAD END : 어중간함]",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        }
+    ]
+}

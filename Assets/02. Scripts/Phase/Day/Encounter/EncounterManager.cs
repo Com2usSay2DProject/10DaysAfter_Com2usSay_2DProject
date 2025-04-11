@@ -10,7 +10,8 @@ public class EncounterManager : Singleton<EncounterManager>
 	public List<GameEncounter> GameEncounters;
 	private GameEncounter _pendingEncounter;
 
-	public string NextSceneName = "EndingCredits";
+	public string NextSceneName = "FinalEnding";
+	public string TitleSceneName = "FinalTitle";
 
 	private void Awake()
 	{
@@ -22,7 +23,8 @@ public class EncounterManager : Singleton<EncounterManager>
 	// 테스트용으로 사용
 	private void Start()
 	{
-		
+		ResourceManager.Instance.OnPopulationDefeat += BadEnd01;
+		//커맨드센터 죽을 때 배드엔드 추가
 	}
 
 	private void LoadAllEncounters()
@@ -118,7 +120,7 @@ public class EncounterManager : Singleton<EncounterManager>
 				{
 					UIEncounterPlayer.Instance.Show(found, () =>
 					{
-						GoToTitle();  // TitleSceneName로 이동
+						GoToScene(NextSceneName);  // TitleSceneName로 이동
 					});
 				}
 				else
@@ -149,6 +151,24 @@ public class EncounterManager : Singleton<EncounterManager>
 		}
 	}
 
+	public void BadEnd01()
+	{
+		GameEncounter badend = GameEncounters.Find(e => e.EncounterId == "BADEND_01");
+		UIEncounterPlayer.Instance.Show(badend, () =>
+		{
+			GoToScene(TitleSceneName);
+		});
+	}
+
+	public void BadEnd02()
+	{
+		GameEncounter badend = GameEncounters.Find(e => e.EncounterId == "BADEND_02");
+		UIEncounterPlayer.Instance.Show(badend, () =>
+		{
+			GoToScene(TitleSceneName);
+		});
+	}
+
 	public void OpenEncounterPlayer()
 	{
 		if (_pendingEncounter == null) return;
@@ -176,10 +196,10 @@ public class EncounterManager : Singleton<EncounterManager>
 		UIEncounterTab.Instance.HideTab();
 	}
 
-	public void GoToTitle()
+	public void GoToScene(string sceneName)
 	{
 		UIEncounterPlayer.Instance.EndFade.gameObject.SetActive(true);
-		SceneManager.LoadScene(NextSceneName);
+		SceneManager.LoadScene(sceneName);
 		return;
 	}
 
