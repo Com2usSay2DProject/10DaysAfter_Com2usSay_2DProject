@@ -5,6 +5,7 @@ using DG.Tweening;
 using System.Collections.Generic;
 using System;
 using System.Collections;
+using System.Text;
 
 //실제로 보여지는 이벤트 팝업
 public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
@@ -32,6 +33,20 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 		_nextButton.onClick.AddListener(NextPage);
 	}
 
+	IEnumerator TypeTextEffect(string text)
+	{
+		_encounterText.text = string.Empty;
+
+		StringBuilder stringBuilder = new StringBuilder();
+
+		for (int i = 0; i < text.Length; i++)
+		{
+			stringBuilder.Append(text[i]);
+			_encounterText.text = stringBuilder.ToString();
+			yield return new WaitForSecondsRealtime(0.01f);
+		}
+	}
+
 	public void Show(GameEncounter e, Action onCloseCallback = null)
 	{
 		_currentEncounter = e;
@@ -47,7 +62,10 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 	{
 		EncounterPage page = _currentEncounter.Pages[_currentPage];
 
-		_encounterText.text = page.text;
+
+		//_encounterText.text = page.text;
+
+		StartCoroutine(TypeTextEffect(page.text));
 		_choiceContainer.gameObject.SetActive(false);
 		_nextButton.gameObject.SetActive(false);
 

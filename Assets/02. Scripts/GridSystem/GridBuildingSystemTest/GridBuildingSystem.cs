@@ -22,7 +22,7 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
 
     public Action OnBuildFailed;
 
-    private void Start()
+    private void Awake()
     {
         InitializeTileBases();
     }
