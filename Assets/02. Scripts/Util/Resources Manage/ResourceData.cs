@@ -24,3 +24,19 @@ public class ResourceData
 {
 	public List<ResourceEntry> entries = new();
 }
+
+public static class ResourceNameTranslator
+{
+	public static string GetLocalizedName(ResourceType type)
+	{
+		return type switch
+		{
+			ResourceType.Wood => "목재",
+			ResourceType.Stone => "석재",
+			ResourceType.Food => "식량",
+			ResourceType.Metal => "금속",
+			ResourceType.Population => "인구",
+			_ => type.ToString()
+		};
+	}
+}
