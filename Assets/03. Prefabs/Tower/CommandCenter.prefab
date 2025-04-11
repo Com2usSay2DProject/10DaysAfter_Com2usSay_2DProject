@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2531329196207363663}
   - component: {fileID: 8287899078061415841}
   - component: {fileID: 5267581526664061887}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CommandCenter
   m_TagString: MainTower
   m_Icon: {fileID: 0}

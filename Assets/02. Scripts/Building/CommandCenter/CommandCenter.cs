@@ -5,6 +5,7 @@ public class CommandCenter : TowerRoot
     //프리팹에 저장된 포지션 그대로 쓸 것
     void Start()
     {
+        base.Start();
         Place();
     }
 

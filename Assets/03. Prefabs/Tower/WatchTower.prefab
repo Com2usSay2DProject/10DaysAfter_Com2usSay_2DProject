@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8392474480802287157}
   - component: {fileID: 7319202619746258329}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5107692524559679719}
   - component: {fileID: 581944115077251941}
   - component: {fileID: 8796525561411785948}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WatchTower
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -264,6 +264,10 @@ PrefabInstance:
       value: BuildEffect
       objectReference: {fileID: 0}
     - target: {fileID: 953483408028025522, guid: 5836d71bdb20b224684595e53c4cd7a3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 953483408028025522, guid: 5836d71bdb20b224684595e53c4cd7a3, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -306,6 +310,14 @@ PrefabInstance:
     - target: {fileID: 3724923414841079803, guid: 5836d71bdb20b224684595e53c4cd7a3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247490260979725167, guid: 5836d71bdb20b224684595e53c4cd7a3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316574243622504644, guid: 5836d71bdb20b224684595e53c4cd7a3, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

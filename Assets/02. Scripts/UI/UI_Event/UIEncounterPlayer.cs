@@ -13,7 +13,7 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 	[SerializeField] private GameObject _playerUI;
 	[SerializeField] private TextMeshProUGUI _encounterText;
 	[SerializeField] private Image _encounterImage;
-	[SerializeField] private Button _nextButton;
+	[SerializeField] private Button _next;
 
 	[SerializeField] private Transform _choiceContainer;
 	[SerializeField] private GameObject _choiceButtonPrefab;
@@ -24,17 +24,55 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 
 	private GameEncounter _currentEncounter;
 	private int _currentPage = 0;
+	private Coroutine _blinkCoroutine;
+	private Coroutine _textEffect;
 
 	public Action OnEncounterClose;
 
 	private void Awake()
 	{
 		_playerUI.SetActive(false);
-		_nextButton.onClick.AddListener(NextPage);
 	}
 
+	private void Update()
+	{
+		if (_next.isActiveAndEnabled)
+		{
+			if (Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown(0))
+			{
+				NextPage();
+			}
+		}
+	}
+
+	//창 밑의 화살표 같은 것 깜빡이게
+	IEnumerator Blink()
+	{
+		Debug.Log("start blinking");
+		while (true)
+		{
+			_next.image.color = new Color(88f / 255f, 56f / 255f, 36 / 255f, 210f / 255f);
+			yield return new WaitForSecondsRealtime(0.7f);
+			_next.image.color = new Color(88f / 255f, 56f / 255f, 36 / 255f, 0f);
+			yield return new WaitForSecondsRealtime(0.7f);
+		}
+	}
+
+
+	//타이핑되는 것처럼 텍스트 나오는 효과
 	IEnumerator TypeTextEffect(string text)
 	{
+		if(_textEffect != null)
+		{
+			StopCoroutine(_textEffect);
+		}
+
+		if (_blinkCoroutine != null)
+		{
+			StopCoroutine(_blinkCoroutine);
+			_next.image.color = new Color(88f / 255f, 56f / 255f, 36 / 255f, 0f);
+		}
+
 		_encounterText.text = string.Empty;
 
 		StringBuilder stringBuilder = new StringBuilder();
@@ -43,8 +81,11 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 		{
 			stringBuilder.Append(text[i]);
 			_encounterText.text = stringBuilder.ToString();
-			yield return new WaitForSecondsRealtime(0.01f);
+			yield return new WaitForSecondsRealtime(0.02f);
 		}
+
+		yield return new WaitForSecondsRealtime(0.5f);
+		_blinkCoroutine = StartCoroutine(Blink());
 	}
 
 	public void Show(GameEncounter e, Action onCloseCallback = null)
@@ -64,10 +105,9 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 
 
 		//_encounterText.text = page.text;
-
-		StartCoroutine(TypeTextEffect(page.text));
+		_textEffect = StartCoroutine(TypeTextEffect(page.text));
 		_choiceContainer.gameObject.SetActive(false);
-		_nextButton.gameObject.SetActive(false);
+		_next.gameObject.SetActive(false);
 
 		if (!string.IsNullOrEmpty(page.imagePath))
 		{
@@ -110,7 +150,7 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 		}
 		else
 		{
-			_nextButton.gameObject.SetActive(true);
+			_next.gameObject.SetActive(true);
 		}
 	}
 
@@ -191,7 +231,7 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 			}
 		}
 
-		_nextButton.gameObject.SetActive(false);
+		_next.gameObject.SetActive(false);
 		_choiceContainer.gameObject.SetActive(true);
 	}
 
@@ -220,9 +260,9 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 
 			string sign = effect.amount > 0 ? "+" : "-";
 			string color = effect.amount > 0 ? "#7FD97A" : "#FF6F5A";
-			string resourceName = effect.resourceType.ToString();
+			string resourceName = ResourceNameTranslator.GetLocalizedName(effect.resourceType);
 
-			sb.Append($"<color={color}>{sign}{Mathf.Abs(effect.amount)} {resourceName}</color>  ");	
+			sb.Append($"<color={color}>{resourceName} {sign}{Mathf.Abs(effect.amount)}</color>  ");	
 		}
 
 		_choiceEffectText.DOFade(255f, 1.5f).SetUpdate(true);
