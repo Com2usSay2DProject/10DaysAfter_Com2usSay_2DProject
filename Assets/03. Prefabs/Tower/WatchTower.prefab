@@ -204,7 +204,7 @@ MonoBehaviour:
     PopulationMultiplier: 0.03
   _buildEffect: {fileID: 6808187511248264797}
   _light: {fileID: 7319202619746258329}
-  _rotateSpeed: 10
+  _rotateSpeed: 40
 --- !u!61 &8796525561411785948
 BoxCollider2D:
   m_ObjectHideFlags: 0

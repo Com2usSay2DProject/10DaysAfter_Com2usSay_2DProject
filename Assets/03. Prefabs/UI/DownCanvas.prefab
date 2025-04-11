@@ -701,7 +701,7 @@ PrefabInstance:
     - target: {fileID: 4083735170796262213, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2325865978226943851, guid: fa0ae1c1c2e59a14abd7e464b88fc8c8, type: 3}
     - target: {fileID: 4083735170796262213, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: InitializeWithBuilding
@@ -895,7 +895,7 @@ PrefabInstance:
     - target: {fileID: 4083735170796262213, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2325865978226943851, guid: fa0ae1c1c2e59a14abd7e464b88fc8c8, type: 3}
     - target: {fileID: 4083735170796262213, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: InitializeWithBuilding
@@ -1097,7 +1097,7 @@ PrefabInstance:
     - target: {fileID: 4083735170796262213, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2325865978226943851, guid: fa0ae1c1c2e59a14abd7e464b88fc8c8, type: 3}
     - target: {fileID: 4083735170796262213, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: InitializeWithBuilding
@@ -1287,7 +1287,7 @@ PrefabInstance:
     - target: {fileID: 4083735170796262213, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2325865978226943851, guid: fa0ae1c1c2e59a14abd7e464b88fc8c8, type: 3}
     - target: {fileID: 4083735170796262213, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: InitializeWithBuilding
@@ -1299,7 +1299,7 @@ PrefabInstance:
     - target: {fileID: 4083735170796262213, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 7781017549173608812, guid: aa3e51b5754f45c4eb170bb47d35cba9, type: 3}
+      objectReference: {fileID: 581944115077251941, guid: 1954e5b82cbac5c439c69359dc2fea40, type: 3}
     - target: {fileID: 4083735170796262213, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: TowerRoot, Assembly-CSharp
@@ -1481,7 +1481,7 @@ PrefabInstance:
     - target: {fileID: 4083735170796262213, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2325865978226943851, guid: fa0ae1c1c2e59a14abd7e464b88fc8c8, type: 3}
     - target: {fileID: 4083735170796262213, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: InitializeWithBuilding
@@ -1670,7 +1670,7 @@ PrefabInstance:
     - target: {fileID: 4083735170796262213, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2325865978226943851, guid: fa0ae1c1c2e59a14abd7e464b88fc8c8, type: 3}
     - target: {fileID: 4083735170796262213, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: InitializeWithBuilding
@@ -1682,7 +1682,7 @@ PrefabInstance:
     - target: {fileID: 4083735170796262213, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 581944115077251941, guid: 1954e5b82cbac5c439c69359dc2fea40, type: 3}
+      objectReference: {fileID: 7238301756168623690, guid: 4e420ebc4145d8c4d83f074993d4c7a7, type: 3}
     - target: {fileID: 4083735170796262213, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: TowerRoot, Assembly-CSharp
@@ -1868,7 +1868,7 @@ PrefabInstance:
     - target: {fileID: 4083735170796262213, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2325865978226943851, guid: fa0ae1c1c2e59a14abd7e464b88fc8c8, type: 3}
     - target: {fileID: 4083735170796262213, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: InitializeWithBuilding
