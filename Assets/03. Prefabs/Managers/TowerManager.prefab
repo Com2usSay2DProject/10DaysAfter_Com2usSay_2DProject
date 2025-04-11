@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2604601583357662932}
   - component: {fileID: 3923930442009459814}
   - component: {fileID: 8701079842755385726}
-  - component: {fileID: 6275382568705037882}
   - component: {fileID: 6844487125400098446}
   - component: {fileID: 132916563767957166}
   - component: {fileID: 2479196259796987000}
@@ -31,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152055182306368906}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.3149644, y: -1.7723168, z: -16.383415}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -92,6 +91,10 @@ MonoBehaviour:
     InitCount: 5
     Prefab: {fileID: 3846297662033212084, guid: aa3e51b5754f45c4eb170bb47d35cba9, type: 3}
     Container: {fileID: 1275071641822414405}
+  - Type: 7
+    InitCount: 5
+    Prefab: {fileID: 9115729199645589374, guid: 1954e5b82cbac5c439c69359dc2fea40, type: 3}
+    Container: {fileID: 1275071641822414405}
 --- !u!114 &8701079842755385726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,20 +119,6 @@ MonoBehaviour:
   - {fileID: 3324840217064256603, guid: 865d7f928ec8edd4a8d540bf416766dd, type: 3}
   - {fileID: 4316339413305995201, guid: f219b9846561c2546bdc0cba15d83bb2, type: 3}
   Container: {fileID: 4722665973038167830}
---- !u!114 &6275382568705037882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1152055182306368906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ae92bd2931c2a74d89e545036e0c833, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsBuildingMode: 0
-  SelectedTower: {fileID: 0}
 --- !u!114 &6844487125400098446
 MonoBehaviour:
   m_ObjectHideFlags: 0
