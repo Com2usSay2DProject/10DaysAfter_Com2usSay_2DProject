@@ -8,14 +8,8 @@ public class UI_TouchBounce : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     public float StartScale = 1f;
     public float Duration = 0.2f;
 
-    private RectTransform _rectTransform;
-
-    [Header("Click Effect")]
-    public GameObject ClickParticle;
-
     private void Awake()
     {
-        _rectTransform = GetComponent<RectTransform>();
         StartScale = transform.localScale.x;
     }
 

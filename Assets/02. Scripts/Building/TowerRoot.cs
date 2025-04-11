@@ -89,7 +89,17 @@ public class TowerRoot : Building
     {
         if (_towerDataDict == null)
         {
+#if UNITY_EDITOR
             TowerDataCollection collection = JsonDataManager.LoadFromFile<TowerDataCollection>("Tower/TowerDataCollection");
+#else
+            TextAsset jsonText = Resources.Load<TextAsset>("Json/Tower/TowerDataCollection");
+            if(jsonText == null)
+            {
+                Debug.LogError("데이터 파일이 없습니다(빌드 환경)");
+                return;
+            }
+            collection = JsonDataManager.FromJson<TowerDataCollection>(jsonText.text);
+#endif
             _towerDataDict = new Dictionary<ETowerType, TowerData>();
 
             foreach (TowerData d in collection.Datas)
@@ -134,5 +144,5 @@ public class TowerRoot : Building
         _damage = Data.GetModifiedStat(Data.Damage, ResourceManager.Instance.GetResourceAmount(ResourceType.Population));
         _range = Data.GetModifiedStat(Data.Range, ResourceManager.Instance.GetResourceAmount(ResourceType.Population));
     }
-    #endregion
+#endregion
 }
