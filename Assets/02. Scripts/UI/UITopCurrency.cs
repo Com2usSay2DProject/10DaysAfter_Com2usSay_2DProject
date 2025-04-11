@@ -53,9 +53,8 @@ public class UITopCurrency : MonoBehaviour
 
     public void SetTimeText()
     {
-        TimeText.text = PhaseManager.Instance.TimeUntilNextPhase.ToString("F0");
+        TimeText.text = $"다음 {(PhaseManager.Instance.isNight ? "낮" : "밤")} 까지 : {PhaseManager.Instance.TimeUntilNextPhase.ToString("F0")} 초";
     }
-
 
     IEnumerator DisplayTime()
     {
