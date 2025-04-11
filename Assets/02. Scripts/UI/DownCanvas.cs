@@ -15,8 +15,6 @@ public class DownCanvas : MonoBehaviour
     {
         OriginaPosition =  DownBar.transform.position;
 
-
-
         //NotificationContent = NotificationText.text;
         //GridBuildingSystem.Instance.OnBuildFailed += 건설실패띄우는함수;
         GridBuildingSystem.Instance.OnBuildFailed += Notification;

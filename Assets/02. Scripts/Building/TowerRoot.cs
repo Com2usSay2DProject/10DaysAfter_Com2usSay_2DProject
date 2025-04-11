@@ -70,7 +70,7 @@ public class TowerRoot : Building
         }
     }
 
-    private void Die()
+    protected virtual void Die()
     {
         BoundsInt areaToClean = GetGridArea();
         GridBuildingSystem.Instance.ClearArea(areaToClean);
