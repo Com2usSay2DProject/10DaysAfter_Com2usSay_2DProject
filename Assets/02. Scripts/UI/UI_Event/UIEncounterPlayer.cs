@@ -212,6 +212,7 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 					}
 				}
 			}
+
 			if (canAfford)
 			{
 				button.GetComponent<Button>().onClick.AddListener(() =>

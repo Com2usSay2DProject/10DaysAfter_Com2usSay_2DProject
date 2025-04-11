@@ -1889,7 +1889,7 @@ MonoBehaviour:
   _playerUI: {fileID: 5876236391163162110}
   _encounterText: {fileID: 3692151749198530643}
   _encounterImage: {fileID: 4201262401639386414}
-  _next: {fileID: 0}
+  _next: {fileID: 8568165925377187608}
   _choiceContainer: {fileID: 7325541486203130781}
   _choiceButtonPrefab: {fileID: 357443628266048994, guid: 0f8dc9ee4fc35094c8512bb9c01dcb40, type: 3}
   _choiceEffect: {fileID: 804373055505989736}

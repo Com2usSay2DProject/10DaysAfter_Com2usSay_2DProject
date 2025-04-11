@@ -18,7 +18,7 @@ public class EncounterPage
 	public string text;						// 페이지에 표시될 텍스트
 	public string imagePath;				// 페이지에 표시될 이미지 경로 (비워두면 없음)
 
-	public List<EncounterChoice> Choices;       // 선택지가 있을 경우
+	public List<EncounterChoice> Choices;	// 선택지가 있을 경우
 	public int nextPageIndex = -1;
 
 	public string bgm;
