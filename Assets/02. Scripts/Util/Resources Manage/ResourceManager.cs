@@ -10,6 +10,7 @@ public class ResourceManager : Singleton<ResourceManager>
 
 	public Action OnPopulationChange;
 	public Action OnReourceChange;
+	public Action OnPopulationDefeat;
 
 	private void Awake()
 	{
@@ -26,6 +27,10 @@ public class ResourceManager : Singleton<ResourceManager>
 			.Subscribe(change =>
 			{
 				OnPopulationChange?.Invoke();
+				if (_resources[ResourceType.Population] <= 0)
+				{
+					OnPopulationDefeat?.Invoke();
+				}
 			}).AddTo(this);
 
         _resources.ObserveReplace()
