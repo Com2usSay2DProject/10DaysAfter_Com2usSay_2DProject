@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2979232966099194277}
   - component: {fileID: 3003018506753124567}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MG2_1_b
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4604141386230564224}
   - component: {fileID: 5378951599674857344}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MachineGunTower
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -189,6 +189,10 @@ PrefabInstance:
       value: BuildEffect
       objectReference: {fileID: 0}
     - target: {fileID: 953483408028025522, guid: 5836d71bdb20b224684595e53c4cd7a3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 953483408028025522, guid: 5836d71bdb20b224684595e53c4cd7a3, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -240,9 +244,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5247490260979725167, guid: 5836d71bdb20b224684595e53c4cd7a3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5585735163836008018, guid: 5836d71bdb20b224684595e53c4cd7a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316574243622504644, guid: 5836d71bdb20b224684595e53c4cd7a3, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86a9bbf0cae2544aad2a785cbb65a3b, type: 3}
+  m_Name: ResourceIconSO
+  m_EditorClassIdentifier: 
+  WoodIcon: {fileID: 21300000, guid: 517d84841215a434b90a2ec99607e8a2, type: 3}
+  StoneIcon: {fileID: 21300000, guid: 05f51c1ba28e4d744a728e3259fb4c96, type: 3}
+  MetalIcon: {fileID: 21300000, guid: 3b8178c2ce66a408ba11d8ed50594163, type: 3}

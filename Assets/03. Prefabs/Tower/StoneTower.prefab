@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3238105559944741355}
   - component: {fileID: 7483629326663515990}
   - component: {fileID: 5934382594418969662}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneTower
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -288,13 +288,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3297763268981891958, guid: fd8ffd056df34a74d936c3827be9df41, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3364578077642045769, guid: fd8ffd056df34a74d936c3827be9df41, type: 3}
       propertyPath: m_Name
       value: NumberPopupCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 3364578077642045769, guid: fd8ffd056df34a74d936c3827be9df41, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3364578077642045769, guid: fd8ffd056df34a74d936c3827be9df41, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4188887258211619480, guid: fd8ffd056df34a74d936c3827be9df41, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8488537819640832889, guid: fd8ffd056df34a74d936c3827be9df41, type: 3}
       propertyPath: m_Sprite
@@ -337,6 +349,10 @@ PrefabInstance:
     - target: {fileID: 953483408028025522, guid: 5836d71bdb20b224684595e53c4cd7a3, type: 3}
       propertyPath: m_Name
       value: BuildEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 953483408028025522, guid: 5836d71bdb20b224684595e53c4cd7a3, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 953483408028025522, guid: 5836d71bdb20b224684595e53c4cd7a3, type: 3}
       propertyPath: m_IsActive
@@ -390,9 +406,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5247490260979725167, guid: 5836d71bdb20b224684595e53c4cd7a3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5585735163836008018, guid: 5836d71bdb20b224684595e53c4cd7a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316574243622504644, guid: 5836d71bdb20b224684595e53c4cd7a3, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -807,6 +807,14 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5154042006575076884, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
+      propertyPath: ResourceIcons
+      value: 
+      objectReference: {fileID: 11400000, guid: 48a7926d6bad4154fa311cd2e9c13670, type: 2}
+    - target: {fileID: 5154042006575076884, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
+      propertyPath: SelectBuildType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5154042006575076884, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: SellectBuildType
       value: 3
       objectReference: {fileID: 0}
@@ -991,6 +999,14 @@ PrefabInstance:
     - target: {fileID: 4369853232505976824, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: m_fontSize
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5154042006575076884, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
+      propertyPath: ResourceIcons
+      value: 
+      objectReference: {fileID: 11400000, guid: 48a7926d6bad4154fa311cd2e9c13670, type: 2}
+    - target: {fileID: 5154042006575076884, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
+      propertyPath: SelectBuildType
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5154042006575076884, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: SellectBuildType
@@ -1186,6 +1202,14 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 5154042006575076884, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
+      propertyPath: ResourceIcons
+      value: 
+      objectReference: {fileID: 11400000, guid: 48a7926d6bad4154fa311cd2e9c13670, type: 2}
+    - target: {fileID: 5154042006575076884, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
+      propertyPath: SelectBuildType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8622725317751529868, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1367,6 +1391,14 @@ PrefabInstance:
     - target: {fileID: 4369853232505976824, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: m_fontSize
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5154042006575076884, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
+      propertyPath: ResourceIcons
+      value: 
+      objectReference: {fileID: 11400000, guid: 48a7926d6bad4154fa311cd2e9c13670, type: 2}
+    - target: {fileID: 5154042006575076884, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
+      propertyPath: SelectBuildType
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5154042006575076884, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: SellectBuildType
@@ -1555,6 +1587,14 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5154042006575076884, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
+      propertyPath: ResourceIcons
+      value: 
+      objectReference: {fileID: 11400000, guid: 48a7926d6bad4154fa311cd2e9c13670, type: 2}
+    - target: {fileID: 5154042006575076884, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
+      propertyPath: SelectBuildType
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5154042006575076884, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: SellectBuildType
       value: 5
       objectReference: {fileID: 0}
@@ -1562,8 +1602,7 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 8556019883905232977, guid: eff0aae580713174b982e4f8eb88e143, type: 3}
-    m_RemovedComponents:
-    - {fileID: 3440982913118222275, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1735,6 +1774,14 @@ PrefabInstance:
     - target: {fileID: 4369853232505976824, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: m_fontSize
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5154042006575076884, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
+      propertyPath: ResourceIcons
+      value: 
+      objectReference: {fileID: 11400000, guid: 48a7926d6bad4154fa311cd2e9c13670, type: 2}
+    - target: {fileID: 5154042006575076884, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
+      propertyPath: SelectBuildType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5154042006575076884, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: SellectBuildType
@@ -1925,6 +1972,14 @@ PrefabInstance:
     - target: {fileID: 4369853232505976824, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: m_fontSize
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5154042006575076884, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
+      propertyPath: ResourceIcons
+      value: 
+      objectReference: {fileID: 11400000, guid: 48a7926d6bad4154fa311cd2e9c13670, type: 2}
+    - target: {fileID: 5154042006575076884, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
+      propertyPath: SelectBuildType
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5154042006575076884, guid: 54eb00fa27bbba048a49592f45db1773, type: 3}
       propertyPath: SellectBuildType
