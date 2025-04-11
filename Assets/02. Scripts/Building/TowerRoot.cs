@@ -112,6 +112,7 @@ public class TowerRoot : Building
             timer += Time.deltaTime;
             yield return null;
         }
+        ResourceManager.Instance.AddResource(ResourceType.Population, 10);
         _spriteRenderer.color = Color.white;
         IsPlaced = true;
     }

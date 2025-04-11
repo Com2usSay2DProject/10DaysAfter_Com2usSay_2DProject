@@ -1147,11 +1147,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5775573559316254356, guid: 65d31ebd7a307e341959a7275cdf8a3b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.900032
+      value: -7.4
       objectReference: {fileID: 0}
     - target: {fileID: 5775573559316254356, guid: 65d31ebd7a307e341959a7275cdf8a3b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.347014
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5775573559316254356, guid: 65d31ebd7a307e341959a7275cdf8a3b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2615,6 +2615,7 @@ MonoBehaviour:
   _choiceEffect: {fileID: 0}
   _choiceEffectText: {fileID: 0}
   EndFade: {fileID: 0}
+  TextSoundInterval: 3
 --- !u!114 &1352863737
 MonoBehaviour:
   m_ObjectHideFlags: 0
