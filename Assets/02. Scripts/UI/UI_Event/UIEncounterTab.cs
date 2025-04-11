@@ -29,5 +29,6 @@ public class UIEncounterTab : Singleton<UIEncounterTab>
 	private void OnTabClicked()
 	{
 		EncounterManager.Instance.OpenEncounterPlayer();
+		tabUI.SetActive(false);
 	}
 }

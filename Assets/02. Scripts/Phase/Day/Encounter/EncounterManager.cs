@@ -114,7 +114,7 @@ public class EncounterManager : Singleton<EncounterManager>
 			GameEncounter found = GameEncounters.Find(e => e.EncounterId == storyId);
 			if (found != null)
 			{
-				if (storyId == "ENDING_01")
+				if (storyId == "ENDING_01" || storyId == "ENDING_02")
 				{
 					UIEncounterPlayer.Instance.Show(found, () =>
 					{

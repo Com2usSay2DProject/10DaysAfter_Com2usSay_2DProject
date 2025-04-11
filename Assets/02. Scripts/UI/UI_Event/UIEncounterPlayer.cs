@@ -110,6 +110,7 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 	private void ShowPage()
 	{
 		EncounterPage page = _currentEncounter.Pages[_currentPage];
+		Debug.Log($"showing page {_currentPage}");
 
 
 		//_encounterText.text = page.text;
@@ -169,10 +170,12 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 		if (current.nextPageIndex >= 0)
 		{
 			_currentPage = current.nextPageIndex;
+			Debug.Log($"moving to page{current.nextPageIndex}");
 		}
 		else
 		{
 			_currentPage++;
+			Debug.Log($"moving to page{_currentPage}");
 		}
 
 		if (_currentPage < _currentEncounter.Pages.Count)
@@ -222,6 +225,7 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 					//같은 인카운터 내 선택지로 반응 바뀌는 용
 					if (choice.nextPageIndex >= 0 && choice.nextPageIndex < _currentEncounter.Pages.Count)
 					{
+						Debug.Log("for some reason this part is being called");
 						_currentPage = choice.nextPageIndex;
 						ShowPage();
 					}
