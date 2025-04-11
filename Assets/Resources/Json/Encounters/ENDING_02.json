@@ -1,9 +1,9 @@
 {
-    "EncounterId": "ENDING_01",
-    "Title": "완료된 송신",
+    "EncounterId": "ENDING_02",
+    "Title": "침묵 속의 기록",
     "Condition": {
         "triggerDays": [],
-        "specialConditionRequired": "commander_ending"
+        "specialConditionRequired": "lietenant_ending"
     },
     "Pages": [
         {
@@ -15,7 +15,7 @@
             "sfx": ""
         },
         {
-            "text": "\"아, 됐다. 원래 나는...\"",
+            "text": "\"아 됐다, 원래 나는...\"",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": -1,
@@ -24,14 +24,6 @@
         },
         {
             "text": "/탕",
-            "imagePath": "",
-            "Choices": [],
-            "nextPageIndex": -1,
-            "bgm": "",
-            "sfx": ""
-        },
-        {
-            "text": "\"어차피... 설득이라던가 재능이 없지.\"",
             "imagePath": "fake_command",
             "Choices": [],
             "nextPageIndex": -1,
@@ -39,7 +31,7 @@
             "sfx": ""
         },
         {
-            "text": "\"기대도 안 했습니다, 지휘관님.\"",
+            "text": "...",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": -1,
@@ -47,7 +39,15 @@
             "sfx": ""
         },
         {
-            "text": "\"이정도로 열심히 준비했다면, 제가 뭘 한다고 해도 바뀌지도 않겠죠.\"",
+            "text": "\"아직 남아 있는 사람들이라도 살게 하고 싶다고.\"",
+            "imagePath": "commander_dead",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"그렇게 다 죽게 해서 뭐가 즐거운 거야, 대체.\"",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": -1,
@@ -55,31 +55,7 @@
             "sfx": ""
         },
         {
-            "text": "이 편이 네게도 더 좋을 거다.",
-            "imagePath": "",
-            "Choices": [],
-            "nextPageIndex": -1,
-            "bgm": "",
-            "sfx": ""
-        },
-        {
-            "text": "너보다 못한 자들에게 재능을 이용당하는 것보다...",
-            "imagePath": "",
-            "Choices": [],
-            "nextPageIndex": -1,
-            "bgm": "",
-            "sfx": ""
-        },
-        {
-            "text": "\"어이가 없군... 그냥 난, 결과가 바뀌지 않더라도 시도해 보러 온 겁니다.\"",
-            "imagePath": "",
-            "Choices": [],
-            "nextPageIndex": -1,
-            "bgm": "",
-            "sfx": ""
-        },
-        {
-            "text": "\"그냥, 당신에게 조금이라도 희망을 걸어본 내가 멍청했지.\"",
+            "text": "...그런가. 하지만 이렇게 한다 해도, 어차피...",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": -1,
@@ -95,15 +71,7 @@
             "sfx": ""
         },
         {
-            "text": "...",
-            "imagePath": "lieutenant_dead",
-            "Choices": [],
-            "nextPageIndex": -1,
-            "bgm": "",
-            "sfx": ""
-        },
-        {
-            "text": "아쉽게 됐군.",
+            "text": "\"미치광이 이상론자는 빨리 죽어 주시죠.\"",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": -1,
@@ -111,7 +79,7 @@
             "sfx": ""
         },
         {
-            "text": "[백로그 재생 종료, 19:37]",
+            "text": "\"...\"",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": -1,
@@ -119,15 +87,55 @@
             "sfx": ""
         },
         {
-            "text": "목표일 당일 / 06:18",
-            "imagePath": "ending_01",
+            "text": "\"하아... 일단 이걸 꺼버릴까.\"",
+            "imagePath": "",
             "Choices": [],
             "nextPageIndex": -1,
             "bgm": "",
             "sfx": ""
         },
         {
-            "text": "기온 : -4.1°C\\n풍속 : 북서풍 3.6m/s\\n강수 없음",
+            "text": "\"그렇다 해도, 바로 멈추는지는 모르겠는데.\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "\"뭐, 어쨌든 지금 멈췄으니, 오늘 밤 정도만 버티면...\"",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "[백로그 재생 종료, 19:40]",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "목표일 당일 / 06:27",
+            "imagePath": "ending_02",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "기온 : -4.0°C\\n풍속 : 북서풍 3.4m/s\\n강수 없음",
+            "imagePath": "",
+            "Choices": [],
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": ""
+        },
+        {
+            "text": "통신망 상태 : 모든 채널 응답 없음",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": -1,
@@ -143,7 +151,7 @@
             "sfx": ""
         },
         {
-            "text": "기지는 조용했다.",
+            "text": "전파는 꺼졌다.",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": -1,
@@ -151,7 +159,7 @@
             "sfx": ""
         },
         {
-            "text": "목표일 아침.",
+            "text": "무너진 지휘실 한켠, 부관은 병사들을 눕히고 있었다.",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": -1,
@@ -159,7 +167,7 @@
             "sfx": ""
         },
         {
-            "text": "기지 정문 앞, 지휘관의 외투가 걸쳐져 있었다.",
+            "text": "그는 말이 없었다.",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": -1,
@@ -167,7 +175,7 @@
             "sfx": ""
         },
         {
-            "text": "[ENDING 01 : 완료된 송신]",
+            "text": "[ENDING 02 : 침묵 속의 기록]",
             "imagePath": "",
             "Choices": [],
             "nextPageIndex": -1,

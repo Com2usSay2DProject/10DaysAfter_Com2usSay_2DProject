@@ -36,10 +36,8 @@ public class PhaseManager : Singleton<PhaseManager>
 	{
 		Debug.Log("This is the Day Phase");
 		//이벤트 발동 활성화
-		if (_currentDay > 1)
-		{
-			yield return new WaitForSeconds(FadeTime);
-		}
+		yield return new WaitForSeconds(FadeTime);
+		
 
 		if (DoTriggerEncounters) EncounterManager.Instance.TriggerStory(_currentDay);
 
@@ -84,7 +82,7 @@ public class PhaseManager : Singleton<PhaseManager>
 				//다음 페이즈는 밤
 				_isNight = true;
 				Debug.Log("Day Phase is over");
-				_timeUntilNextPhase = NightPhaseDuration + FadeTime * 2;
+				_timeUntilNextPhase = NightPhaseDuration + FadeTime;
 			}
 			else
 			{
@@ -100,7 +98,7 @@ public class PhaseManager : Singleton<PhaseManager>
 				Debug.Log($"Night Phase is over. You survived {_currentDay} days");
 				_currentDay++;
 				OnDateChange?.Invoke();
-				_timeUntilNextPhase = DayPhaseDuration + FadeTime;
+				_timeUntilNextPhase = DayPhaseDuration + FadeTime * 2;
 			}
         }
     }

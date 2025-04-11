@@ -97,10 +97,13 @@ public class EncounterManager : Singleton<EncounterManager>
 				storyId = PhaseManager.Instance.isNight ? "T_EVT_007" : "T_EVT_006";
 				break;
 			case 10:
-				//if (StateManager.Instance.GetBranch("lieutenant_ending"))
-				//{
-				//}
-				storyId = "ENDING_01";
+				if (StateManager.Instance.GetBranch("lieutenant_ending"))
+				{
+					storyId = "ENDING_02";
+				} else if (StateManager.Instance.GetBranch("commander_ending"))
+				{
+					storyId = "ENDING_01";
+				}
 				break;
 			default:
 				break;

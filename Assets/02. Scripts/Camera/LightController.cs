@@ -2,10 +2,14 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using System.Collections;
 
-public class LightTesting : MonoBehaviour
+public class LightController : MonoBehaviour
 {
 	public Light2D GlobalLight;
 	public float FadeTime = 3f;
+	public float DayIntensity = 1f;
+	public float NightIntensity = 0.35f;
+	public float DayRadius = 200f;
+	public float NightRadius = 100f;
 
 	public void Start()
 	{
@@ -28,21 +32,33 @@ public class LightTesting : MonoBehaviour
 
 	private IEnumerator LightOut()
 	{
-		while(GlobalLight.intensity > 0.35f)
+		while(GlobalLight.intensity > NightIntensity)
 		{
 			GlobalLight.intensity -= Time.deltaTime / FadeTime;
 			yield return null;
 		}
-		GlobalLight.intensity = 0.35f;
+		while(GlobalLight.pointLightOuterRadius > NightRadius)
+		{
+			GlobalLight.pointLightOuterRadius -= Time.deltaTime / FadeTime;
+			yield return null;
+		}
+		GlobalLight.intensity = NightIntensity;
+		GlobalLight.pointLightOuterRadius = NightRadius;
 	}
 
 	private IEnumerator LightOn()
 	{
-		while (GlobalLight.intensity < 1.5f)
+		while (GlobalLight.intensity < DayIntensity)
 		{
 			GlobalLight.intensity += Time.deltaTime / FadeTime;
 			yield return null;
 		}
-		GlobalLight.intensity = 1.5f;
+		while (GlobalLight.pointLightOuterRadius < DayRadius)
+		{
+			GlobalLight.pointLightOuterRadius += Time.deltaTime / FadeTime;
+			yield return null;
+		}
+		GlobalLight.intensity = DayIntensity;
+		GlobalLight.pointLightOuterRadius = DayRadius;
 	}
 }
