@@ -30,6 +30,7 @@ public class UITopCurrency : MonoBehaviour
 
     private void Start()
     {
+        SoundManager.Instance.PlayBgm(EBgmType.Game);
 
         Vector3 originalPosition = TopCanvas.transform.position;
         TopCanvas.transform.position = StartPosition.position;

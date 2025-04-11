@@ -40,7 +40,6 @@ public class PhaseManager : Singleton<PhaseManager>
 		
 
 		if (DoTriggerEncounters) EncounterManager.Instance.TriggerStory(_currentDay);
-
 		yield return new WaitForSeconds(dayDuration);
 
 		//이벤트 발동 비활성화
@@ -70,8 +69,9 @@ public class PhaseManager : Singleton<PhaseManager>
 
 					Debug.Log("축하합니다 10일 끝입니다");
 				}
-				OnDayBegin?.Invoke();							//이벤트 시작
+				OnDayBegin?.Invoke();                           //이벤트 시작
 
+				SoundManager.Instance.PlayBgm(EBgmType.Game);
 				yield return StartCoroutine(PlayDayPhase(DayPhaseDuration));
 
 				
@@ -87,8 +87,8 @@ public class PhaseManager : Singleton<PhaseManager>
 			else
 			{
 				
-				OnNightBegin?.Invoke();							//스포너 키기(적 스폰), 빛 조절
-
+				OnNightBegin?.Invoke();                         //스포너 키기(적 스폰), 빛 조절
+				SoundManager.Instance.PlayBgm(EBgmType.Game_Night);
 				yield return StartCoroutine(PlayNightPhase(NightPhaseDuration));
 
 				OnNightEnd?.Invoke();							//스포너 끄기, 빛 조절
