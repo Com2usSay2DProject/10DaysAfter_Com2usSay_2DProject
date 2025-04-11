@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8701079842755385726}
   - component: {fileID: 132916563767957166}
   - component: {fileID: 2479196259796987000}
+  - component: {fileID: 7592964395814947161}
   m_Layer: 0
   m_Name: TowerManager
   m_TagString: Untagged
@@ -156,6 +157,18 @@ MonoBehaviour:
     InitCount: 3
     Prefab: {fileID: 1509579658076386493, guid: 87ee339920a95cd40af1de03e629e822, type: 3}
     Container: {fileID: 2241033905070302010}
+--- !u!114 &7592964395814947161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152055182306368906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18b2976de4b80904a8709497fd454ee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2319317683406974896
 GameObject:
   m_ObjectHideFlags: 0
