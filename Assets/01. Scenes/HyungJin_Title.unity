@@ -304,8 +304,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282337636
-  m_fontColor: {r: 0.39215687, g: 0.28627452, b: 0.24705882, a: 1}
+    rgba: 4279902515
+  m_fontColor: {r: 0.2, g: 0.12941177, b: 0.101960786, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -614,7 +614,6 @@ MonoBehaviour:
   EndScale: 0.9
   StartScale: 1
   Duration: 0.2
-  ClickParticle: {fileID: 0}
   AllocatedTower: 0
 --- !u!1 &172188788
 GameObject:
@@ -811,7 +810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.77254903, g: 0.8235294, b: 0.8980392, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1286,8 +1285,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282337636
-  m_fontColor: {r: 0.39215687, g: 0.28627452, b: 0.24705882, a: 1}
+    rgba: 4279902515
+  m_fontColor: {r: 0.2, g: 0.12941177, b: 0.101960786, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1868,7 +1867,6 @@ MonoBehaviour:
   EndScale: 0.9
   StartScale: 1
   Duration: 0.2
-  ClickParticle: {fileID: 0}
   AllocatedTower: 0
 --- !u!1 &1000142372
 GameObject:
@@ -1936,8 +1934,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282337636
-  m_fontColor: {r: 0.3915094, g: 0.28537032, b: 0.2474635, a: 1}
+    rgba: 4279902515
+  m_fontColor: {r: 0.2, g: 0.12941177, b: 0.101960786, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2227,7 +2225,6 @@ MonoBehaviour:
   EndScale: 0.9
   StartScale: 1
   Duration: 0.2
-  ClickParticle: {fileID: 0}
   AllocatedTower: 0
 --- !u!114 &1058261373
 MonoBehaviour:
@@ -2464,8 +2461,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282337636
-  m_fontColor: {r: 0.39215687, g: 0.28627452, b: 0.24705882, a: 1}
+    rgba: 4279902515
+  m_fontColor: {r: 0.1981132, g: 0.12787445, b: 0.10186009, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2759,7 +2756,6 @@ MonoBehaviour:
   EndScale: 0.9
   StartScale: 1
   Duration: 0.2
-  ClickParticle: {fileID: 0}
   AllocatedTower: 0
 --- !u!1 &1175731138
 GameObject:
@@ -2827,8 +2823,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282337636
-  m_fontColor: {r: 0.3915094, g: 0.28537032, b: 0.2474635, a: 1}
+    rgba: 4279902515
+  m_fontColor: {r: 0.2, g: 0.12941177, b: 0.101960786, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3239,8 +3235,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282337636
-  m_fontColor: {r: 0.3915094, g: 0.28537032, b: 0.2474635, a: 1}
+    rgba: 4279902515
+  m_fontColor: {r: 0.2, g: 0.12941177, b: 0.101960786, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3444,7 +3440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7736294, g: 0.82498163, b: 0.8962264, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3549,8 +3545,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282337636
-  m_fontColor: {r: 0.39215687, g: 0.28627452, b: 0.24705882, a: 1}
+    rgba: 4279902515
+  m_fontColor: {r: 0.2, g: 0.12941177, b: 0.101960786, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3919,7 +3915,6 @@ MonoBehaviour:
   EndScale: 0.9
   StartScale: 1
   Duration: 0.2
-  ClickParticle: {fileID: 0}
   AllocatedTower: 0
 --- !u!1 &1672919909
 GameObject:
@@ -4309,8 +4304,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282337636
-  m_fontColor: {r: 0.39215687, g: 0.28627452, b: 0.24705882, a: 1}
+    rgba: 4279902515
+  m_fontColor: {r: 0.2, g: 0.12941177, b: 0.101960786, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

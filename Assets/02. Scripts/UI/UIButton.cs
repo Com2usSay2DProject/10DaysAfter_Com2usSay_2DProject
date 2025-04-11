@@ -50,17 +50,18 @@ public class UIButton: UI_TouchBounce
     public void OnClicPopupUI(GameObject popupUI)
     {
         popupUI.SetActive(true);
-        popupUI.transform.DOScale(Vector3.one, 0.3f).SetEase(Ease.OutExpo).OnComplete(() => transform.localScale = Vector3.one);
+        popupUI.transform.DOScale(Vector3.one, 0.3f).SetEase(Ease.OutBack).OnComplete(() => transform.localScale = Vector3.one);
     }
 
     public void OnClickCloseUI(GameObject PopupUI)
     {
-        PopupUI.transform.DOScale(Vector3.zero * 0.2f, 0.3f).SetEase(Ease.OutExpo).OnComplete(() => PopupUI.SetActive(false));
+        PopupUI.transform.DOScale(Vector3.one * 0.5f, 0.3f).SetEase(Ease.InBack).OnComplete(() => PopupUI.SetActive(false));
     }
 
     public void OnClickLoadScene(String name)
     {
         SceneManager.LoadScene(name);
         SoundManager.Instance.StopBgm();
+        
     }
 }

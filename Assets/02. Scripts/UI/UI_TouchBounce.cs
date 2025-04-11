@@ -16,12 +16,13 @@ public class UI_TouchBounce : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     public void OnPointerDown(PointerEventData eventData)
     {
         transform.DOScale(EndScale, Duration).SetEase(Ease.InOutBounce).OnComplete(() => transform.localScale = Vector3.one * EndScale);
-        PlaySFX();
+
     }
 
     public virtual void OnPointerUp(PointerEventData eventData)
     {
         transform.DOScale(StartScale, Duration).SetEase(Ease.InOutBounce).OnComplete(() => transform.localScale = Vector3.one * StartScale);
+        PlaySFX();
     }
     public void PlaySFX()
     {
