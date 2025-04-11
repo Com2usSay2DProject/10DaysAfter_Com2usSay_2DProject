@@ -12,6 +12,8 @@ public class CreditRoll : MonoBehaviour
 
 	void Start()
 	{
+		SoundManager.Instance.OnChangedBGMVolume(0.5f);
+		SoundManager.Instance.PlayBgm(EBgmType.Title);
 		// 초기 위치 설정 (화면 아래)	
 		creditContent.anchoredPosition = new Vector2(0, -Screen.height);
 

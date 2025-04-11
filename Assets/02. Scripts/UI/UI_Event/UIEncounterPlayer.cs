@@ -81,7 +81,7 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 		{
 			stringBuilder.Append(text[i]);
 			_encounterText.text = stringBuilder.ToString();
-			yield return new WaitForSecondsRealtime(0.02f);
+			yield return new WaitForSecondsRealtime(0.01f);
 		}
 
 		yield return new WaitForSecondsRealtime(0.5f);
@@ -280,6 +280,10 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 		}
 		_playerUI.SetActive(false);
 
+		if (!PhaseManager.Instance.isNight)
+		{
+			SoundManager.Instance.PlayBgm(EBgmType.Game);
+		} else SoundManager.Instance.PlayBgm(EBgmType.Game_Night);
 		OnEncounterClose?.Invoke();
 		OnEncounterClose = null;
 	}
