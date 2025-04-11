@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -6,16 +7,15 @@ public class DownCanvas : MonoBehaviour
 {
     public TextMeshProUGUI NotificationText;
     public GameObject DownBar;
-    public Vector3 OriginaPosition;
     public Transform StartPosition;
-    public Transform EndPosition;
-    //public string CurrentString;
-    //private string NotificationContent;
+
+
     void Start()
     {
-        OriginaPosition =  DownBar.transform.position;
+        Vector3 originalPosition = DownBar.transform.position;
+        DownBar.transform.position = StartPosition.transform.position;
+        DownBar.transform.DOMove(originalPosition, 2f).SetEase(Ease.InOutCubic).SetDelay(2f);
 
-        //NotificationContent = NotificationText.text;
         //GridBuildingSystem.Instance.OnBuildFailed += 건설실패띄우는함수;
         GridBuildingSystem.Instance.OnBuildFailed += Notification;
     }

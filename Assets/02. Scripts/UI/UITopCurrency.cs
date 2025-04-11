@@ -17,15 +17,24 @@ public class UITopCurrency : MonoBehaviour
     public Sprite SunSprite;
     public Sprite NightSprite;
     public Image CurrentDayImage;
+    public GameObject TopCanvas;
+    public Transform StartPosition;
+
     private float GameHours = 12f; // 게임 내에서 표현되는 시간
     private float conversionFactor; // 변환 비율
     private float inGameHours;
-
+    
+    
     private Dictionary<ResourceType, float> _currentDisplayValues = new Dictionary<ResourceType, float>();
     [SerializeField] private float _resourceAnimationDuration = 0.5f;
 
     private void Start()
-    {       
+    {
+
+        Vector3 originalPosition = TopCanvas.transform.position;
+        TopCanvas.transform.position = StartPosition.position;
+        TopCanvas.transform.DOMove(originalPosition, 2f).SetEase(Ease.InOutCubic).SetDelay(2f);
+
         InitializeCurrentValues();
         DisplayTopResources();
         ResourceManager.Instance.OnReourceChange += DisplayTopResources;
