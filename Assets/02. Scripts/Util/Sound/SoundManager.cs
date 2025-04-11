@@ -16,6 +16,9 @@ public class SoundManager : Singleton<SoundManager> // 문의 : 수민
     AudioSource[] sfxPlayers;                           // SFX는 동시에 여러개가 실행됨
     int channelIndex;
 
+    [Header("# PlayingInfo")]
+    private string _currentBGM;
+
     public float BGMVolume
     {
         get => GetVolume(AudioType.BGM);
@@ -71,8 +74,13 @@ public class SoundManager : Singleton<SoundManager> // 문의 : 수민
     public void PlayBgm(EBgmType bgm)
     {
         if (bgmPlayer == null) return;
+        if(_currentBGM == bgm.ToString())
+        {
+            return;
+        }
         bgmPlayer.clip = bgmClips[(int)bgm];
         bgmPlayer.Play();
+        _currentBGM = bgm.ToString();
     }
 
     public void StopBgm()
