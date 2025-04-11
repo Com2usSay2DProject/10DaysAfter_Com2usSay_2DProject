@@ -23,12 +23,11 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         //PhaseManager.Instance.OnNightBegin += SetPath;
-        SetPath();
+        //SetPath();
     }
     private void OnEnable()
     {
-        _pathSetList.Clear();
-        SetPath();
+        //SetPath();
         //_pathNomal.Clear();
         //_pathTowrTarget.Clear();
         //SetPath();
@@ -120,7 +119,7 @@ public class EnemySpawner : MonoBehaviour
 
     }
 
-    private void SetPath()
+    public void SetPath()
     {
 
         _pathSetList.Clear();

@@ -108,6 +108,7 @@ public class EnemySpawnerManager : MonoBehaviour
 
         UniqueSpawner = Instantiate(spawnerPrefab).GetComponent<EnemySpawner>();
         SetRandPos(UniqueSpawner);
+        UniqueSpawner.SetPath();
     }
     IEnumerator SpawnAtRandomIntervals(EnemySpawner spawner)
     {
@@ -167,6 +168,7 @@ public class EnemySpawnerManager : MonoBehaviour
         //나중에 코루틴 종료할때 필요해서 저장
         foreach (var spawner in spawners)
         {
+            spawner.SetPath();
             spawner.gameObject.SetActive(true);
             if (!spawnerCoroutines.ContainsKey(spawner))
             {
@@ -217,6 +219,7 @@ public class EnemySpawnerManager : MonoBehaviour
 
         // 선택된 위치로 현재 스포너 이동
         spawner.transform.position = randomSpawnerPos;
+        spawner.SetPath();
     }
 
 

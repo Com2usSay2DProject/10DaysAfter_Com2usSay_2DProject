@@ -7,5 +7,6 @@ public enum EEnemyType
     Crawler,
     Unique1,
     Unique2,
+    Boss,
     Count,
 }
