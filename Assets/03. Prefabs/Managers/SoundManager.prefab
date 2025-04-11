@@ -46,11 +46,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmClips:
   - {fileID: 8300000, guid: c86b32c6417b8d84a842924689bfeb81, type: 3}
+  - {fileID: 8300000, guid: 071f4cdf3b7c86a4789ff5201bfd8e68, type: 3}
+  - {fileID: 8300000, guid: 9caafc7cfa6cd24409e0637cbd827706, type: 3}
   bgmVolume: 1
   sfxClips:
   - {fileID: 8300000, guid: 5a5c1c9ff44839447b3c9beb08a5b9f7, type: 3}
   - {fileID: 8300000, guid: 08ac28376fa04e242a38f592a087ab3b, type: 3}
   - {fileID: 8300000, guid: f0e4ff1af0fe89448892caa6fc728514, type: 3}
   - {fileID: 8300000, guid: 916953b2410e61d4b987003effa8f52a, type: 3}
+  - {fileID: 8300000, guid: 30da25de867402c4fb43c70a0b764c56, type: 3}
   sfxVolume: 1
   channels: 30

@@ -27,6 +27,8 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 	private Coroutine _blinkCoroutine;
 	private Coroutine _textEffect;
 
+	public int TextSoundInterval = 3;
+
 	public Action OnEncounterClose;
 
 	private void Awake()
@@ -80,6 +82,12 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 		for (int i = 0; i < text.Length; i++)
 		{
 			stringBuilder.Append(text[i]);
+
+			if (i % TextSoundInterval == 0 && !char.IsWhiteSpace(text[i]))
+			{
+				SoundManager.Instance.PlaySfx(ESfxType.Type);
+			}
+
 			_encounterText.text = stringBuilder.ToString();
 			yield return new WaitForSecondsRealtime(0.01f);
 		}
@@ -204,6 +212,7 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 					}
 				}
 			}
+
 			if (canAfford)
 			{
 				button.GetComponent<Button>().onClick.AddListener(() =>

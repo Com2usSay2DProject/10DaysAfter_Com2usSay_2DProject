@@ -6,14 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/01. Scenes/HyungJin_Title.unity
-    guid: 93ea8d82252f7c04aa9d821164a59a2d
+    path: Assets/01. Scenes/FinalTest/FinalTitle.unity
+    guid: 07ab9589654309346a04c74cc57ae627
   - enabled: 1
-    path: Assets/01. Scenes/SuminFromProto.unity
-    guid: cd3b99816f6e79f47870620c71de49e8
+    path: Assets/01. Scenes/FinalTest/FinalMain.unity
+    guid: 13575d0e2f45500428ef8f0277409e7f
   - enabled: 1
-    path: Assets/01. Scenes/EndingCredits.unity
-    guid: 965ecf549e0ade045b1f07bffe051dc6
+    path: Assets/01. Scenes/FinalTest/FinalEnding.unity
+    guid: 00c52a038e3520445bac946e7377f526
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 68dd293eee0084b4796b0fadc5bb533a, type: 3}
   m_UseUCBPForAssetBundles: 0
