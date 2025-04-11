@@ -18,27 +18,12 @@ public class UIManager : Singleton<UIManager>
 
     public bool isBuildModeActive = false; // 빌드 모드 활성화 여부
 
-    private void Awake()
-    {
-        //Instance = this;
-        
-    }
     public void Start()
     {
         foreach(UIPage page in UIPages)
         {
             page.gameObject.SetActive(false);
         }
-    }
-
-    public void SetGold()
-    {
-
-    }
-
-    public void SetItem() 
-    { 
-    
     }
 
     public void DisplayTopResources(ResourceType type, int amount)
