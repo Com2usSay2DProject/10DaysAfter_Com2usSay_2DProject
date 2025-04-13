@@ -32,6 +32,8 @@ public class EnemyAttackState : EnemyState
         {
             _stateMachine.ChangeState(_enemyBase.MoveState);
 
+            if (_enemyBase.TargetSelector.FindTarget(ETargetType.MainTower) == null) return;
+
             List<Vector3> pathList = Pathfinding.FindPath(_enemyBase.transform.position, _enemyBase.TargetSelector.FindTarget(ETargetType.MainTower).transform.position);
             if (pathList != null && pathList.Count > 0)
             {

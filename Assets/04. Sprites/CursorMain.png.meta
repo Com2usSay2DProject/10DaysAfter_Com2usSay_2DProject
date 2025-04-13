@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2f7eac265d999874d86bd62c61d52188
+guid: 2f55a55005ccf694e9cf7e080bc7655b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2933493413206537530
-    second: BADEND_02_0
+      213: -1492703463844802421
+    second: "ChatGPT Image 2025\uB144 4\uC6D4 13\uC77C \uC624\uD6C4 12_14_26_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -24,7 +24,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 2
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -57,7 +57,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 8
+  textureType: 7
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -72,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BADEND_02_0
+      name: "ChatGPT Image 2025\uB144 4\uC6D4 13\uC77C \uC624\uD6C4 12_14_26_0"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1536
-        height: 1024
+        x: 223
+        y: 88
+        width: 563
+        height: 834
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a35bf1d87bcd5b820800000000000000
-      internalID: 2933493413206537530
+      spriteID: b80198abb1ad84be0800000000000000
+      internalID: -1492703463844802421
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BADEND_02_0: 2933493413206537530
+      "ChatGPT Image 2025\uB144 4\uC6D4 13\uC77C \uC624\uD6C4 12_14_26_0": -1492703463844802421
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

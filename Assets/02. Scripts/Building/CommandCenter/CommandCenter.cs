@@ -5,14 +5,15 @@ public class CommandCenter : TowerRoot
     private float _timer;
 
     //프리팹에 저장된 포지션 그대로 쓸 것
-    void Start()
+    protected override void Start()
     {
-        base.Start();
+        //base.Start();
         Place();
     }
 
     private void Update()
     {
+        _hp = 2000;
         _timer += Time.deltaTime;
 
         if(_timer > _atkSpeed)
@@ -32,7 +33,7 @@ public class CommandCenter : TowerRoot
         SoundManager.Instance.PlaySfx(ESfxType.BuildingExplode);
 
         //TODO: 배드엔딩 로직
-        EncounterManager.Instance.BadEnd02();
+        //EncounterManager.Instance.BadEnd02();
 
         Destroy(gameObject);
     }

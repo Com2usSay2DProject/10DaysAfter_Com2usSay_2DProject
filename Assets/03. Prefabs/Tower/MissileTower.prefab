@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5796355606717759355}
   - component: {fileID: 9000863416204762014}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: samsite1_5_a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5505740200219177178}
   - component: {fileID: 1642266837398863161}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: samsite1_1_a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 7781017549173608812}
   - component: {fileID: 2622370767298490946}
   - component: {fileID: 8424420026870597673}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: MissileTower
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -405,7 +405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 689470682081607486}
   - component: {fileID: 3610728832622263670}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: samsite1_8_a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3312813106459893892}
   - component: {fileID: 8406900524171401741}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: samsite1_2_a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -579,7 +579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7145118915408783830}
   - component: {fileID: 147858921962079826}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: samsite1_3_a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -666,7 +666,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8639290355328272784}
   - component: {fileID: 1362009018071654920}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -778,7 +778,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5974561803633375959}
   - component: {fileID: 8647876304068277327}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: samsite1_4_a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -865,7 +865,7 @@ GameObject:
   m_Component:
   - component: {fileID: 33795623268291793}
   - component: {fileID: 3916228760316780188}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: samsite1_7_a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -952,7 +952,7 @@ GameObject:
   m_Component:
   - component: {fileID: 721451897419991832}
   - component: {fileID: 5107272626564783403}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: samsite1_6_a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1043,7 +1043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 953483408028025522, guid: 5836d71bdb20b224684595e53c4cd7a3, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 953483408028025522, guid: 5836d71bdb20b224684595e53c4cd7a3, type: 3}
       propertyPath: m_IsActive
@@ -1099,7 +1099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5247490260979725167, guid: 5836d71bdb20b224684595e53c4cd7a3, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5585735163836008018, guid: 5836d71bdb20b224684595e53c4cd7a3, type: 3}
       propertyPath: m_Materials.Array.size
@@ -1107,7 +1107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6316574243622504644, guid: 5836d71bdb20b224684595e53c4cd7a3, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

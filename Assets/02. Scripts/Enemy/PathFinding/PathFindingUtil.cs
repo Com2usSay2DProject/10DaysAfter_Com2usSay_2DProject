@@ -1,10 +1,5 @@
-using CityBuilderCore;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 public static class Pathfinding
 {
     public static List<Vector3> FindPath(Vector3 startWorld, Vector3 targetWorld)

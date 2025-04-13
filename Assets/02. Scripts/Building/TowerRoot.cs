@@ -100,6 +100,10 @@ public class TowerRoot : Building
     {
         _collider.enabled = true;
         _spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
+        if(_buildEffect != null)
+            _buildEffect.SetActive(true);
+        if(SoundManager.Instance !=null)
+            SoundManager.Instance.PlaySfx(ESfxType.BuildSound);
         StartCoroutine(CoBuildRoutine());
     }
 
@@ -112,7 +116,8 @@ public class TowerRoot : Building
             timer += Time.deltaTime;
             yield return null;
         }
-        ResourceManager.Instance.AddResource(ResourceType.Population, 10);
+        ResourceManager.Instance.AddResource(ResourceType.Population, 3);
+
         _spriteRenderer.color = Color.white;
         IsPlaced = true;
     }
@@ -130,8 +135,7 @@ public class TowerRoot : Building
     {
         BoundsInt areaToClean = GetGridArea();
         GridBuildingSystem.Instance.ClearArea(areaToClean);
-
-        ResourceManager.Instance.TryUseResource(ResourceType.Population, 10);
+        ResourceManager.Instance.TryUseResource(ResourceType.Population, 2);
         GameObject explode = EffectPoolManager.Instance.GetObject(EEffectType.BuildingExplode);
         explode.transform.position = transform.position;
         SoundManager.Instance.PlaySfx(ESfxType.BuildingExplode);

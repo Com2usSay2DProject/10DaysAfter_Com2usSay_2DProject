@@ -15,9 +15,9 @@ public class TowerDataManager : Singleton<TowerDataManager>
     private void LoadTowerData()
     {
         if (TowerDataDictionary != null) return;
-
+        TowerDataCollection collection;
 #if UNITY_EDITOR
-        TowerDataCollection collection = JsonDataManager.LoadFromFile<TowerDataCollection>("Tower/TowerDataCollection");
+        collection = JsonDataManager.LoadFromFile<TowerDataCollection>("Tower/TowerDataCollection");
 #else
         TextAsset jsonText = Resources.Load<TextAsset>("Json/Tower/TowerDataCollection");
         if(jsonText == null)

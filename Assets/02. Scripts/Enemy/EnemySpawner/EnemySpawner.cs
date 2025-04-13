@@ -22,6 +22,7 @@ public class EnemySpawner : MonoBehaviour
     private GameObject MainTowerTarget;
     private void Start()
     {
+        //ResourceManager.Instance.AddResource(ResourceType.Population)
         //PhaseManager.Instance.OnNightBegin += SetPath;
         SetPath();
     }

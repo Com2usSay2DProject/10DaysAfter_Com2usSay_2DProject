@@ -29,23 +29,52 @@ public class EncounterManager : Singleton<EncounterManager>
 
 	private void LoadAllEncounters()
 	{
-		string path = Application.dataPath + "/Resources/Json/Encounters";
-		if (!Directory.Exists(path)) return;
+#if UNITY_EDITOR
+        // 에디터에서만 실제 파일 시스템 경로를 이용
+        string path = Application.dataPath + "/Resources/Json/Encounters";
+        if (!Directory.Exists(path)) return;
 
-		string[] files = Directory.GetFiles(path, "*.json");
-		foreach (string file in files)
-		{
-			string rawJson = File.ReadAllText(file);
-			GameEncounter e = JsonDataManager.FromJson<GameEncounter>(rawJson);
-			if (e != null)
-			{
-				GameEncounters.Add(e);
-			}
-		}
-	}
+        string[] files = Directory.GetFiles(path, "*.json");
+        foreach (string file in files)
+        {
+            string rawJson = File.ReadAllText(file);
+            GameEncounter e = JsonDataManager.FromJson<GameEncounter>(rawJson);
+            if (e != null)
+            {
+                GameEncounters.Add(e);
+            }
+        }
 
-	// 페이즈 전환 시 이벤트 발생 or 미발생 (조건 중 랜덤으로 골라옴)
-	public void TriggerEncounter(int currentDay)
+#else
+    // 빌드된 환경에선 Resources.LoadAll 사용
+    TextAsset[] files = Resources.LoadAll<TextAsset>("Json/Encounters");
+    foreach (TextAsset textAsset in files)
+    {
+        GameEncounter e = JsonDataManager.FromJson<GameEncounter>(textAsset.text);
+        if (e != null)
+        {
+            GameEncounters.Add(e);
+        }
+    }
+#endif
+
+        //string path = Application.dataPath + "/Resources/Json/Encounters";
+        //if (!Directory.Exists(path)) return;
+
+        //string[] files = Directory.GetFiles(path, "*.json");
+        //foreach (string file in files)
+        //{
+        //	string rawJson = File.ReadAllText(file);
+        //	GameEncounter e = JsonDataManager.FromJson<GameEncounter>(rawJson);
+        //	if (e != null)
+        //	{
+        //		GameEncounters.Add(e);
+        //	}
+        //}
+    }
+
+    // 페이즈 전환 시 이벤트 발생 or 미발생 (조건 중 랜덤으로 골라옴)
+    public void TriggerEncounter(int currentDay)
 	{
 		Debug.Log($"triggered encounter day {currentDay}");
 		List<GameEncounter> validEncounter = new();

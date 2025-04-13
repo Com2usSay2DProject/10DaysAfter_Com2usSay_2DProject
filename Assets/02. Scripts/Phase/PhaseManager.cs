@@ -105,8 +105,13 @@ public class PhaseManager : Singleton<PhaseManager>
 
 	private void Awake()
 	{
-		Initialize_DontDestroyOnLoad();
-	}
+		//Initialize_DontDestroyOnLoad();
+        if (_instance == null)
+        {
+			_instance = this;
+            DontDestroyOnLoad(gameObject); 
+        }
+    }
 
 	private void Start()
 	{

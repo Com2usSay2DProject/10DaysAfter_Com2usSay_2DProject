@@ -80,7 +80,11 @@ public class Enemy : MonoBehaviour
         if (_stateMachine.IsInited)
             _stateMachine.ChangeState(IdleState);
 
-        Hp = Data.MaxHp;
+        int bonusDay = Mathf.Max(0, PhaseManager.Instance.CurrentDay - 1);
+        float baseGrowth = 1.18f;
+        float bonusMultiplier = Mathf.Pow(baseGrowth, bonusDay); 
+        Hp = (int)(Data.MaxHp * bonusMultiplier);
+
         IsDead = false;
         _collider2D.enabled = true;
         _spriteRenderer.color = new Color(1, 1, 1, 1);
