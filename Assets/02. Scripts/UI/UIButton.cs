@@ -18,6 +18,18 @@ public class UIButton: UI_TouchBounce
         button = GetComponent<Button>();
     }
 
+    public void OnExitConfirmed()
+    {
+        // 게임 종료
+        Application.Quit();
+
+        // 에디터 상에서는 종료되지 않으므로 아래 코드 참고
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
+
+
     public void OnClickDisplayResource(string resource)
     {
 
@@ -25,11 +37,6 @@ public class UIButton: UI_TouchBounce
         {
             ResourceManager.Instance.AddResource(resourceType, 300);
         }
-
-        //var input = Enum.Parse(ResourceType, resorceType, true);
-        //UIManager.Instance.DisplayTopResources();
-        //ResourceManager.Instance.AddResource(ResourceType.Wood, 300);
-        //UIManager.Instance.DisplayTopResources(ResourceType.Wood, 300);
     }
 
     public void OnClickBuildMode()

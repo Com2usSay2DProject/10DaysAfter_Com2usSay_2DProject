@@ -19,6 +19,7 @@ public class UITopCurrency : MonoBehaviour
     public Image CurrentDayImage;
     public GameObject TopCanvas;
     public Transform StartPosition;
+    public GameObject ExitPage;
 
     private float GameHours = 12f; // 게임 내에서 표현되는 시간
     private float conversionFactor; // 변환 비율
