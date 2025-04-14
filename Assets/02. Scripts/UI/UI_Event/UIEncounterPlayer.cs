@@ -221,6 +221,7 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 				button.GetComponent<Button>().onClick.AddListener(() =>
 				{
 					EncounterManager.Instance.ResolveEncounter(choice);
+					SoundManager.Instance.PlaySfx(ESfxType.BuildSound);
 
 					//같은 인카운터 내 선택지로 반응 바뀌는 용
 					if (choice.nextPageIndex >= 0 && choice.nextPageIndex < _currentEncounter.Pages.Count)

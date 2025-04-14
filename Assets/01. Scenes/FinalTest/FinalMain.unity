@@ -294070,7 +294070,23 @@ PrefabInstance:
       objectReference: {fileID: 837715679069067520, guid: 1fa2e5435df8569459d88abc96e31366, type: 3}
     - target: {fileID: 4146804072151017660, guid: edbdb3ffdb73d354b98f597549d1d291, type: 3}
       propertyPath: _poolInfoList.Array.data[0].InitCount
-      value: 80
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146804072151017660, guid: edbdb3ffdb73d354b98f597549d1d291, type: 3}
+      propertyPath: _poolInfoList.Array.data[1].InitCount
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146804072151017660, guid: edbdb3ffdb73d354b98f597549d1d291, type: 3}
+      propertyPath: _poolInfoList.Array.data[2].InitCount
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146804072151017660, guid: edbdb3ffdb73d354b98f597549d1d291, type: 3}
+      propertyPath: _poolInfoList.Array.data[3].InitCount
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146804072151017660, guid: edbdb3ffdb73d354b98f597549d1d291, type: 3}
+      propertyPath: _poolInfoList.Array.data[4].InitCount
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4146804072151017660, guid: edbdb3ffdb73d354b98f597549d1d291, type: 3}
       propertyPath: _poolInfoList.Array.data[5].Container
@@ -294078,7 +294094,7 @@ PrefabInstance:
       objectReference: {fileID: 1503913065}
     - target: {fileID: 4146804072151017660, guid: edbdb3ffdb73d354b98f597549d1d291, type: 3}
       propertyPath: _poolInfoList.Array.data[5].InitCount
-      value: 30
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4146804072151017660, guid: edbdb3ffdb73d354b98f597549d1d291, type: 3}
       propertyPath: _poolInfoList.Array.data[6].Container
