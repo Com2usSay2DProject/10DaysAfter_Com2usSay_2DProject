@@ -708,7 +708,7 @@ MonoBehaviour:
   targetY: 3000
   duration: 20
   delayAfter: 2
-  nextScene: HyungJin_Title
+  nextScene: FinalTitle
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
