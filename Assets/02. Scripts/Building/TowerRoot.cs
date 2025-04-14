@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TowerRoot : Building
@@ -30,9 +31,13 @@ public class TowerRoot : Building
         _collider = GetComponent<Collider2D>();
     }
 
-    protected virtual void Start()
+
+    protected override void OnEnable()
     {
+        base.OnEnable();
         TryInitializeData();
+        _collider.enabled = false;
+        _spriteRenderer.color = _tempColor;
     }
 
     private void TryInitializeData()
@@ -70,9 +75,6 @@ public class TowerRoot : Building
 
         CostDataDict = TowerDataManager.Instance.GetTowerCost(TowerType);
         _isDataInitialized = true;
-        
-        // 초기화 후 첫 스탯 업데이트
-        UpdateStats();
     }
 
     private void UpdateStats()
@@ -83,17 +85,9 @@ public class TowerRoot : Building
             return;
         }
 
-        _maxHp = TowerDataManager.Instance.GetModifiedStat(TowerType, "MaxHp", Data.MaxHp);
-        _damage = TowerDataManager.Instance.GetModifiedStat(TowerType, "Damage", Data.Damage);
-        _range = TowerDataManager.Instance.GetModifiedStat(TowerType, "Range", Data.Range);
-    }
-
-    protected override void OnEnable()
-    {
-        base.OnEnable();
-        TryInitializeData();
-        _collider.enabled = false;
-        _spriteRenderer.color = _tempColor;
+        _maxHp = TowerDataManager.Instance.GetModifiedStat(TowerType, Data.MaxHp);
+        _damage = TowerDataManager.Instance.GetModifiedStat(TowerType, Data.Damage);
+        _range = TowerDataManager.Instance.GetModifiedStat(TowerType, Data.Range);
     }
 
     protected override void OnPlaced()
@@ -117,7 +111,7 @@ public class TowerRoot : Building
             yield return null;
         }
         ResourceManager.Instance.AddResource(ResourceType.Population, 3);
-
+        UpdateStats();
         _spriteRenderer.color = Color.white;
         IsPlaced = true;
     }

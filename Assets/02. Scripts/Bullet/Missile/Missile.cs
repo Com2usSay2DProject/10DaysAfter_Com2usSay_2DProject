@@ -77,7 +77,10 @@ public class Missile : MonoBehaviour
         }
 
         //TODO : 폭발 이펙트
-        Instantiate(_explodeEffect, transform.position, Quaternion.identity);
+        //Instantiate(_explodeEffect, transform.position, Quaternion.identity);
+        GameObject explodeEffect = EffectPoolManager.Instance.GetObject(EEffectType.MissileExplode);
+        explodeEffect.transform.position = transform.position;
+
 
         BulletPoolManager.Instance.ReturnObject(gameObject, Type);
     }

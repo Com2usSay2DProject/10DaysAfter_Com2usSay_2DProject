@@ -40,10 +40,7 @@ public class TowerDataManager : Singleton<TowerDataManager>
     {
         if (TowerDataDictionary.TryGetValue(towerType, out TowerData data))
         {
-            // 데이터 복사본 반환
-            TowerData newData = new TowerData();
-            newData = data;
-            return newData;
+            return data;
         }
         
         Debug.LogError($"타워 데이터 없음: {towerType}");
@@ -63,23 +60,11 @@ public class TowerDataManager : Singleton<TowerDataManager>
         return costDict;
     }
 
-    public float GetModifiedStat(ETowerType towerType, string statName, float baseValue)
+    public float GetModifiedStat(ETowerType towerType, float baseValue)
     {
         TowerData data = GetTowerData(towerType);
         if (data == null) return baseValue;
 
         return data.GetModifiedStat(baseValue, ResourceManager.Instance.GetResourceAmount(ResourceType.Population));
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -5,7 +5,7 @@ public class CommandCenter : TowerRoot
     private float _timer;
 
     //프리팹에 저장된 포지션 그대로 쓸 것
-    protected override void Start()
+    private void Start()
     {
         //base.Start();
         Place();

@@ -61,7 +61,6 @@ public abstract class Building : MonoBehaviour
         if (!CanBePlaced()) return;
         
         GridBuildingSystem.Instance.TakeArea(GetGridArea());
-        _collider.isTrigger = false;  // 배치 후에는 실제 충돌체로 변경
         OnPlaced();
     }
 
