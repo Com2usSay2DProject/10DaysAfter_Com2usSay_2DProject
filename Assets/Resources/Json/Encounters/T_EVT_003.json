@@ -52,7 +52,7 @@
             "Choices": [],
             "nextPageIndex": -1,
             "bgm": "",
-            "sfx": ""
+            "sfx": "StoryExplosion"
         },
         {
             "text": "/(총격음)",
@@ -60,7 +60,7 @@
             "Choices": [],
             "nextPageIndex": -1,
             "bgm": "",
-            "sfx": ""
+            "sfx": "Shooting"
         },
         {
             "text": "/쾅",
@@ -68,7 +68,7 @@
             "Choices": [],
             "nextPageIndex": -1,
             "bgm": "",
-            "sfx": ""
+            "sfx": "HitImpact"
         },
         {
             "text": "\"지휘관님! 무사하십니까! 방금까지...\"",

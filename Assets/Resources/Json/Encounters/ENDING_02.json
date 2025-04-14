@@ -12,7 +12,7 @@
             "Choices": [],
             "nextPageIndex": -1,
             "bgm": "",
-            "sfx": ""
+            "sfx": "Beep"
         },
         {
             "text": "\"아 됐다, 원래 나는...\"",
@@ -28,7 +28,7 @@
             "Choices": [],
             "nextPageIndex": -1,
             "bgm": "",
-            "sfx": ""
+            "sfx": "GunShot"
         },
         {
             "text": "...",
@@ -68,7 +68,7 @@
             "Choices": [],
             "nextPageIndex": -1,
             "bgm": "",
-            "sfx": ""
+            "sfx": "GunShot"
         },
         {
             "text": "\"미치광이 이상론자는 빨리 죽어 주시죠.\"",
@@ -92,7 +92,7 @@
             "Choices": [],
             "nextPageIndex": -1,
             "bgm": "",
-            "sfx": ""
+            "sfx": "Static"
         },
         {
             "text": "\"그렇다 해도, 바로 멈추는지는 모르겠는데.\"",
@@ -116,14 +116,14 @@
             "Choices": [],
             "nextPageIndex": -1,
             "bgm": "",
-            "sfx": ""
+            "sfx": "Outro"
         },
         {
             "text": "목표일 당일 / 06:27",
             "imagePath": "ending_02",
             "Choices": [],
             "nextPageIndex": -1,
-            "bgm": "",
+            "bgm": "Ending_02",
             "sfx": ""
         },
         {

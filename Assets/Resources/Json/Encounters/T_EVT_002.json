@@ -16,7 +16,9 @@
             "text": "/치직-",
             "imagePath": "",
             "Choices": [],
-            "nextPageIndex": -1
+            "nextPageIndex": -1,
+            "bgm": "",
+            "sfx": "Static"
         },
         {
             "text": "...다수 지역에서 통신 장애...",
@@ -32,7 +34,7 @@
         },
         {
             "text": "/치직-",
-            "imagePath": "",
+            "imagePath": "Static2",
             "Choices": [],
             "nextPageIndex": -1
         },
@@ -58,7 +60,7 @@
         },
         {
             "text": "/치지직-",
-            "imagePath": "",
+            "imagePath": "Static",
             "Choices": [],
             "nextPageIndex": -1
         },
@@ -76,7 +78,7 @@
         },
         {
             "text": "/치지지직-",
-            "imagePath": "",
+            "imagePath": "Static2",
             "Choices": [],
             "nextPageIndex": -1
         },

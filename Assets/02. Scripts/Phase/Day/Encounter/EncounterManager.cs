@@ -113,7 +113,7 @@ public class EncounterManager : Singleton<EncounterManager>
 		switch (currentDay)
 		{
 			case 1:
-				storyId = PhaseManager.Instance.isNight ? "T_EVT_002" : "T_EVT_001";
+				storyId = PhaseManager.Instance.isNight ? "T_EVT_002" : "ENDING_02";
 				break;
 			case 2:
 				if (!PhaseManager.Instance.isNight)storyId = "T_EVT_003";

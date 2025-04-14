@@ -52,7 +52,7 @@
             "Choices": [],
             "nextPageIndex": -1,
             "bgm": "",
-            "sfx": ""
+            "sfx": "Beep"
         },
         {
             "text": "\"무슨 놈의 방해전파가 날이 갈수록 이렇게 세지지?\"",
@@ -156,7 +156,7 @@
             "Choices": [],
             "nextPageIndex": -1,
             "bgm": "",
-            "sfx": ""
+            "sfx": "outro"
         }
     ]
 }

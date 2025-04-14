@@ -85,6 +85,7 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 
 			if (i % TextSoundInterval == 0 && !char.IsWhiteSpace(text[i]))
 			{
+				SoundManager.Instance.OnVolumeChanged(SoundManager.AudioType.SFX, 1f);
 				SoundManager.Instance.PlaySfx(ESfxType.Type);
 			}
 
@@ -148,6 +149,7 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 		{
 			if (Enum.TryParse<ESfxType>(page.sfx, out var sfxType))
 			{
+				Debug.Log($"playing sfx {page.sfx}");
 				SoundManager.Instance.PlaySfx(sfxType);
 			}
 		}
@@ -221,7 +223,7 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 				button.GetComponent<Button>().onClick.AddListener(() =>
 				{
 					EncounterManager.Instance.ResolveEncounter(choice);
-					SoundManager.Instance.PlaySfx(ESfxType.BuildSound);
+					//SoundManager.Instance.PlaySfx(ESfxType.BuildSound);
 
 					//같은 인카운터 내 선택지로 반응 바뀌는 용
 					if (choice.nextPageIndex >= 0 && choice.nextPageIndex < _currentEncounter.Pages.Count)
@@ -287,6 +289,7 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 	private void Close()
 	{
 		Time.timeScale = 1f;
+		SoundManager.Instance.OnVolumeChanged(SoundManager.AudioType.SFX, 0.5f);
 
 		if (_currentEncounter != null)
 		{

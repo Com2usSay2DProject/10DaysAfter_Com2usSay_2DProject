@@ -1640,18 +1640,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
-    - target: {fileID: 7297665227272696241, guid: 8c5234e612ce72840a50d00c0c3592fe, type: 3}
-      propertyPath: channels
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7297665227272696241, guid: 8c5234e612ce72840a50d00c0c3592fe, type: 3}
-      propertyPath: bgmVolume
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7297665227272696241, guid: 8c5234e612ce72840a50d00c0c3592fe, type: 3}
-      propertyPath: sfxVolume
-      value: 0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
