@@ -297,10 +297,19 @@ public class UIEncounterPlayer : Singleton<UIEncounterPlayer>
 		}
 		_playerUI.SetActive(false);
 
-		if (!PhaseManager.Instance.isNight)
+		if(_currentEncounter.EncounterId == "ENDING_01" || _currentEncounter.EncounterId == "ENDING_02")
 		{
-			SoundManager.Instance.PlayBgm(EBgmType.Game);
-		} else SoundManager.Instance.PlayBgm(EBgmType.Game_Night);
+
+		}
+		else
+		{
+			if (!PhaseManager.Instance.isNight)
+			{
+				SoundManager.Instance.PlayBgm(EBgmType.Game);
+			}
+			else SoundManager.Instance.PlayBgm(EBgmType.Game_Night);
+		}
+		
 		OnEncounterClose?.Invoke();
 		OnEncounterClose = null;
 	}

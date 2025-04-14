@@ -66,7 +66,7 @@ public class PhaseManager : Singleton<PhaseManager>
 				if (_currentDay >= 10)
 				{
 					//엔딩 추가 (씬 전환)
-
+					StopAllCoroutines();
 					Debug.Log("축하합니다 10일 끝입니다");
 				}
 				OnDayBegin?.Invoke();                           //이벤트 시작

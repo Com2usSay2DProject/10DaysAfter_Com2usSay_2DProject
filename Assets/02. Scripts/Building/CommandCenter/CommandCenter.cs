@@ -33,7 +33,7 @@ public class CommandCenter : TowerRoot
         SoundManager.Instance.PlaySfx(ESfxType.BuildingExplode);
 
         //TODO: 배드엔딩 로직
-        //EncounterManager.Instance.BadEnd02();
+        EncounterManager.Instance.BadEnd02();
 
         Destroy(gameObject);
     }
