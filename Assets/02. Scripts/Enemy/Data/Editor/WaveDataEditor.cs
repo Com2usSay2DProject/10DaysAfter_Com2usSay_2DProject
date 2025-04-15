@@ -42,6 +42,7 @@ public class WaveDataEditor : EditorWindow
 
             EditorGUILayout.LabelField($"Wave {i + 1}", EditorStyles.boldLabel);
 
+            wave.spawnerCount = EditorGUILayout.IntField("Use SpawnerCount", wave.spawnerCount);
             wave.spawnMinnum = EditorGUILayout.IntField("Spawn Min Num", wave.spawnMinnum);
             wave.spawnMaxnum = EditorGUILayout.IntField("Spawn Max Num", wave.spawnMaxnum);
             wave.minSpawnDelay = EditorGUILayout.FloatField("Min Spawn Delay", wave.minSpawnDelay);

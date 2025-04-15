@@ -3,6 +3,7 @@ using System;
 [Serializable]
 public class WaveData
 {
+    public int spawnerCount;
     public int spawnMinnum;
     public int spawnMaxnum;
     public float minSpawnDelay;

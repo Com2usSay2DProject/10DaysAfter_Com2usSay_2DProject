@@ -294114,11 +294114,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5016515145468676071, guid: edbdb3ffdb73d354b98f597549d1d291, type: 3}
       propertyPath: _spawnRadiusMax
-      value: 7
+      value: 9.88
       objectReference: {fileID: 0}
     - target: {fileID: 5016515145468676071, guid: edbdb3ffdb73d354b98f597549d1d291, type: 3}
       propertyPath: _spawnRadiusMin
-      value: 5
+      value: 5.8
       objectReference: {fileID: 0}
     - target: {fileID: 5016515145468676071, guid: edbdb3ffdb73d354b98f597549d1d291, type: 3}
       propertyPath: spawners.Array.size

@@ -15,7 +15,7 @@ public class EnemySpawnerManager : MonoBehaviour
     [SerializeField] private float _spawnRadiusMax;
 
     //스포너들
-    [SerializeField] private List<EnemySpawner> spawners;
+    private List<EnemySpawner> spawners;
     private EnemySpawner ClusterSpawner;
     private EnemySpawner UniqueSpawner;
 
@@ -39,20 +39,33 @@ public class EnemySpawnerManager : MonoBehaviour
     {
         WaveDatasCurIndex = PhaseManager.Instance.CurrentDay - 1;
 
-        if (spawners.Count == 0)
-        {
-            spawners = new List<EnemySpawner>();
-            for (int i = 0; i < 12; i++)
-            {
-                CreateSpawner();
-            }
-        }
+
+        spawners = new List<EnemySpawner>();
+
+        CreateMainSpawner();
 
         CreateClusterSpanwer();
 
         PhaseManager.Instance.OnDayBegin += DisActiveSpawners;
         PhaseManager.Instance.OnNightBegin += ActiveSpawners;
 
+    }
+
+    private void CreateMainSpawner()
+    {
+        int requiredCount = WaveDatas[WaveDatasCurIndex].spawnerCount;
+        int currentCount = spawners.Count;
+
+        //현재 필요한 갯수와 실제 스포너의 갯수를 비교해서 부족할때만 생성
+        int toCreate = requiredCount - currentCount;
+
+        if (toCreate <= 0)
+            return;
+
+        for (int i = 0; i < toCreate; i++)
+        {
+            CreateSpawner();
+        }
     }
     private void GetData()
     {
@@ -76,7 +89,6 @@ public class EnemySpawnerManager : MonoBehaviour
 
         Debug.Log("웨이브 데이터 로드 완료");
     }
-
     void CreateSpawner()
     {
         // angle은 0 ~ 2π 사이에서 균일하게 선택
@@ -129,7 +141,6 @@ public class EnemySpawnerManager : MonoBehaviour
             }
         }
     }
-
     void DisActiveSpawners()
     {
         WaveDatasCurIndex = PhaseManager.Instance.CurrentDay - 1;
@@ -147,7 +158,7 @@ public class EnemySpawnerManager : MonoBehaviour
         if (ClusterSpawner != null)
         {
             ClusterSpawner.gameObject.SetActive(false);
-            if(ClusterSpawnerCoroutine!=null)
+            if (ClusterSpawnerCoroutine != null)
                 StopCoroutine(ClusterSpawnerCoroutine);
         }
         if (UniqueSpawner != null)
@@ -159,6 +170,7 @@ public class EnemySpawnerManager : MonoBehaviour
     }
     void ActiveSpawners()
     {
+        CreateMainSpawner();
 
         if (ClusterSpawner != null)
             ClusterSpawner.gameObject.SetActive(true);
@@ -187,7 +199,7 @@ public class EnemySpawnerManager : MonoBehaviour
             ClusterSpawnerCoroutine = StartCoroutine(SpawnClusterEnemy(ClusterSpawner));
         }
 
-        if (WaveDatas[WaveDatasCurIndex].useUnipueEnemy && UniqueSpawnerCoroutines ==null)
+        if (WaveDatas[WaveDatasCurIndex].useUnipueEnemy && UniqueSpawnerCoroutines == null)
         {
             SetRandPos(UniqueSpawner);
             UniqueSpawnerCoroutines = StartCoroutine(SpawnUniqueEnemy(UniqueSpawner));
@@ -222,6 +234,16 @@ public class EnemySpawnerManager : MonoBehaviour
         spawner.SetPath();
     }
 
+    //스포너 생성되는 범위 시각적으로 표현
+    private void OnDrawGizmos()
+    {
+        // 스폰 범위를 노란색으로 표시
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, _spawnRadiusMax);
+
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, _spawnRadiusMin);
+    }
 
 }
 
