@@ -292681,6 +292681,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8416644494524006955, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1212314364}
+    - target: {fileID: 8416644494524006955, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416644494524006955, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -2123178505
+      objectReference: {fileID: 0}
     - target: {fileID: 8903198181194449376, guid: 05174dec9e245f64584afa2eacc96208, type: 3}
       propertyPath: m_Name
       value: UI_EventCanvas
@@ -293115,6 +293127,18 @@ PrefabInstance:
     - target: {fileID: 973799117878048839, guid: 49ff10abfd8e86340a205f3f450b30cf, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085377709913446601, guid: 49ff10abfd8e86340a205f3f450b30cf, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1212314364}
+    - target: {fileID: 1085377709913446601, guid: 49ff10abfd8e86340a205f3f450b30cf, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085377709913446601, guid: 49ff10abfd8e86340a205f3f450b30cf, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -2123178505
       objectReference: {fileID: 0}
     - target: {fileID: 2527491082349847710, guid: 49ff10abfd8e86340a205f3f450b30cf, type: 3}
       propertyPath: m_AnchorMax.y
@@ -294564,6 +294588,18 @@ PrefabInstance:
     - target: {fileID: 4966907789740643467, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5768027615810580027, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1212314364}
+    - target: {fileID: 5768027615810580027, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5768027615810580027, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -2123178505
       objectReference: {fileID: 0}
     - target: {fileID: 5837794041115102207, guid: 0d06c5252bc26654aaf97bd0f05b76dc, type: 3}
       propertyPath: m_AnchoredPosition.x
