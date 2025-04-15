@@ -52,6 +52,7 @@ public class Enemy : MonoBehaviour
 
     public void AnimTrigger() => _stateMachine.currentState.AnimFinishTrigger();
 
+
     protected virtual void Awake()
     {
         if (_enemyDataDict == null)
@@ -124,7 +125,6 @@ public class Enemy : MonoBehaviour
     {
         if (_enemyDataDict.TryGetValue(EnemyType, out EnemyData data))
         {
-            Data = new EnemyData();
             Data = data;
         }
         else
@@ -133,11 +133,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnDayBegin() {/* if (IsDead == true) return; _stateMachine.ChangeState(DeadState);*/ }
+    private void OnDayBegin() 
+    {
+    }
     private void OnNightBegin()
     {
-        //_stateMachine.ChangeState(IdleState);
-
     }
 
     protected virtual void Start()
@@ -152,8 +152,6 @@ public class Enemy : MonoBehaviour
         {
             _stateMachine.InitStateMachine(IdleState, this);
         }
-
-
     }
 
     protected virtual void Update()
@@ -162,10 +160,13 @@ public class Enemy : MonoBehaviour
 
         _spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
 
-        if(Input.GetKeyDown(KeyCode.Q))
+#if UNITY_EDITOR
+        //디버그용
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             TakeDamage(0);
         }
+#endif
     }
 
     public virtual void TakeDamage(float damage)
@@ -201,8 +202,10 @@ public class Enemy : MonoBehaviour
 
         if (AttackTerget != null)
         {
+            
             List<Vector3> path = Pathfinding.FindPath(transform.position, AttackTerget.transform.position);
-            Path = new Queue<Vector3>(path);
+            if (path != null && path.Count > 0)
+                Path = new Queue<Vector3>(path);
         }
         else
         {

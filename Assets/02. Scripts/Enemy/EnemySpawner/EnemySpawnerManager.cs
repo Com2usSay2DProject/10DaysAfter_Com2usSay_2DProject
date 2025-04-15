@@ -26,8 +26,8 @@ public class EnemySpawnerManager : MonoBehaviour
 
     [Header("ClusterSpawnerSetting")]
     //[SerializeField] Transform[] ClusterSpawnerPos;
-    [SerializeField] int ClusterEnemyNum;
-    [SerializeField] float ClusterRadius;
+    [SerializeField] private int _clusterEnemyNum;
+    [SerializeField] private float _clusterRadius;
 
     private void Awake()
     {

@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
-using static UnityEngine.GraphicsBuffer;
 
 public class EnemyMoveState : EnemyState
 {
@@ -47,15 +46,15 @@ public class EnemyMoveState : EnemyState
             }
         }
 
-        // 0.2초마다 검사
-        _avoidCheckTimer -= Time.deltaTime;
-        if (_avoidCheckTimer <= 0f)
-        {
-            _cachedAvoidDir = AvoidLogic();
-            _avoidCheckTimer = 0.3f; // 0.3초마다 한 번만 회피 계산
-        }
+        //// 0.2초마다 검사
+        //_avoidCheckTimer -= Time.deltaTime;
+        //if (_avoidCheckTimer <= 0f)
+        //{
+        //    _cachedAvoidDir = AvoidLogic();
+        //    _avoidCheckTimer = 0.3f; // 0.3초마다 한 번만 회피 계산
+        //}
 
-        Vector2 avoidDir = _cachedAvoidDir;
+        //Vector2 avoidDir = _cachedAvoidDir;
 
         if (_enemyBase.EnemyType != EEnemyType.Crawler)
         {
@@ -63,9 +62,9 @@ public class EnemyMoveState : EnemyState
             Vector3 targetPoint = _enemyBase.Path.Peek();
             Vector2 toTarget = (targetPoint - _enemyBase.transform.position).normalized;
 
-            float avoidWeight = (avoidDir == Vector2.zero) ? 0f : 0.8f;
-            Vector2 finalMove = (toTarget.normalized + avoidDir * avoidWeight).normalized;
-            //Vector2 finalMove = toTarget.normalized + avoidDir;
+            //float avoidWeight = (avoidDir == Vector2.zero) ? 0f : 0.8f;
+            //Vector2 finalMove = (toTarget.normalized + avoidDir * avoidWeight).normalized;
+            Vector2 finalMove = toTarget.normalized;
 
 
             _rigidbody.linearVelocity = finalMove * _enemyBase.MoveSpeed;//* Time.fixedDeltaTime;
@@ -99,6 +98,15 @@ public class EnemyMoveState : EnemyState
         }
         else
         {
+            _avoidCheckTimer -= Time.deltaTime;
+            if (_avoidCheckTimer <= 0f)
+            {
+                _cachedAvoidDir = AvoidLogic();
+                _avoidCheckTimer = 0.3f; // 0.3초마다 한 번만 회피 계산
+            }
+
+            Vector2 avoidDir = _cachedAvoidDir;
+
             Vector2 toTarget = (Vector3.zero - _enemyBase.transform.position).normalized;
 
             Vector2 finalMove = toTarget.normalized + avoidDir;
