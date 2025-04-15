@@ -61,7 +61,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: -2123178505
+  m_SortingLayerID: 0
   m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &8396775158964105608
@@ -261,9 +261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2a589d192acb204c8bfc80ea4554308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EndScale: 0.9
-  StartScale: 1
-  Duration: 0.2
   AllocatedTower: 0
 --- !u!1 &3644602653881130958
 GameObject:
@@ -422,9 +419,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2a589d192acb204c8bfc80ea4554308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EndScale: 0.9
-  StartScale: 1
-  Duration: 0.2
   AllocatedTower: 0
 --- !u!1 &6827500204190209445
 GameObject:
