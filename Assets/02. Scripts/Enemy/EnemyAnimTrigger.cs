@@ -22,9 +22,9 @@ public class EnemyAnimTrigger : MonoBehaviour
 
     private void NomalAttackTrigger()
     {
-        if (_enemy.AttackTerget.activeSelf == false) return;
+        if (_enemy.AttackTarget .activeSelf == false) return;
 
-        TowerRoot Tower = _enemy.AttackTerget.GetComponent<TowerRoot>();
+        TowerRoot Tower = _enemy.AttackTarget .GetComponent<TowerRoot>();
 
         if (Tower == null) return;
 
@@ -37,9 +37,9 @@ public class EnemyAnimTrigger : MonoBehaviour
 
     private void BommerAttackTrigger()
     {
-        if (_enemy.AttackTerget.activeSelf == false) return;
+        if (_enemy.AttackTarget .activeSelf == false) return;
 
-        TowerRoot Tower = _enemy.AttackTerget.GetComponent<TowerRoot>();
+        TowerRoot Tower = _enemy.AttackTarget .GetComponent<TowerRoot>();
 
         if (Tower == null) return;
 
@@ -62,7 +62,7 @@ public class EnemyAnimTrigger : MonoBehaviour
     {
         if (_enemy.ProjectilePrefab == null) return;
 
-        TowerRoot Tower = _enemy.AttackTerget.GetComponent<TowerRoot>();
+        TowerRoot Tower = _enemy.AttackTarget .GetComponent<TowerRoot>();
         GameObject acid=Instantiate(_enemy.ProjectilePrefab);
 
         Vector3 offset = _enemy.FaceDir * 2f;

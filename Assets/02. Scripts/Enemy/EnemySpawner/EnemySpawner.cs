@@ -8,30 +8,19 @@ public class PathSet
 {
     public Vector3 startPosition;
     public Queue<Vector3> pathToMainTower;
-    public Queue<Vector3> pathToTower;
 }
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private EnemyTargetSelector targetSelector;
+    [SerializeField] private float _spawnRadius = 3f; // 스포너 반경
 
     private List<PathSet> _pathSetList = new List<PathSet>();
 
-
-    private GameObject TowrTarget;
     private GameObject MainTowerTarget;
-    private void Start()
-    {
-        //ResourceManager.Instance.AddResource(ResourceType.Population)
-        //PhaseManager.Instance.OnNightBegin += SetPath;
-        SetPath();
-    }
+
     private void OnEnable()
     {
-        //SetPath();
-        //_pathNomal.Clear();
-        //_pathTowrTarget.Clear();
-        //SetPath();
+        SetPath();
     }
 
     public void Spawn(EEnemyType type)
@@ -45,52 +34,8 @@ public class EnemySpawner : MonoBehaviour
 
         //출발 위치 적용
         enemy.transform.position = selected.startPosition;
-
-        //경로 및 타겟 설정
-        switch (type)
-        {
-            case EEnemyType.NomalEnemy:
-                enemy.Path = new Queue<Vector3>(selected.pathToMainTower);
-                enemy.AttackTerget = MainTowerTarget;
-                break;
-            case EEnemyType.TowerAttackEnemy:
-                if (selected.pathToTower != null)
-                {
-                    enemy.Path = new Queue<Vector3>(selected.pathToTower);
-                    enemy.AttackTerget = TowrTarget;
-                }
-                else
-                {
-                    enemy.Path = new Queue<Vector3>(selected.pathToMainTower);
-                    enemy.AttackTerget = MainTowerTarget;
-                }
-                break;
-            case EEnemyType.Boomer:
-                if (selected.pathToTower != null)
-                {
-                    enemy.Path = new Queue<Vector3>(selected.pathToTower);
-                    enemy.AttackTerget = TowrTarget;
-                }
-                else
-                {
-                    enemy.Path = new Queue<Vector3>(selected.pathToMainTower);
-                    enemy.AttackTerget = MainTowerTarget;
-                }
-                break;
-            case EEnemyType.ThrowEnemy:
-                if (selected.pathToTower != null)
-                {
-                    enemy.Path = new Queue<Vector3>(selected.pathToTower);
-                    enemy.AttackTerget = TowrTarget;
-                }
-                else
-                {
-                    enemy.Path = new Queue<Vector3>(selected.pathToMainTower);
-                    enemy.AttackTerget = MainTowerTarget;
-                }
-                break;
-
-        }
+        enemy.Path = new Queue<Vector3>(selected.pathToMainTower);
+        enemy.AttackTarget = MainTowerTarget;
 
     }
     public void SpawnEnemyCluster(int enemyNum, float radius)
@@ -98,7 +43,7 @@ public class EnemySpawner : MonoBehaviour
         List<Enemy> enemies = new List<Enemy>();
         enemies.Capacity = enemyNum;
 
-        List<Vector3> path = Pathfinding.FindPath(transform.position, targetSelector.FindTarget(ETargetType.MainTower).transform.position);
+        List<Vector3> path = Pathfinding.FindPath(transform.position, EnemyTargetSelector.FindTarget(transform.position,ETargetType.MainTower).transform.position);
         Queue<Vector3> pathQue = new Queue<Vector3>(path);
         for (int i = 0; i < enemyNum; ++i)
         {
@@ -125,16 +70,20 @@ public class EnemySpawner : MonoBehaviour
 
         _pathSetList.Clear();
 
-        MainTowerTarget = targetSelector.FindTarget(ETargetType.MainTower);
-        TowrTarget = targetSelector.FindTarget(ETargetType.Tower);
+        MainTowerTarget = EnemyTargetSelector.FindTarget(transform.position,ETargetType.MainTower);
+        if (MainTowerTarget == null)
+        {
+            Debug.LogWarning("[EnemySpawner] 메인 타워를 찾지 못했습니다. 경로 설정 중단.");
+            return;
+        }
 
-        for (int i = 0; i < 9; i++)
+        for (int i = 0; i < 5; i++)
         {
             // 랜덤 위치 생성
             float angle = Random.Range(0f, 2 * Mathf.PI);
             float t = Random.Range(0f, 1f);
             float randRadius = Mathf.Sqrt(t) * 2f;
-            Vector3 offset = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * randRadius;
+            Vector3 offset = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * _spawnRadius;
             Vector3 spawnPos = transform.position + offset;
 
             PathSet pathSet = new PathSet();
@@ -147,15 +96,6 @@ public class EnemySpawner : MonoBehaviour
                 if (path != null && path.Count > 0)
                     pathSet.pathToMainTower = new Queue<Vector3>(path);
             }
-
-            // TowrTarget 경로
-            if (TowrTarget != null)
-            {
-                var path = Pathfinding.FindPath(spawnPos, TowrTarget.transform.position);
-                if (path != null && path.Count > 0)
-                    pathSet.pathToTower = new Queue<Vector3>(path);
-            }
-
             _pathSetList.Add(pathSet);
         }
 

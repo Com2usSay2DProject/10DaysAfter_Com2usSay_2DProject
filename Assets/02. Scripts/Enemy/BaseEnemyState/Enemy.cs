@@ -22,7 +22,6 @@ public class Enemy : MonoBehaviour
     protected CircleCollider2D _collider2D;
     protected Animator _animator;
     protected SpriteRenderer _spriteRenderer;
-    public EnemyTargetSelector TargetSelector;
 
     //게터
     public Animator Animator => _animator;
@@ -39,7 +38,7 @@ public class Enemy : MonoBehaviour
 
     public Queue<Vector3> Path; // 현재 이동경로
     public Vector2 FaceDir; //현재 보는 방향
-    public GameObject AttackTerget = null; //현재 목표인 오브젝트
+    public GameObject AttackTarget  = null; //현재 목표인 오브젝트
 
     #region Staties
     public EnemyIdleState IdleState;
@@ -191,26 +190,29 @@ public class Enemy : MonoBehaviour
         HasTowerInRange = true;
     }
 
-    public void RefreshTargetAndPath()
+    public bool RefreshTargetAndPath()
     {
-        // 지정된 타입 타겟 재탐색
-        AttackTerget = TargetSelector.FindTarget(TargetType);
+        Vector3 from = transform.position;
 
-        // 없으면 메인 타워를 타겟으로
-        if (AttackTerget == null)
-            AttackTerget = TargetSelector.FindTarget(ETargetType.MainTower);
+        GameObject target = EnemyTargetSelector.FindTarget(from, TargetType)
+                        ?? EnemyTargetSelector.FindTarget(from, ETargetType.MainTower);
 
-        if (AttackTerget != null)
-        {
-            
-            List<Vector3> path = Pathfinding.FindPath(transform.position, AttackTerget.transform.position);
-            if (path != null && path.Count > 0)
-                Path = new Queue<Vector3>(path);
-        }
-        else
+        if (target == null)
         {
             Debug.Log("타겟이 존재하지 않습니다.");
+            return false;
         }
+
+        AttackTarget  = target;
+
+        List<Vector3> path = Pathfinding.FindPath(transform.position, target.transform.position);
+        if (path != null && path.Count > 0)
+        {
+            Path = new Queue<Vector3>(path);
+            return true;
+        }
+
+        return false;
     }
 
 

@@ -31,7 +31,7 @@ public class EnemySpawnerManager : MonoBehaviour
 
     private void Awake()
     {
-        //spawners = new List<EnemySpawner>();
+        spawners = new List<EnemySpawner>();
         GetData();
 
     }
@@ -40,33 +40,16 @@ public class EnemySpawnerManager : MonoBehaviour
         WaveDatasCurIndex = PhaseManager.Instance.CurrentDay - 1;
 
 
-        spawners = new List<EnemySpawner>();
 
         CreateMainSpawner();
-
+        SetAllSpawnersToRandomPositions();
         CreateClusterSpanwer();
 
-        PhaseManager.Instance.OnDayBegin += DisActiveSpawners;
-        PhaseManager.Instance.OnNightBegin += ActiveSpawners;
+        PhaseManager.Instance.OnDayBegin += OnDayBegin;
+        PhaseManager.Instance.OnNightBegin += OnNightBegin;
 
     }
 
-    private void CreateMainSpawner()
-    {
-        int requiredCount = WaveDatas[WaveDatasCurIndex].spawnerCount;
-        int currentCount = spawners.Count;
-
-        //현재 필요한 갯수와 실제 스포너의 갯수를 비교해서 부족할때만 생성
-        int toCreate = requiredCount - currentCount;
-
-        if (toCreate <= 0)
-            return;
-
-        for (int i = 0; i < toCreate; i++)
-        {
-            CreateSpawner();
-        }
-    }
     private void GetData()
     {
         WaveDataCollection collection;
@@ -89,19 +72,42 @@ public class EnemySpawnerManager : MonoBehaviour
 
         Debug.Log("웨이브 데이터 로드 완료");
     }
+    private void SetAllSpawnersToRandomPositions()
+    {
+        if (spawners == null || spawners.Count == 0) return;
+
+        foreach (var spawner in spawners)
+        {
+            float angle = Random.Range(0f, 2 * Mathf.PI);
+            float t = Random.Range(0f, 1f);
+            float radius = Mathf.Sqrt(t) * (_spawnRadiusMax - _spawnRadiusMin) + _spawnRadiusMin;
+
+            Vector3 pos = new Vector3(Mathf.Cos(angle) * radius, Mathf.Sin(angle) * radius, 0);
+            spawner.transform.position = transform.position + pos;
+        }
+    }
+
+    private void CreateMainSpawner()
+    {
+        int requiredCount = WaveDatas[WaveDatasCurIndex].spawnerCount;
+        int currentCount = spawners.Count;
+
+        //현재 필요한 갯수와 실제 스포너의 갯수를 비교해서 부족할때만 생성
+        int toCreate = requiredCount - currentCount;
+        Debug.Log(toCreate);
+
+        if (toCreate <= 0)
+            return;
+
+        for (int i = 0; i < toCreate; i++)
+        {
+            CreateSpawner();
+        }
+    }
     void CreateSpawner()
     {
-        // angle은 0 ~ 2π 사이에서 균일하게 선택
-        float angle = Random.Range(0f, 2 * Mathf.PI);
-
-        //균일한 분포로 변환
-        float t = Random.Range(0f, 1f);
-        float radius = Mathf.Sqrt(t) * (_spawnRadiusMax - _spawnRadiusMin) + _spawnRadiusMin;
-
-        Vector3 pos = new Vector3(Mathf.Cos(angle) * radius, Mathf.Sin(angle) * radius, 0);
-
         // 스포너 생성 및 등록
-        GameObject spawnerObj = Instantiate(spawnerPrefab, pos, Quaternion.identity);
+        GameObject spawnerObj = Instantiate(spawnerPrefab);
         spawnerObj.transform.SetParent(transform);
 
         EnemySpawner spawner = spawnerObj.GetComponent<EnemySpawner>();
@@ -110,7 +116,6 @@ public class EnemySpawnerManager : MonoBehaviour
             spawner.gameObject.SetActive(false);
             spawners.Add(spawner);
         }
-
     }
     void CreateClusterSpanwer()
     {
@@ -141,7 +146,7 @@ public class EnemySpawnerManager : MonoBehaviour
             }
         }
     }
-    void DisActiveSpawners()
+    void OnDayBegin()
     {
         WaveDatasCurIndex = PhaseManager.Instance.CurrentDay - 1;
         //스포너 멈추고 코루틴도 멈추기
@@ -168,10 +173,10 @@ public class EnemySpawnerManager : MonoBehaviour
                 StopCoroutine(UniqueSpawnerCoroutines);
         }
     }
-    void ActiveSpawners()
+    void OnNightBegin()
     {
         CreateMainSpawner();
-
+        SetAllSpawnersToRandomPositions();
         if (ClusterSpawner != null)
             ClusterSpawner.gameObject.SetActive(true);
         if (UniqueSpawner != null)

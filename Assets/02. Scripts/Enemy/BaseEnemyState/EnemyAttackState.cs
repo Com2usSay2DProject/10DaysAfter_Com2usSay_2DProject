@@ -15,7 +15,7 @@ public class EnemyAttackState : EnemyState
         _rigidbody.linearVelocity = Vector2.zero;
         _enemyBase.Animator.speed = _enemyBase.AttackRate;
 
-        _enemyBase.FaceDir = (_enemyBase.AttackTerget.transform.position-_enemyBase.transform.position).normalized;
+        _enemyBase.FaceDir = (_enemyBase.AttackTarget .transform.position-_enemyBase.transform.position).normalized;
     }
 
     public override void Exit()
@@ -32,9 +32,9 @@ public class EnemyAttackState : EnemyState
         {
             _stateMachine.ChangeState(_enemyBase.MoveState);
 
-            if (_enemyBase.TargetSelector.FindTarget(ETargetType.MainTower) == null) return;
+            if (EnemyTargetSelector.FindTarget(_enemyBase.transform.position,ETargetType.MainTower) == null) return;
 
-            List<Vector3> pathList = Pathfinding.FindPath(_enemyBase.transform.position, _enemyBase.TargetSelector.FindTarget(ETargetType.MainTower).transform.position);
+            List<Vector3> pathList = Pathfinding.FindPath(_enemyBase.transform.position, EnemyTargetSelector.FindTarget(_enemyBase.transform.position, ETargetType.MainTower).transform.position);
             if (pathList != null && pathList.Count > 0)
             {
                 _enemyBase.Path = new Queue<Vector3>(pathList);

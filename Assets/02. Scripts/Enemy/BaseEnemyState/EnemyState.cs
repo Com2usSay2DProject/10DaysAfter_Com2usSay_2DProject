@@ -23,44 +23,34 @@ public class EnemyState
 
         _bommer = _enemyBase as Bommer;
     }
-
+    protected virtual void SetAnimation(bool value)
+    {
+        if (!string.IsNullOrEmpty(_animBoolName))
+            _enemyBase.Animator.SetBool(_animBoolName, value);
+    }
 
     public virtual void Enter()
     {
 
         _stateTimer = 0;
-        _enemyBase.Animator.SetBool(_animBoolName, true);
+        SetAnimation(true);
         _triggerCalled = false;
     }
     public virtual void Update()
     {
         _stateTimer -= Time.deltaTime;
 
-        if(!_enemyBase.IsDead)
-            UpdateTargetAndPath();
-    }
 
-    protected void UpdateTargetAndPath()
-    {
-        if(_bommer)
-        {
-            if (_bommer.isAttacked) return;
-        }
-
-        if (_enemyBase.AttackTerget == null || !_enemyBase.AttackTerget.activeSelf)
+        //목표 타겟이 없어졌으면
+        if (_enemyBase.AttackTarget.activeSelf==false )
         {
             _enemyBase.RefreshTargetAndPath();
-
-            if (_enemyBase.AttackTerget != null)
-            {
-                _stateMachine.ChangeState(_enemyBase.MoveState);
-            }
         }
-    }
 
+    }
     public virtual void Exit()
     {
-        _enemyBase.Animator.SetBool(_animBoolName, false);
+        SetAnimation(false);
     }
 
 }
