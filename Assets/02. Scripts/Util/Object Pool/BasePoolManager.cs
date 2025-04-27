@@ -61,6 +61,45 @@ public abstract class BasePoolManager<TEnum, TPoolInfo> : MonoBehaviour
         return obj;
     }
 
+    public GameObject GetObject(TEnum type, Vector3 position)
+    {
+        TPoolInfo info = GetPoolByType(type);
+        if (info == null) return null;
+
+        GameObject obj;
+        if (info.PoolQueue.Count > 0)
+        {
+            obj = info.PoolQueue.Dequeue();
+        }
+        else
+        {
+            obj = CreateNewObject(info);
+        }
+        obj.transform.position = position;
+        obj.SetActive(true);
+        return obj;
+    }
+
+    public GameObject GetObject(TEnum type, Vector3 position, Quaternion rotation)
+    {
+        TPoolInfo info = GetPoolByType(type);
+        if (info == null) return null;
+
+        GameObject obj;
+        if (info.PoolQueue.Count > 0)
+        {
+            obj = info.PoolQueue.Dequeue();
+        }
+        else
+        {
+            obj = CreateNewObject(info);
+        }
+        obj.transform.position = position;
+        obj.transform.rotation = rotation;
+        obj.SetActive(true);
+        return obj;
+    }
+
     public void ReturnObject(GameObject obj, TEnum type)
     {
         TPoolInfo info = GetPoolByType(type);
