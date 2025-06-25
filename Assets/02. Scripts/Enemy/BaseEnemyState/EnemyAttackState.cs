@@ -30,8 +30,6 @@ public class EnemyAttackState : EnemyState
 
         if (!_enemyBase.HasTowerInRange && !_enemyBase.IsDead)
         {
-            _stateMachine.ChangeState(_enemyBase.MoveState);
-
             if (EnemyTargetSelector.FindTarget(_enemyBase.transform.position,ETargetType.MainTower) == null) return;
 
             List<Vector3> pathList = Pathfinding.FindPath(_enemyBase.transform.position, EnemyTargetSelector.FindTarget(_enemyBase.transform.position, ETargetType.MainTower).transform.position);
