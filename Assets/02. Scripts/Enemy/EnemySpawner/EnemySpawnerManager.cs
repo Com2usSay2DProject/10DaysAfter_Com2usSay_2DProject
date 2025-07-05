@@ -4,250 +4,355 @@ using UnityEngine;
 
 public class EnemySpawnerManager : MonoBehaviour
 {
-    public GameObject spawnerPrefab;             // 스포너 프리팹
+    [Header("프리팹")]
+    public GameObject spawnerPrefab;
 
-    List<WaveData> WaveDatas;
-    int WaveDatasCurIndex = 0;
+    [Header("스포너 범위")]
+    [SerializeField] private float spawnRadiusMin = 5f;
+    [SerializeField] private float spawnRadiusMax = 10f;
 
-    //-----------------------------------
+    [Header("물량 좀비 수")]
+    [SerializeField] private int clusterEnemyNum = 30;
+    [SerializeField] private float clusterRadius = 3f;
 
-    [SerializeField] private float _spawnRadiusMin;
-    [SerializeField] private float _spawnRadiusMax;
+    // 웨이브 데이터
+    private List<WaveData> waveDatas;
+    private int currentWaveIndex = 0;
 
-    //스포너들
-    private List<EnemySpawner> spawners;
-    private EnemySpawner ClusterSpawner;
-    private EnemySpawner UniqueSpawner;
+    // 스포너
+    private List<EnemySpawner> mainSpawners = new List<EnemySpawner>();
+    private EnemySpawner clusterSpawner;
+    private EnemySpawner uniqueSpawner;
 
-    //코루틴 저장용
+    // 코루틴
     private Dictionary<EnemySpawner, Coroutine> spawnerCoroutines = new Dictionary<EnemySpawner, Coroutine>();
-    private Coroutine ClusterSpawnerCoroutine;
-    private Coroutine UniqueSpawnerCoroutines;
+    private Coroutine clusterSpawnerCoroutine;
+    private Coroutine uniqueSpawnerCoroutine;
 
-    [Header("ClusterSpawnerSetting")]
-    //[SerializeField] Transform[] ClusterSpawnerPos;
-    [SerializeField] private int _clusterEnemyNum;
-    [SerializeField] private float _clusterRadius;
+    private const float SPECIAL_SPAWN_DELAY = 10f;
 
     private void Awake()
     {
-        spawners = new List<EnemySpawner>();
-        GetData();
-
+        InitializeSpawnerList();
+        LoadWaveData();
     }
+
     private void Start()
     {
-        WaveDatasCurIndex = PhaseManager.Instance.CurrentDay - 1;
+        SetupInitialWave();
+        SetupInitialSpawners();
+        RegisterPhaseEvents();
+    }
+
+    private void Update()
+    {
+        if (!PhaseManager.Instance.isNight) return;
+
+        HandleSpecialSpawners();
+    }
+
+    private void OnDestroy()
+    {
+        UnregisterPhaseEvents();
+    }
 
 
+    private void InitializeSpawnerList()
+    {
+        mainSpawners = new List<EnemySpawner>();
+    }
 
-        CreateMainSpawner();
+    private void SetupInitialWave()
+    {
+        currentWaveIndex = PhaseManager.Instance.CurrentDay - 1;
+    }
+
+    private void SetupInitialSpawners()
+    {
+        CreateMainSpawners();
         SetAllSpawnersToRandomPositions();
-        CreateClusterSpanwer();
+        CreateSpecialSpawners();
+    }
 
+    private void RegisterPhaseEvents()
+    {
         PhaseManager.Instance.OnDayBegin += OnDayBegin;
         PhaseManager.Instance.OnNightBegin += OnNightBegin;
-
     }
 
-    private void GetData()
+    private void UnregisterPhaseEvents()
     {
-        WaveDataCollection collection;
-
-#if UNITY_EDITOR
-        // 에디터에서는 직접 파일에서 로딩
-        collection = JsonDataManager.LoadFromFile<WaveDataCollection>("Wave/WaveDataCollection");
-#else
-    // 빌드에서는 Resources.Load 사용
-    TextAsset jsonText = Resources.Load<TextAsset>("Json/Wave/WaveDataCollection");
-    if (jsonText == null)
-    {
-        Debug.LogError("웨이브 데이터 파일을 찾을 수 없습니다 (빌드 환경)");
-        return;
-    }
-    collection = JsonDataManager.FromJson<WaveDataCollection>(jsonText.text);
-#endif
-
-        WaveDatas = collection.Datas;
-
-        Debug.Log("웨이브 데이터 로드 완료");
-    }
-    private void SetAllSpawnersToRandomPositions()
-    {
-        if (spawners == null || spawners.Count == 0) return;
-
-        foreach (var spawner in spawners)
+        if (PhaseManager.Instance != null)
         {
-            float angle = Random.Range(0f, 2 * Mathf.PI);
-            float t = Random.Range(0f, 1f);
-            float radius = Mathf.Sqrt(t) * (_spawnRadiusMax - _spawnRadiusMin) + _spawnRadiusMin;
-
-            Vector3 pos = new Vector3(Mathf.Cos(angle) * radius, Mathf.Sin(angle) * radius, 0);
-            spawner.transform.position = transform.position + pos;
+            PhaseManager.Instance.OnDayBegin -= OnDayBegin;
+            PhaseManager.Instance.OnNightBegin -= OnNightBegin;
         }
     }
-
-    private void CreateMainSpawner()
+    private void LoadWaveData()
     {
-        int requiredCount = WaveDatas[WaveDatasCurIndex].spawnerCount;
-        int currentCount = spawners.Count;
+        WaveDataCollection collection = LoadWaveDataCollection();
+        waveDatas = collection.Datas;
+        Debug.Log("웨이브 데이터 로드 완료");
+    }
 
-        //현재 필요한 갯수와 실제 스포너의 갯수를 비교해서 부족할때만 생성
+    private WaveDataCollection LoadWaveDataCollection()
+    {
+#if UNITY_EDITOR
+        return JsonDataManager.LoadFromFile<WaveDataCollection>("Wave/WaveDataCollection");
+#else
+        TextAsset jsonText = Resources.Load<TextAsset>("Json/Wave/WaveDataCollection");
+        if (jsonText == null)
+        {
+            Debug.LogError("웨이브 데이터 파일을 찾을 수 없습니다 (빌드 환경)");
+            return new WaveDataCollection();
+        }
+        return JsonDataManager.FromJson<WaveDataCollection>(jsonText.text);
+#endif
+    }
+
+    private WaveData GetCurrentWaveData()
+    {
+        return waveDatas[currentWaveIndex];
+    }
+
+    private void CreateMainSpawners()
+    {
+        int requiredCount = GetCurrentWaveData().spawnerCount;
+        int currentCount = mainSpawners.Count;
         int toCreate = requiredCount - currentCount;
-        Debug.Log(toCreate);
 
-        if (toCreate <= 0)
-            return;
+        if (toCreate <= 0) return;
 
         for (int i = 0; i < toCreate; i++)
         {
-            CreateSpawner();
+            CreateAndAddMainSpawner();
         }
     }
-    void CreateSpawner()
-    {
-        // 스포너 생성 및 등록
-        GameObject spawnerObj = Instantiate(spawnerPrefab);
-        spawnerObj.transform.SetParent(transform);
 
+    private void CreateAndAddMainSpawner()
+    {
+        GameObject spawnerObj = Instantiate(spawnerPrefab, transform);
         EnemySpawner spawner = spawnerObj.GetComponent<EnemySpawner>();
+
         if (spawner != null)
         {
             spawner.gameObject.SetActive(false);
-            spawners.Add(spawner);
+            mainSpawners.Add(spawner);
         }
     }
-    void CreateClusterSpanwer()
+
+    private void CreateSpecialSpawners()
     {
+        clusterSpawner = CreateSpawner();
+        uniqueSpawner = CreateSpawner();
 
-        ClusterSpawner = Instantiate(spawnerPrefab).GetComponent<EnemySpawner>();
-        SetRandPos(ClusterSpawner);
-
-        UniqueSpawner = Instantiate(spawnerPrefab).GetComponent<EnemySpawner>();
-        SetRandPos(UniqueSpawner);
-        UniqueSpawner.SetPath();
+        SetRandomPositionForSpecialSpawner(clusterSpawner);
+        SetRandomPositionForSpecialSpawner(uniqueSpawner);
+        uniqueSpawner.SetPath();
     }
-    IEnumerator SpawnAtRandomIntervals(EnemySpawner spawner)
+
+    private EnemySpawner CreateSpawner()
     {
-        int curIndex = WaveDatasCurIndex;
+        GameObject spawnerObj = Instantiate(spawnerPrefab);
+        return spawnerObj.GetComponent<EnemySpawner>();
+    }
 
-        while (true)
+    private void SetAllSpawnersToRandomPositions()
+    {
+        if (mainSpawners == null || mainSpawners.Count == 0) return;
+
+        foreach (EnemySpawner spawner in mainSpawners)
         {
-            int spawnNum = Random.Range(WaveDatas[curIndex].spawnMinnum, WaveDatas[curIndex].spawnMaxnum);
+            Vector3 randomPos = GetRandomSpawnPosition();
+            spawner.transform.position = transform.position + randomPos;
+        }
+    }
 
-            float randomDelay = Random.Range(WaveDatas[curIndex].minSpawnDelay, WaveDatas[curIndex].maxSpawnDelay);
-            yield return new WaitForSeconds(randomDelay);
-            for (int i = 0; i < spawnNum; ++i)
+    private Vector3 GetRandomSpawnPosition()
+    {
+        float angle = Random.Range(0f, 2f * Mathf.PI);
+        float t = Random.Range(0f, 1f);
+        float radius = Mathf.Sqrt(t) * (spawnRadiusMax - spawnRadiusMin) + spawnRadiusMin;
+
+        return new Vector3(
+            Mathf.Cos(angle) * radius,
+            Mathf.Sin(angle) * radius,
+            0f
+        );
+    }
+
+    private void SetRandomPositionForSpecialSpawner(EnemySpawner spawner)
+    {
+        if (spawner == null || mainSpawners.Count == 0) return;
+
+        int randIndex = Random.Range(0, mainSpawners.Count);
+        Vector3 randomSpawnerPos = mainSpawners[randIndex].transform.position;
+
+        spawner.transform.position = randomSpawnerPos;
+        spawner.SetPath();
+    }
+
+
+    private void StartMainSpawnerCoroutines()
+    {
+        foreach (EnemySpawner spawner in mainSpawners)
+        {
+            spawner.SetPath();
+            spawner.gameObject.SetActive(true);
+
+            if (!spawnerCoroutines.ContainsKey(spawner))
             {
-
-                int randomType = Random.Range(0, WaveDatas[curIndex].enableSpawnType);
-
-                spawner.Spawn((EEnemyType)randomType);
+                Coroutine coroutine = StartCoroutine(SpawnAtRandomIntervals(spawner));
+                spawnerCoroutines[spawner] = coroutine;
             }
         }
     }
-    void OnDayBegin()
+
+    private void StopAllMainSpawnerCoroutines()
     {
-        WaveDatasCurIndex = PhaseManager.Instance.CurrentDay - 1;
-        //스포너 멈추고 코루틴도 멈추기
-        foreach (var spawner in spawners)
+        foreach (EnemySpawner spawner in mainSpawners)
         {
             spawner.gameObject.SetActive(false);
+
             if (spawnerCoroutines.ContainsKey(spawner))
             {
                 StopCoroutine(spawnerCoroutines[spawner]);
                 spawnerCoroutines.Remove(spawner);
             }
         }
-
-        if (ClusterSpawner != null)
-        {
-            ClusterSpawner.gameObject.SetActive(false);
-            if (ClusterSpawnerCoroutine != null)
-                StopCoroutine(ClusterSpawnerCoroutine);
-        }
-        if (UniqueSpawner != null)
-        {
-            UniqueSpawner.gameObject.SetActive(false);
-            if (UniqueSpawnerCoroutines != null)
-                StopCoroutine(UniqueSpawnerCoroutines);
-        }
     }
-    void OnNightBegin()
-    {
-        CreateMainSpawner();
-        SetAllSpawnersToRandomPositions();
-        if (ClusterSpawner != null)
-            ClusterSpawner.gameObject.SetActive(true);
-        if (UniqueSpawner != null)
-            UniqueSpawner.gameObject.SetActive(true);
 
-        //나중에 코루틴 종료할때 필요해서 저장
-        foreach (var spawner in spawners)
+    private void StopSpecialSpawnerCoroutines()
+    {
+        if (clusterSpawner != null)
         {
-            spawner.SetPath();
-            spawner.gameObject.SetActive(true);
-            if (!spawnerCoroutines.ContainsKey(spawner))
+            clusterSpawner.gameObject.SetActive(false);
+            if (clusterSpawnerCoroutine != null)
             {
-                Coroutine co = StartCoroutine(SpawnAtRandomIntervals(spawner));
-                spawnerCoroutines[spawner] = co;
+                StopCoroutine(clusterSpawnerCoroutine);
+                clusterSpawnerCoroutine = null;
+            }
+        }
+
+        if (uniqueSpawner != null)
+        {
+            uniqueSpawner.gameObject.SetActive(false);
+            if (uniqueSpawnerCoroutine != null)
+            {
+                StopCoroutine(uniqueSpawnerCoroutine);
+                uniqueSpawnerCoroutine = null;
             }
         }
     }
-    private void Update()
-    {
-        if (PhaseManager.Instance.isNight == false) return;
 
-        if (WaveDatas[WaveDatasCurIndex].useClusterEnemy /*&& ClusterSpawner.gameObject.activeSelf*/ && ClusterSpawnerCoroutine == null)
+    private IEnumerator SpawnAtRandomIntervals(EnemySpawner spawner)
+    {
+        WaveData currentWave = GetCurrentWaveData();
+
+        while (true)
         {
-            SetRandPos(ClusterSpawner);
-            ClusterSpawnerCoroutine = StartCoroutine(SpawnClusterEnemy(ClusterSpawner));
-        }
+            int spawnNum = Random.Range(currentWave.spawnMinnum, currentWave.spawnMaxnum + 1);
+            float randomDelay = Random.Range(currentWave.minSpawnDelay, currentWave.maxSpawnDelay);
 
-        if (WaveDatas[WaveDatasCurIndex].useUnipueEnemy && UniqueSpawnerCoroutines == null)
+            yield return new WaitForSeconds(randomDelay);
+
+            for (int i = 0; i < spawnNum; i++)
+            {
+                EEnemyType randomType = (EEnemyType)Random.Range(0, currentWave.enableSpawnType);
+                spawner.Spawn(randomType);
+            }
+        }
+    }
+
+    private IEnumerator SpawnClusterEnemy(EnemySpawner spawner)
+    {
+        yield return new WaitForSeconds(SPECIAL_SPAWN_DELAY);
+        spawner.SpawnEnemyCluster(clusterEnemyNum, clusterRadius);
+        clusterSpawnerCoroutine = null;
+    }
+
+    private IEnumerator SpawnUniqueEnemy(EnemySpawner spawner)
+    {
+        yield return new WaitForSeconds(SPECIAL_SPAWN_DELAY);
+
+        EEnemyType uniqueType = GetRandomUniqueEnemyType();
+        spawner.Spawn(uniqueType);
+
+        uniqueSpawnerCoroutine = null;
+    }
+
+    private EEnemyType GetRandomUniqueEnemyType()
+    {
+        return (EEnemyType)Random.Range((int)EEnemyType.Unique1, (int)EEnemyType.Unique2 + 1);
+    }
+
+
+
+    private void OnDayBegin()
+    {
+        currentWaveIndex = PhaseManager.Instance.CurrentDay - 1;
+        StopAllMainSpawnerCoroutines();
+        StopSpecialSpawnerCoroutines();
+    }
+
+    private void OnNightBegin()
+    {
+        CreateMainSpawners();
+        SetAllSpawnersToRandomPositions();
+        ActivateSpecialSpawners();
+        StartMainSpawnerCoroutines();
+    }
+
+    private void ActivateSpecialSpawners()
+    {
+        if (clusterSpawner != null)
+            clusterSpawner.gameObject.SetActive(true);
+
+        if (uniqueSpawner != null)
+            uniqueSpawner.gameObject.SetActive(true);
+    }
+
+
+
+    private void HandleSpecialSpawners()
+    {
+        WaveData currentWave = GetCurrentWaveData();
+
+        HandleClusterSpawner(currentWave);
+        HandleUniqueSpawner(currentWave);
+    }
+
+    private void HandleClusterSpawner(WaveData waveData)
+    {
+        if (waveData.useClusterEnemy && clusterSpawnerCoroutine == null)
         {
-            SetRandPos(UniqueSpawner);
-            UniqueSpawnerCoroutines = StartCoroutine(SpawnUniqueEnemy(UniqueSpawner));
+            SetRandomPositionForSpecialSpawner(clusterSpawner);
+            clusterSpawnerCoroutine = StartCoroutine(SpawnClusterEnemy(clusterSpawner));
         }
     }
-    IEnumerator SpawnClusterEnemy(EnemySpawner spawner)
+
+    private void HandleUniqueSpawner(WaveData waveData)
     {
-        yield return new WaitForSeconds(10f);
-
-        spawner.SpawnEnemyCluster(30, 3);
-        ClusterSpawnerCoroutine = null;
-    }
-    IEnumerator SpawnUniqueEnemy(EnemySpawner spawner)
-    {
-        yield return new WaitForSeconds(10f);
-
-        int randInt = Random.Range((int)EEnemyType.Unique1, (int)EEnemyType.Unique2 + 1);
-
-        spawner.Spawn((EEnemyType)randInt);
-        UniqueSpawnerCoroutines = null;
-    }
-    private void SetRandPos(EnemySpawner spawner)
-    {
-        if (spawner == null || spawners == null || spawners.Count == 0) return;
-
-        // spawners 리스트에서 랜덤한 스포너 하나 선택
-        int randIndex = Random.Range(0, spawners.Count);
-        Vector3 randomSpawnerPos = spawners[randIndex].transform.position;
-
-        // 선택된 위치로 현재 스포너 이동
-        spawner.transform.position = randomSpawnerPos;
-        spawner.SetPath();
+        if (waveData.useUnipueEnemy && uniqueSpawnerCoroutine == null)
+        {
+            SetRandomPositionForSpecialSpawner(uniqueSpawner);
+            uniqueSpawnerCoroutine = StartCoroutine(SpawnUniqueEnemy(uniqueSpawner));
+        }
     }
 
-    //스포너 생성되는 범위 시각적으로 표현
+
     private void OnDrawGizmos()
     {
-        // 스폰 범위를 노란색으로 표시
+        DrawSpawnRangeGizmos();
+    }
+
+    private void DrawSpawnRangeGizmos()
+    {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, _spawnRadiusMax);
+        Gizmos.DrawWireSphere(transform.position, spawnRadiusMax);
 
         Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, _spawnRadiusMin);
+        Gizmos.DrawWireSphere(transform.position, spawnRadiusMin);
     }
 
 }
